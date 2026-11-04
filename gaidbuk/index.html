@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Скалы Армении — гайдбук White Irbis</title>
+<meta name="description" content="175 маршрутов в 15 районах: Нораванк, Адское ущелье, Оханаван, Карби, Апаран, скалы Еревана. Точки для навигатора, подходы, тень, советы местных скалолазов.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="White Irbis">
+<meta property="og:title" content="Скалы Армении — гайдбук White Irbis">
+<meta property="og:description" content="175 маршрутов в 15 районах: Нораванк, Адское ущелье, Оханаван, Карби, Апаран, скалы Еревана. Точки для навигатора, подходы, тень, советы местных скалолазов.">
+<meta property="og:url" content="https://scmam-rgb.github.io/white-irbis/gaidbuk/">
+<meta property="og:image" content="https://scmam-rgb.github.io/white-irbis/gaidbuk/img/preview.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#2f2b29">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px;font-family:system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head><body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Manrope:wght@400;600;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: climbing topo-book — area chapter → sector cards → route rows with grade chips; sticky grade filter */
+:root{
+  --bg:#f7f3ef; --surface:#fff; --ink:#24201d; --muted:#6c625b; --line:#e3d9d0;
+  --tuff:#c96f55; --basalt:#2f2b29; --leopard:#e8b923;
+  --nav-g:#1a73e8; --g1:#3f7d4e; --g2:#2f6fa3; --g3:#c26a1d; --g4:#a3283f;
+  --f-display:"Oswald","Arial Narrow",Arial,sans-serif;
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1b1817; --surface:#24201e; --ink:#efe8e2; --muted:#a99d94; --line:#3a3330;
+  --tuff:#e08b70; --basalt:#0f0d0c; --leopard:#f0c63e;
+  --nav-g:#3b82f6; --g1:#6db07d; --g2:#6aa6d6; --g3:#e39a57; --g4:#e07088; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1b1817; --surface:#24201e; --ink:#efe8e2; --muted:#a99d94; --line:#3a3330;
+  --tuff:#e08b70; --basalt:#0f0d0c; --leopard:#f0c63e;
+  --nav-g:#3b82f6; --g1:#6db07d; --g2:#6aa6d6; --g3:#e39a57; --g4:#e07088; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--f-body)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:900px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;line-height:1.1;text-wrap:balance;margin:0}
+p{margin:0}
+[hidden]{display:none!important}
+a{color:var(--tuff)}
+:focus-visible{outline:2px solid var(--leopard);outline-offset:2px}
+
+.hero{background:var(--basalt);color:#f4ede6}
+.hero .wrap{padding-block:48px 36px;display:grid;gap:16px}
+.brand{font:500 13px/1 var(--f-data);letter-spacing:.14em;text-transform:uppercase;color:var(--leopard)}
+.hero h1{font-size:clamp(40px,8vw,72px);text-transform:uppercase}
+.hero p{max-width:62ch;color:#d9cfc6;font-size:17px}
+.stats{display:flex;flex-wrap:wrap;gap:10px 28px;font:500 14px var(--f-data);color:#bfb4ab}
+.stats b{display:block;font:700 28px/1.1 var(--f-display);color:#f4ede6}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar .wrap{padding-block:8px}
+.bar .lbl{font:500 12px var(--f-data);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-right:4px}
+.f{font:600 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer}
+.f[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.nav{display:flex;gap:16px;font-size:14px;font-weight:700;min-width:0}
+.nav a{text-decoration:none}
+
+main .wrap{display:grid;gap:56px;padding-block:40px 64px}
+.area{display:grid;gap:18px;scroll-margin-top:70px}
+.area>header{display:grid;gap:10px;border-top:3px solid var(--tuff);padding-top:14px}
+.kicker{font:500 12px/1 var(--f-data);letter-spacing:.14em;text-transform:uppercase;color:var(--tuff)}
+h2{font-size:clamp(30px,5vw,44px);text-transform:uppercase}
+.intro{max-width:65ch;color:var(--muted);font-size:17px}
+.facts{display:flex;flex-wrap:wrap;gap:6px 18px;font:500 13px/1.4 var(--f-data);color:var(--muted)}
+.facts b{color:var(--ink);font-weight:500}
+.note{border-left:3px solid var(--leopard);padding:10px 14px;background:color-mix(in srgb,var(--leopard) 10%,transparent);border-radius:0 8px 8px 0;max-width:68ch}
+.note.warn{border-left-color:var(--g4);background:color-mix(in srgb,var(--g4) 8%,transparent)}
+
+.sector{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.sector>div.head{padding:16px 18px 12px;display:grid;gap:6px}
+.sector h3{font-size:21px}
+.sector .desc{color:var(--muted);font-size:15px;max-width:68ch}
+.routes{list-style:none;margin:0;padding:0}
+.r{display:grid;grid-template-columns:58px 1fr;gap:4px 12px;padding:10px 18px;border-top:1px solid var(--line);align-items:baseline}
+.r .gr{font:500 14px var(--f-data);text-align:center;border-radius:6px;padding:3px 0;color:#fff;font-variant-numeric:tabular-nums}
+.l0 .gr{background:var(--muted)} .l1 .gr{background:var(--g1)} .l2 .gr{background:var(--g2)} .l3 .gr{background:var(--g3)} .l4 .gr{background:var(--g4)}
+:root:not([data-theme="light"]) .gr{color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .gr{color:#1b1817}}
+:root[data-theme="dark"] .gr{color:#1b1817}
+.r .nm{font-weight:700;min-width:0}
+.r .st{color:var(--leopard);letter-spacing:1px;margin-left:6px;font-size:14px}
+.r .meta{font:500 12px var(--f-data);color:var(--muted);margin-left:6px}
+.r .tx{grid-column:2;color:var(--muted);font-size:14px;min-width:0}
+.empty{padding:12px 18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:14px;height:14px;border-radius:4px;display:inline-block}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;gap:8px}
+.box h3{font-size:19px}
+ul.clean{margin:0;padding-left:20px;display:grid;gap:5px}
+.contact{background:var(--basalt);color:#f4ede6;border-radius:12px;padding:24px;display:grid;gap:12px}
+.contact .num{font:500 clamp(22px,5vw,30px)/1 var(--f-data);color:var(--leopard);user-select:all}
+.contact button{font:600 14px var(--f-body);background:var(--leopard);color:#24201d;border:0;border-radius:999px;padding:9px 18px;cursor:pointer;justify-self:start}
+.contact .small{color:#bfb4ab;font-size:14px}
+.contact a{color:var(--leopard)}
+
+.geo{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font:500 12px var(--f-data);color:var(--muted)}
+.geo a{font:700 14px/1 var(--f-body);text-decoration:none;border-radius:999px;padding:9px 14px;min-height:36px;display:inline-flex;align-items:center;gap:6px;border:2px solid transparent;transition:transform .1s}
+.geo a:hover{transform:translateY(-1px)} .geo a:active{transform:none}
+.geo a.gg{background:var(--nav-g);color:#fff}
+.geo a.ya{background:var(--leopard);color:#24201d}
+.geo a.os{background:var(--surface);color:var(--ink);border-color:var(--ink)}
+.geo .co{flex-basis:100%;font:500 12px var(--f-data);color:var(--muted)}
+.geo .co.inl{flex-basis:auto}
+.r{cursor:pointer}
+.r:hover{background:color-mix(in srgb,var(--tuff) 6%,transparent)}
+.r{grid-template-columns:58px 1fr 18px}
+.r::after{content:"▾";grid-column:3;grid-row:1;color:var(--muted);justify-self:end}
+.r[aria-expanded="true"]::after{content:"▴"}
+.r .tx{grid-column:2}
+.det{grid-column:1/-1;margin-top:8px;padding:14px;border-radius:8px;background:var(--bg);border:1px solid var(--line);display:grid;gap:10px;cursor:auto;font-size:14px}
+.det h4{font:700 16px var(--f-body)}
+.det dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0}
+.det dt{color:var(--muted);font:500 12px var(--f-data);text-transform:uppercase;letter-spacing:.06em;padding-top:2px}
+.det dd{margin:0}
+.det .ph{width:100%;max-height:340px;object-fit:cover;border-radius:6px}
+.det .noph{border:1px dashed var(--line);border-radius:6px;padding:10px;color:var(--muted);font-size:13px}
+.det blockquote{margin:0;padding:8px 12px;border-left:3px solid var(--tuff);background:var(--surface);border-radius:0 6px 6px 0;color:var(--ink)}
+.det blockquote small{display:block;color:var(--muted);font:500 11px var(--f-data);margin-bottom:3px}
+.det .lnk{font-weight:700}
+.geo .pin{color:var(--tuff)}
+.mapbox{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;overflow-x:auto}
+.mapbox svg{display:block;width:100%;min-width:520px;height:auto}
+.mapbox text{font-family:var(--f-body);fill:var(--ink)}
+.mapbox .town{fill:var(--muted);font-size:13px}
+.mapbox .lab{font-size:15px;font-weight:800}
+.mapbox .sub{font:500 11px var(--f-data);fill:var(--muted)}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px;padding:0 18px 14px}
+.photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+footer{color:var(--muted);font-size:13px;display:grid;gap:6px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:64px;width:64px;border-radius:14px;box-shadow:0 0 0 1px #4a423e}
+.logo .wm{font-size:26px}
+.wm{font:700 22px/1 var(--f-display);letter-spacing:.08em;color:#f4ede6}
+.wm span{color:var(--leopard)}
+.scroller{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px;min-width:0}
+.scroller::-webkit-scrollbar{display:none}
+.scroller>*{flex:0 0 auto}
+.bar .wrap{display:grid;gap:8px}
+.nav a{padding:4px 0;white-space:nowrap}
+.sh{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:16px 18px}
+.sh:focus-visible{outline:2px solid var(--leopard);outline-offset:-2px}
+.sh h3{font-size:21px}
+.sh .cnt{font:500 13px var(--f-data);color:var(--muted);grid-column:1}
+.sh .chev{grid-row:1/3;grid-column:2;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--bg);font-size:16px;transition:transform .2s}
+.sector.open .sh .chev{transform:rotate(180deg)}
+.sector>div.head{padding:0 18px 14px}
+.bars{display:flex;gap:3px;grid-column:1;margin-top:2px}
+.bars i{height:6px;border-radius:3px;display:block}
+.ac{display:inline-flex;align-items:center;gap:6px;font:700 14px var(--f-body);text-decoration:none;padding:8px 14px;border-radius:999px;border:2px solid var(--tuff);color:var(--tuff);justify-self:start}
+.pht{display:flex;flex-wrap:wrap;gap:8px}
+.pht a{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--line);text-decoration:none;color:var(--ink);font:600 13px var(--f-body)}
+.info{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.info>summary{cursor:pointer;padding:14px 16px;font:700 16px var(--f-body);list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.info>summary::-webkit-details-marker{display:none}
+.info>summary::after{content:"▾";color:var(--muted)}
+.info[open]>summary::after{content:"▴"}
+.info>div{display:grid;gap:12px;padding:0 16px 16px}
+.info .note{background:none;border-left-width:3px}
+.det .geo a{flex:0 1 auto;padding:7px 12px;min-height:32px;font-size:13px}
+.srch{position:relative}
+.srch input{width:100%;box-sizing:border-box;font:600 16px var(--f-body);padding:10px 40px 10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.srch input:focus{outline:2px solid var(--tuff);outline-offset:0;border-color:transparent}
+.srch button{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--muted);font-size:18px;cursor:pointer;padding:6px}
+.res{font:500 13px var(--f-data);color:var(--muted)}
+.nav a.cur{color:var(--ink);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.toc a{display:grid;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink)}
+.toc a:hover{border-color:var(--tuff)}
+.toc b{font:700 18px var(--f-body)}
+.toc span{font:500 12px var(--f-data);color:var(--muted)}
+.toc .tag{justify-self:start;font:700 11px var(--f-body);text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:999px;background:color-mix(in srgb,var(--g1) 16%,transparent);color:var(--g1)}
+.top{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:var(--bg);font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgb(0 0 0 / .25)}
+.legend.mini{font-size:13px}
+@media (max-width:600px){.toc{grid-template-columns:1fr 1fr}.toc a{padding:12px}.toc b{font-size:16px}}
+body.act .area>header .intro,body.act .area>header .facts,body.act details.info,body.act .area>.note,body.act .allbtn,body.act .sector .desc{display:none}
+.allbtn{font:600 14px var(--f-body);background:none;border:0;color:var(--tuff);cursor:pointer;padding:4px 0;justify-self:start}
+@media (max-width:600px){
+ body{font-size:16px}
+ .hero .wrap{padding-block:28px 24px;gap:12px}
+ .hero h1{font-size:44px}
+ .hero p{font-size:16px}
+ .stats{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:8px}
+ .stats b{font-size:24px}
+ .stats span{font-size:11px}
+ main .wrap{gap:40px;padding-block:24px 48px}
+ h2{font-size:30px}
+ .intro{font-size:16px}
+ .legend{font-size:13px;gap:6px 12px}
+ .sh{padding:14px 14px}
+ .sh h3{font-size:19px}
+ .sector>div.head{padding:0 14px 12px}
+ .r{grid-template-columns:52px 1fr 16px;padding:12px 14px;gap:3px 10px}
+ .r .nm{font-size:16px}
+ .r .meta{display:inline-block;margin-left:0;margin-right:8px}
+ .r .st{margin-left:4px}
+ .r .nm .meta:first-of-type{display:block}
+ .geo a{flex:1 1 0;min-width:0;justify-content:center;padding:11px 6px;font-size:14px}
+ .geo .lg{display:none}
+ .note{font-size:15px}
+ .det{padding:12px;margin-inline:-4px}
+ .det dl{grid-template-columns:1fr}
+ .det dt{padding-top:6px}
+}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="logo" id="logo"><img src="data:image/png;base64,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Kzo6WmOXLulnfTedz58/n6SkJGbMmMGJEycIDw/XSqK7du3i4Ycfpn79+tSrV8/vtcUAusDfT5kyRbO0InTZuHEjK1euZNKkSRgMBsLDwzXhrV27NnFxcRq1iO8oZFHSgJycHLKyshgxYgS///47LpeL+fPna+wZl6MQBxTAx2KLzfFLliyhbt26fPzxx7Rt25aHH37Yz8KdP3++zJstFKpr164au1xJ3kIowIgRI0hLS+PUqVNkZGRo2yS9Xi9er5eoqCgyMzN58MEHWb9+fYmvJyDfN954I9999x1ms9nPQwiaEDF44na7qV27thbq+IY7f/75p4ayPHnyJPv27eOhhx7ixIkTuN1uunfvzvTp05k7dy56vR673Y7ZbA4owOWeD3g8Hq0i9Nprr7F9+3b279/Pgw8+6NfEOX36dJmteVH379Kli1aaLAlrL57j9ddfp127dlitVsaNG8eUKVP8lmt4PB7MZjNnzpxhzpw5dOzYkaysLOx2O23atPELL+rXr6+NK4rf960oicpUUFAQK1eu5I033uD222+nVq1abN68GavVyvLly8nPz9eE2+FwMGPGDJxOJ2FhYezcuZMNGzZo2+6rap0+oAAXGA45HA7y8vK45pprmD9/Ptu3b6ddu3YabigrK6tcNjNZlmnUqFGFKlHt2rXTLP0777zDwoULyc7O1gRLoCWzs7MZOnQoMTEx2srRgwcPalh4r9dL165dqV27tpY4FxVMkYxnZGQwYsQIcnNz2bdvn7b8WqfTaStkVVXFYrEQHh7O4cOH/eryospU1UuVgST4Ar3BwoULue+++/B6vYwdO1YDZAElUneUBJkuOmBTVs1fQJejoqLo06cPubm5xabQdDod4eHh2O12DAYDKSkpTJs2TWtm6XQ62rdvz/Dhw8vcfimGVRRFITQ0lPDwcKKiooiNjSUyMtLPu4lqktls1noeQtmuVsG/ohVACO+pU6cYMGAATZs2ZdmyZXz33XeaQJa3hVDE9hXtYopwRafTsXLlSlasWFFih1kInrDsZrOZMWPGcNttt7Ft2zZWrVrF77//zsyZM8ulBhSQCVHpKUpZeKVUagIKcAEKEBQUxPHjx1m9erWGV589e7Ym9IKDpiyBKI2Mt7xxxfbt2zN16tQSd4wVhUOL3sCmTZu45557GDhwILfffjtnz56tEHgsINABBSgV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" alt="White Irbis" width="64" height="64"><span class="wm">WHITE <span>IRBIS</span></span></div>
+    <div class="brand">гайдбук · издание ноябрь 2026</div>
+    <h1>Скалы Армении</h1>
+    <p>Районы, сектора и маршруты с координатами: Нораванк, Адское ущелье, Ереван, Оханаван и ещё 11 мест, которые развивает местное сообщество. Категории по французской шкале, описания маршрутов, подходы и что важно знать до выезда.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="srch"><input id="q" type="text" inputmode="search" enterkeyhint="search" placeholder="Найти маршрут или сектор" autocomplete="off" aria-label="Поиск маршрута"><button type="button" id="qx" aria-label="Очистить" hidden>✕</button></div>
+    <div class="scroller"><button class="f" data-l="all" aria-pressed="true">Все уровни</button>
+    <button class="f" data-l="1" aria-pressed="false">до 5c</button>
+    <button class="f" data-l="2" aria-pressed="false">6a–6b+</button>
+    <button class="f" data-l="3" aria-pressed="false">6c–7a+</button>
+    <button class="f" data-l="4" aria-pressed="false">7b+</button></div>
+    <div class="res" id="res" hidden></div>
+    <nav class="nav scroller" aria-label="Районы"><a href="#where">Обзор</a><a href="#noravank">Нораванк</a><a href="#hell">Адское</a><a href="#map">Карта</a><a href="#yerevan">Ереван</a><a href="#ohanavan">Оханаван</a><a href="#more">Новые</a><a href="#tips">Советы</a></nav>
+  </div>
+</div>
+
+<main>
+<div class="wrap">
+
+<section class="area" id="where" style="gap:12px">
+  <header style="border:0;padding:0"><div class="kicker">Куда поехать</div></header>
+  <div class="toc">
+    <a href="#yerevan"><b>Скалы Еревана</b><span>15 мин от центра · <i data-c="yerevan"></i></span><span class="tag">после работы</span></a>
+    <a href="#ohanavan"><b>Оханаван</b><span>40 мин · <i data-c="ohanavan"></i></span><span class="tag">для новичков</span></a>
+    <a href="#hell"><b>Адское ущелье</b><span>≈1,5 ч · <i data-c="hell"></i></span><span class="tag">тень, лагерь</span></a>
+    <a href="#noravank"><b>Нораванк</b><span>≈2 ч · <i data-c="noravank"></i></span><span class="tag">мультипитчи</span></a>
+    <a href="#more"><b>Ещё 11 мест</b><span>Карби, Апаран, Веди… · <i data-c="more"></i></span><span class="tag">новые сектора</span></a>
+    <a href="#map"><b>Карта</b><span>все районы на схеме</span></a>
+  </div>
+  <div class="legend mini">
+    <span><i style="background:var(--g1)"></i>до 5c</span><span><i style="background:var(--g2)"></i>6a–6b+</span><span><i style="background:var(--g3)"></i>6c–7a+</span><span><i style="background:var(--g4)"></i>7b+</span><span><b style="color:var(--leopard)">★</b> оценка</span><span>💬 обсуждали в чате</span><span>📷 есть фото</span>
+  </div>
+</section>
+
+<section class="area" id="map">
+  <header>
+    <div class="kicker">Карта</div>
+    <h2>Где скалы</h2>
+    <p class="intro">Схема в масштабе по реальным координатам. У каждого сектора ниже есть точка и кнопки для Google Карт, Яндекс Карт и OpenStreetMap: откройте в телефоне, и навигатор доведёт до места.</p>
+  </header>
+  <div class="mapbox" id="ovmap"></div>
+</section>
+
+<section class="area" id="noravank">
+  <header>
+    <div class="kicker">Район 1 · Вайоц Дзор</div>
+    <h2>Ущелье Нораванк (Гнишик)</h2>
+    <div class="facts"><span>от Еревана <b>≈2 часа</b></span><span>порода <b>известняк, сверху слой туфа</b></span><span>стиль <b>спорт, мультипитчи, немного трада</b></span><span>база <b>с. Арени</b></span></div>
+    <p class="intro">Самый развитый район страны. Здесь проходили чемпионаты СССР по скалолазанию, а до середины 1990-х ущелье было главной площадкой армянских скалолазов. Современные спортивные маршруты начали бурить в 2006–2007 годах, среди первых провешивателей — Антуан Ананян и Алексей Трубачёв. По ущелью идёт асфальт к монастырю, большинство маршрутов в паре шагов от машины.</p>
+  </header>
+  <p class="note warn"><b>Осторожно.</b> Часть скалы живая, на новых маршрутах бывают отколы. По дороге быстро ездят машины и автобусы. Встречаются скорпионы и гадюки. Каска обязательна и для лезущего, и для страхующего.</p>
+  <p class="note"><b>Из чата.</b> Солнце на Центральном секторе с 10 утра, рано утром тень. Такси в ущелье вызывается, а обратно нет: договаривайтесь с водителем, чтобы забрал вечером. Под стенами есть стоянка с кострищами. Рядом пещеры Арени-1 и Магеллана. Местные категории на старых маршрутах жёсткие, а на части мультипитчей вместо шлямбуров нужны френды, хотя в старых схемах они значатся как спортивные.</p>
+  <div class="geo" data-geo="39.699505,45.209853" data-label="Парковка у сектора Арени"></div><div class="geo" data-geo="39.731,45.2057" data-label="Вход в ущелье, у пещеры Арени-1"></div><div id="nv"></div>
+</section>
+
+<section class="area" id="hell">
+  <header>
+    <div class="kicker">Район 2 · Вайоц Дзор</div>
+    <h2>Адское ущелье (Hell's Canyon)</h2>
+    <div class="facts"><span>от Еревана <b>≈80 км</b></span><span>от трассы <b>≈2 км</b></span><span>порода <b>плотный серый известняк</b></span><span>стиль <b>спорт</b></span></div>
+    <p class="intro">Любимое место армянских скалолазов и самые сложные маршруты страны. Первые маршруты пробурены в 2006 году. Ущелье отходит от трассы Ереван–Горис. На общественном транспорте: автобус Ереван–Ехегнадзор, выходить после синего указателя «Ланджар» у первого (справа по ходу) или второго (слева) родника.</p>
+  </header>
+  <p class="note"><b>Из чата.</b> Такси из Еревана туда и обратно от метро «Зоравар Андраник» в 2023 году стоило 35–45 тыс. драм за машину на 5–6 человек. Один из секторов весь день в тени, под стенами удобное место для лагеря. Летний дождь обычно короткий, скала просыхает за несколько минут.</p>
+  <p class="note"><b>Вода.</b> Питьевой воды в каньоне нет, набирайте на родниках у трассы. Ручьём в ущелье можно умыться. Под стенами есть ровные травянистые площадки.</p>
+  <div class="geo" data-geo="39.813137,45.013851" data-label="Центр каньона"></div><div id="hc"></div>
+</section>
+
+<section class="area" id="yerevan">
+  <header>
+    <div class="kicker">Район 3 · город</div>
+    <h2>Скалы Еревана</h2>
+    <div class="facts"><span>порода <b>базальт</b></span><span>высота <b>до 45 м</b></span><span>дорога <b>от 15 минут</b></span></div>
+    <p class="intro">Базальтовые скалы ущелья Раздан, Арзни и Бжни — площадка, на которой выросли несколько поколений местных альпинистов. Подходит для тренировки на полдня, первого выхода на скалы и вечерней лазалки после работы. Ниже сектора в черте Еревана по данным theCrag; точный подход покажет гид.</p>
+  </header>
+  <div class="geo" data-geo="40.210552,44.488532" data-label="Парковка у шлагбаума"></div>
+  <p class="note"><b>Из чата.</b> На Мнго солнце весь день, на Old School тень примерно с 13 часов. Между секторами около 7 минут ходьбы. Базальт пыльный и местами живой, поэтому каски обязательны. Под «Змеиным камнем» живут змеи. Скалы сохнут через 10–20 минут после дождя.</p><div id="yv"></div>
+</section>
+
+<section class="area" id="ohanavan">
+  <header>
+    <div class="kicker">Район 4 · Арагацотн</div>
+    <h2>Оханаван</h2>
+    <div class="facts"><span>от Еревана <b>≈40 минут</b></span><span>рядом <b>Аштарак</b></span><span>стиль <b>спорт, трад-проекты</b></span></div>
+    <p class="intro">Новый небольшой район в ущелье у села Оганаван: три сектора в паре сотен метров от парковки, много простых маршрутов категории 5 — хорошее место для первого выезда. Описания маршрутов авторы пока не опубликовали.</p>
+  </header>
+  <div class="geo" data-geo="40.351957,44.392605" data-label="Парковка у кладбища Оганавана"></div>
+  <p class="note"><b>Подход.</b> От кладбища по дороге вниз до указателя, затем по основной дороге немного вперёд, потом тропа к реке и вдоль реки. Есть второй вариант: от старого моста через ресторан и вдоль реки. На левом берегу Касаха, где маршруты пятой категории, солнце с 13 часов, а правый берег в это время уходит в тень. Такси сюда и обратно вызывается легко.</p>
+  <div id="oh"></div>
+</section>
+
+<section class="area" id="more">
+  <header>
+    <div class="kicker">Районы 5–15 · по чату скалолазов</div>
+    <h2>Новые и малые районы</h2>
+    <p class="intro">Места, которые развивает сообщество «Некоммерческое скалолазание Армения»: здесь пробивают новые маршруты каждый сезон. Данные собраны из переписки 2022–2026 годов, у каждого места указано, когда о нём писали последний раз. Полных схем маршрутов в открытом доступе для них нет, поэтому перечислены только трассы, которые называли в чате.</p>
+  </header>
+  <div id="mx" style="display:grid;gap:14px"></div>
+</section>
+
+<section class="area" id="closed">
+  <header>
+    <div class="kicker">Запрещено</div>
+    <h2>Гарни и Арпа</h2>
+    <p class="intro">Базальтовые «органы» в ущельях Гарни («Симфония камней») и Арпы — охраняемые памятники природы. С 2013 года лазание по столбам запрещено. Приезжайте смотреть и фотографировать.</p>
+  </header>
+</section>
+
+<section class="area" id="tips">
+  <header>
+    <div class="kicker">Перед выездом</div>
+    <h2>Советы</h2>
+  </header>
+  <div class="grid2">
+    <div class="box"><h3>Снаряжение</h3><ul class="clean"><li>Верёвка 70 м. Для мультипитчей две по 60 м.</li><li>12–14 оттяжек и станционный набор.</li><li>Каска на каждого.</li><li>На трад-маршруты — набор закладок и френдов.</li></ul></div>
+    <div class="box"><h3>Солнце и тень</h3><ul class="clean"><li>Нораванк, Центральный сектор: тень утром, солнце после обеда.</li><li>Адское, Западный сектор: солнце утром, тень после обеда.</li><li>Летом в каньонах очень жарко. Лучшие месяцы — весна и осень.</li></ul></div>
+    <div class="box"><h3>Категории</h3><ul class="clean"><li>Маршруты пролазят редко, категории могут плавать.</li><li>Ряд старых маршрутов перебурен, и звёзды могли измениться.</li><li>Если сомневаетесь, начинайте на категорию ниже обычной.</li></ul></div>
+    <div class="box"><h3>Этика</h3><ul class="clean"><li>Мусор забираем с собой.</li><li>Не добуриваем чужие маршруты без согласования с авторами.</li><li>У монастыря ведём себя тихо: здесь туристы и прихожане.</li></ul></div>
+  </div>
+</section>
+
+<button class="top" id="top" type="button" aria-label="Наверх" hidden>↑</button>
+<section class="area" id="contact">
+  <div class="contact">
+    <div class="kicker" style="color:var(--leopard)">White Irbis</div>
+    <h2>Лазать с гидом</h2>
+    <p>Покажем сектора, подберём маршруты под ваш уровень, научим с нуля. На скалах с каждой группой два инструктора. В горах Армении с 2003 года.</p>
+    <span class="num" id="num">+374 91 470 331</span>
+    <button type="button" id="copy">Скопировать номер</button>
+    <p class="small">WhatsApp и звонки · <a href="https://irbis.am" target="_blank" rel="noopener">irbis.am</a></p>
+  </div>
+</section>
+
+<footer>
+  <p><a href="../">Все туры White Irbis →</a></p>
+  <p>Источники: базы маршрутов и координаты theCrag и 27crags (thetopo), архив Up The Rocks (uptherocks.com), переписка Telegram-сообщества «Некоммерческое скалолазание Армения» (2022–2026), отчёт А. Трубачёва на mountain.ru (2006). Данные собраны в ноябре 2026 года.</p>
+  <p>Координаты секторов взяты из баз маршрутов и могут расходиться с реальностью на десятки метров. Сектора у входа в ущелье Нораванк в базе отмечены почти одной точкой.</p>
+  <p>Гайдбук не заменяет оценку на месте. Состояние станций и шлямбуров проверяйте сами.</p>
+</footer>
+
+</div>
+</main>
+
+<script>
+// [name, grade, stars, meta, note]
+var D={
+nv:[
+ ["Арпа","Первая стена слева на въезде в ущелье. Умеренные многоверёвочные спортивные маршруты. Зрители у дороги гарантированы.",[
+  ["Soyuz 82","6b",2,"мультипитч","Старый маршрут чемпионатов СССР, перебурен в 2006 году."],
+  ["Vertical","6b+",0,"75 м, 3 питча",""],
+  ["Experience","6c",0,"25 м, трад",""],
+  ["Gardening","5a",0,"",""]]],
+ ["Airlines","Пока одна многоверёвочная линия, есть потенциал для новых.",[
+  ["Czech Airlines","6c",1,"5 питчей","Не для первого мультипитча. Живая скала почти на всех верёвках, лучшая порода на 3-м питче, на 5-м шатаются блоки у вершины. Спуск на двух 60 м или одной 70 м."]]],
+ ["Центральный","Самый популярный сектор, много классики. Тень утром, солнце после обеда.",[
+  ["Kret","5a",0,"трещина","Классический первый маршрут на скалах. Распоры и заклинивания в широкой трещине или ребро справа."],
+  ["Warm up","5c",2,"","Плита, хорош для работы ногами."],
+  ["Ots","5b",1,"","Заклинивания и ключ на перегибе. Шлямбур на ключе стоит неудобно."],
+  ["Kaitsak","6a+",2,"","Классика района. Боулдерный старт, дальше карманы. Часто собирает зрителей."],
+  ["Alecram","5b",1,"спорт","Самый левый из четырёх спортивных маршрутов. Плита с карманами и перегиб у верха."],
+  ["Greenhorn","5c",1,"спорт","Похож на Alecram, чуть сложнее. Общие последние шлямбуры и станция."],
+  ["Birdy","5b",1,"спорт","Плита с карманами и редкими перегибами."],
+  ["Tamada","5b",1,"спорт","Плита, небольшой карниз, затем угол. Своя станция."],
+  ["Slab","4c",0,"",""],
+  ["Danak («Нож»)","6a",2,"3 питча","Ключ на 2-м питче — техничная трещина на откидку."],
+  ["Rainy Day","6a+",2,"2 питча, смешанный","Стенка и трещина, затем камин и офвидс."],
+  ["Yeghegnadzor","6a+",0,"",""],
+  ["Donini Watched","6a+",0,"",""],
+  ["Catalex","6a",0,"",""],
+  ["The End","6a",0,"",""],
+  ["Tom Richter Scale","6b+",2,"спорт","Техничная плита, выходит на общий с Richter Scale карниз."],
+  ["Mart'an","6b+",0,"20 м",""],
+  ["JoSiTo Girls Power","6b+",0,"150 м, 4 питча",""],
+  ["Richter Scale","6c",2,"спорт","Боулдерный старт, ключ на карнизе у верха. Станция на цепи."],
+  ["Czech climbing","6c",1,"26 м","Почищен, но тонкие чешуйки проверяйте. 60 м верёвки хватает до земли."],
+  ["Bratishka Andreas","6c",1,"","Затяжной, несколько ключей."],
+  ["Noravank Eagle","6c",3,"150 м","Одна из лучших линий ущелья."],
+  ["Totkam","6c+",2,"","Нависание, несколько ключей с хорошими отдыхами. Первый шлямбур высоко."],
+  ["Iranian 1","6c+",0,"",""],
+  ["Flake Appeal","5c",0,"трад","Шлямбуры спилены в 2013 году, маршрут лезут на страховке. Две 60 м верёвки до земли."],
+  ["Iranian 2","8a",0,"",""]]],
+ ["Роза","В паре сотен метров за Центральным.",[
+  ["Soviet Nail","5a",1,"","Мелкие зацепы и ручки по ребру."],
+  ["Marshuka Melee","6a+",2,"","Карманы, мизера, откидка по чешуе."],
+  ["Vehicular Homicide","6b",2,"","Тонко и на растяжку, выше легче."],
+  ["Noravank Rose","6c+",2,"спорт","Сложнее, чем кажется. Боулдерный старт, перегиб на мелочи. Невысоким тяжелее."],
+  ["Cucumber","7a",1,"спорт","Мизера и хорошие ноги. Два искусственных кармана можно обойти."],
+  ["Twins","7b",0,"","Вертикальная стена, есть живые камни."]]],
+ ["Арени","Скала с несколькими простыми маршрутами — хороший сектор для новичков.",[
+  ["Go Baby Go","5a",1,"",""],["Jndi Love","5a",1,"",""],["Tornado","5a",1,"",""],["Baby Boo","5a",1,"",""],["Aren","5a",0,"",""],
+  ["Shark Teeth","5c",1,"",""],["Vardges Cave","6a",2,"",""],["Scorpion","6a+",2,"",""]]],
+ ["Арени 1 (Пещера)","",[
+  ["Chxchik","6b+",0,"20 м",""],["Karich","6c",0,"20 м",""]]],
+ ["Ехегнадзор","",[
+  ["Mo","5b",0,"",""],["Nassim and Caro","6a",0,"",""],["I love the life","6b+",0,"40 м, трад",""],["Delicate Negotiation","6b+",0,"25 м, трад",""],["Jung","6c",0,"80 м, 3 питча, трад",""]]],
+ ["Безоар","",[
+  ["SaMo","5c",0,"",""],["Jeezus Christ","5c",0,"",""],["Something to go back","6a+",0,"",""]]],
+ ["Титаник","Огромная скала, видна с дороги. Два крутых маршрута уровня 7c+–8a и простые линии на пологих частях.",[
+  ["Sardarapat","4b",0,"","Лёгкий маршрут, по нему же подход к остальным."],
+  ["Belayer pay-off","5a",0,"",""],["Belayer bonus","6a",0,"",""],
+  ["Needle Factory","6b",1,"","Плита и стенка, острая скала."],
+  ["Tigran the Great","7c+",3,"","Очевидная линия по ребру. Ключи с хорошими отдыхами."],
+  ["Khosrov Kotak","8a",3,"","Несколько ключей и отдыхов, скала ещё острая."]]],
+ ["Take Off","Высокие крутые многоверёвочные маршруты, много потенциала.",[
+  ["Bjan Yourd","7a+",0,"",""],
+  ["Take Off","7b",2,"4 питча, спорт","Хорошая скала и воздух под ногами. Спуск на двух верёвках."],
+  ["Sebkad","7b",0,"",""]]],
+ ["FX Rock","",[["Journey Through Wonderland","6b",0,"",""]]]
+],
+hc:[
+ ["Западный","Самый популярный сектор, больше всего маршрутов. Маршруты короче, чем на Восточном, в основном 6a–6c. Солнце утром, тень после обеда.",[
+  ["Childhood","5a",0,"",""],
+  ["Centepide","5a",1,"","Тонкие карманы на старте, система трещин, хороший выход."],
+  ["Screaming Khorovats","5a",1,"",""],
+  ["Cheese and Wieners","5b",1,"",""],
+  ["Estragon and Sisy Bolts","5b",0,"","Короткий, весёлый, слегка плита."],
+  ["Side Swipe","5c",0,"6 шлямбуров","Общая станция с Centepide."],
+  ["Ignorance","6a",2,"","Ходы на растяжку у верха."],
+  ["Noy","6a+",2,"","Один из первых маршрутов ущелья, 2006 год. Добавлен нижний шлямбур. Плита."],
+  ["Frostbite","6a+",2,"","Блоки на старте, тонкий ключ на растяжку, финиш по Fire and Brimstone."],
+  ["Spinal Crack","6a+",0,"","Хорошие ходы по крутому рельефу."],
+  ["Death Spank","6b",2,"","Тонко, на мизерах. Держитесь правее шлямбуров, затем влево через перегиб."],
+  ["Institutionalized","6b+",2,"","Крутой забивающий старт, ключ на плите перед станцией."],
+  ["Fire and Brimstone","6b+",2,"","Круто, забивает, интересные ходы."],
+  ["Ararat","6b+",0,"","Тонкая плита. Раньше серьёзный нижний, теперь перебурен."],
+  ["Cliff Chicken","6c",1,"","Ручки внизу, тонкий ключ на карнизе."],
+  ["The French King","6c",1,"","Самый длинный маршрут стены. Блуждает, нужно читать рельеф."],
+  ["World Famous Nobody","6c",1,"","Спокойно до ключа у самого верха. Станция на двух цепях."],
+  ["The Maple Way of Drilling","8a",0,"",""]]],
+ ["Восточный","Длинные маршруты на всю стену, включая самые сложные в стране.",[
+  ["Cheghk","5b",1,"","Длинный маршрут левее очевидной трещины."],
+  ["Salamandra","5b",0,"","Длинный и простой, но большие расстояния между шлямбурами."],
+  ["Redemption","5c",0,"20 м","По ребру прямо под святилищем."],
+  ["Wish Up","6a",1,"","Старт по трещине, траверс вправо через ключ, финиш по простой плите."],
+  ["The Apple of Chick and Fox","6b+",2,"",""],
+  ["Nzhdeh","6c+",2,"","Отличные движения. Спорный из-за перебурки: старые шлямбуры блестят сильнее."],
+  ["Hell's Diamond","6c+",2,"30 м","Длинный, не перебурен. Техничные продуманные ходы."],
+  ["Sea of Dream","7a",2,"на всю стену","Огромная линия, посередине полка для ночёвки. Финал — силовой ключ на мизерах. Спуск на 80 м или двух 60 м."],
+  ["Sky Girls","7b",0,"",""],
+  ["Sky Path","7c",0,"",""],
+  ["Melancholia","8a/8a+",3,"","Одна из лучших линий Армении. Жёсткая боулдерная задача у верха."]]]
+],
+oh:[
+ ["Пещерная стена (Cave Wall)","",[
+  ["First born","5",0,"",""],["Awesome foundation","5",0,"",""],["Pedigree","5",0,"трад",""],["Invisible pumpkin seeds","5+",0,"",""],["Crack for cheese","5+",0,"",""],["Leave your sanity at the quicklink","5+",0,"",""],["Middle finger salute","6b+",0,"",""]]],
+ ["Easy Pocket","",[
+  ["Tapas for breakfast","5",0,"",""],["Acid","5",0,"",""],["Acid variant","5+",0,"",""]]],
+ ["Речная стена (River Wall)","Кроме спортивных маршрутов, здесь три трад-проекта без категории.",[
+  ["Sandstorm","6a",0,"",""],["Fishing for freedom","6b",0,"",""],["World on fire","6c+",0,"",""],["Something from nothing","7a",0,"",""]]]
+],
+yv:[
+ ["Mngo","Простые маршруты для первого знакомства.",[
+  ["Kindergarden","4a",0,"",""],["Sanasar","5a",0,"",""],["Baghdasar","5a",0,"",""],["Buttefly","5b",0,"",""]]],
+ ["Physic Wall","",[
+  ["Hrazdan","5a",0,"",""],["May Love","5a",0,"",""],["Spitak","5b",0,"",""],["Salty Soup","6a+",0,"",""]]],
+ ["Old School","",[
+  ["Easy Peasy","5c",0,"",""],["Hawaii Sand Beach","5c",0,"",""],["Peaceful Sky","6a+",0,"",""],["Blue Grey Fun","6a+",0,"",""],["Better than Nothing","6a+",0,"",""],["Pick work","6a+",0,"",""],
+  ["Seven","6b",0,"",""],["Unshaven Oldschols","6b",0,"",""],["Mobilisation","6b",0,"",""],["Fragile","6c",0,"",""],["Moskali","6c",0,"",""],["Ousta Souren","7a+",0,"",""]]],
+ ["Шенгавит (скала Гургена Меликяна)","Самый насыщенный городской сектор, от 5c до 8a.",[
+  ["Concrete Jungle","5c",0,"",""],["East Face","5c",0,"",""],["Legoland","6a",0,"",""],["Wave","6a",0,"",""],["Hello Kitty","6a",0,"",""],["Citik","6a+",0,"",""],["Alex in Fatherland","6a+",0,"",""],
+  ["Flight mode","6b",0,"",""],["Alice in Wonderland","6b",0,"",""],["Teen Spirit","6c",0,"",""],["Black Dog","7a",0,"",""],["Ground Zero","7a",0,"",""],["Hurry Up","7a+",0,"",""],["Climber-2","7b",0,"",""],["Tteni","8a",0,"",""]]],
+ ["Peninsula High Balls","Хайболы, лучше с крэшпэдом.",[["Bratishka","4c",0,"",""]]]
+]};
+
+var MORE=[
+ {n:"Карби",r:"Арагацотн · у Оганавана",c:[40.335170,44.387220],cl:"начало лестницы к сектору",t:"спорт, известняк, слабое нависание по дыркам",d:"2024–2026",
+  tx:"Новый сектор, первое лазание в мае 2024 года. Подход тяжеловат, лучше в кроссовках; в 2024 году его заметно обустроили, сделали переход вдоль скал между секторами. Можно обойти водопад снизу. Тень на трассах с 13–14 часов, утром на солнце жарко. Такси сюда ездит.",
+  rt:[["Bonsai","5b","6 оттяжек, первой уходит в тень"],["Iron Women","6b",""],["View of Waterfall","6b",""],["From the Ground","6b+","новая, 2026"],["Karandzav","?",""],["два маршрута","6c+?","без прохождений на 2024 год"]]},
+ {n:"Апаран",r:"Арагацотн",c:[40.462938,44.445516],cl:"сектор",c2:[40.467394,44.445269],cl2:"парковка",t:"боулдеринг, трад-щели, немного спорта",d:"2023–2026",
+  tx:"Самая активная тема в чате после Оганавана. Сектора The First One, Community Cliff, Candy Shop и район у водохранилища. Трад-щели оборудованы станциями сверху, чтобы вешать верхнюю страховку. Утром в тени трассы со стороны Касаха, после 14 часов тень на трад-секторе у заброшенной деревни. Такси сюда доезжает, обратно его не вызвать: договаривайтесь заранее или выходите к Апнагюху, это около 30 минут пешком. Поздней осенью в тени иней не тает.",
+  rt:[["The Rabbit","5a","по камину на вершину башни, 5 м под шлямбурами"],["The Cat","6c–7a+","15 м, 7 шлямбуров, оценки расходятся"],["6a","6a","спорт"],["Трад-щели (6 шт.)","—","со станциями сверху"]]},
+ {n:"Кахси",r:"Котайк",c:[40.478101,44.733483],cl:"село Кахси (ориентир)",t:"спорт",d:"2023–2025",
+  tx:"Первые маршруты, пробитые Лукой (AmericanCowboy) в 2018–2019 годах. Расстояние между шлямбурами крупное, срывы бывают длинными, новичкам лучше с верхней. Тень на секторе с 12 часов. Можно доехать электричкой из Еревана, в 2023 году около 1000 драм в одну сторону.",
+  rt:[["Kosmopoliturbo","6b+",""],["Two Cups of Tan","?","хорошая пробивка"]]},
+ {n:"Арзни",r:"Котайк · ущелье Раздана у Нор Гехи",c:[40.314348,44.587066],cl:"сектор",t:"спорт и трад, базальт",d:"2023–2026",
+  tx:"20 минут на такси от города. На солнце жарко. Подход к верхнему кольцу лучше делать на самостраховке. В 2026 году добавлена промежуточная станция и новая трасса.",
+  rt:[["Спорт","5a",""],["Спорт","5c/6a","35 м"],["Спорт","6b",""],["Arzni 3","6a","выходит на самый верх, 2 шлямбура"],["Трад","—","около 4 маршрутов"]]},
+ {n:"Рехаб",r:"Ереван · Шенгавит",c:[40.158829,44.490328],cl:"нижняя парковка, ул. Раздана, 13",t:"спорт и трад",d:"2025",
+  tx:"Сектор рядом с Шенгавитом. От парковки по пешеходному мосту через реку, сразу налево, перед беседкой направо на бугор, по тропе вдоль огорода, затем между кустами и камышом до трубы и дальше вдоль скалы. До 13:30 лазать комфортно, потом солнце. Вдоль тропы пасут лошадей.",
+  rt:[["Rehab","?","одноимённая трасса"],["8 марта","?",""],["Трад-пятёрки","5","можно завесить сбоку или сверху"]]},
+ {n:"Норагюх",r:"Ереван",c:[40.159491,44.492524],cl:"скала",t:"спорт, хайболы",d:"2023–2026",
+  tx:"Городской сектор, развивали Мхитар, Завен, Лука и Мгер. В основном сложные маршруты, легче 6b немного. Утром тень, днём солнце; зимой здесь тепло, сезон закрывали под Новый год. Подход от реки через мост, по тропе направо вдоль реки и через забор. Проехать машиной к полям мешает шлагбаум.",
+  rt:[["Маршрут","5c",""],["Маршрут","6b+",""],["Маршрут","7a","пробил Лука"],["Маршрут","7a+","пролезен"]]},
+ {n:"Веди: скала у ущелья Ангелов",r:"Арарат",c:[39.928840,44.741673],cl:"скала",c2:[39.931758,44.744073],cl2:"где оставить машину",t:"спорт, новый сектор (2025)",d:"2025–2026",
+  tx:"Машину оставляйте на дороге к ущелью Ангелов и идите 10 минут пешком между садами, по полевым дорогам после дождя грязно. До 12–13 часов на солнце, потом скала в тени. Справа есть простой подъём на плато, слева проход у Sun Gate. На такси можно доехать по грейдеру до брода; обратно от асфальта вызывается межгород.",
+  rt:[["Sun Gate","?","ориентир сектора"]]},
+ {n:"Веди: боулдеринг в Урцадзоре",r:"Арарат",c:[39.957933,44.887233],cl:"боулдеры",t:"боулдеринг",d:"2024",
+  tx:"Небольшое красивое место, с дороги боулдеры почти не видно. По главной дороге в долину Урцадзора, затем 15–20 минут подъёма. Лучшее время — весна и осень, бывает ветрено. Есть потенциал примерно на дюжину простых задач.",
+  rt:[["Главный блок, стенд-старт","6c/+",""]]},
+ {n:"Татев",r:"Сюник",c:[39.390470,46.275970],cl:"скала",c2:[39.392553,46.278356],cl2:"точка сектора",t:"трад и спорт по щелям",d:"2024",
+  tx:"Около 20 маршрутов, почти все пробиты по щелям. Лазание в основном щелевое: заклинивания, офвидсы. Берите плоские туфли и перчатки. Маршруты подписаны у основания. Удобного подхода не нашли, к скалам выбирались по камням. Летом жарко уже утром.",
+  rt:[["щелевой маршрут","7a","hand/fist jam"],["офвидс","6b","тяжелее своей категории"]]},
+ {n:"Джермук",r:"Вайоц Дзор",c:[39.812665,45.662031],cl:"сектор",t:"спорт",d:"2022–2024",
+  tx:"6 маршрутов, некоторые с хорошим нависанием, на вид до 6c. Первый шлямбур везде очень высоко, подлезть к нему непросто: лучше вешать первый шлямбур с палки. Один маршрут проходит в паре метров от места молитв со свечами, ведите себя уважительно.",
+  rt:[]},
+ {n:"Аручское ущелье",r:"Арагацотн",c:[40.308323,44.076385],cl:"боулдеры",t:"боулдеринг",d:"2024–2026",
+  tx:"Боулдеринговый район. От машины идти недалеко, часть пути по траве. По полю, по словам участников, можно подъехать почти к боулдерам.",
+  rt:[]},
+ {n:"Дилижан: Сарцапат",r:"Тавуш · у монастыря Агарцин",c:null,t:"спорт, известняк",d:"2023",
+  tx:"По отзывам из чата, самая приятная на ощупь скала в Армении. Маршруты новые, болты блестят, на станциях по два кольца. Нижний сектор Empress Slabs — плиты на баланс с частой пробивкой. Выше, ещё на 100 м, сектора Shady Water Gully и The Nest с вертикалью и нависанием. Подход от дороги вниз и вверх через овраг, полки под стеной нет. Подъезд по грунтовке, нужна машина повыше; есть круговая дорога от Техута. Точной точки в чате нет.",
+  rt:[["Big Red Villis","7a/+",""],["Lichen My Whistle","7b",""],["Seams Solid","—","трад"]]}
+];
+var GEO={
+ "nv|Арпа":[39.73106,45.204857],"nv|Airlines":[39.731035,45.205666],"nv|Центральный":[39.730783,45.205701],
+ "nv|Арени":[39.699869,45.210074],"nv|Арени 1 (Пещера)":[39.731149,45.205667],"nv|Ехегнадзор":[39.730907,45.205689],
+ "nv|Безоар":[39.730542,45.205635],"nv|Титаник":[39.730431,45.205663],"nv|Take Off":[39.730347,45.205658],"nv|FX Rock":[39.730226,45.20563],
+ "hc|Западный":[39.812784,45.013871],"hc|Восточный":[39.812859,45.012845],
+ "yv|Mngo":[40.209285,44.48934],"yv|Physic Wall":[40.204286,44.486511],"yv|Old School":[40.206955,44.488445],"yv|Peninsula High Balls":[40.209011,44.488985],
+ "oh|Пещерная стена (Cave Wall)":[40.358847,44.394481],"oh|Easy Pocket":[40.358622,44.394149],"oh|Речная стена (River Wall)":[40.358912,44.394281]
+};
+var PHOTOS={};
+var RPHOTO={}; // "nv|Kret":"photo.jpg"
+var NOTES={"nv|Soyuz 82": {"n": 1, "last": "2026-05-07", "q": []}, "nv|Czech Airlines": {"n": 1, "last": "2023-05-29", "q": []}, "nv|Danak («Нож»)": {"n": 9, "last": "2025-10-13", "q": [{"d": "2025-10", "t": "But it doesn’t show that there are some pretty decent runouts on the climb also.. just trying to be fair about the grade and nature of the climb. I haven’t climbed it but people that have say that it’s kinda runout. Similar to Danak"}, {"d": "2025-10", "t": "Про ранаут это было про Danak (вторая верёвка 6a+)"}, {"d": "2025-10", "t": "I’m sure the 2nd and 3rd pitches of Danak would be climbed much more often if ir were repro bolted. But the question is still: does it NEED to be?"}]}, "nv|The End": {"n": 1, "last": "2024-10-18", "q": []}, "nv|Tom Richter Scale": {"n": 2, "last": "2026-05-03", "q": []}, "nv|Mart'an": {"n": 2, "last": "2023-12-04", "q": [{"d": "2023-12", "t": "The 6b you're talking about to the let of the tringle is Mart'an, correct? Did you notice maybe there as a drilled pocket near the top? Others thought the same maybe with Cucumber, the 7a all the way to the right."}]}, "nv|Richter Scale": {"n": 2, "last": "2026-05-03", "q": []}, "nv|Bratishka Andreas": {"n": 3, "last": "2026-05-03", "q": [{"d": "2023-12", "t": "I don't remember anybody climbed \"Bratishka Andreas\" so I guess we don't know about it's cleanliness."}]}, "nv|Totkam": {"n": 1, "last": "2024-11-02", "q": []}, "nv|Marshuka Melee": {"n": 1, "last": "2025-05-18", "q": [{"d": "2025-05", "t": "Простите, я опять трассу сломал. Marshuka Melee 6a+."}]}, "nv|Noravank Rose": {"n": 2, "last": "2024-10-05", "q": [{"d": "2024-10", "t": "6c+ Noravank rose на мой взгляд сложнее (но я бы скорее её поднял, а не Cucumber опустил)"}, {"d": "2024-10", "t": "Beside the difficulty of the climb itself, there are three or four 4-meter intervals between bolts on Noravank rose. But probably I'm just weak-minded ;)"}]}, "nv|Cucumber": {"n": 4, "last": "2024-10-22", "q": [{"d": "2023-12", "t": "The 6b you're talking about to the let of the tringle is Mart'an, correct? Did you notice maybe there as a drilled pocket near the top? Others thought the same maybe with Cucumber, the 7a all the way to the right."}, {"d": "2024-10", "t": "6c+ Noravank rose на мой взгляд сложнее (но я бы скорее её поднял, а не Cucumber опустил)"}]}, "nv|Twins": {"n": 2, "last": "2024-11-19", "q": []}, "nv|Belayer bonus": {"n": 1, "last": "2025-09-21", "q": [{"d": "2025-09", "t": "I climbed Belayer Bonus and it was scary for 6a"}]}, "nv|Needle Factory": {"n": 4, "last": "2026-09-21", "q": [{"d": "2025-09", "t": "“Needle factory” was the first climb my friend tired in Armenia and she couldn’t redpoint it (she’s climbed 8b+ before) and was basically insulted it was graded 6b+"}, {"d": "2025-10", "t": "So.. I spoke to Mkhitar. He has not redpointed Needle Factory, no one has. So it’s an open project, and the name is definitely just a guess."}, {"d": "2026-09", "t": "Может быть на Needle Factory изначально были зацепки, но их отломали. С оставшимися у нее должна быть категория не ниже 7а. Может и 8ка"}]}, "nv|Tigran the Great": {"n": 1, "last": "2025-09-21", "q": []}, "nv|Take Off": {"n": 1, "last": "2026-08-03", "q": []}, "nv|Journey Through Wonderland": {"n": 1, "last": "2025-04-06", "q": []}, "hc|Institutionalized": {"n": 2, "last": "2026-06-30", "q": [{"d": "2023-05", "t": "Institutionalized, if it’s not in the way of the rope jump, French king, and cliff chicken (not sure in the anchor situation but it’s fun!) also the one to the left of institutionalized is great! Noy and Ararat are classics! Maybe a bit runout but you’ll be fine"}]}, "hc|Fire and Brimstone": {"n": 1, "last": "2026-08-11", "q": []}, "hc|Cliff Chicken": {"n": 1, "last": "2023-05-19", "q": [{"d": "2023-05", "t": "Institutionalized, if it’s not in the way of the rope jump, French king, and cliff chicken (not sure in the anchor situation but it’s fun!) also the one to the left of institutionalized is great! Noy and Ararat are classics! Maybe a bit runout but you’ll be fine"}]}, "hc|Salamandra": {"n": 1, "last": "2026-07-20", "q": []}, "hc|Redemption": {"n": 1, "last": "2025-09-27", "q": []}, "hc|Wish Up": {"n": 1, "last": "2025-09-27", "q": []}, "hc|The Apple of Chick and Fox": {"n": 1, "last": "2023-11-04", "q": [{"d": "2023-11", "t": "Даже не знаю пролез ли я The Apple of Chick and Fox. Оттяжки то встегнул, но ключ облез с диким маятником 🫣"}]}, "hc|Nzhdeh": {"n": 4, "last": "2026-07-20", "q": []}, "hc|Hell's Diamond": {"n": 3, "last": "2026-07-20", "q": []}, "hc|Sea of Dream": {"n": 1, "last": "2025-09-28", "q": [{"d": "2025-09", "t": "Снял вчера карабин с Sea of Dream 7a. Чей?"}]}, "oh|Pedigree": {"n": 1, "last": "2023-05-28", "q": [{"d": "2023-05", "t": "Кто поедет в Оганаван. На восточной стороне у трассы левее Middle finger 6b, наверно это pedigree, не смог по гайду понять), открутилось ухо у третьего шлямбура."}]}, "oh|Sandstorm": {"n": 3, "last": "2026-08-03", "q": [{"d": "2023-06", "t": "The other two along the river. The one on the left I’ve never tried. Sandstorm, the furthest right feels like 6a/+??"}, {"d": "2023-06", "t": "I did Sandstorm last summer, looks like 6a-6a+, nice long line."}, {"d": "2026-08", "t": "Я Sandstorm заонсайтил. Он, кстати, ниже, чем указан в allclimb(25m) и thecrag(27m). Для него нужно лишь на пару метров больше, чем половина моей 80м веревки."}]}, "oh|World on fire": {"n": 25, "last": "2026-09-20", "q": [{"d": "2023-06", "t": "Me and 3 other people climbed it on top rope and all agreed on 6c+. Same grade as: World on Fire (the arete)"}, {"d": "2023-06", "t": "Напишу по русски. Я вообще в гневе … Если World on Fire это 6с+  то я в рот **** такие категории …  Что это за 6с такая к которой надо готовиться, а потом еще стратегически раскладывать, где в каких местах отдыхать, с какой скоростью ключи проходить, при этом полностью знать расклад и так далее. Я лазил 7а в Тайланде, "}, {"d": "2024-08", "t": "Finally finished bolting the route between “something from nothing” and “world on fire”. Big thanks to Alexey and Olga for helping! Route is 28m 12 bolts. Around 6c+. Name: Resurrection"}]}, "oh|Something from nothing": {"n": 20, "last": "2026-05-13", "q": [{"d": "2023-05", "t": "There are two lines there. The one starting in the big block is called “something from Nothing. It’s maybe 7a/7a+ it is an open project. The one in the middle is still only half bolted, I must return to finish bolting it so don’t try to climb or you will get stuck 😅"}, {"d": "2023-06", "t": "Agreed. So World on Fire is 7a, and Something from Nothing is 7a+ standard"}, {"d": "2024-08", "t": "Finally finished bolting the route between “something from nothing” and “world on fire”. Big thanks to Alexey and Olga for helping! Route is 28m 12 bolts. Around 6c+. Name: Resurrection"}]}, "yv|Easy Peasy": {"n": 5, "last": "2023-06-15", "q": [{"d": "2023-06", "t": "На Easy Peasy висят оттяжки. Кто-то забыл?"}]}, "yv|Peaceful Sky": {"n": 3, "last": "2024-08-20", "q": [{"d": "2023-09", "t": "Кстати, @Alexey34788, а ты пролез 6б старую, которая справа от Peaceful sky?"}]}, "yv|Blue Grey Fun": {"n": 1, "last": "2023-06-02", "q": []}, "yv|Better than Nothing": {"n": 4, "last": "2024-08-14", "q": [{"d": "2024-08", "t": "Мне понравилась первая половина у better than nothing. И ещё там есть одна вроде 6b+, в которой нужно заклиниваться в трещине, а потом уходить левее по плохим зацепкам, у нее тоже первая половина классная."}]}, "yv|Pick work": {"n": 4, "last": "2024-11-07", "q": [{"d": "2023-10", "t": "Москалей пролезла без зависов, а pick work нет) Вот и верь после этого категориям всяким."}, {"d": "2024-11", "t": "Там, к сожалению явная зависимость от роста лезущего. С моим ростом 6а. И трасса явно проще Pick Work на ОлдСкуле (армянская 6a+)"}]}, "yv|Fragile": {"n": 9, "last": "2026-04-19", "q": [{"d": "2023-05", "t": "Стас, ну давай категории подпишем и заливку добавим и исправим на Fragile. Скинь исходник"}, {"d": "2026-04", "t": "На Fragile (6с) еще одна ключевая откидочная зацепка чуть выше первой оттяжки отвалилась 😢"}]}, "yv|Ousta Souren": {"n": 1, "last": "2024-07-04", "q": [{"d": "2024-07", "t": "Я смог 2 раза чисто сделать ключ на Ousta Souren, надо теперь линковать с подлазом к нему"}]}, "yv|Hello Kitty": {"n": 2, "last": "2025-12-20", "q": []}, "yv|Alex in Fatherland": {"n": 1, "last": "2024-10-24", "q": [{"d": "2024-10", "t": "да не, Alex in Fatherland тож 6b"}]}, "yv|Flight mode": {"n": 3, "last": "2025-02-09", "q": []}, "yv|Teen Spirit": {"n": 1, "last": "2025-12-20", "q": [{"d": "2025-12", "t": "Я, кстати, разгадал, почему в гайдбуке Ground Zero имеет категорию 6c+ при том, что она проще Teen Spirit: В thecrag она вообще 7a. Хотя видимо дело ещё в том, что в thecrag не совсем она;)"}]}, "yv|Black Dog": {"n": 14, "last": "2025-12-19", "q": [{"d": "2023-09", "t": "For the record I said Black Dog was probably 7b without having climbed it from the ground. I only tried the moves using bad beta once. After I actually tried it I immediately thought 7a at most.."}, {"d": "2024-10", "t": "At this point of view if I climbed black dog with one crash pad I would say that it is minimum 7a, I don’t want to risk my health for fucking 6b+))"}, {"d": "2024-11", "t": "I bolted Black Dog. And for the record I don’t have any opinion on the grade. It seems bunch better beta has been discovered since the original bolting. But @zaven_araqelyan bolted the route to the right of it. I only installed the anchors."}]}, "yv|Ground Zero": {"n": 2, "last": "2025-12-20", "q": [{"d": "2025-12", "t": "Я, кстати, разгадал, почему в гайдбуке Ground Zero имеет категорию 6c+ при том, что она проще Teen Spirit: В thecrag она вообще 7a. Хотя видимо дело ещё в том, что в thecrag не совсем она;)"}]}, "yv|Hurry Up": {"n": 9, "last": "2026-10-11", "q": [{"d": "2023-12", "t": "Челлендж: кто первый пролезет 7а+ в Шенгавите с нижней, получит приз!)) (На фотке она обозначена как Daisy, название пробивщика - Hurry Up)."}, {"d": "2024-10", "t": "Я, кстати, была уверена, что ты уже пролез Hurry Up."}, {"d": "2024-11", "t": "Кстати, а @flyingkakapo пролез Hurry Up?"}]}, "yv|Climber-2": {"n": 7, "last": "2024-11-21", "q": [{"d": "2024-10", "t": "@StasMikhaylov @flyingkakapo Vlad Кто-нибудь снимал пролаз Climber-2 в Шенгавите (7b c ключом в начале)?"}, {"d": "2024-11", "t": "Ты вот шутишь, а 7b Climber-2 Федя в кроксах вылез"}]}, "yv|Tteni": {"n": 3, "last": "2025-03-09", "q": []}, "yv|Bratishka": {"n": 1, "last": "2024-10-24", "q": [{"d": "2024-10", "t": "Bratishka Andreas comes to mind in Noravanq. Totkam was originally graded 7a+/b by the first ascentionist and another locals agreement. I heard Take Off might be in the soft side.  cliff chicken in hells canyon. Nzdeh is definitely only 6c not 6c+."}]}, "mx|Bonsai": {"n": 3, "last": "2025-07-12", "q": [{"d": "2024-05", "t": "В Карби добавилась самая легкая трасса - Bonsai - 5b 6 оттяжек. Она первая уходит в тень."}, {"d": "2024-05", "t": "Теперь там 5 спортивных маршрутов Bonsai 5b, Iron Women 6b, View of Waterfall 6b, и 2 трассы 6с+?, которые никто не залез."}, {"d": "2025-07", "t": "В Карби включили водопад над Crooked Path и Bonsai. Amnesia вроде сухая, но страховать невозможно 🐳"}]}, "mx|Iron Women": {"n": 3, "last": "2026-06-19", "q": [{"d": "2024-05", "t": "Теперь там 5 спортивных маршрутов Bonsai 5b, Iron Women 6b, View of Waterfall 6b, и 2 трассы 6с+?, которые никто не залез."}, {"d": "2024-06", "t": "It is a good Idea. In a sector with small number of routes it is interesting to \"combinate\" them. You have another several routes by this way. e.g. it will be possible to start from the Iron Women and go to the View of Waterfall before the crux. May be this combination will be 6a+ 🤷‍♂️"}]}, "mx|View of Waterfall": {"n": 2, "last": "2024-06-12", "q": [{"d": "2024-05", "t": "Теперь там 5 спортивных маршрутов Bonsai 5b, Iron Women 6b, View of Waterfall 6b, и 2 трассы 6с+?, которые никто не залез."}, {"d": "2024-06", "t": "It is a good Idea. In a sector with small number of routes it is interesting to \"combinate\" them. You have another several routes by this way. e.g. it will be possible to start from the Iron Women and go to the View of Waterfall before the crux. May be this combination will be 6a+ 🤷‍♂️"}]}, "mx|From the Ground": {"n": 4, "last": "2026-09-07", "q": [{"d": "2026-06", "t": "New sport route \"From the Ground\" to the left from \"Too easy, too short\" on the same anchors. 10 bolts. 6a+ - 6b?"}, {"d": "2026-07", "t": "Вчера, несмотря на прогноз, в Карби упали 3 капли дождя. Лазать в тени было нормально. Новые трассы в тени уже в 13:30. @vapcomm сделал шикарный переход вдоль скал между секторами. Мы убрали основной мусор. Цираны и шелковица растут прямо под трассой Карандзав. Новая трасса - From the Ground - 🔥. 2 прохождения. Оценено"}]}, "mx|Karandzav": {"n": 1, "last": "2024-11-04", "q": []}, "mx|The Rabbit": {"n": 2, "last": "2024-08-17", "q": [{"d": "2024-08", "t": "Hey everyone, yesterday me and David established two new routes! The first one is the Rabbit 5a, goes up the backside of the tower, you climb two short chimneys, and then the last 5m is bolted. It’s a fun little adventure to get to the top of the tower. And then we bolted The Cat, which goes up the main face of the tow"}, {"d": "2024-08", "t": "The Rabbit is more of an adventure than anything else. You could do it as a single pitch, the first chimney takes no gear, the second one could take some larger sized cams,  but they are both very short, and we soloed them. The bolted face was bolted ground up but is still reasonably bolted. The anchor is in place to a"}]}, "mx|The Cat": {"n": 3, "last": "2025-05-22", "q": [{"d": "2024-08", "t": "Hey everyone, yesterday me and David established two new routes! The first one is the Rabbit 5a, goes up the backside of the tower, you climb two short chimneys, and then the last 5m is bolted. It’s a fun little adventure to get to the top of the tower. And then we bolted The Cat, which goes up the main face of the tow"}, {"d": "2024-11", "t": "Fedor graded \"The Cat\" as 6b, but no one except him climbed 🤔"}, {"d": "2025-05", "t": "On another note: David and I both climbed The Cat today. And we both agree that it’s probably more like easy 6c+"}]}, "mx|Kosmopoliturbo": {"n": 2, "last": "2023-10-15", "q": [{"d": "2023-10", "t": "Все (Саша, Сергей, Дима) пролезли Kosmopoliturbo 6b+. Кажется, что она проще Let's face it 6b."}]}, "mx|Two Cups of Tan": {"n": 4, "last": "2024-11-06", "q": [{"d": "2024-11", "t": "As far as Two Cups of Tan goes, I respectfully disagree. If the climber fell in that spot they would not get hurt, only take a longer fall. That’s normal"}, {"d": "2024-11", "t": "I have decided I will add a bolt to the end of two cups of tan. And I will add a new independent anchor  and an extra bolt for let’s face it, whether I will completely move the bolt line further left is yet to be decided, it entirely depends on the rock and if the new bolt placements make sense"}, {"d": "2024-11", "t": "There is another good route, two cups of tan, and I did not notice similar problems there, the only thing is that I would add another bolt before the station. You can say that there is a simple place there and the bolt is not needed, but when preparing routes I adhere to the rule - a climber can fall at any point of th"}]}, "mx|8 марта": {"n": 3, "last": "2025-06-28", "q": [{"d": "2025-03", "t": "В общем, сегодня ещё было несколько пролазов, в результате которых порешили, что трасса «8 марта» имеет категорию 6б, трасса «Левша» (это слева от «8 марта») - категорию 6а."}, {"d": "2025-06", "t": "\"Лу\" по слабому нависанию и ее низ почти без ног. Наверху согласен, нашелся более легкий расклад. Я ее вылез, но как минимум 6а+ дал бы. Мне даже 8 Марта проще далась - на флеш"}]}, "mx|Big Red Villis": {"n": 2, "last": "2023-09-26", "q": [{"d": "2023-09", "t": "Shady water Gully, and the Nest have vertical to overhanging climbs.. empress Slabs is… as the name suggests… a slab… maybe Lichen My Whistle (7b) all the way on the left, would be considered vertical (for the crux at least. Even Big Red Villis (7a/+) has a steeper beginning, top is slab, but it’s easy… Lil’ Swollie (6"}, {"d": "2023-09", "t": "Did anyone climb big red villis? Seemed like a harder crux than Knucks, but lil swolie felt easier than both.."}]}, "mx|Lichen My Whistle": {"n": 2, "last": "2023-10-10", "q": [{"d": "2023-09", "t": "Shady water Gully, and the Nest have vertical to overhanging climbs.. empress Slabs is… as the name suggests… a slab… maybe Lichen My Whistle (7b) all the way on the left, would be considered vertical (for the crux at least. Even Big Red Villis (7a/+) has a steeper beginning, top is slab, but it’s easy… Lil’ Swollie (6"}, {"d": "2023-10", "t": "It’s a pretty good route. But you need to be good at placing gear. The crux is right after the two bolts and you need to place gear at the start of the crack to keep you off the ground..then it gets a bit easier at the top but not too easy… you could also climb the 7b to the left of it “lichen my whistle” and hang a to"}]}};
+var RT=[];
+var TGP={"nv|Czech Airlines": [[10675, "2023-04-15"], [10676, "2023-04-15"], [10677, "2023-04-15"], [10678, "2023-04-15"]], "nv|Journey Through Wonderland": [[66783, "2025-04-06"], [66784, "2025-04-06"], [66785, "2025-04-06"], [66786, "2025-04-06"]], "hc|Screaming Khorovats": [[91203, "2026-06-22"], [91204, "2026-06-22"], [91205, "2026-06-22"], [91206, "2026-06-22"]], "hc|Spinal Crack": [[93862, "2026-08-16"], [93863, "2026-08-16"], [93864, "2026-08-16"]], "hc|Cheghk": [[36629, "2023-10-23"]], "hc|Hell's Diamond": [[92464, "2026-07-20"], [92465, "2026-07-20"], [92466, "2026-07-20"], [92467, "2026-07-20"]], "oh|Something from nothing": [[15381, "2023-05-25"], [15382, "2023-05-25"]], "yv|Concrete Jungle": [[41634, "2024-01-08"], [41635, "2024-01-08"], [41636, "2024-01-08"]], "yv|Legoland": [[87571, "2026-03-14"], [87572, "2026-03-14"], [87573, "2026-03-14"], [87574, "2026-03-14"]], "yv|Citik": [[41634, "2024-01-08"], [41635, "2024-01-08"], [41636, "2024-01-08"]], "yv|Flight mode": [[87571, "2026-03-14"], [87572, "2026-03-14"], [87573, "2026-03-14"], [87574, "2026-03-14"]], "yv|Black Dog": [[59593, "2024-11-07"]], "yv|Climber-2": [[58306, "2024-10-24"]], "mx|Bonsai": [[47907, "2024-05-19"]], "mx|Iron Women": [[48917, "2024-06-07"]], "mx|From the Ground": [[95028, "2026-09-07"], [91404, "2026-06-28"]], "mx|The Rabbit": [[53385, "2024-08-17"], [53386, "2024-08-17"]], "mx|The Cat": [[68944, "2025-05-22"], [53385, "2024-08-17"], [53386, "2024-08-17"]], "mx|Two Cups of Tan": [[59433, "2024-11-06"]], "mx|Big Red Villis": [[35138, "2023-10-10"], [35139, "2023-10-10"]]};
+var TC='https://www.thecrag.com/en/climbing/armenia/area/';
+var AC={nv:[TC+'1660330830','Нораванк на theCrag'],hc:[TC+'1660330884','Адское ущелье на theCrag'],'hc|Западный':[TC+'1660834701','Сектор West на theCrag'],'hc|Восточный':[TC+'1660834755','Сектор East на theCrag'],oh:['https://27crags.com/crags/ohanavan/routelist','Оханаван на 27crags'],yv:['https://27crags.com/crags/yerevan/routelist','Скалы Еревана на 27crags'],'nv|Центральный':['https://27crags.com/crags/noravank-canyon/topos','Топо Нораванка на 27crags']};
+function acUrl(k,sec,rn){if(rn)return null;return AC[k+'|'+sec]||AC[k]||null}
+var LVL=['','Первые маршруты: подойдёт после пары тренировок на скалодроме или в первый выход на скалы с инструктором.','Уверенный уровень: нужна техника и опыт нижней страховки.','Сложно: регулярные тренировки, умение работать маршрут.','Топ-уровень для сильных спортсменов.'];
+function rli(k,sec,r,L,g){var i=RT.length;RT.push({k:k,sec:sec,r:r,L:L,g:g});var n=NOTES[k+'|'+r[0]];
+ return '<li class="r l'+L+'" data-l="'+L+'" data-i="'+i+'" role="button" tabindex="0" aria-expanded="false"><span class="gr">'+esc(r[1])+'</span><span class="nm">'+esc(r[0])+(r[2]?'<span class="st" aria-label="'+r[2]+' из 3">'+'★'.repeat(r[2])+'</span>':'')+(r[3]?'<span class="meta">'+esc(r[3])+'</span>':'')+(n?'<span class="meta">💬 '+n.n+'</span>':'')+(TGP[k+'|'+r[0]]?'<span class="meta">📷 '+TGP[k+'|'+r[0]].length+'</span>':'')+'</span>'+(r[4]?'<span class="tx">'+esc(r[4])+'</span>':'')+'</li>'}
+var AREA={nv:'Ущелье Нораванк',hc:'Адское ущелье',yv:'Скалы Еревана',oh:'Оханаван',mx:''};
+function det(o){var r=o.r,n=NOTES[o.k+'|'+r[0]],ph=RPHOTO[o.k+'|'+r[0]],h='<div class="det">';
+ var tp=TGP[o.k+'|'+r[0]]||[];
+ if(ph)h+='<img class="ph" src="'+esc(ph)+'" alt="'+esc(r[0])+'">';
+ h+='<h4>'+esc(r[0])+'</h4><dl><dt>Категория</dt><dd>'+esc(r[1])+(o.L?' — '+LVL[o.L]:'')+'</dd>';
+ h+='<dt>Район</dt><dd>'+esc((AREA[o.k]?AREA[o.k]+', сектор ':'')+o.sec)+'</dd>';
+ if(r[2])h+='<dt>Оценка</dt><dd>'+'★'.repeat(r[2])+' из 3 по оценкам лазателей</dd>';
+ if(r[3])h+='<dt>Тип</dt><dd>'+esc(r[3])+'</dd>';
+ h+='</dl>';
+ if(n){h+='<div><b>В чате сообщества</b>: упоминаний '+n.n+', последнее '+n.last.split('-').reverse().join('.')+'.</div>';n.q.forEach(function(q){h+='<blockquote><small>'+q.d.split('-').reverse().join('.')+'</small>'+esc(q.t)+'</blockquote>'})}
+ else h+='<div class="noph">В чате сообщества этот маршрут не обсуждали.</div>';
+ if(tp.length){h+='<div><b>Фото в чате сообщества</b> — откроются в Telegram:</div><div class="pht">'+tp.map(function(t){return '<a href="https://t.me/ArmeniaClimbing/'+t[0]+'" target="_blank" rel="noopener">📷 '+t[1].split('-').reverse().join('.')+'</a>'}).join('')+'</div>'}
+ var ac=acUrl(o.k,o.sec,r[0]);if(ac)h+='<a class="ac" href="'+ac[0]+'" target="_blank" rel="noopener">'+ac[1]+' ↗</a>';
+ if(o.g)h+='<div class="geo">'+geoHTML(o.g[0],o.g[1],'сектор')+'</div>';
+ h+='<a class="lnk" href="https://www.thecrag.com/en/climbing/armenia/search?S='+encodeURIComponent(r[0])+'" target="_blank" rel="noopener">Искать маршрут на theCrag ↗</a>';
+ return h+'</div>'}
+function geoHTML(la,lo,label){var c=la.toFixed(5)+', '+lo.toFixed(5);
+ return '<span class="co"><span class="pin">◉</span> '+(label?esc(label)+' · ':'')+c+'</span>'+
+ '<a class="gg" href="https://www.google.com/maps/dir/?api=1&destination='+la+','+lo+'" target="_blank" rel="noopener">➤ Google<span class="lg"> Карты</span></a>'+
+ '<a class="ya" href="https://yandex.ru/maps/?rtext=~'+la+','+lo+'&rtt=auto" target="_blank" rel="noopener">➤ Яндекс<span class="lg"> Карты</span></a>'+
+ '<a class="os" href="https://www.openstreetmap.org/?mlat='+la+'&mlon='+lo+'#map=17/'+la+'/'+lo+'" target="_blank" rel="noopener">OSM</a>'}
+function lvl(g){var n=parseInt(g[0],10),x=g.slice(1);if(n<=5)return 1;if(n===6&&/^(a|a\+|b|b\+)$/.test(x))return 2;if(n===6||(n===7&&/^a/.test(x)))return 3;return 4}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+var total=0,byL=[0,0,0,0,0];
+Object.keys(D).forEach(function(k){
+  var h="";
+  D[k].forEach(function(s){
+    var rs=s[2].slice().sort(function(a,b){var la=lvl(a[1]),lb=lvl(b[1]);return la-lb||a[1].localeCompare(b[1])});
+    var g=GEO[k+'|'+s[0]],ph=PHOTOS[k+'|'+s[0]]||[];
+    h+='<article class="sector"><div class="head"><h3>'+esc(s[0])+'</h3>'+(s[1]?'<p class="desc">'+esc(s[1])+'</p>':'')+(g?'<div class="geo">'+geoHTML(g[0],g[1])+'</div>':'<div class="geo">Точных координат сектора нет, подход покажет гид.</div>')+'</div>'+(ph.length?'<div class="photos">'+ph.map(function(u){return '<img src="'+esc(u)+'" alt="'+esc(s[0])+'" loading="lazy">'}).join('')+'</div>':'')+'<ul class="routes">';
+    rs.forEach(function(r){var L=lvl(r[1]);total++;byL[L]++;
+      h+=rli(k,s[0],r,L,g)});
+    h+='</ul><p class="empty" hidden>В этом секторе нет маршрутов выбранной категории.</p></article>';
+  });
+  document.getElementById(k).innerHTML='<div style="display:grid;gap:14px">'+h+'</div>';
+});
+document.getElementById('mx').innerHTML=MORE.map(function(c){
+ var rs=c.rt.map(function(r){var L=/^[4-8]/.test(r[1])?lvl(r[1]):0;total++;if(L)byL[L]++;return rli('mx',c.n,[r[0],r[1],0,r[2],''],L,c.c)}).join('');
+ return '<article class="sector"><div class="head"><h3>'+esc(c.n)+'</h3><div class="facts"><span>регион <b>'+esc(c.r)+'</b></span><span>стиль <b>'+esc(c.t)+'</b></span><span>в чате <b>'+esc(c.d)+'</b></span></div><p class="desc">'+esc(c.tx)+'</p>'+(c.c?'<div class="geo">'+geoHTML(c.c[0],c.c[1],c.cl)+'</div>':'<div class="geo">Точных координат нет.</div>')+(c.c2?'<div class="geo">'+geoHTML(c.c2[0],c.c2[1],c.cl2)+'</div>':'')+'</div>'+(rs?'<ul class="routes">'+rs+'</ul><p class="empty" hidden>Нет маршрутов выбранной категории.</p>':'<p class="empty">Названия маршрутов в открытых источниках не опубликованы.</p>')+'</article>'}).join('');
+document.querySelectorAll('.geo[data-geo]').forEach(function(e){var c=e.dataset.geo.split(',').map(Number);e.innerHTML=geoHTML(c[0],c[1],e.dataset.label)});
+(function(){
+ var W=760,H=560,lo0=43.95,lo1=46.45,la0=39.30,la1=40.58;
+ function X(lo){return 40+(lo-lo0)/(lo1-lo0)*(W-80)}
+ function Y(la){return 30+(la1-la)/(la1-la0)*(H-60)}
+ var towns=[["Горис",39.5111,46.3386]];
+ var _=0;var pts=[["Ереван","городские, Норагюх, Рехаб",40.19,44.49,"#yerevan",1],["Оханаван · Карби","",40.35,44.39,"#ohanavan",-2],["Апаран","",40.4629,44.4455,"#more",0],["Кахси","",40.4781,44.7335,"#more",1],["Арзни","",40.3143,44.5871,"#more",1],["Аруч","",40.3083,44.0764,"#more",1],["Веди","",39.9288,44.7417,"#more",-1],["Адское ущелье","",39.8131,45.0139,"#hell",1],["Нораванк","",39.7305,45.2057,"#noravank",-1],["Джермук","",39.8127,45.6620,"#more",1],["Татев","",39.3905,46.2760,"#more",-1]];
+ var sv='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Схема скальных районов Армении"><rect x="0" y="0" width="'+W+'" height="'+H+'" rx="8" fill="var(--bg)"/>';
+ var dx=20/(111.32*Math.cos(40*Math.PI/180))/(lo1-lo0)*(W-80);
+ sv+='<line x1="40" y1="'+(H-24)+'" x2="'+(40+dx)+'" y2="'+(H-24)+'" stroke="var(--muted)" stroke-width="3"/><text x="40" y="'+(H-32)+'" class="sub">20 км</text>';
+ sv+='<text x="'+(W-40)+'" y="40" text-anchor="end" class="sub">N ↑</text>';
+ sv+='<polyline points="'+[[40.1792,44.4991],[39.83,44.705],[39.8131,45.0139],[39.7203,45.1833],[39.7611,45.3333],[39.62,45.75],[39.5111,46.3386]].map(function(p){return X(p[1])+','+Y(p[0])}).join(' ')+'" fill="none" stroke="var(--line)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>';
+ sv+='<text x="'+X(45.6)+'" y="'+(Y(39.62)+26)+'" class="sub">трасса М2 (схематично)</text>';
+ towns.forEach(function(t){var x=X(t[2]),y=Y(t[1]);sv+='<circle cx="'+x+'" cy="'+y+'" r="3.5" fill="var(--muted)"/><text x="'+(x+7)+'" y="'+(y-6)+'" class="town">'+t[0]+'</text>'});
+ pts.forEach(function(p){var x=X(p[3]),y=Y(p[2]),a=p[5]>0?'start':(p[5]<0?'end':'middle'),tx=x+(p[5]===-2?-12:p[5]*14),dy=p[5]===0?-40:(p[5]===-2?-14:0);
+  sv+='<a href="'+p[4]+'"><circle cx="'+x+'" cy="'+y+'" r="'+(p[4]==='#more'?6:9)+'" fill="var(--tuff)" stroke="var(--surface)" stroke-width="3"/><text x="'+tx+'" y="'+(y+24+dy)+'" text-anchor="'+a+'" class="lab">'+p[0]+'</text>'+(p[1]?'<text x="'+tx+'" y="'+(y+39)+'" text-anchor="'+a+'" class="sub">'+p[1]+'</text>':'')+'</a>'});
+ sv+='</svg>';
+ document.getElementById('ovmap').innerHTML=sv;
+})();
+document.querySelectorAll('.sector').forEach(function(sec){
+ var h3=sec.querySelector('h3');if(!h3)return;var name=h3.textContent;
+ var area=sec.closest('.area').id,k={noravank:'nv',hell:'hc',yerevan:'yv',ohanavan:'oh',more:'mx'}[area];
+ var rs=[].slice.call(sec.querySelectorAll('.r')),c=[0,0,0,0,0];rs.forEach(function(r){c[+r.dataset.l]++});
+ var head=sec.querySelector('.head');h3.remove();
+ var b=document.createElement('button');b.className='sh';b.setAttribute('aria-expanded','false');
+ var bars=c.slice(1).map(function(v,i){return v?'<i style="width:'+Math.max(10,v*6)+'px;background:var(--g'+(i+1)+')" title="'+v+'"></i>':''}).join('');
+ var parts=[];if(c[1])parts.push(c[1]+' до 5c');if(c[2])parts.push(c[2]+' 6a–6b+');if(c[3])parts.push(c[3]+' 6c–7a+');if(c[4])parts.push(c[4]+' 7b+');
+ b.innerHTML='<h3>'+esc(name)+'</h3><span class="chev" aria-hidden="true">▾</span><span class="cnt">'+(rs.length?rs.length+' маршр. · '+parts.join(' · '):'описание и точка')+'</span>'+(bars?'<span class="bars">'+bars+'</span>':'');
+ sec.insertBefore(b,sec.firstChild);
+ var body=document.createElement('div');body.className='sb';body.hidden=true;
+ while(b.nextSibling)body.appendChild(b.nextSibling);sec.appendChild(body);
+ var ac=acUrl(k,name);if(ac)head.insertAdjacentHTML('beforeend','<a class="ac" href="'+ac[0]+'" target="_blank" rel="noopener">'+ac[1]+' ↗</a>');
+ b.addEventListener('click',function(){var o=body.hidden;body.hidden=!o;sec.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false')});
+});
+document.querySelectorAll('.area').forEach(function(a){var items=[].slice.call(a.children).filter(function(e){return (e.classList.contains('note')&&!e.classList.contains('warn'))||(e.classList.contains('geo')&&e.dataset.geo)});if(!items.length)return;var d=document.createElement('details');d.className='info';d.innerHTML='<summary>Как добраться, парковка, тень</summary><div></div>';items[0].parentNode.insertBefore(d,items[0]);items.forEach(function(e){d.lastChild.appendChild(e)})});
+document.querySelectorAll('.area').forEach(function(a){var ss=a.querySelectorAll('.sector');if(ss.length<2)return;var bt=document.createElement('button');bt.className='allbtn';bt.textContent='Раскрыть все сектора';var first=ss[0].parentNode;first.parentNode.insertBefore(bt,first);bt.addEventListener('click',function(){var open=bt.dataset.o!=='1';ss.forEach(function(sec){var body=sec.querySelector('.sb');body.hidden=!open;sec.classList.toggle('open',open);sec.querySelector('.sh').setAttribute('aria-expanded',open)});bt.dataset.o=open?'1':'';bt.textContent=open?'Свернуть все':'Раскрыть все сектора'})});
+document.getElementById('stats').innerHTML='<span><b>'+total+'</b>маршрутов</span><span><b>15</b>районов</span><span><b>'+byL[1]+'</b>до 5c</span><span><b>4a–8a+</b>диапазон</span>';
+var ST={l:'all',q:''};
+function norm(t){return (t||'').toLowerCase().replace(/ё/g,'е')}
+function apply(){var l=ST.l,q=norm(ST.q),act=l!=='all'||q.length>1,n=0;
+ document.querySelectorAll('.sector').forEach(function(sec){var sn=norm(sec.querySelector('.sh h3')&&sec.querySelector('.sh h3').textContent),any=false,rs=sec.querySelectorAll('.r');
+  rs.forEach(function(r){var okL=l==='all'||r.dataset.l===l,okQ=q.length<2||sn.indexOf(q)>=0||norm(r.querySelector('.nm').textContent).indexOf(q)>=0;var show=okL&&okQ;r.hidden=!show;if(show){any=true;n++}});
+  if(!rs.length)any=(l==='all')&&(q.length<2||sn.indexOf(q)>=0);
+  var e=sec.querySelector('.empty');if(e&&rs.length)e.hidden=any;
+  sec.hidden=act&&!any;var body=sec.querySelector('.sb');if(body){var op=act&&any;body.hidden=!op;sec.classList.toggle('open',op);sec.querySelector('.sh').setAttribute('aria-expanded',op)}});
+ document.querySelectorAll('.area').forEach(function(a){if(!a.querySelector('.sector'))return;var vis=a.querySelector('.sector:not([hidden])');a.style.display=(act&&!vis)?'none':''});
+ ['where','map','closed','tips'].forEach(function(id){var a=document.getElementById(id);if(a)a.style.display=act?'none':''});
+ var res=document.getElementById('res');res.hidden=!act;res.textContent=n?'Найдено маршрутов: '+n:'Ничего не найдено. Попробуйте другое название или уровень.';
+ document.getElementById('qx').hidden=!ST.q;document.body.classList.toggle('act',act)}
+document.querySelectorAll('.f').forEach(function(b){b.addEventListener('click',function(){ST.l=b.dataset.l;document.querySelectorAll('.f').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});apply();if(ST.l!=='all'||ST.q)window.scrollTo({top:document.querySelector('main').offsetTop-80,behavior:'smooth'})})});
+var qi=document.getElementById('q');var qt;qi.addEventListener('input',function(){ST.q=qi.value.trim();apply();clearTimeout(qt);qt=setTimeout(function(){var f=document.querySelector('.sector:not([hidden]) .r:not([hidden])');if(ST.q.length>1&&f){window.scrollTo({top:f.closest('.area').getBoundingClientRect().top+window.scrollY-170,behavior:'smooth'})}},500)});
+qi.addEventListener('keydown',function(e){if(e.key==='Enter')qi.blur()});
+document.getElementById('qx').addEventListener('click',function(){qi.value='';ST.q='';apply();qi.focus()});
+var tb=document.getElementById('top');window.addEventListener('scroll',function(){tb.hidden=window.scrollY<900},{passive:true});tb.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+try{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){document.querySelectorAll('.nav a').forEach(function(a){a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id);if(a.classList.contains('cur')){var sc=a.parentNode;sc.scrollTo({left:a.offsetLeft-sc.offsetLeft-sc.clientWidth/2+a.offsetWidth/2,behavior:'smooth'})}})}})},{rootMargin:'-40% 0px -55% 0px'});document.querySelectorAll('.area[id]').forEach(function(a){io.observe(a)})}catch(e){}
+document.querySelectorAll('.toc i[data-c]').forEach(function(i){var a=document.getElementById(i.dataset.c);i.outerHTML=a.querySelectorAll('.r').length+' маршр.'});
+function tog(li){var o=li.getAttribute('aria-expanded')==='true';var d=li.querySelector('.det');if(o){d&&d.remove();li.setAttribute('aria-expanded','false')}else{li.insertAdjacentHTML('beforeend',det(RT[+li.dataset.i]));li.setAttribute('aria-expanded','true')}}
+document.addEventListener('click',function(e){var li=e.target.closest('.r');if(!li||e.target.closest('.det'))return;tog(li)});
+document.addEventListener('keydown',function(e){var li=e.target.closest&&e.target.closest('.r');if(li&&e.target===li&&(e.key==='Enter'||e.key===' ')){e.preventDefault();tog(li)}});
+document.getElementById('copy').addEventListener('click',function(){var b=this;function done(){b.textContent='Скопировано';setTimeout(function(){b.textContent='Скопировать номер'},1600)}function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('num'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Номер выделен'}try{navigator.clipboard.writeText('+37491470331').then(done,sel)}catch(e){sel()}});
+</script>
+
+</body></html>
