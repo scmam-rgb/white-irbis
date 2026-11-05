@@ -299,7 +299,7 @@ body.act .area>header .intro,body.act .area>header .facts,body.act details.info,
 
 <div class="bar">
   <div class="wrap">
-    <div class="toprow"><div class="srch"><input id="q" type="text" inputmode="search" enterkeyhint="search" placeholder="Маршрут, сектор или автор" autocomplete="off" aria-label="Поиск маршрута"><button type="button" id="qx" aria-label="Очистить" hidden>✕</button></div><div class="lang" role="group" aria-label="Язык / Language / Լեզու" data-noi18n><button type="button" data-lang="ru" aria-pressed="true">RU</button><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="hy" aria-pressed="false">HY</button></div></div>
+    <div class="toprow"><div class="srch"><input id="q" type="text" inputmode="search" enterkeyhint="search" placeholder="Маршрут, сектор или автор" autocomplete="off" aria-label="Поиск маршрута"><button type="button" id="qx" aria-label="Очистить" hidden>✕</button></div><div class="lang" role="group" aria-label="Язык / Language / Լեզու" data-noi18n><button type="button" data-lang="ru" aria-pressed="true">RU</button><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="hy" aria-pressed="false">ARM</button></div></div>
     <div class="scroller"><button class="f" data-l="all" aria-pressed="true">Все уровни</button>
     <button class="f" data-l="1" aria-pressed="false">до 5c</button>
     <button class="f" data-l="2" aria-pressed="false">6a–6b+</button>
@@ -849,7 +849,7 @@ var I18N={D:{"Все туры White Irbis →": ["All White Irbis tours →", "W
    if(ORIG.has(n)&&n.nodeValue!==tr(ORIG.get(n)))ORIG.delete(n);doText(n)}else m.addedNodes.forEach(walk)});busy=false});
  function set(l){L=l;try{localStorage.setItem('lang',l)}catch(e){}document.documentElement.lang=l==='hy'?'hy':l;busy=true;walk(document.body);busy=false;
   document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l?'true':'false')})}
- var q=(location.search.match(/[?&]lang=(ru|en|hy)/)||[])[1],s=null;try{s=localStorage.getItem('lang')}catch(e){}
+ var q=(location.search.match(/[?&]lang=(ru|en|hy|arm)/)||[])[1];if(q==='arm')q='hy',s=null;try{s=localStorage.getItem('lang')}catch(e){}
  var nl=(navigator.language||'').slice(0,2),def=/^(ru|uk|be|kk)$/.test(nl)?'ru':nl==='hy'?'hy':'en';
  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.lang)})});
  mo.observe(document.body,{subtree:true,childList:true,characterData:true});
