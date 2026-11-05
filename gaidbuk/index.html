@@ -139,6 +139,63 @@ ul.clean{margin:0;padding-left:20px;display:grid;gap:5px}
 .photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px;padding:0 18px 14px}
 .photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
 footer{color:var(--muted);font-size:13px;display:grid;gap:6px}
+.r .au{grid-column:2;font:500 12px/1.4 var(--f-data);color:var(--tuff);min-width:0}
+.cred{display:grid;gap:10px}
+.cred .row{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:4px}
+.cred .row b{font:700 16px var(--f-body)}
+.cred .row .yr{font:500 12px var(--f-data);color:var(--tuff)}
+.cred .row p{color:var(--muted);font-size:14px;max-width:68ch}
+.cred .row .src{font:500 12px var(--f-data);color:var(--muted)}
+.prt{font:600 14px var(--f-body);background:transparent;color:#f4ede6;border:1px solid #5a514c;border-radius:999px;padding:8px 16px;cursor:pointer;justify-self:start}
+.prt:hover{border-color:var(--leopard);color:var(--leopard)}
+.colophon{display:none}
+.cta{display:flex;flex-wrap:wrap;gap:8px}
+.wa{display:inline-flex;align-items:center;gap:6px;font:700 14px var(--f-body);text-decoration:none;padding:9px 16px;border-radius:999px;background:#1f8f4e;color:#fff}
+.wa:hover{filter:brightness(1.08)}
+.sharebtn{font:600 14px var(--f-body);background:transparent;color:#f4ede6;border:1px solid #5a514c;border-radius:999px;padding:8px 16px;cursor:pointer}
+.sharebtn:hover{border-color:var(--leopard);color:var(--leopard)}
+.hb{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.areacta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.areacta span{font-size:14px;color:var(--muted);flex:1 1 220px}
+.fix{font:600 13px var(--f-body);color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.ac.send{border-color:var(--g1);color:var(--g1)}
+.au-list{display:flex;flex-wrap:wrap;gap:8px}
+.au-list button{font:600 14px var(--f-body);padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.au-list button b{color:var(--tuff);margin-left:6px}
+.inst{font:700 14px var(--f-body);background:var(--leopard);color:#24201d;border:0;border-radius:999px;padding:9px 16px;cursor:pointer}
+@media print{.inst,.au-list,#ios{display:none!important}}
+.news{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:8px}
+.news b{font:700 16px var(--f-body)}
+.news ul{margin:0;padding-left:20px;display:grid;gap:4px;font-size:14px;color:var(--muted)}
+.news .dt{font:500 12px var(--f-data);color:var(--tuff)}
+@media print{.cta,.areacta,.fix,.sharebtn,.hb{display:none!important}}
+@page{size:A5;margin:12mm 11mm 14mm}
+@media print{
+ :root{--bg:#fff;--surface:#fff;--ink:#000;--muted:#444;--line:#bbb;color-scheme:light}
+ body{font-size:10pt;line-height:1.4;background:#fff}
+ body::before,.bar,.top,.prt,#copy,.allbtn,.geo a,.ac,.lnk,.pht,.sh .chev,.r::after,.srch,.res{display:none!important}
+ .hero{background:#fff!important;color:#000;border-bottom:2pt solid #000;break-after:page}
+ .hero h1,.hero p,.stats b,.wm{color:#000!important}.hero .wrap{padding-block:30mm 10mm}
+ .colophon{display:block;break-after:page;font-size:9pt;color:#000}
+ .colophon h2{font-size:16pt;margin-bottom:6pt}.colophon p{margin:0 0 5pt}
+ main .wrap{gap:14pt;padding:0}
+ .area{break-before:page}.area#where,.area#map{break-before:auto}
+ .sector{break-inside:auto;border:0;border-top:1pt solid #999;border-radius:0}
+ .sector .sb{display:block!important}.sector .sb[hidden]{display:block!important}
+ .sh{padding:6pt 0}.sh h3{font-size:13pt}.sector>div.head,.sector .sb>div.head{padding:0 0 4pt}
+ .r{padding:3pt 0;grid-template-columns:34pt 1fr;break-inside:avoid;cursor:auto}
+ .r .gr{color:#000!important;background:none!important;border:1pt solid #000;font-size:9pt}
+ .r .tx,.r .au{font-size:8.5pt}
+ .det{display:none}
+ details.info{border:0}details.info>summary{display:none}details.info>div{display:grid!important;padding:0}
+ .note{background:none!important;border-left:2pt solid #000;font-size:9pt}
+ .geo .co{flex-basis:100%;color:#000}
+ .mapbox{border:0;padding:0}.mapbox svg{min-width:0}
+ .contact{background:#fff;color:#000;border:1.5pt solid #000}.contact .num,.contact h2,.contact a{color:#000!important}
+ a{color:#000;text-decoration:none}
+ .toc a{border:1pt solid #999}
+ .cred .row{break-inside:avoid;border:0;border-top:1pt solid #bbb;border-radius:0;padding:6pt 0}
+}
 .logo{display:flex;align-items:center;gap:12px}
 .logo img{height:64px;width:64px;border-radius:14px;box-shadow:0 0 0 1px #4a423e}
 .logo .wm{font-size:26px}
@@ -185,12 +242,6 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:6px}
 .legend.mini{font-size:13px}
 @media (max-width:600px){.toc{grid-template-columns:1fr 1fr}.toc a{padding:12px}.toc b{font-size:16px}}
 body.act .area>header .intro,body.act .area>header .facts,body.act details.info,body.act .area>.note,body.act .allbtn,body.act .sector .desc{display:none}
-.ac.send{border-color:var(--g1);color:var(--g1)}
-.authors{display:grid;gap:14px}
-.au-list{display:flex;flex-wrap:wrap;gap:8px}
-.au-list button{font:600 14px var(--f-body);padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
-.au-list button b{color:var(--tuff);margin-left:4px}
-.inst{font:700 15px var(--f-body);background:var(--leopard);color:#24201d;border:0;border-radius:999px;padding:10px 18px;cursor:pointer;justify-self:start}
 .allbtn{font:600 14px var(--f-body);background:none;border:0;color:var(--tuff);cursor:pointer;padding:4px 0;justify-self:start}
 @media (max-width:600px){
  body{font-size:16px}
@@ -228,10 +279,17 @@ body.act .area>header .intro,body.act .area>header .facts,body.act details.info,
     <h1>Скалы Армении</h1>
     <p>Районы, сектора и маршруты с координатами: Нораванк, Адское ущелье, Ереван, Оганаван и ещё 11 мест, которые развивает местное сообщество. Категории по французской шкале, описания маршрутов, подходы и что важно знать до выезда.</p>
     <div class="stats" id="stats"></div>
-    <button class="inst" id="inst" type="button" hidden>📲 Установить на телефон — работает без интернета</button>
-    <p id="ios" hidden style="font-size:14px;color:#d9cfc6">📲 Чтобы гайдбук работал без интернета: нажмите «Поделиться» внизу Safari → «На экран „Домой“».</p>
+    <p id="ios" hidden style="font-size:14px;color:#d9cfc6">📲 Чтобы гайд работал без интернета: в Safari нажмите «Поделиться» → «На экран „Домой“».</p>
+    <div class="hb"><button class="inst" id="inst" type="button" hidden>📲 Установить на телефон</button><a class="wa" id="waHero" target="_blank" rel="noopener">WhatsApp: лазать с гидом</a><button type="button" class="sharebtn" id="share">Поделиться гайдом</button><button type="button" class="prt" id="prt">Печать · A5</button></div>
   </div>
 </header>
+<section class="colophon wrap" aria-hidden="true">
+  <h2>Скалы Армении</h2>
+  <p>Гайдбук White Irbis · издание ноябрь 2026 · irbis.am</p>
+  <p>Маршруты в этой книге придумали, пробурили и впервые пролезли другие люди. Их имена указаны у районов и маршрутов везде, где авторство известно из открытых источников; полный список — в разделе «Кто открыл эти скалы». Если вы автор маршрута и ваше имя пропущено или указано неверно, напишите нам — исправим в следующем издании.</p>
+  <p>Схемы маршрутов (топо) клуба Up The Rocks защищены авторским правом и в издание не включены. Данные о маршрутах сведены из баз theCrag, 27crags и Mountain Project, публикаций Up The Rocks и чата «Некоммерческое скалолазание Армения».</p>
+  <p>Гайдбук не заменяет оценку на месте. Состояние станций, шлямбуров и скалы проверяйте сами.</p>
+</section>
 
 <div class="bar">
   <div class="wrap">
@@ -242,7 +300,7 @@ body.act .area>header .intro,body.act .area>header .facts,body.act details.info,
     <button class="f" data-l="3" aria-pressed="false">6c–7a+</button>
     <button class="f" data-l="4" aria-pressed="false">7b+</button></div>
     <div class="res" id="res" hidden></div>
-    <nav class="nav scroller" aria-label="Районы"><a href="#where">Обзор</a><a href="#noravank">Нораванк</a><a href="#hell">Адское</a><a href="#map">Карта</a><a href="#yerevan">Ереван</a><a href="#ohanavan">Оганаван</a><a href="#more">Новые</a><a href="#authors">Авторы</a><a href="#tips">Советы</a></nav>
+    <nav class="nav scroller" aria-label="Районы"><a href="#where">Обзор</a><a href="#noravank">Нораванк</a><a href="#hell">Адское</a><a href="#map">Карта</a><a href="#yerevan">Ереван</a><a href="#ohanavan">Оганаван</a><a href="#more">Новые</a><a href="#credits">Авторы</a><a href="#tips">Советы</a></nav>
   </div>
 </div>
 
@@ -250,6 +308,7 @@ body.act .area>header .intro,body.act .area>header .facts,body.act details.info,
 <div class="wrap">
 
 <section class="area" id="where" style="gap:12px">
+  <div class="news"><span class="dt">Обновлено 5 ноября 2026</span><b>Что нового</b><ul><li>Раздел «Кто открыл эти скалы»: авторы маршрутов и история освоения с 1982 года.</li><li>Авторы у маршрутов Нораванка, отмечены значком ✎.</li><li>Подъезд на машине к Адскому ущелью, данные по скалам Дилижана.</li><li>У каждого маршрута кнопка «Сообщить о неточности» — помогите сделать гайд точнее.</li></ul></div>
   <header style="border:0;padding:0"><div class="kicker">Куда поехать</div></header>
   <div class="toc">
     <a href="#yerevan"><b>Скалы Еревана</b><span>15 мин от центра · <i data-c="yerevan"></i></span><span class="tag">после работы</span></a>
@@ -258,7 +317,6 @@ body.act .area>header .intro,body.act .area>header .facts,body.act details.info,
     <a href="#noravank"><b>Нораванк</b><span>≈2 ч · <i data-c="noravank"></i></span><span class="tag">мультипитчи</span></a>
     <a href="#more"><b>Ещё 11 мест</b><span>Карби, Апаран, Веди… · <i data-c="more"></i></span><span class="tag">новые сектора</span></a>
     <a href="#map"><b>Карта</b><span>все районы на схеме</span></a>
-    <a href="#authors"><b>Авторы</b><span>кто пробил маршруты</span><span class="tag">прислать фото</span></a>
   </div>
   <div class="legend mini">
     <span><i style="background:var(--g1)"></i>до 5c</span><span><i style="background:var(--g2)"></i>6a–6b+</span><span><i style="background:var(--g3)"></i>6c–7a+</span><span><i style="background:var(--g4)"></i>7b+</span><span><b style="color:var(--leopard)">★</b> оценка</span><span>💬 обсуждали в чате</span><span>📷 есть фото</span>
@@ -279,10 +337,11 @@ body.act .area>header .intro,body.act .area>header .facts,body.act details.info,
     <div class="kicker">Район 1 · Вайоц Дзор</div>
     <h2>Ущелье Нораванк (Гнишик)</h2>
     <div class="facts"><span>от Еревана <b>≈2 часа</b></span><span>порода <b>известняк, сверху слой туфа</b></span><span>стиль <b>спорт, мультипитчи, немного трада</b></span><span>база <b>с. Арени</b></span></div>
-    <p class="intro">Самый развитый район страны. Здесь проходили чемпионаты СССР по скалолазанию, а до середины 1990-х ущелье было главной площадкой армянских скалолазов. Современные спортивные маршруты начали бурить в 2006–2007 годах, среди первых провешивателей — Антуан Ананян и Алексей Трубачёв. По ущелью идёт асфальт к монастырю, большинство маршрутов в паре шагов от машины.</p>
+    <p class="intro">Самый развитый район страны. Здесь проходили чемпионаты СССР по скалолазанию, а до середины 1990-х ущелье было главной площадкой армянских скалолазов. Первые семь современных спортивных маршрутов пробурили в 2006–2007 годах Алексей Трубачёв и Антуан Ананян по инициативе турфирмы WishUp Adventures. Дальше район развивал клуб Up The Rocks (основан в 2008 году Мхитаром Мхитаряном): фестивали «Арев» 2009, 2011 и 2013 годов, затем серия из 10 новых маршрутов осенью 2018 года вместе с чешским скалолазом Мартином Тучкой. По базе 27crags в ущелье 107 маршрутов в 10 секторах; в этом гайде собраны те, по которым есть категория и описание. По ущелью идёт асфальт к монастырю, большинство маршрутов в паре шагов от машины.</p>
   </header>
   <p class="note warn"><b>Осторожно.</b> Часть скалы живая, на новых маршрутах бывают отколы. По дороге быстро ездят машины и автобусы. Встречаются скорпионы и гадюки. Каска обязательна и для лезущего, и для страхующего.</p>
   <p class="note"><b>Из чата.</b> Солнце на Центральном секторе с 10 утра, рано утром тень. Такси в ущелье вызывается, а обратно нет: договаривайтесь с водителем, чтобы забрал вечером. Под стенами есть стоянка с кострищами. Рядом пещеры Арени-1 и Магеллана. Местные категории на старых маршрутах жёсткие, а на части мультипитчей вместо шлямбуров нужны френды, хотя в старых схемах они значатся как спортивные.</p>
+  <p class="note"><b>После скал.</b> Вход в ущелье — у пещеры Арени-1, где нашли древнейшую известную винодельню в мире. В селе Арени десятки винодельен: после утреннего лазания удобно поехать на дегустацию.</p>
   <div class="geo" data-geo="39.699505,45.209853" data-label="Парковка у сектора Арени"></div><div class="geo" data-geo="39.731,45.2057" data-label="Вход в ущелье, у пещеры Арени-1"></div><div id="nv"></div>
 </section>
 
@@ -291,9 +350,10 @@ body.act .area>header .intro,body.act .area>header .facts,body.act details.info,
     <div class="kicker">Район 2 · Вайоц Дзор</div>
     <h2>Адское ущелье (Hell's Canyon)</h2>
     <div class="facts"><span>от Еревана <b>≈80 км</b></span><span>от трассы <b>≈2 км</b></span><span>порода <b>плотный серый известняк</b></span><span>стиль <b>спорт</b></span></div>
-    <p class="intro">Любимое место армянских скалолазов и самые сложные маршруты страны. Первые маршруты пробурены в 2006 году. Ущелье отходит от трассы Ереван–Горис. На общественном транспорте: автобус Ереван–Ехегнадзор, выходить после синего указателя «Ланджар» у первого (справа по ходу) или второго (слева) родника.</p>
+    <p class="intro">Любимое место армянских скалолазов и самые сложные маршруты страны. Первые шесть спортивных маршрутов пробурил в 2006 году Алексей Трубачёв. В 2011 году Мхитар Мхитарян, Джейсон Стивенс, Джаред Нильсон и ещё несколько скалолазов добавили 17 спортивных маршрутов и один трад. На theCrag здесь 30 маршрутов в двух секторах. Ущелье отходит от трассы Ереван–Горис. На общественном транспорте: автобус Ереван–Ехегнадзор, выходить после синего указателя «Ланджар» у первого (справа по ходу) или второго (слева) родника.</p>
   </header>
   <p class="note"><b>Из чата.</b> Такси из Еревана туда и обратно от метро «Зоравар Андраник» в 2023 году стоило 35–45 тыс. драм за машину на 5–6 человек. Один из секторов весь день в тени, под стенами удобное место для лагеря. Летний дождь обычно короткий, скала просыхает за несколько минут.</p>
+  <p class="note"><b>На машине (по Mountain Project).</b> Из Еревана на юг по трассе М2. После Тигранашена следите за развязкой с Н10, примерно через 6,8 км. Через 350 м после неё сверните на юг на полевую дорогу и проезжайте около 700 м до едва заметной грунтовки вниз. Без полного привода оставляйте машину наверху, иначе можно застрять. Вход в каньон отмечает маленькое святилище на склоне. Палатки лучше ставить у входа в каньон и как можно дальше от стен: места под скалами мало.</p>
   <p class="note"><b>Вода.</b> Питьевой воды в каньоне нет, набирайте на родниках у трассы. Ручьём в ущелье можно умыться. Под стенами есть ровные травянистые площадки.</p>
   <div class="geo" data-geo="39.813137,45.013851" data-label="Центр каньона"></div><div id="hc"></div>
 </section>
@@ -338,19 +398,26 @@ body.act .area>header .intro,body.act .area>header .facts,body.act details.info,
   </header>
 </section>
 
-<section class="area" id="authors">
+<section class="area" id="credits">
   <header>
-    <div class="kicker">Кто сделал</div>
-    <h2>Авторы</h2>
-    <p class="intro">Маршруты в Армении пробивают энтузиасты на свои деньги и в свободное время. Нажмите на имя, чтобы увидеть маршруты этого автора.</p>
+    <div class="kicker">Авторство</div>
+    <h2>Кто открыл эти скалы</h2>
+    <p class="intro">Каждый маршрут кто-то нашёл, почистил, пробурил и пролез первым. Ниже те, чей вклад подтверждён открытыми источниками. Список неполный: многие маршруты в базах значатся без автора («FA: unknown»).</p>
   </header>
-  <div class="authors">
-    <div class="box"><h3>Авторы маршрутов</h3><div class="au-list" id="aulist"></div><p class="res">По открытым источникам: фестиваль Arev 2011, отчёт А. Трубачёва 2006, чат сообщества. У многих маршрутов авторы пока не указаны.</p></div>
-    <div class="grid2">
-      <div class="box"><h3>Составители гайдбука</h3><ul class="clean"><li>White Irbis: Алексей Цисельский и Антуан Ананян, гиды. Антуан в горах Армении с 2003 года и одним из первых пробивал спортивные маршруты Нораванка.</li><li>Данные: theCrag, 27crags, Up The Rocks, mountain.ru.</li><li>Отзывы, подходы и фото: сообщество «Некоммерческое скалолазание Армения».</li></ul></div>
-      <div class="box"><h3>Как помочь гайдбуку</h3><ul class="clean"><li>Пришлите фото маршрута или сектора с подписью.</li><li>Расскажите о пролазе: категория, ключ, состояние станции.</li><li>Поправьте ошибку или добавьте новый маршрут.</li></ul><a class="ac send" id="helpwa" target="_blank" rel="noopener">📷 Написать в WhatsApp</a></div>
-    </div>
+  <div class="box"><h3>Маршруты автора</h3><div class="au-list" id="aulist"></div><p class="res">Нажмите на имя — гайд покажет маршруты, где этот человек указан как автор или первопроходец.</p></div>
+  <div class="cred">
+    <div class="row"><span class="yr">1982</span><b>Чемпионаты СССР в Нораванке</b><p>Ущелье было соревновательной площадкой: по линии будущего Soyuz 82 в 1982 году лезли финал женского чемпионата СССР с верхней страховкой. До середины 1990-х здесь тренировалось старшее поколение армянских скалолазов.</p><span class="src">uptherocks.com, 2008</span></div>
+    <div class="row"><span class="yr">2006–2007</span><b>Алексей Трубачёв и Антуан Ананян</b><p>Первые современные спортивные маршруты Армении: 7 в Нораванке (в том числе Soyuz 82) и 6 в Адском ущелье, по инициативе турфирмы WishUp Adventures. Антуан Ананян — сооснователь Федерации альпинизма и горного туризма Армении и горного клуба White Irbis.</p><span class="src">uptherocks.com, 2008; Mountain Project; mountain.ru, 2006</span></div>
+    <div class="row"><span class="yr">с 2008</span><b>Up The Rocks и Мхитар Мхитарян</b><p>Клуб основан 5 января 2008 года. По словам клуба, бо́льшая часть скальных, ледовых и альпинистских маршрутов Армении проложена его участниками; клуб же составил первое топо. Фестивали «Арев» 2009, 2011 и 2013 годов привлекли иностранных провешивателей и вывели Армению на скалолазную карту. Печатный гайдбук клуб анонсировал в 2018–2020 годах, но он так и не вышел.</p><span class="src">uptherocks.com</span></div>
+    <div class="row"><span class="yr">2009</span><b>Первые соревнования Федерации скалолазания</b><p>Турнир прошёл в четыре этапа: ущелье Раздан, Нораванк, Адское ущелье, Гарни.</p><span class="src">armland.am</span></div>
+    <div class="row"><span class="yr">2011</span><b>Фестиваль первопрохождений в Нораванке и Адском</b><p>Джейсон Стивенс и Джаред Нильсон бурили новые линии. Насим Эшки и Кэролайн Норт прошли трад JoSiTo Girls Power (4 питча) и первыми свободно пролезли Moon Fish, начатый в 2009 году М. Мхитаряном, Р. Крчмаром и В. Сирекяном. Андраник Мирибян и Ваге Тамамян пролезли Moon Fish с листа и добавили третий питч. В Адском ущелье в том же году появилось 17 спортивных маршрутов и один трад (М. Мхитарян, Дж. Стивенс, Дж. Нильсон и другие).</p><span class="src">uptherocks.com, 2011; Mountain Project</span></div>
+    <div class="row"><span class="yr">2013, 2018</span><b>Мартин Тучка (Чехия)</b><p>Бурил маршруты в Нораванке на фестивале 2013 года. В сентябре 2018 года вместе с М. Мхитаряном за шесть дней пробурил 10 маршрутов (14 питчей), среди них самые сложные в ущелье: Czech Airlines, Twins, Cucumber, Tigran the Great. Чистили Карен Марутян, Роза Вроом и Андрей Ралев, помогала Марцела Тучкова. Проект поддержали Up The Rocks, Армянский альпклуб, Cambarsport.cz и Ян Карес.</p><span class="src">uptherocks.com, 2018</span></div>
+    <div class="row"><span class="yr">2018–2019</span><b>Лука Кеушгерян (AmericanCowboy)</b><p>Первые маршруты в Кахси. Один из развивающих Норагюх вместе с Мхитаром, Завеном и Мгером. Ведёт армянские разделы на Mountain Project.</p><span class="src">чат сообщества; Mountain Project</span></div>
+    <div class="row"><span class="yr">2019</span><b>Project Armenia, Val Ismali</b><p>Команда, пробурившая первые маршруты на скалах Дилижанского нацпарка (Сарцапат), и PDF-гайд по ним.</p><span class="src">Mountain Project; projectarmenia.co.uk</span></div>
+    <div class="row"><span class="yr">2022–2026</span><b>Сообщество «Некоммерческое скалолазание Армения»</b><p>Новые сектора в Оганаване, Карби, Апаране, Веди, Арзни, Ереване и других местах. Имена провешивателей по этим районам мы собираем: если маршрут ваш — напишите, добавим.</p><span class="src">Telegram-чат сообщества</span></div>
   </div>
+  <div class="areacta"><span>Вы пробурили или первым пролезли маршрут из гайда? Напишите — добавим ваше имя.</span><a class="wa" id="waAuth" target="_blank" rel="noopener">Я автор маршрута</a></div>
+  <p class="note"><b>Как мы используем чужие данные.</b> Категории, названия и описания маршрутов — факты из открытых баз, у каждого района указан источник. Схемы маршрутов Up The Rocks («© Up The Rocks») мы не копируем: для печатного издания с топо нужно разрешение авторов.</p>
 </section>
 
 <section class="area" id="tips">
@@ -373,16 +440,17 @@ body.act .area>header .intro,body.act .area>header .facts,body.act details.info,
     <h2>Лазать с гидом</h2>
     <p>Покажем сектора, подберём маршруты под ваш уровень, научим с нуля. На скалах с каждой группой два инструктора. В горах Армении с 2003 года.</p>
     <span class="num" id="num">+374 91 470 331</span>
-    <button type="button" id="copy">Скопировать номер</button>
+    <div class="cta"><a class="wa" id="waC" target="_blank" rel="noopener">Написать в WhatsApp</a><button type="button" id="copy">Скопировать номер</button></div>
     <p class="small">WhatsApp и звонки · <a href="https://irbis.am" target="_blank" rel="noopener">irbis.am</a></p>
   </div>
 </section>
 
 <footer>
   <p><a href="../">Все туры White Irbis →</a></p>
-  <p>Источники: базы маршрутов и координаты theCrag и 27crags (thetopo), архив Up The Rocks (uptherocks.com), переписка Telegram-сообщества «Некоммерческое скалолазание Армения» (2022–2026), отчёт А. Трубачёва на mountain.ru (2006). Данные собраны в ноябре 2026 года.</p>
+  <p>Источники: базы маршрутов и координаты theCrag и 27crags (thetopo), архив Up The Rocks (uptherocks.com), переписка Telegram-сообщества «Некоммерческое скалолазание Армения» (2022–2026), отчёт А. Трубачёва на mountain.ru (2006), Mountain Project (разделы Hell's Canyon, Noravank Canyon, Cliffs of Dilijan; гайд Project Armenia, Val Ismali, 2019), статьи клуба Up The Rocks 2008–2018, armland.am. Данные собраны в ноябре 2026 года.</p>
   <p>Координаты секторов взяты из баз маршрутов и могут расходиться с реальностью на десятки метров. Сектора у входа в ущелье Нораванк в базе отмечены почти одной точкой.</p>
   <p>Гайдбук не заменяет оценку на месте. Состояние станций и шлямбуров проверяйте сами.</p>
+  <p>Нашли ошибку, новый маршрут или сектор? <a id="waFoot" target="_blank" rel="noopener">Напишите нам в WhatsApp</a> — гайд обновляется каждый сезон.</p>
 </footer>
 
 </div>
@@ -543,8 +611,8 @@ var MORE=[
  {n:"Аручское ущелье",r:"Арагацотн",c:[40.308323,44.076385],cl:"боулдеры",t:"боулдеринг",d:"2024–2026",
   tx:"Боулдеринговый район. От машины идти недалеко, часть пути по траве. По полю, по словам участников, можно подъехать почти к боулдерам.",
   rt:[]},
- {n:"Дилижан: Сарцапат",r:"Тавуш · у монастыря Агарцин",c:null,t:"спорт, известняк",d:"2023",
-  tx:"По отзывам из чата, самая приятная на ощупь скала в Армении. Маршруты новые, болты блестят, на станциях по два кольца. Нижний сектор Empress Slabs — плиты на баланс с частой пробивкой. Выше, ещё на 100 м, сектора Shady Water Gully и The Nest с вертикалью и нависанием. Подход от дороги вниз и вверх через овраг, полки под стеной нет. Подъезд по грунтовке, нужна машина повыше; есть круговая дорога от Техута. Точной точки в чате нет.",
+ {n:"Дилижан: Сарцапат",r:"Тавуш · у монастыря Агарцин",c:null,t:"спорт, известняк, выше 2 000 м",d:"2023",
+  tx:"По отзывам из чата, самая приятная на ощупь скала в Армении. Маршруты новые, болты блестят, на станциях по два кольца. По Mountain Project здесь 21 маршрут в трёх секторах: Empress Slabs (12, из них 1 трад) — плиты на баланс с частой пробивкой; выше Shady Water Gully (7) с жёсткими боулдерными ключами и The Nest (2). Скалы выше 2 000 м, погода серьёзная: снег бывает с ноября по апрель, в июле–августе до +30. Из центра Дилижана в хорошую погоду около трёх часов: на северо-запад к Иджевану, к селу Техут, дальше на север по джиповым дорогам. Советуют нанять местного водителя через Hike Armenia. Первые маршруты открыла команда Project Armenia, гайд в PDF выпустил Val Ismali в 2019 году. Точной точки в источниках нет.",
   rt:[["Big Red Villis","7a/+",""],["Lichen My Whistle","7b",""],["Seams Solid","—","трад"]]}
 ];
 var GEO={
@@ -556,18 +624,74 @@ var GEO={
  "oh|Пещерная стена (Cave Wall)":[40.358847,44.394481],"oh|Easy Pocket":[40.358622,44.394149],"oh|Речная стена (River Wall)":[40.358912,44.394281]
 };
 var PHOTOS={};
+var AUTH={
+ "nv|Soyuz 82":"Линия женского чемпионата СССР 1982 г. (верхняя страховка). Шлямбуры: А. Трубачёв и А. Ананян, 2006–2007. 4 питча: 4c, 5b, 5b, 6b/+",
+ "nv|Czech Airlines":"М. Тучка и М. Мхитарян, 2018. 5 питчей, 120 м",
+ "nv|Bratishka Andreas":"М. Тучка и М. Мхитарян, 2018. В отчёте авторов 6c+, 26 м",
+ "nv|Warm up":"М. Тучка и М. Мхитарян, 2018. 20 м",
+ "nv|Mart'an":"М. Тучка и М. Мхитарян, 2018",
+ "nv|Slab":"М. Тучка и М. Мхитарян, 2018. 35 м",
+ "nv|Alecram":"М. Тучка и М. Мхитарян, 2018. 20 м",
+ "nv|Twins":"М. Тучка и М. Мхитарян, 2018. 32 м",
+ "nv|Cucumber":"М. Тучка и М. Мхитарян, 2018. 30 м",
+ "nv|Tigran the Great":"М. Тучка и М. Мхитарян, 2018. В отчёте авторов «7c?», 23 м",
+ "nv|JoSiTo Girls Power":"Первопрохождение (трад): Насим Эшки и Кэролайн Норт, фестиваль «Арев», май 2011. В отчёте 165 м, 4 питча",
+ "hc|Redemption":"Пробил: Jared Nielson, первопроход: Caroline North, 2011",
+ "hc|Hell's Diamond":"Пробил: Мхитар Мхитарян, первопроход: Will Nazarian, 2011",
+ "hc|Sea of Dream":"Пробил: Мхитар Мхитарян, 2011. На фестивале 2011 года остался проектом",
+ "hc|The Maple Way of Drilling":"Пробил: Jared Nielson, 2011. На фестивале 2011 года остался проектом",
+ "hc|Cliff Chicken":"Пробил: Jared Nielson, 2011. На фестивале 2011 года остался проектом",
+ "hc|Institutionalized":"Пробил: Jared Nielson, первопроход: Jared Nielson, 2011",
+ "hc|Death Spank":"Пробил: Jared Nielson, первопроход: Jared Nielson, 2011",
+ "hc|Centepide":"Пробил: Jared Nielson, первопроход: Jared Nielson, 2011",
+ "hc|Side Swipe":"Пробил: Jared Nielson, первопроход: Jared Nielson, 2011",
+ "hc|Frostbite":"Пробил: Jared Nielson, первопроход: Jared Nielson, 2011",
+ "hc|Fire and Brimstone":"Пробил: Jared Nielson, первопроход: Jared Nielson, 2011",
+ "hc|Spinal Crack":"Пробил: Jared Nielson, первопроход: Jared Nielson, 2011",
+ "hc|Screaming Khorovats":"Пробил: Jason Stevens, первопроход: Jason Stevens, 2011",
+ "hc|Cheese and Wieners":"Пробил: Jason Stevens, первопроход: Jared Nielson, 2011",
+ "hc|Ignorance":"Пробил: Jason Stevens, первопроход: Jared Nielson, 2011",
+ "hc|World Famous Nobody":"Пробил: Jason Stevens, первопроход: Jason Stevens, 2011",
+ "hc|Estragon and Sisy Bolts":"Пробил: Jason Stevens, первопроход: Jason Stevens, 2011",
+ "hc|Salamandra":"Пробил: А. Трубачёв и А. Ананян, 2006–2007. Одни из первых маршрутов ущелья",
+ "hc|Nzhdeh":"Пробил: А. Трубачёв и А. Ананян, 2006–2007. Одни из первых маршрутов ущелья; позже перебурен",
+ "hc|Ararat":"Пробил: А. Трубачёв и А. Ананян, 2006–2007. Одни из первых маршрутов ущелья; позже перебурен",
+ "hc|Noy":"Пробил: А. Трубачёв и А. Ананян, 2006–2007. Одни из первых маршрутов ущелья; позже перебурен",
+ "hc|Cheghk":"Пробил: А. Трубачёв и А. Ананян, 2006–2007. Одни из первых маршрутов ущелья",
+ "nv|Nassim and Caro":"первопроход: Nasim Eshqi, Caroline North, 2011. Трад-маршрут: на станциях нет цепей, берите свои петли",
+ "nv|Soviet Nail":"Пробил: Jason Stevens, первопроход: Jason Stevens, 2011",
+ "nv|Catalex":"первопроход: Андраник Мирибян, Ваге Тамамян, 2011. Трад-маршрут: на станциях нет цепей, берите свои петли",
+ "nv|Vehicular Homicide":"Пробил: Jason Stevens, первопроход: Jared Nielson, 2011",
+ "nv|Yeghegnadzor":"первопроход: Алексей Антонов, Алексей Адамов, 2011. Трад-маршрут: на станциях нет цепей, берите свои петли",
+ "nv|Marshuka Melee":"Пробил: Jared Nielson, первопроход: Jared Nielson, 2011",
+ "nv|The End":"первопроход: Caroline North, Nasim Eshqi, 2011. Трад-маршрут: на станциях нет цепей, берите свои петли",
+ "nv|Danak («Нож»)":"Пробил: А. Трубачёв и А. Ананян, 2006–2007",
+ "nv|Kret":"Пробил: А. Трубачёв и А. Ананян, 2006–2007",
+ "nv|Kaitsak":"Пробил: А. Трубачёв и А. Ананян, 2006–2007",
+ "nv|Ots":"Пробил: А. Трубачёв и А. Ананян, 2006–2007",
+ "nv|Karich":"Пробил: А. Трубачёв и А. Ананян, 2006–2007",
+ "nv|Chxchik":"Пробил: А. Трубачёв и А. Ананян, 2006–2007",
+ "mx|The Rabbit":"Пробил: Лука и Давид, первопроход: Лука и Давид, 2024. Объявлено в чате 17.08.2024",
+ "mx|The Cat":"Пробил: Лука и Давид, 2024. Пробит снизу вверх; позже оценён как «лёгкая 6c+»",
+ "mx|Kosmopoliturbo":"Пробил: Лука, 2018–2019. Лука пробил весь сектор Кахси",
+ "mx|Two Cups of Tan":"Пробил: Лука, 2018–2019",
+ "mx|From the Ground":"2026. Новый маршрут, в 2026 году 2 прохождения",
+ "mx|Bonsai":"2024. Самый лёгкий маршрут Карби, добавлен в мае 2024",
+ "oh|World on fire":"Пробил: Лука. Лука ставил первую половину шлямбуров",
+ "oh|Something from nothing":"Пробил: Лука, 2023. В 2023 году — открытый проект"
+};
+var AUTHS={"hc|Redemption": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Hell's Diamond": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Sea of Dream": "Фестиваль Arev 2011 (uptherocks.com)", "hc|The Maple Way of Drilling": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Cliff Chicken": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Institutionalized": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Death Spank": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Centepide": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Side Swipe": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Frostbite": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Fire and Brimstone": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Spinal Crack": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Screaming Khorovats": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Cheese and Wieners": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Ignorance": "Фестиваль Arev 2011 (uptherocks.com)", "hc|World Famous Nobody": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Estragon and Sisy Bolts": "Фестиваль Arev 2011 (uptherocks.com)", "hc|Salamandra": "mountain.ru, отчёт А. Трубачёва 2006; uptherocks.com", "hc|Nzhdeh": "mountain.ru, отчёт А. Трубачёва 2006; uptherocks.com", "hc|Ararat": "mountain.ru, отчёт А. Трубачёва 2006; uptherocks.com", "hc|Noy": "mountain.ru, отчёт А. Трубачёва 2006; uptherocks.com", "hc|Cheghk": "mountain.ru, отчёт А. Трубачёва 2006; uptherocks.com", "nv|Nassim and Caro": "Фестиваль Arev 2011 (uptherocks.com)", "nv|Soviet Nail": "Фестиваль Arev 2011 (uptherocks.com)", "nv|Catalex": "Фестиваль Arev 2011 (uptherocks.com)", "nv|Vehicular Homicide": "Фестиваль Arev 2011 (uptherocks.com)", "nv|Yeghegnadzor": "Фестиваль Arev 2011 (uptherocks.com)", "nv|Marshuka Melee": "Фестиваль Arev 2011 (uptherocks.com)", "nv|The End": "Фестиваль Arev 2011 (uptherocks.com)", "nv|Danak («Нож»)": "mountain.ru, отчёт А. Трубачёва 2006; uptherocks.com", "nv|Kret": "mountain.ru, отчёт А. Трубачёва 2006; uptherocks.com", "nv|Kaitsak": "mountain.ru, отчёт А. Трубачёва 2006; uptherocks.com", "nv|Ots": "mountain.ru, отчёт А. Трубачёва 2006; uptherocks.com", "nv|Karich": "mountain.ru, отчёт А. Трубачёва 2006; uptherocks.com", "nv|Chxchik": "mountain.ru, отчёт А. Трубачёва 2006; uptherocks.com", "mx|The Rabbit": "Чат «Некоммерческое скалолазание Армения»", "mx|The Cat": "Чат «Некоммерческое скалолазание Армения»", "mx|Kosmopoliturbo": "Чат «Некоммерческое скалолазание Армения»", "mx|Two Cups of Tan": "Чат «Некоммерческое скалолазание Армения»", "mx|From the Ground": "Чат «Некоммерческое скалолазание Армения»", "mx|Bonsai": "Чат «Некоммерческое скалолазание Армения»", "oh|World on fire": "Чат «Некоммерческое скалолазание Армения»", "oh|Something from nothing": "Чат «Некоммерческое скалолазание Армения»"};
+var AUTHSRC="uptherocks.com — отчёты М. Мхитаряна 2008, 2011, 2018";
 var RPHOTO={}; // "nv|Kret":"photo.jpg"
 var NOTES={"nv|Soyuz 82": {"n": 1, "last": "2026-05-07", "q": []}, "nv|Czech Airlines": {"n": 1, "last": "2023-05-29", "q": []}, "nv|Danak («Нож»)": {"n": 9, "last": "2025-10-13", "q": [{"d": "2025-10", "t": "But it doesn’t show that there are some pretty decent runouts on the climb also.. just trying to be fair about the grade and nature of the climb. I haven’t climbed it but people that have say that it’s kinda runout. Similar to Danak"}, {"d": "2025-10", "t": "Про ранаут это было про Danak (вторая верёвка 6a+)"}, {"d": "2025-10", "t": "I’m sure the 2nd and 3rd pitches of Danak would be climbed much more often if ir were repro bolted. But the question is still: does it NEED to be?"}]}, "nv|The End": {"n": 1, "last": "2024-10-18", "q": []}, "nv|Tom Richter Scale": {"n": 2, "last": "2026-05-03", "q": []}, "nv|Mart'an": {"n": 2, "last": "2023-12-04", "q": [{"d": "2023-12", "t": "The 6b you're talking about to the let of the tringle is Mart'an, correct? Did you notice maybe there as a drilled pocket near the top? Others thought the same maybe with Cucumber, the 7a all the way to the right."}]}, "nv|Richter Scale": {"n": 2, "last": "2026-05-03", "q": []}, "nv|Bratishka Andreas": {"n": 3, "last": "2026-05-03", "q": [{"d": "2023-12", "t": "I don't remember anybody climbed \"Bratishka Andreas\" so I guess we don't know about it's cleanliness."}]}, "nv|Totkam": {"n": 1, "last": "2024-11-02", "q": []}, "nv|Marshuka Melee": {"n": 1, "last": "2025-05-18", "q": [{"d": "2025-05", "t": "Простите, я опять трассу сломал. Marshuka Melee 6a+."}]}, "nv|Noravank Rose": {"n": 2, "last": "2024-10-05", "q": [{"d": "2024-10", "t": "6c+ Noravank rose на мой взгляд сложнее (но я бы скорее её поднял, а не Cucumber опустил)"}, {"d": "2024-10", "t": "Beside the difficulty of the climb itself, there are three or four 4-meter intervals between bolts on Noravank rose. But probably I'm just weak-minded ;)"}]}, "nv|Cucumber": {"n": 4, "last": "2024-10-22", "q": [{"d": "2023-12", "t": "The 6b you're talking about to the let of the tringle is Mart'an, correct? Did you notice maybe there as a drilled pocket near the top? Others thought the same maybe with Cucumber, the 7a all the way to the right."}, {"d": "2024-10", "t": "6c+ Noravank rose на мой взгляд сложнее (но я бы скорее её поднял, а не Cucumber опустил)"}]}, "nv|Twins": {"n": 2, "last": "2024-11-19", "q": []}, "nv|Belayer bonus": {"n": 1, "last": "2025-09-21", "q": [{"d": "2025-09", "t": "I climbed Belayer Bonus and it was scary for 6a"}]}, "nv|Needle Factory": {"n": 4, "last": "2026-09-21", "q": [{"d": "2025-09", "t": "“Needle factory” was the first climb my friend tired in Armenia and she couldn’t redpoint it (she’s climbed 8b+ before) and was basically insulted it was graded 6b+"}, {"d": "2025-10", "t": "So.. I spoke to Mkhitar. He has not redpointed Needle Factory, no one has. So it’s an open project, and the name is definitely just a guess."}, {"d": "2026-09", "t": "Может быть на Needle Factory изначально были зацепки, но их отломали. С оставшимися у нее должна быть категория не ниже 7а. Может и 8ка"}]}, "nv|Tigran the Great": {"n": 1, "last": "2025-09-21", "q": []}, "nv|Take Off": {"n": 1, "last": "2026-08-03", "q": []}, "nv|Journey Through Wonderland": {"n": 1, "last": "2025-04-06", "q": []}, "hc|Institutionalized": {"n": 2, "last": "2026-06-30", "q": [{"d": "2023-05", "t": "Institutionalized, if it’s not in the way of the rope jump, French king, and cliff chicken (not sure in the anchor situation but it’s fun!) also the one to the left of institutionalized is great! Noy and Ararat are classics! Maybe a bit runout but you’ll be fine"}]}, "hc|Fire and Brimstone": {"n": 1, "last": "2026-08-11", "q": []}, "hc|Cliff Chicken": {"n": 1, "last": "2023-05-19", "q": [{"d": "2023-05", "t": "Institutionalized, if it’s not in the way of the rope jump, French king, and cliff chicken (not sure in the anchor situation but it’s fun!) also the one to the left of institutionalized is great! Noy and Ararat are classics! Maybe a bit runout but you’ll be fine"}]}, "hc|Salamandra": {"n": 1, "last": "2026-07-20", "q": []}, "hc|Redemption": {"n": 1, "last": "2025-09-27", "q": []}, "hc|Wish Up": {"n": 1, "last": "2025-09-27", "q": []}, "hc|The Apple of Chick and Fox": {"n": 1, "last": "2023-11-04", "q": [{"d": "2023-11", "t": "Даже не знаю пролез ли я The Apple of Chick and Fox. Оттяжки то встегнул, но ключ облез с диким маятником 🫣"}]}, "hc|Nzhdeh": {"n": 4, "last": "2026-07-20", "q": []}, "hc|Hell's Diamond": {"n": 3, "last": "2026-07-20", "q": []}, "hc|Sea of Dream": {"n": 1, "last": "2025-09-28", "q": [{"d": "2025-09", "t": "Снял вчера карабин с Sea of Dream 7a. Чей?"}]}, "oh|Pedigree": {"n": 1, "last": "2023-05-28", "q": [{"d": "2023-05", "t": "Кто поедет в Оганаван. На восточной стороне у трассы левее Middle finger 6b, наверно это pedigree, не смог по гайду понять), открутилось ухо у третьего шлямбура."}]}, "oh|Sandstorm": {"n": 3, "last": "2026-08-03", "q": [{"d": "2023-06", "t": "The other two along the river. The one on the left I’ve never tried. Sandstorm, the furthest right feels like 6a/+??"}, {"d": "2023-06", "t": "I did Sandstorm last summer, looks like 6a-6a+, nice long line."}, {"d": "2026-08", "t": "Я Sandstorm заонсайтил. Он, кстати, ниже, чем указан в allclimb(25m) и thecrag(27m). Для него нужно лишь на пару метров больше, чем половина моей 80м веревки."}]}, "oh|World on fire": {"n": 25, "last": "2026-09-20", "q": [{"d": "2023-06", "t": "Me and 3 other people climbed it on top rope and all agreed on 6c+. Same grade as: World on Fire (the arete)"}, {"d": "2023-06", "t": "Напишу по русски. Я вообще в гневе … Если World on Fire это 6с+  то я в рот **** такие категории …  Что это за 6с такая к которой надо готовиться, а потом еще стратегически раскладывать, где в каких местах отдыхать, с какой скоростью ключи проходить, при этом полностью знать расклад и так далее. Я лазил 7а в Тайланде, "}, {"d": "2024-08", "t": "Finally finished bolting the route between “something from nothing” and “world on fire”. Big thanks to Alexey and Olga for helping! Route is 28m 12 bolts. Around 6c+. Name: Resurrection"}]}, "oh|Something from nothing": {"n": 20, "last": "2026-05-13", "q": [{"d": "2023-05", "t": "There are two lines there. The one starting in the big block is called “something from Nothing. It’s maybe 7a/7a+ it is an open project. The one in the middle is still only half bolted, I must return to finish bolting it so don’t try to climb or you will get stuck 😅"}, {"d": "2023-06", "t": "Agreed. So World on Fire is 7a, and Something from Nothing is 7a+ standard"}, {"d": "2024-08", "t": "Finally finished bolting the route between “something from nothing” and “world on fire”. Big thanks to Alexey and Olga for helping! Route is 28m 12 bolts. Around 6c+. Name: Resurrection"}]}, "yv|Easy Peasy": {"n": 5, "last": "2023-06-15", "q": [{"d": "2023-06", "t": "На Easy Peasy висят оттяжки. Кто-то забыл?"}]}, "yv|Peaceful Sky": {"n": 3, "last": "2024-08-20", "q": [{"d": "2023-09", "t": "Кстати, @Alexey34788, а ты пролез 6б старую, которая справа от Peaceful sky?"}]}, "yv|Blue Grey Fun": {"n": 1, "last": "2023-06-02", "q": []}, "yv|Better than Nothing": {"n": 4, "last": "2024-08-14", "q": [{"d": "2024-08", "t": "Мне понравилась первая половина у better than nothing. И ещё там есть одна вроде 6b+, в которой нужно заклиниваться в трещине, а потом уходить левее по плохим зацепкам, у нее тоже первая половина классная."}]}, "yv|Pick work": {"n": 4, "last": "2024-11-07", "q": [{"d": "2023-10", "t": "Москалей пролезла без зависов, а pick work нет) Вот и верь после этого категориям всяким."}, {"d": "2024-11", "t": "Там, к сожалению явная зависимость от роста лезущего. С моим ростом 6а. И трасса явно проще Pick Work на ОлдСкуле (армянская 6a+)"}]}, "yv|Fragile": {"n": 9, "last": "2026-04-19", "q": [{"d": "2023-05", "t": "Стас, ну давай категории подпишем и заливку добавим и исправим на Fragile. Скинь исходник"}, {"d": "2026-04", "t": "На Fragile (6с) еще одна ключевая откидочная зацепка чуть выше первой оттяжки отвалилась 😢"}]}, "yv|Ousta Souren": {"n": 1, "last": "2024-07-04", "q": [{"d": "2024-07", "t": "Я смог 2 раза чисто сделать ключ на Ousta Souren, надо теперь линковать с подлазом к нему"}]}, "yv|Hello Kitty": {"n": 2, "last": "2025-12-20", "q": []}, "yv|Alex in Fatherland": {"n": 1, "last": "2024-10-24", "q": [{"d": "2024-10", "t": "да не, Alex in Fatherland тож 6b"}]}, "yv|Flight mode": {"n": 3, "last": "2025-02-09", "q": []}, "yv|Teen Spirit": {"n": 1, "last": "2025-12-20", "q": [{"d": "2025-12", "t": "Я, кстати, разгадал, почему в гайдбуке Ground Zero имеет категорию 6c+ при том, что она проще Teen Spirit: В thecrag она вообще 7a. Хотя видимо дело ещё в том, что в thecrag не совсем она;)"}]}, "yv|Black Dog": {"n": 14, "last": "2025-12-19", "q": [{"d": "2023-09", "t": "For the record I said Black Dog was probably 7b without having climbed it from the ground. I only tried the moves using bad beta once. After I actually tried it I immediately thought 7a at most.."}, {"d": "2024-10", "t": "At this point of view if I climbed black dog with one crash pad I would say that it is minimum 7a, I don’t want to risk my health for fucking 6b+))"}, {"d": "2024-11", "t": "I bolted Black Dog. And for the record I don’t have any opinion on the grade. It seems bunch better beta has been discovered since the original bolting. But @zaven_araqelyan bolted the route to the right of it. I only installed the anchors."}]}, "yv|Ground Zero": {"n": 2, "last": "2025-12-20", "q": [{"d": "2025-12", "t": "Я, кстати, разгадал, почему в гайдбуке Ground Zero имеет категорию 6c+ при том, что она проще Teen Spirit: В thecrag она вообще 7a. Хотя видимо дело ещё в том, что в thecrag не совсем она;)"}]}, "yv|Hurry Up": {"n": 9, "last": "2026-10-11", "q": [{"d": "2023-12", "t": "Челлендж: кто первый пролезет 7а+ в Шенгавите с нижней, получит приз!)) (На фотке она обозначена как Daisy, название пробивщика - Hurry Up)."}, {"d": "2024-10", "t": "Я, кстати, была уверена, что ты уже пролез Hurry Up."}, {"d": "2024-11", "t": "Кстати, а @flyingkakapo пролез Hurry Up?"}]}, "yv|Climber-2": {"n": 7, "last": "2024-11-21", "q": [{"d": "2024-10", "t": "@StasMikhaylov @flyingkakapo Vlad Кто-нибудь снимал пролаз Climber-2 в Шенгавите (7b c ключом в начале)?"}, {"d": "2024-11", "t": "Ты вот шутишь, а 7b Climber-2 Федя в кроксах вылез"}]}, "yv|Tteni": {"n": 3, "last": "2025-03-09", "q": []}, "yv|Bratishka": {"n": 1, "last": "2024-10-24", "q": [{"d": "2024-10", "t": "Bratishka Andreas comes to mind in Noravanq. Totkam was originally graded 7a+/b by the first ascentionist and another locals agreement. I heard Take Off might be in the soft side.  cliff chicken in hells canyon. Nzdeh is definitely only 6c not 6c+."}]}, "mx|Bonsai": {"n": 3, "last": "2025-07-12", "q": [{"d": "2024-05", "t": "В Карби добавилась самая легкая трасса - Bonsai - 5b 6 оттяжек. Она первая уходит в тень."}, {"d": "2024-05", "t": "Теперь там 5 спортивных маршрутов Bonsai 5b, Iron Women 6b, View of Waterfall 6b, и 2 трассы 6с+?, которые никто не залез."}, {"d": "2025-07", "t": "В Карби включили водопад над Crooked Path и Bonsai. Amnesia вроде сухая, но страховать невозможно 🐳"}]}, "mx|Iron Women": {"n": 3, "last": "2026-06-19", "q": [{"d": "2024-05", "t": "Теперь там 5 спортивных маршрутов Bonsai 5b, Iron Women 6b, View of Waterfall 6b, и 2 трассы 6с+?, которые никто не залез."}, {"d": "2024-06", "t": "It is a good Idea. In a sector with small number of routes it is interesting to \"combinate\" them. You have another several routes by this way. e.g. it will be possible to start from the Iron Women and go to the View of Waterfall before the crux. May be this combination will be 6a+ 🤷‍♂️"}]}, "mx|View of Waterfall": {"n": 2, "last": "2024-06-12", "q": [{"d": "2024-05", "t": "Теперь там 5 спортивных маршрутов Bonsai 5b, Iron Women 6b, View of Waterfall 6b, и 2 трассы 6с+?, которые никто не залез."}, {"d": "2024-06", "t": "It is a good Idea. In a sector with small number of routes it is interesting to \"combinate\" them. You have another several routes by this way. e.g. it will be possible to start from the Iron Women and go to the View of Waterfall before the crux. May be this combination will be 6a+ 🤷‍♂️"}]}, "mx|From the Ground": {"n": 4, "last": "2026-09-07", "q": [{"d": "2026-06", "t": "New sport route \"From the Ground\" to the left from \"Too easy, too short\" on the same anchors. 10 bolts. 6a+ - 6b?"}, {"d": "2026-07", "t": "Вчера, несмотря на прогноз, в Карби упали 3 капли дождя. Лазать в тени было нормально. Новые трассы в тени уже в 13:30. @vapcomm сделал шикарный переход вдоль скал между секторами. Мы убрали основной мусор. Цираны и шелковица растут прямо под трассой Карандзав. Новая трасса - From the Ground - 🔥. 2 прохождения. Оценено"}]}, "mx|Karandzav": {"n": 1, "last": "2024-11-04", "q": []}, "mx|The Rabbit": {"n": 2, "last": "2024-08-17", "q": [{"d": "2024-08", "t": "Hey everyone, yesterday me and David established two new routes! The first one is the Rabbit 5a, goes up the backside of the tower, you climb two short chimneys, and then the last 5m is bolted. It’s a fun little adventure to get to the top of the tower. And then we bolted The Cat, which goes up the main face of the tow"}, {"d": "2024-08", "t": "The Rabbit is more of an adventure than anything else. You could do it as a single pitch, the first chimney takes no gear, the second one could take some larger sized cams,  but they are both very short, and we soloed them. The bolted face was bolted ground up but is still reasonably bolted. The anchor is in place to a"}]}, "mx|The Cat": {"n": 3, "last": "2025-05-22", "q": [{"d": "2024-08", "t": "Hey everyone, yesterday me and David established two new routes! The first one is the Rabbit 5a, goes up the backside of the tower, you climb two short chimneys, and then the last 5m is bolted. It’s a fun little adventure to get to the top of the tower. And then we bolted The Cat, which goes up the main face of the tow"}, {"d": "2024-11", "t": "Fedor graded \"The Cat\" as 6b, but no one except him climbed 🤔"}, {"d": "2025-05", "t": "On another note: David and I both climbed The Cat today. And we both agree that it’s probably more like easy 6c+"}]}, "mx|Kosmopoliturbo": {"n": 2, "last": "2023-10-15", "q": [{"d": "2023-10", "t": "Все (Саша, Сергей, Дима) пролезли Kosmopoliturbo 6b+. Кажется, что она проще Let's face it 6b."}]}, "mx|Two Cups of Tan": {"n": 4, "last": "2024-11-06", "q": [{"d": "2024-11", "t": "As far as Two Cups of Tan goes, I respectfully disagree. If the climber fell in that spot they would not get hurt, only take a longer fall. That’s normal"}, {"d": "2024-11", "t": "I have decided I will add a bolt to the end of two cups of tan. And I will add a new independent anchor  and an extra bolt for let’s face it, whether I will completely move the bolt line further left is yet to be decided, it entirely depends on the rock and if the new bolt placements make sense"}, {"d": "2024-11", "t": "There is another good route, two cups of tan, and I did not notice similar problems there, the only thing is that I would add another bolt before the station. You can say that there is a simple place there and the bolt is not needed, but when preparing routes I adhere to the rule - a climber can fall at any point of th"}]}, "mx|8 марта": {"n": 3, "last": "2025-06-28", "q": [{"d": "2025-03", "t": "В общем, сегодня ещё было несколько пролазов, в результате которых порешили, что трасса «8 марта» имеет категорию 6б, трасса «Левша» (это слева от «8 марта») - категорию 6а."}, {"d": "2025-06", "t": "\"Лу\" по слабому нависанию и ее низ почти без ног. Наверху согласен, нашелся более легкий расклад. Я ее вылез, но как минимум 6а+ дал бы. Мне даже 8 Марта проще далась - на флеш"}]}, "mx|Big Red Villis": {"n": 2, "last": "2023-09-26", "q": [{"d": "2023-09", "t": "Shady water Gully, and the Nest have vertical to overhanging climbs.. empress Slabs is… as the name suggests… a slab… maybe Lichen My Whistle (7b) all the way on the left, would be considered vertical (for the crux at least. Even Big Red Villis (7a/+) has a steeper beginning, top is slab, but it’s easy… Lil’ Swollie (6"}, {"d": "2023-09", "t": "Did anyone climb big red villis? Seemed like a harder crux than Knucks, but lil swolie felt easier than both.."}]}, "mx|Lichen My Whistle": {"n": 2, "last": "2023-10-10", "q": [{"d": "2023-09", "t": "Shady water Gully, and the Nest have vertical to overhanging climbs.. empress Slabs is… as the name suggests… a slab… maybe Lichen My Whistle (7b) all the way on the left, would be considered vertical (for the crux at least. Even Big Red Villis (7a/+) has a steeper beginning, top is slab, but it’s easy… Lil’ Swollie (6"}, {"d": "2023-10", "t": "It’s a pretty good route. But you need to be good at placing gear. The crux is right after the two bolts and you need to place gear at the start of the crack to keep you off the ground..then it gets a bit easier at the top but not too easy… you could also climb the 7b to the left of it “lichen my whistle” and hang a to"}]}};
 var RT=[];
-var AUTH={"hc|Redemption": {"b": "Jared Nielson", "fa": "Caroline North", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Hell's Diamond": {"b": "Мхитар Мхитарян", "fa": "Will Nazarian", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Sea of Dream": {"b": "Мхитар Мхитарян", "fa": null, "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": "на фестивале 2011 года остался проектом"}, "hc|The Maple Way of Drilling": {"b": "Jared Nielson", "fa": null, "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": "на фестивале 2011 года остался проектом"}, "hc|Cliff Chicken": {"b": "Jared Nielson", "fa": null, "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": "на фестивале 2011 года остался проектом"}, "hc|Institutionalized": {"b": "Jared Nielson", "fa": "Jared Nielson", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Death Spank": {"b": "Jared Nielson", "fa": "Jared Nielson", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Centepide": {"b": "Jared Nielson", "fa": "Jared Nielson", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Side Swipe": {"b": "Jared Nielson", "fa": "Jared Nielson", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Frostbite": {"b": "Jared Nielson", "fa": "Jared Nielson", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Fire and Brimstone": {"b": "Jared Nielson", "fa": "Jared Nielson", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Spinal Crack": {"b": "Jared Nielson", "fa": "Jared Nielson", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Screaming Khorovats": {"b": "Jason Stevens", "fa": "Jason Stevens", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Cheese and Wieners": {"b": "Jason Stevens", "fa": "Jared Nielson", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Ignorance": {"b": "Jason Stevens", "fa": "Jared Nielson", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|World Famous Nobody": {"b": "Jason Stevens", "fa": "Jason Stevens", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Estragon and Sisy Bolts": {"b": "Jason Stevens", "fa": "Jason Stevens", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "hc|Salamandra": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": "одни из первых маршрутов ущелья"}, "hc|Nzhdeh": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": "одни из первых маршрутов ущелья; позже перебурен"}, "hc|Ararat": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": "одни из первых маршрутов ущелья; позже перебурен"}, "hc|Noy": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": "одни из первых маршрутов ущелья; позже перебурен"}, "hc|Cheghk": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": "одни из первых маршрутов ущелья"}, "nv|Nassim and Caro": {"b": null, "fa": "Nasim Eshqi, Caroline North", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": "трад-маршрут: на станциях нет цепей, берите свои петли"}, "nv|Soviet Nail": {"b": "Jason Stevens", "fa": "Jason Stevens", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "nv|Catalex": {"b": null, "fa": "Андраник Мирибян, Ваге Тамамян", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": "трад-маршрут: на станциях нет цепей, берите свои петли"}, "nv|JoSiTo Girls Power": {"b": null, "fa": "Caroline North, Nasim Eshqi", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": "трад-маршрут: на станциях нет цепей, берите свои петли"}, "nv|Vehicular Homicide": {"b": "Jason Stevens", "fa": "Jared Nielson", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "nv|Yeghegnadzor": {"b": null, "fa": "Алексей Антонов, Алексей Адамов", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": "трад-маршрут: на станциях нет цепей, берите свои петли"}, "nv|Marshuka Melee": {"b": "Jared Nielson", "fa": "Jared Nielson", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": null}, "nv|The End": {"b": null, "fa": "Caroline North, Nasim Eshqi", "y": 2011, "s": "Фестиваль Arev 2011 (uptherocks.com)", "n": "трад-маршрут: на станциях нет цепей, берите свои петли"}, "nv|Soyuz 82": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": "маршрут чемпионатов СССР, перебурен в 2006 году"}, "nv|Danak («Нож»)": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": null}, "nv|Kret": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": null}, "nv|Kaitsak": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": null}, "nv|Ots": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": null}, "nv|Karich": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": null}, "nv|Chxchik": {"b": "Антуан Ананян и Алексей Трубачёв", "fa": null, "y": "2006–2007", "s": "Отчёт А. Трубачёва 2006 (mountain.ru), Up The Rocks", "n": null}, "mx|The Rabbit": {"b": "Лука (AmericanCowboy) и Давид", "fa": "Лука и Давид", "y": 2024, "s": "Чат «Некоммерческое скалолазание Армения»", "n": "объявлено в чате 17.08.2024"}, "mx|The Cat": {"b": "Лука (AmericanCowboy) и Давид", "fa": null, "y": 2024, "s": "Чат «Некоммерческое скалолазание Армения»", "n": "пробит снизу вверх; позже оценён как «лёгкая 6c+»"}, "mx|Kosmopoliturbo": {"b": "Лука (AmericanCowboy)", "fa": null, "y": "2018–2019", "s": "Чат «Некоммерческое скалолазание Армения»", "n": "Лука пробил весь сектор Кахси"}, "mx|Two Cups of Tan": {"b": "Лука (AmericanCowboy)", "fa": null, "y": "2018–2019", "s": "Чат «Некоммерческое скалолазание Армения»", "n": null}, "mx|From the Ground": {"b": null, "fa": null, "y": 2026, "s": "Чат «Некоммерческое скалолазание Армения»", "n": "новый маршрут, в 2026 году 2 прохождения"}, "mx|Bonsai": {"b": null, "fa": null, "y": 2024, "s": "Чат «Некоммерческое скалолазание Армения»", "n": "самый лёгкий маршрут Карби, добавлен в мае 2024"}, "oh|World on fire": {"b": "Лука (AmericanCowboy)", "fa": null, "y": null, "s": "Чат «Некоммерческое скалолазание Армения»", "n": "Лука ставил первую половину шлямбуров"}, "oh|Something from nothing": {"b": "Лука (AmericanCowboy)", "fa": null, "y": 2023, "s": "Чат «Некоммерческое скалолазание Армения»", "n": "в 2023 году — открытый проект"}};
-var WA='37491470331';
 var TGP={"nv|Czech Airlines": [[10675, "2023-04-15"], [10676, "2023-04-15"], [10677, "2023-04-15"], [10678, "2023-04-15"]], "nv|Journey Through Wonderland": [[66783, "2025-04-06"], [66784, "2025-04-06"], [66785, "2025-04-06"], [66786, "2025-04-06"]], "hc|Screaming Khorovats": [[91203, "2026-06-22"], [91204, "2026-06-22"], [91205, "2026-06-22"], [91206, "2026-06-22"]], "hc|Spinal Crack": [[93862, "2026-08-16"], [93863, "2026-08-16"], [93864, "2026-08-16"]], "hc|Cheghk": [[36629, "2023-10-23"]], "hc|Hell's Diamond": [[92464, "2026-07-20"], [92465, "2026-07-20"], [92466, "2026-07-20"], [92467, "2026-07-20"]], "oh|Something from nothing": [[15381, "2023-05-25"], [15382, "2023-05-25"]], "yv|Concrete Jungle": [[41634, "2024-01-08"], [41635, "2024-01-08"], [41636, "2024-01-08"]], "yv|Legoland": [[87571, "2026-03-14"], [87572, "2026-03-14"], [87573, "2026-03-14"], [87574, "2026-03-14"]], "yv|Citik": [[41634, "2024-01-08"], [41635, "2024-01-08"], [41636, "2024-01-08"]], "yv|Flight mode": [[87571, "2026-03-14"], [87572, "2026-03-14"], [87573, "2026-03-14"], [87574, "2026-03-14"]], "yv|Black Dog": [[59593, "2024-11-07"]], "yv|Climber-2": [[58306, "2024-10-24"]], "mx|Bonsai": [[47907, "2024-05-19"]], "mx|Iron Women": [[48917, "2024-06-07"]], "mx|From the Ground": [[95028, "2026-09-07"], [91404, "2026-06-28"]], "mx|The Rabbit": [[53385, "2024-08-17"], [53386, "2024-08-17"]], "mx|The Cat": [[68944, "2025-05-22"], [53385, "2024-08-17"], [53386, "2024-08-17"]], "mx|Two Cups of Tan": [[59433, "2024-11-06"]], "mx|Big Red Villis": [[35138, "2023-10-10"], [35139, "2023-10-10"]]};
 var TC='https://www.thecrag.com/en/climbing/armenia/area/';
 var AC={nv:[TC+'1660330830','Нораванк на theCrag'],hc:[TC+'1660330884','Адское ущелье на theCrag'],'hc|Западный':[TC+'1660834701','Сектор West на theCrag'],'hc|Восточный':[TC+'1660834755','Сектор East на theCrag'],oh:['https://27crags.com/crags/ohanavan/routelist','Оганаван на 27crags'],yv:['https://27crags.com/crags/yerevan/routelist','Скалы Еревана на 27crags'],'nv|Центральный':['https://27crags.com/crags/noravank-canyon/topos','Топо Нораванка на 27crags']};
 function acUrl(k,sec,rn){if(rn)return null;return AC[k+'|'+sec]||AC[k]||null}
 var LVL=['','Первые маршруты: подойдёт после пары тренировок на скалодроме или в первый выход на скалы с инструктором.','Уверенный уровень: нужна техника и опыт нижней страховки.','Сложно: регулярные тренировки, умение работать маршрут.','Топ-уровень для сильных спортсменов.'];
 function rli(k,sec,r,L,g){var i=RT.length;RT.push({k:k,sec:sec,r:r,L:L,g:g});var n=NOTES[k+'|'+r[0]];
- var au=AUTH[k+'|'+r[0]];return '<li class="r l'+L+'" data-l="'+L+'" data-au="'+esc(au?[au.b,au.fa].filter(Boolean).join(' '):'')+'" data-i="'+i+'" role="button" tabindex="0" aria-expanded="false"><span class="gr">'+esc(r[1])+'</span><span class="nm">'+esc(r[0])+(r[2]?'<span class="st" aria-label="'+r[2]+' из 3">'+'★'.repeat(r[2])+'</span>':'')+(r[3]?'<span class="meta">'+esc(r[3])+'</span>':'')+(n?'<span class="meta">💬 '+n.n+'</span>':'')+(TGP[k+'|'+r[0]]?'<span class="meta">📷 '+TGP[k+'|'+r[0]].length+'</span>':'')+'</span>'+(r[4]?'<span class="tx">'+esc(r[4])+'</span>':'')+'</li>'}
+ return '<li class="r l'+L+'" data-l="'+L+'" data-au="'+esc(AUTH[k+'|'+r[0]]||'')+'" data-i="'+i+'" role="button" tabindex="0" aria-expanded="false"><span class="gr">'+esc(r[1])+'</span><span class="nm">'+esc(r[0])+(r[2]?'<span class="st" aria-label="'+r[2]+' из 3">'+'★'.repeat(r[2])+'</span>':'')+(r[3]?'<span class="meta">'+esc(r[3])+'</span>':'')+(n?'<span class="meta">💬 '+n.n+'</span>':'')+(TGP[k+'|'+r[0]]?'<span class="meta">📷 '+TGP[k+'|'+r[0]].length+'</span>':'')+'</span>'+(r[4]?'<span class="tx">'+esc(r[4])+'</span>':'')+(AUTH[k+'|'+r[0]]?'<span class="au">✎ '+esc(AUTH[k+'|'+r[0]])+'</span>':'')+'</li>'}
 var AREA={nv:'Ущелье Нораванк',hc:'Адское ущелье',yv:'Скалы Еревана',oh:'Оганаван',mx:''};
 function det(o){var r=o.r,n=NOTES[o.k+'|'+r[0]],ph=RPHOTO[o.k+'|'+r[0]],h='<div class="det">';
  var tp=TGP[o.k+'|'+r[0]]||[];
@@ -576,18 +700,16 @@ function det(o){var r=o.r,n=NOTES[o.k+'|'+r[0]],ph=RPHOTO[o.k+'|'+r[0]],h='<div 
  h+='<dt>Район</dt><dd>'+esc((AREA[o.k]?AREA[o.k]+', сектор ':'')+o.sec)+'</dd>';
  if(r[2])h+='<dt>Оценка</dt><dd>'+'★'.repeat(r[2])+' из 3 по оценкам лазателей</dd>';
  if(r[3])h+='<dt>Тип</dt><dd>'+esc(r[3])+'</dd>';
+ if(AUTH[o.k+'|'+r[0]])h+='<dt>Авторы</dt><dd>'+esc(AUTH[o.k+'|'+r[0]])+' <small>('+(AUTHS[o.k+'|'+r[0]]||AUTHSRC)+')</small></dd>';
  h+='</dl>';
  if(n){h+='<div><b>В чате сообщества</b>: упоминаний '+n.n+', последнее '+n.last.split('-').reverse().join('.')+'.</div>';n.q.forEach(function(q){h+='<blockquote><small>'+q.d.split('-').reverse().join('.')+'</small>'+esc(q.t)+'</blockquote>'})}
  else h+='<div class="noph">В чате сообщества этот маршрут не обсуждали.</div>';
  if(tp.length){h+='<div><b>Фото в чате сообщества</b> — откроются в Telegram:</div><div class="pht">'+tp.map(function(t){return '<a href="https://t.me/ArmeniaClimbing/'+t[0]+'" target="_blank" rel="noopener">📷 '+t[1].split('-').reverse().join('.')+'</a>'}).join('')+'</div>'}
- var au=AUTH[o.k+'|'+r[0]];
- if(au){h+='<div><b>История маршрута</b></div><dl>'+(au.b?'<dt>Пробил</dt><dd>'+esc(au.b)+'</dd>':'')+(au.fa?'<dt>Первопроход</dt><dd>'+esc(au.fa)+'</dd>':'')+(au.y?'<dt>Год</dt><dd>'+esc(String(au.y))+'</dd>':'')+(au.n?'<dt>Заметка</dt><dd>'+esc(au.n)+'</dd>':'')+'<dt>Источник</dt><dd>'+esc(au.s)+'</dd></dl>'}
- else h+='<div class=\"noph\">Автор и первопроходец маршрута не указаны в открытых источниках. Знаете — напишите нам.</div>';
- var msg='Гайдбук «Скалы Армении»: '+r[0]+' ('+r[1]+'), '+(AREA[o.k]?AREA[o.k]+', ':'')+o.sec+'. Хочу прислать: фото / отчёт о пролазе / правку.';
- h+='<a class=\"ac send\" href=\"https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'\" target=\"_blank\" rel=\"noopener\">📷 Прислать фото, отчёт или правку</a>';
  var ac=acUrl(o.k,o.sec,r[0]);if(ac)h+='<a class="ac" href="'+ac[0]+'" target="_blank" rel="noopener">'+ac[1]+' ↗</a>';
  if(o.g)h+='<div class="geo">'+geoHTML(o.g[0],o.g[1],'сектор')+'</div>';
  h+='<a class="lnk" href="https://www.thecrag.com/en/climbing/armenia/search?S='+encodeURIComponent(r[0])+'" target="_blank" rel="noopener">Искать маршрут на theCrag ↗</a>';
+ h+='<a class="ac send" target="_blank" rel="noopener" href="'+wa('Гайд «Скалы Армении», маршрут '+r[0]+' ('+r[1]+', '+((AREA[o.k]?AREA[o.k]+', ':'')+o.sec)+'): хочу прислать фото / отчёт о пролазе. ')+'">📷 Прислать фото или отчёт о пролазе</a>';
+ h+='<a class="fix" href="'+wa('Гайд «Скалы Армении», маршрут '+r[0]+' ('+r[1]+', '+((AREA[o.k]?AREA[o.k]+', ':'')+o.sec)+'): хочу сообщить о неточности / я автор маршрута. ')+'" target="_blank" rel="noopener">Сообщить о неточности или об авторе</a>';
  return h+'</div>'}
 function geoHTML(la,lo,label){var c=la.toFixed(5)+', '+lo.toFixed(5);
  return '<span class="co"><span class="pin">◉</span> '+(label?esc(label)+' · ':'')+c+'</span>'+
@@ -658,28 +780,44 @@ function apply(){var l=ST.l,q=norm(ST.q),act=l!=='all'||q.length>1,n=0;
   var e=sec.querySelector('.empty');if(e&&rs.length)e.hidden=any;
   sec.hidden=act&&!any;var body=sec.querySelector('.sb');if(body){var op=act&&any;body.hidden=!op;sec.classList.toggle('open',op);sec.querySelector('.sh').setAttribute('aria-expanded',op)}});
  document.querySelectorAll('.area').forEach(function(a){if(!a.querySelector('.sector'))return;var vis=a.querySelector('.sector:not([hidden])');a.style.display=(act&&!vis)?'none':''});
- ['where','map','closed','tips','authors'].forEach(function(id){var a=document.getElementById(id);if(a)a.style.display=act?'none':''});
+ ['where','map','closed','tips'].forEach(function(id){var a=document.getElementById(id);if(a)a.style.display=act?'none':''});
  var res=document.getElementById('res');res.hidden=!act;res.textContent=n?'Найдено маршрутов: '+n:'Ничего не найдено. Попробуйте другое название или уровень.';
  document.getElementById('qx').hidden=!ST.q;document.body.classList.toggle('act',act)}
 document.querySelectorAll('.f').forEach(function(b){b.addEventListener('click',function(){ST.l=b.dataset.l;document.querySelectorAll('.f').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});apply();if(ST.l!=='all'||ST.q)window.scrollTo({top:document.querySelector('main').offsetTop-80,behavior:'smooth'})})});
 var qi=document.getElementById('q');var qt;qi.addEventListener('input',function(){ST.q=qi.value.trim();apply();clearTimeout(qt);qt=setTimeout(function(){var f=document.querySelector('.sector:not([hidden]) .r:not([hidden])');if(ST.q.length>1&&f){window.scrollTo({top:f.closest('.area').getBoundingClientRect().top+window.scrollY-170,behavior:'smooth'})}},500)});
 qi.addEventListener('keydown',function(e){if(e.key==='Enter')qi.blur()});
 document.getElementById('qx').addEventListener('click',function(){qi.value='';ST.q='';apply();qi.focus()});
-(function(){var c={};Object.keys(AUTH).forEach(function(k){var b=AUTH[k].b;if(!b)return;b.split(/ и |, /).forEach(function(x){x=x.trim().replace(' (AmericanCowboy)','');c[x]=(c[x]||0)+1})});
- var el=document.getElementById('aulist');el.innerHTML=Object.keys(c).sort(function(a,b){return c[b]-c[a]}).map(function(n){return '<button type="button" data-q="'+esc(n.split(' ').pop())+'">'+esc(n)+'<b>'+c[n]+'</b></button>'}).join('');
- el.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;qi.value=b.dataset.q;ST.q=b.dataset.q;apply();window.scrollTo({top:document.querySelector('main').offsetTop-80,behavior:'smooth'})});
- document.getElementById('helpwa').href='https://wa.me/'+WA+'?text='+encodeURIComponent('Гайдбук «Скалы Армении»: хочу прислать фото / отчёт / правку.');})();
-(function(){var dp;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;document.getElementById('inst').hidden=false});
- document.getElementById('inst').addEventListener('click',function(){if(dp){dp.prompt();dp=null;this.hidden=true}});
- var ios=/iphone|ipad|ipod/i.test(navigator.userAgent),sa=window.matchMedia&&matchMedia('(display-mode: standalone)').matches||navigator.standalone;
- if(/github\.io$/.test(location.hostname)){if(ios&&!sa)document.getElementById('ios').hidden=false;if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){})}})();
 var tb=document.getElementById('top');window.addEventListener('scroll',function(){tb.hidden=window.scrollY<900},{passive:true});tb.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
 try{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){document.querySelectorAll('.nav a').forEach(function(a){a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id);if(a.classList.contains('cur')){var sc=a.parentNode;sc.scrollTo({left:a.offsetLeft-sc.offsetLeft-sc.clientWidth/2+a.offsetWidth/2,behavior:'smooth'})}})}})},{rootMargin:'-40% 0px -55% 0px'});document.querySelectorAll('.area[id]').forEach(function(a){io.observe(a)})}catch(e){}
 document.querySelectorAll('.toc i[data-c]').forEach(function(i){var a=document.getElementById(i.dataset.c);i.outerHTML=a.querySelectorAll('.r').length+' маршр.'});
 function tog(li){var o=li.getAttribute('aria-expanded')==='true';var d=li.querySelector('.det');if(o){d&&d.remove();li.setAttribute('aria-expanded','false')}else{li.insertAdjacentHTML('beforeend',det(RT[+li.dataset.i]));li.setAttribute('aria-expanded','true')}}
 document.addEventListener('click',function(e){var li=e.target.closest('.r');if(!li||e.target.closest('.det'))return;tog(li)});
 document.addEventListener('keydown',function(e){var li=e.target.closest&&e.target.closest('.r');if(li&&e.target===li&&(e.key==='Enter'||e.key===' ')){e.preventDefault();tog(li)}});
+var PHONE='37491470331',GUIDE_URL=/github\.io$/.test(location.hostname)?'https://scmam-rgb.github.io/white-irbis/gaidbuk/':'https://claude.ai/artifact/YKtR5fTMZfPbN868U8tmoj';
+function wa(t){return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(t)}
+document.getElementById('waHero').href=wa('Здравствуйте! Нашёл гайд «Скалы Армении». Хочу полазать с гидом White Irbis.');
+document.getElementById('waC').href=wa('Здравствуйте! Хочу полазать в Армении с гидом White Irbis.');
+document.getElementById('waAuth').href=wa('Здравствуйте! Я автор маршрута из гайда «Скалы Армении»: ');
+document.getElementById('waFoot').href=wa('Гайд «Скалы Армении»: нашёл ошибку / новый маршрут: ');
+var ANAME={noravank:'в ущелье Нораванк',hell:'в Адском ущелье',yerevan:'на скалах Еревана',ohanavan:'в Оганаване'};
+Object.keys(ANAME).forEach(function(id){var a=document.getElementById(id);if(!a)return;var hd=a.querySelector(':scope>header');
+ hd.insertAdjacentHTML('afterend','<div class="areacta"><span>Первый раз здесь? Покажем сектора и подберём маршруты под ваш уровень. Снаряжение выдаём.</span><a class="wa" target="_blank" rel="noopener" href="'+wa('Здравствуйте! Хочу полазать '+ANAME[id]+' с гидом White Irbis.')+'">Лазать здесь с гидом</a></div>')});
+document.getElementById('share').addEventListener('click',function(){var b=this,d={title:'Скалы Армении — гайдбук White Irbis',text:'Маршруты, координаты и авторы маршрутов по всей Армении',url:GUIDE_URL};
+ function cp(){try{navigator.clipboard.writeText(GUIDE_URL).then(function(){b.textContent='Ссылка скопирована';setTimeout(function(){b.textContent='Поделиться гайдом'},1800)},function(){window.open('https://t.me/share/url?url='+encodeURIComponent(GUIDE_URL)+'&text='+encodeURIComponent(d.text),'_blank')})}catch(e){window.open('https://t.me/share/url?url='+encodeURIComponent(GUIDE_URL),'_blank')}}
+ try{if(navigator.share){navigator.share(d).catch(function(){});}else cp()}catch(e){cp()}});
+function prOpen(){document.querySelectorAll('.sector .sb').forEach(function(b){b.hidden=false})}
+window.addEventListener('beforeprint',prOpen);
+document.getElementById('prt').addEventListener('click',function(){prOpen();try{window.print()}catch(e){}});
 document.getElementById('copy').addEventListener('click',function(){var b=this;function done(){b.textContent='Скопировано';setTimeout(function(){b.textContent='Скопировать номер'},1600)}function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('num'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Номер выделен'}try{navigator.clipboard.writeText('+37491470331').then(done,sel)}catch(e){sel()}});
+
+(function(){var FN={'Трубачёв':'Алексей Трубачёв','Ананян':'Антуан Ананян','Мхитарян':'Мхитар Мхитарян','Тучка':'Мартин Тучка','Nielson':'Jared Nielson','Stevens':'Jason Stevens','Eshqi':'Nasim Eshqi','North':'Caroline North','Nazarian':'Will Nazarian','Лука':'Лука Кеушгерян','Давид':'Давид','Антонов':'Алексей Антонов','Адамов':'Алексей Адамов'};var N=Object.keys(FN);var AL={'Эшки':'Eshqi','Норт':'North'};var c={};
+ document.querySelectorAll('.r[data-au]').forEach(function(r){var t=r.dataset.au;Object.keys(AL).forEach(function(k){if(t.indexOf(k)>=0&&t.indexOf(AL[k])<0)t+=' '+AL[k]});r.dataset.au=t;N.forEach(function(x){if(t.indexOf(x)>=0)c[x]=(c[x]||0)+1})});
+ var el=document.getElementById('aulist');if(!el)return;el.innerHTML=N.filter(function(x){return c[x]}).sort(function(a,b){return c[b]-c[a]}).map(function(x){return '<button type="button" data-q="'+esc(x)+'">'+esc(FN[x])+'<b>'+c[x]+'</b></button>'}).join('');
+ el.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var qi=document.getElementById('q');qi.value=b.dataset.q;ST.q=b.dataset.q;apply();window.scrollTo({top:document.querySelector('main').offsetTop-80,behavior:'smooth'})})})();
+(function(){var dp,ib=document.getElementById('inst');window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;ib.hidden=false});
+ ib.addEventListener('click',function(){if(dp){dp.prompt();dp=null;ib.hidden=true}});
+ var ios=/iphone|ipad|ipod/i.test(navigator.userAgent),sa=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone;
+ if(/github\.io$/.test(location.hostname)){if(ios&&!sa)document.getElementById('ios').hidden=false;if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){})}})();
 </script>
 
 </body></html>
