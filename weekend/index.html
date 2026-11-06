@@ -132,10 +132,13 @@ html[lang="hy"] .hero h1{font-size:clamp(44px,7vw,92px)}
 .reqs a{color:#F7F4EC;text-decoration:none}
 @media (max-width:760px){.price .wrap{grid-template-columns:1fr}}
 footer{padding:28px 0;font-size:13px;color:var(--muted)}
+.slogan{display:block;font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-weight:600;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:#F7F4EC;white-space:nowrap;margin:8px 0 14px}
+.lockup{display:flex;flex-direction:column;align-items:flex-start}
+@media (max-width:520px){.slogan{font-size:12px;letter-spacing:.14em}}
 </style>
 
 <header class="top"><div class="wrap">
-  <img src="img/logo.png" alt="White Irbis">
+  <div class="lockup"><img src="img/logo.png" alt="White Irbis"><span class="slogan">Follow the White Irbis</span></div>
   <div class="lang" role="group" aria-label="Language"><button type="button" data-l="ru" aria-pressed="true">RU</button><button type="button" data-l="en" aria-pressed="false">EN</button><button type="button" data-l="hy" aria-pressed="false">ARM</button></div>
 </div></header>
 

@@ -254,11 +254,15 @@ html[lang="hy"] .hero h1{font-size:clamp(44px,7vw,96px)}
 .lang button{font:600 14px var(--body);color:#F7F4EC;background:none;border:0;padding:6px 10px;border-radius:4px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:#FAEB0F;color:#121212}
 .top .right{display:flex;align-items:center}
+.slogan{display:block;font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-weight:600;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:#F7F4EC;white-space:nowrap;margin:8px 0 14px}
+.lockup{display:flex;flex-direction:column;align-items:flex-start}
+.brand{flex-direction:column;align-items:flex-start;gap:0}html[lang] .brand .slogan{font-stretch:normal;font-weight:600;font-size:15px;letter-spacing:.18em;font-family:Oswald,"Arial Narrow",Arial,sans-serif}
+@media (max-width:520px){.brand .slogan,.slogan{font-size:12px;letter-spacing:.14em}}
 </style>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="White Irbis"><img src="img/logo.png" alt="Логотип White Irbis"></a>
+    <a class="brand" href="#top" aria-label="White Irbis"><img src="img/logo.png" alt="Логотип White Irbis"><span class="slogan">Follow the White Irbis</span></a>
     <div class="right"><nav aria-label="Разделы">
       <a href="#program"><span lang="ru">Программа</span><span lang="en">Programme</span><span lang="hy">Ծրագիր</span></a>
       <a href="#places"><span lang="ru">Места</span><span lang="en">Places</span><span lang="hy">Վայրեր</span></a>
