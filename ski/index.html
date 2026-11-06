@@ -16,7 +16,7 @@
 <meta name="theme-color" content="#121212">
 <meta name="description" content="7 дней в Армении для новичков: учимся в Myler, пробуем силы в Цахкадзоре, живём в Ереване. Инструктор и гид-альпинист на склоне. 97 000 ₽.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Rubik:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Rubik:wght@400;500;600&display=swap">
 <style>
 :root{
   --ink:#121212; --paper:#F7F4EC; --card:#EEEADF; --line:#DDD6C3; --muted:#6B6A62;
@@ -211,12 +211,18 @@ a.yt:hover img{filter:brightness(.95)}
 .stay h3{font-size:34px;text-transform:uppercase;margin-top:8px}
 .stay p{color:var(--muted);margin-top:10px}
 @media (max-width:860px){.stay{grid-template-columns:1fr}.wide .hv img{aspect-ratio:16/9}}
-.slogan{display:block;font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-weight:600;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:#F7F4EC;white-space:nowrap;margin:8px 0 14px}
-.lockup{display:flex;flex-direction:column;align-items:flex-start}
-@media (max-width:520px){.slogan{font-size:12px;letter-spacing:.14em}}
+/* slogan lockup: logo | FOLLOW THE / WHITE IRBIS — both lines optically the same width */
+.lockup{display:flex;align-items:center;gap:20px;text-decoration:none}
+.lockup img{flex:none}
+.sl{display:inline-flex;flex-direction:column;align-items:flex-start;gap:.42em;font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-size:22px;line-height:.82;text-transform:uppercase;white-space:nowrap;border-left:1px solid rgba(247,244,236,.3);padding:6px 0 6px 20px}
+html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-stretch:normal}
+.sl .s1{font-size:.5em;font-weight:400;letter-spacing:.7254em;margin-right:-.7254em;color:rgba(247,244,236,.8)}
+.sl .s2{font-size:1em;font-weight:600;letter-spacing:.06em;margin-right:-.06em;color:#F7F4EC}
+.sl b{font-weight:600;color:#FAEB0F}
+@media (max-width:520px){.lockup{flex-direction:column;align-items:flex-start;gap:12px}.sl{font-size:17px;border-left:0;padding:0}}
 </style>
 <header class="top"><div class="wrap">
-  <div class="lockup"><img src="img/logo.png" alt="White Irbis"><span class="slogan">Follow the White Irbis</span></div>
+  <div class="lockup"><img src="img/logo.png" alt="White Irbis"><span class="sl"><span class="s1">Follow the</span><span class="s2">White <b>Irbis</b></span></span></div>
   <a class="toplink" href="#price">97 000 ₽ · Записаться</a>
 </div></header>
 

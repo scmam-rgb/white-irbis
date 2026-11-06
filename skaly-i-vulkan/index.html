@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Rubik:wght@400;500;600&family=Noto+Sans+Armenian:wdth,wght@62.5..100,400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Rubik:wght@400;500;600&family=Noto+Sans+Armenian:wdth,wght@62.5..100,400..700&display=swap">
 <style>
 /* Layout: photo-led editorial page; dark hero band, then cream/ink sections; yellow = snow-leopard eye, used only for markers and the main action */
 :root{
@@ -254,15 +254,23 @@ html[lang="hy"] .hero h1{font-size:clamp(44px,7vw,96px)}
 .lang button{font:600 14px var(--body);color:#F7F4EC;background:none;border:0;padding:6px 10px;border-radius:4px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:#FAEB0F;color:#121212}
 .top .right{display:flex;align-items:center}
-.slogan{display:block;font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-weight:600;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:#F7F4EC;white-space:nowrap;margin:8px 0 14px}
-.lockup{display:flex;flex-direction:column;align-items:flex-start}
-.brand{flex-direction:column;align-items:flex-start;gap:0}html[lang] .brand .slogan{font-stretch:normal;font-weight:600;font-size:15px;letter-spacing:.18em;font-family:Oswald,"Arial Narrow",Arial,sans-serif}
-@media (max-width:520px){.brand .slogan,.slogan{font-size:12px;letter-spacing:.14em}}
+/* slogan lockup: logo | FOLLOW THE / WHITE IRBIS — both lines optically the same width */
+.lockup{display:flex;align-items:center;gap:20px;text-decoration:none}
+.lockup img{flex:none}
+.sl{display:inline-flex;flex-direction:column;align-items:flex-start;gap:.42em;font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-size:22px;line-height:.82;text-transform:uppercase;white-space:nowrap;border-left:1px solid rgba(247,244,236,.3);padding:6px 0 6px 20px}
+html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-stretch:normal}
+.sl .s1{font-size:.5em;font-weight:400;letter-spacing:.7254em;margin-right:-.7254em;color:rgba(247,244,236,.8)}
+.sl .s2{font-size:1em;font-weight:600;letter-spacing:.06em;margin-right:-.06em;color:#F7F4EC}
+.sl b{font-weight:600;color:#FAEB0F}
+@media (max-width:520px){.lockup{flex-direction:column;align-items:flex-start;gap:12px}.sl{font-size:17px;border-left:0;padding:0}}
+.brand.lockup{gap:20px}
+@media (max-width:520px){.brand.lockup{gap:12px}}
+@media (max-width:640px){.hero .wrap{padding-top:168px}}
 </style>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="White Irbis"><img src="img/logo.png" alt="Логотип White Irbis"><span class="slogan">Follow the White Irbis</span></a>
+    <a class="brand lockup" href="#top" aria-label="White Irbis — Follow the White Irbis"><img src="img/logo.png" alt="Логотип White Irbis"><span class="sl"><span class="s1">Follow the</span><span class="s2">White <b>Irbis</b></span></span></a>
     <div class="right"><nav aria-label="Разделы">
       <a href="#program"><span lang="ru">Программа</span><span lang="en">Programme</span><span lang="hy">Ծրագիր</span></a>
       <a href="#places"><span lang="ru">Места</span><span lang="en">Places</span><span lang="hy">Վայրեր</span></a>

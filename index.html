@@ -9,7 +9,7 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="skaly-i-vulkan/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 <style>
 body{margin:0;background:#121212;color:#F7F4EC;font-family:Rubik,Arial,sans-serif}
 .w{max-width:1100px;margin:0 auto;padding:40px 16px}
@@ -23,11 +23,14 @@ a.c div{padding:16px 20px;font-size:18px}
 a.c:hover{border-color:#FAEB0F}
 footer{margin-top:32px;font-size:18px}
 footer a{color:#FAEB0F}
-.slogan{display:block;font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-weight:600;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:#FAEB0F;white-space:nowrap;margin-top:6px}
-.lockup{display:flex;flex-direction:column;align-items:flex-start}
-@media (max-width:520px){.slogan{font-size:12px;letter-spacing:.14em}}
+/* slogan under the wordmark, letter-spaced to the wordmark's exact width */
+.tt{display:inline-flex;flex-direction:column;align-items:stretch;gap:9px}
+.sll{display:block;font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-size:13px;line-height:1;letter-spacing:0.2822em;margin-right:-0.2822em;text-transform:uppercase;white-space:nowrap;color:#F7F4EC}
+.sll .sl-f{font-weight:300;color:#B9B5A8}
+.sll .sl-w{font-weight:600}
+.sll b{font-weight:600;color:#FAEB0F}
 </style></head><body><div class="w">
-<header><img src="skaly-i-vulkan/img/logo.png" alt="White Irbis"><div><h1>White Irbis</h1><span class="slogan">Follow the White Irbis</span></div></header>
+<header><img src="skaly-i-vulkan/img/logo.png" alt="White Irbis"><div class="tt"><h1>White Irbis</h1><span class="sll"><span class="sl-f">Follow the </span><span class="sl-w">White <b>Irbis</b></span></span></div></header>
 <div class="g">
 <a class="c" href="ski/"><img src="ski/img/preview.jpg" alt="Горные лыжи с нуля"><div>Горные лыжи с нуля · 7 дней · зима</div></a>
 <a class="c" href="skaly-i-vulkan/"><img src="skaly-i-vulkan/img/preview.jpg" alt="Скалы и вулкан"><div>Скалы и вулкан · 7 дней · апрель — ноябрь</div></a>
