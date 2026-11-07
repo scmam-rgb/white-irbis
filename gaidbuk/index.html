@@ -294,7 +294,7 @@ body.act .area>header .intro,body.act .area>header .facts,body.act details.info,
     <p>Районы, сектора и маршруты с координатами: Нораванк, Адское ущелье, Ереван, Оганаван и ещё 11 мест, которые развивает местное сообщество. Категории по французской шкале, описания маршрутов, подходы и что важно знать до выезда.</p>
     <div class="stats" id="stats"></div>
     <p id="ios" hidden style="font-size:14px;color:#d9cfc6">📲 Чтобы гайд работал без интернета: в Safari нажмите «Поделиться» → «На экран „Домой“».</p>
-    <div class="hb"><button class="inst" id="inst" type="button" hidden>📲 Установить на телефон</button><a class="wa" id="waHero" target="_blank" rel="noopener">WhatsApp: лазать с гидом</a><button type="button" class="sharebtn" id="share">Поделиться гайдом</button><button type="button" class="prt" id="prt">Печать · A5</button></div>
+    <div class="hb"><button class="inst" id="inst" type="button" hidden>📲 Установить на телефон</button><button type="button" class="sharebtn" id="share">Поделиться гайдом</button><button type="button" class="prt" id="prt">Печать · A5</button></div>
   </div>
 </header>
 <section class="colophon wrap" aria-hidden="true">
@@ -814,13 +814,10 @@ document.addEventListener('click',function(e){var li=e.target.closest('.r');if(!
 document.addEventListener('keydown',function(e){var li=e.target.closest&&e.target.closest('.r');if(li&&e.target===li&&(e.key==='Enter'||e.key===' ')){e.preventDefault();tog(li)}});
 var PHONE='37491470331',GUIDE_URL=/github\.io$/.test(location.hostname)?'https://scmam-rgb.github.io/white-irbis/gaidbuk/':'https://claude.ai/artifact/YKtR5fTMZfPbN868U8tmoj';
 function wa(t){return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(t)}
-document.getElementById('waHero').href=wa('Здравствуйте! Нашёл гайд «Скалы Армении». Хочу полазать с гидом White Irbis.');
 document.getElementById('waC').href=wa('Здравствуйте! Хочу полазать в Армении с гидом White Irbis.');
 document.getElementById('waAuth').href=wa('Здравствуйте! Я автор маршрута из гайда «Скалы Армении»: ');
 document.getElementById('waFoot').href=wa('Гайд «Скалы Армении»: нашёл ошибку / новый маршрут: ');
 var ANAME={noravank:'в ущелье Нораванк',hell:'в Адском ущелье',yerevan:'на скалах Еревана',ohanavan:'в Оганаване'};
-Object.keys(ANAME).forEach(function(id){var a=document.getElementById(id);if(!a)return;var hd=a.querySelector(':scope>header');
- hd.insertAdjacentHTML('afterend','<div class="areacta"><span>Первый раз здесь? Покажем сектора и подберём маршруты под ваш уровень. Снаряжение выдаём.</span><a class="wa" target="_blank" rel="noopener" href="'+wa('Здравствуйте! Хочу полазать '+ANAME[id]+' с гидом White Irbis.')+'">Лазать здесь с гидом</a></div>')});
 document.getElementById('share').addEventListener('click',function(){var b=this,d={title:'Скалы Армении — гайдбук White Irbis',text:'Маршруты, координаты и авторы маршрутов по всей Армении',url:GUIDE_URL};
  function cp(){try{navigator.clipboard.writeText(GUIDE_URL).then(function(){b.textContent='Ссылка скопирована';setTimeout(function(){b.textContent='Поделиться гайдом'},1800)},function(){window.open('https://t.me/share/url?url='+encodeURIComponent(GUIDE_URL)+'&text='+encodeURIComponent(d.text),'_blank')})}catch(e){window.open('https://t.me/share/url?url='+encodeURIComponent(GUIDE_URL),'_blank')}}
  try{if(navigator.share){navigator.share(d).catch(function(){});}else cp()}catch(e){cp()}});
