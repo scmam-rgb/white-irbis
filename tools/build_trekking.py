@@ -132,6 +132,12 @@ svg.append('</g><image href="img/logo.png" x="20" y="476" width="44" height="44"
 overview = "\n".join(svg)
 
 CSS_EXTRA = r"""
+.mo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:36px}
+.mo-grid img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.mo-grid figcaption{margin-top:10px;font-size:15px;color:var(--muted)}
+.mo-grid figcaption b{display:block;font-family:var(--display);font-weight:600;font-size:20px;text-transform:uppercase;color:var(--ink)}
+@media (max-width:960px){.mo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 /* trekking additions */
 .day{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 .day .trk{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;background:var(--deep);color:var(--on-deep);border-radius:6px;overflow:hidden}
@@ -225,7 +231,7 @@ page = f'''<!doctype html>
 </header>
 
 <section class="hero" id="top">
-  <div class="hero-photos" aria-hidden="true"><img src="img/u_hero_ridge.jpg" alt="" style="object-position:50% 45%"></div>
+  <div class="hero-photos" aria-hidden="true"><img src="img/u_green_valley.jpg" alt="" style="object-position:50% 55%"><video class="hero-vid" src="vid/walk.mp4" poster="img/f_walk.jpg" muted loop playsinline preload="metadata"></video></div>
   <div class="wrap">
     <span class="alt">{t("Армения · 7 дней · май — октябрь","Armenia · 7 days · May — October","Հայաստան · 7 օր · մայիս — հոկտեմբեր")}</span>
     <h1>{t("Армения","Armenia","Հայաստան")}<br><em>{t("пешком","on foot","ոտքով")}</em></h1>
@@ -247,10 +253,23 @@ page = f'''<!doctype html>
   </dl></div>
 </section>
 
+<section class="motion" id="motion" style="padding-bottom:0">
+  <div class="wrap">
+    <span class="eyebrow">{t("Как это выглядит","What it looks like","Ինչպես է դա երևում")}</span>
+    <h2 class="h2">{t("С наших выходов в горы","From our days in the mountains","Մեր լեռնային ելքերից")}</h2>
+    <div class="mo-grid">
+      <figure><span class="hv"><img src="img/f_walk.jpg" alt="Двое с рюкзаками идут по зелёному плато, позади снежные вершины" loading="lazy"><video src="vid/walk.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("По тропе","On the trail","Արահետով")}</b> {t("Идём в темпе группы, с привалами","At the group's pace, with rests","Խմբի տեմպով, դադարներով")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_v12.jpg" alt="Красные маки на склоне, внизу зелёные хребты" loading="lazy"><video src="vid/v12.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Весна","Spring","Գարուն")}</b> {t("Склоны в цветах и зелёные хребты","Slopes in flower and green ridges","Ծաղկած լանջեր և կանաչ լեռնաշղթաներ")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_v06.jpg" alt="Золотая трава и горные долины" loading="lazy"><video src="vid/v06.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Осень","Autumn","Աշուն")}</b> {t("Золотые травы и прозрачный воздух","Golden grass and clear air","Ոսկեգույն խոտ և թափանցիկ օդ")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_v08.jpg" alt="Участница в красной куртке у снежника на Арагаце" loading="lazy"><video src="vid/v08.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Арагац","Aragats","Արագած")}</b> {t("Снежники даже летом — берите тёплый слой","Snowfields even in summer — bring a warm layer","Ձնադաշտեր նույնիսկ ամռանը՝ վերցրեք տաք շերտ")}</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section id="who">
   <div class="wrap">
     <span class="eyebrow">{t("Для кого","Who it's for","Ում համար է")}</span>
-    <h2 class="h2">{t("Ходить умеют все","Everyone can walk","Քայլել բոլորը գիտեն")}</h2>
+    <h2 class="h2">{t("Следуй за White Irbis","Follow the White Irbis","Հետևիր White Irbis-ին")}</h2>
     <div class="who-grid">
       <div class="who"><h3>{t("Первый поход","Your first hike","Առաջին արշավ")}</h3><p>{t("Тропы по 5–12 км, набор до 700 м в день. Рюкзак лёгкий: обед несём с собой, вечером возвращаемся в гостиницу.","Trails of 5–12 km with up to 700 m of climbing a day. A light pack: we carry lunch and return to the hotel every evening.","Արահետներ՝ 5–12 կմ, օրական մինչև 700 մ բարձրացում։ Թեթև ուսապարկ՝ ճաշը վերցնում ենք հետներս, երեկոյան վերադառնում հյուրանոց։")}</p></div>
       <div class="who"><h3>{t("Армения целиком","All of Armenia","Ամբողջ Հայաստանը")}</h3><p>{t("Каждый день новый пейзаж: ущелье с базальтом, альпийский хребет, лес Дилижана, Севан, красные скалы юга и вулкан.","A new landscape every day: a basalt gorge, an alpine ridge, the Dilijan forest, Sevan, the red cliffs of the south and a volcano.","Ամեն օր նոր բնանկար՝ բազալտե կիրճ, ալպյան լեռնաշղթա, Դիլիջանի անտառ, Սևան, հարավի կարմիր ժայռեր և հրաբուխ։")}</p></div>
@@ -360,7 +379,7 @@ page = f'''<!doctype html>
           <li>{t("Купальник — для Севана","Swimwear for Sevan","Լողազգեստ Սևանի համար")}</li>
         </ul>
       </div>
-      <figure><span class="hv"><img src="img/u_hero_ridge.jpg" alt="Группа идёт по каменному гребню над озером" loading="lazy" style="aspect-ratio:3/4;object-fit:cover"><video src="vid/v12.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption class="credit">{t("Выезд White Irbis на Арагац","A White Irbis trip to Aragats","White Irbis-ի ելքը Արագած")}</figcaption></figure>
+      <figure><img src="img/u_hero_ridge.jpg" alt="Группа идёт по каменному гребню над озером" loading="lazy" style="aspect-ratio:3/4;object-fit:cover;border-radius:6px"><figcaption class="credit">{t("Выезд White Irbis на Арагац","A White Irbis trip to Aragats","White Irbis-ի ելքը Արագած")}</figcaption></figure>
     </div>
   </div>
 </section>
@@ -430,6 +449,15 @@ page = f'''<!doctype html>
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   items.forEach(function(el){{el.addEventListener('mouseenter',function(){{play(el)}});el.addEventListener('mouseleave',function(){{stop(el)}});el.addEventListener('click',function(){{el.classList.contains('on')?stop(el):play(el)}});}});
   if(!canHover&&!reduce&&'IntersectionObserver' in window){{var io=new IntersectionObserver(function(es){{es.forEach(function(e){{e.intersectionRatio>0.6?play(e.target):stop(e.target)}})}},{{threshold:[0,0.6]}});items.forEach(function(el){{io.observe(el)}});}}
+}})();
+(function(){{
+  var h=document.querySelector('.hero'),v=h&&h.querySelector('.hero-vid'),ph=h&&h.querySelector('.hero-photos');if(!v)return;
+  function on(){{var p=v.play();if(p&&p.catch)p.catch(function(){{}});h.classList.add('on')}}
+  function off(){{v.pause();h.classList.remove("on");setTimeout(function(){{if(!h.classList.contains("on"))v.currentTime=0}},650)}}
+  var hover=window.matchMedia('(hover:hover)').matches,reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)return;
+  if(hover){{h.addEventListener('mousemove',function(e){{var r=ph.getBoundingClientRect();(e.clientX>=r.left)?(h.classList.contains('on')||on()):(h.classList.contains('on')&&off())}});h.addEventListener('mouseleave',off);setTimeout(on,2500)}}
+  else{{setTimeout(on,2500)}}
 }})();
 (function(){{var h=document.documentElement,b=[].slice.call(document.querySelectorAll('.lang button'));
 var t={{ru:'Армения пешком — White Irbis',en:'Armenia on Foot — White Irbis',hy:'Հայաստան ոտքով — White Irbis'}};
