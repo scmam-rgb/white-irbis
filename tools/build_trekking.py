@@ -289,10 +289,10 @@ page = f'''<!doctype html>
     <span class="eyebrow">{t("Как это выглядит","What it looks like","Ինչպես է դա երևում")}</span>
     <h2 class="h2">{t("С наших выходов в горы","From our days in the mountains","Մեր լեռնային ելքերից")}</h2>
     <div class="mo-grid">
-      <figure><span class="hv"><img src="img/f_v09.jpg" alt="Вид с горного гребня на долины и снежники" loading="lazy"><video src="vid/v09.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("На гребне","On the ridge","Լեռնաշղթայի վրա")}</b> {t("Виды на десятки километров","Views for dozens of kilometres","Տեսարաններ տասնյակ կիլոմետրերով")}</figcaption></figure>
-      <figure><span class="hv"><img src="img/f_v06.jpg" alt="Золотая трава и горные долины" loading="lazy"><video src="vid/v06.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Осень","Autumn","Աշուն")}</b> {t("Золотые травы и прозрачный воздух","Golden grass and clear air","Ոսկեգույն խոտ և թափանցիկ օդ")}</figcaption></figure>
-      <figure><span class="hv"><img src="img/f_v08.jpg" alt="Участница в красной куртке у снежника на Арагаце" loading="lazy"><video src="vid/v08.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Арагац","Aragats","Արագած")}</b> {t("Снежники даже летом — берите тёплый слой","Snowfields even in summer — bring a warm layer","Ձնադաշտեր նույնիսկ ամռանը՝ վերցրեք տաք շերտ")}</figcaption></figure>
-      <figure><span class="hv"><img src="img/f_v05.jpg" alt="Группа на вершине у креста" loading="lazy"><video src="vid/v05.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Вершина","Summit","Գագաթ")}</b> {t("Вся группа наверху","The whole group on top","Ամբողջ խումբը վերևում")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_t_ridge.jpg" alt="Группа идёт по каменистой тропе на гребне" loading="lazy"><video src="vid/t_ridge.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("По тропе","On the trail","Արահետով")}</b> {t("Идём в темпе группы, с привалами","At the group's pace, with rests","Խմբի տեմպով, դադարներով")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_t_rest.jpg" alt="Двое на привале смотрят на Арарат" loading="lazy"><video src="vid/t_rest.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Привал","A rest stop","Դադար")}</b> {t("С видом на Арарат","With a view of Ararat","Արարատի տեսարանով")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_t_canyon.jpg" alt="Скальные ущелья юга Армении на закате" loading="lazy"><video src="vid/t_canyon.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Ущелья юга","Gorges of the south","Հարավի կիրճերը")}</b> {t("Красные скалы и крепости над обрывом","Red cliffs and fortresses above the drop","Կարմիր ժայռեր և ամրոցներ զառիթափի վրա")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_v05.jpg" alt="Группа на вершине Арагаца у креста" loading="lazy"><video src="vid/v05.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Арагац","Aragats","Արագած")}</b> {t("Вся группа на вершине","The whole group on the summit","Ամբողջ խումբը գագաթին")}</figcaption></figure>
     </div>
   </div>
 </section>
@@ -410,7 +410,7 @@ page = f'''<!doctype html>
           <li>{t("Купальник — для Севана","Swimwear for Sevan","Լողազգեստ Սևանի համար")}</li>
         </ul>
       </div>
-      <figure><img src="img/u_hero_ridge.jpg" alt="Группа идёт по каменному гребню над озером" loading="lazy" style="aspect-ratio:3/4;object-fit:cover;border-radius:6px"><figcaption class="credit">{t("Выезд White Irbis на Арагац","A White Irbis trip to Aragats","White Irbis-ի ելքը Արագած")}</figcaption></figure>
+      <figure><img src="img/u_crater.jpg" alt="Группа на гребне кратера Арагаца" loading="lazy" style="aspect-ratio:3/4;object-fit:cover;border-radius:6px"><figcaption class="credit">{t("Выезд White Irbis на Арагац","A White Irbis trip to Aragats","White Irbis-ի ելքը Արագած")}</figcaption></figure>
     </div>
   </div>
 </section>
