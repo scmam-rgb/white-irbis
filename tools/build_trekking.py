@@ -4,7 +4,11 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 base_css = (ROOT / "skaly-i-vulkan/index.html").read_text(encoding="utf-8")
 base_css = re.search(r"<style>(.*?)</style>", base_css, re.S).group(1)
 
+def _nb(x):
+    return re.sub(r'(?<=\d) (?=\d{3}(?!\d))', '\u00a0', x)
+
 def t(ru, en, hy):
+    ru, en, hy = _nb(ru), _nb(en), _nb(hy)
     return f'<span lang="ru">{ru}</span><span lang="en">{en}</span><span lang="hy">{hy}</span>'
 
 def ts(ru, en, hy):  # svg
@@ -132,6 +136,10 @@ svg.append('</g><image href="img/logo.png" x="20" y="476" width="44" height="44"
 overview = "\n".join(svg)
 
 CSS_EXTRA = r"""
+.pg-url{font-size:14px;letter-spacing:.04em;color:var(--on-deep-muted);text-decoration:none;align-self:flex-start;border-bottom:1px solid rgba(247,244,236,.25)}
+.pg-url:hover{color:var(--eye)}
+.reqs dd.url{font-size:18px;font-family:var(--body);overflow-wrap:anywhere}
+
 .mo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:36px}
 .mo-grid img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .mo-grid figcaption{margin-top:10px;font-size:15px;color:var(--muted)}
@@ -139,7 +147,6 @@ CSS_EXTRA = r"""
 @media (max-width:960px){.mo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* trekking additions */
-.day{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 .day .trk{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;background:var(--deep);color:var(--on-deep);border-radius:6px;overflow:hidden}
 .trk-map{position:relative;min-height:230px;display:flex;align-items:center;justify-content:center;padding:44px 24px 46px;
   background-color:#151513;background-image:linear-gradient(#22211e 1px,transparent 1px),linear-gradient(90deg,#22211e 1px,transparent 1px);background-size:28px 28px}
@@ -166,7 +173,7 @@ CSS_EXTRA = r"""
 .day1 h3{font-size:30px;text-transform:uppercase;margin-top:6px}
 .day1 p{color:var(--muted);margin-top:8px;max-width:70ch}
 .ask{font-family:var(--display);font-size:clamp(52px,8vw,96px);font-weight:700;line-height:.95}
-.ask small{font-size:.3em;font-weight:500;display:block;margin-top:10px;font-family:var(--body)}
+.ask small{font-size:17px;line-height:1.4;font-weight:500;display:block;margin-top:14px;font-family:var(--body);max-width:34ch}
 @media (max-width:960px){.summit7{grid-template-columns:1fr}}
 .summit7 .st{grid-template-columns:1fr}
 @media (max-width:640px){
@@ -189,9 +196,9 @@ CSS_EXTRA = r"""
   .eyebrow,.h2,.mark{break-after:avoid}
   .route,.inc-grid,.price .wrap,.guides{break-inside:avoid}
   .eyebrow{display:block}
-  #places{break-before:page}
+  #places,#program{break-before:page}
   #stay{padding-bottom:8px}
-  .lead{break-inside:avoid}
+  .lead,.day1{break-inside:avoid}
 }
 """
 
@@ -231,7 +238,7 @@ page = f'''<!doctype html>
 </header>
 
 <section class="hero" id="top">
-  <div class="hero-photos" aria-hidden="true"><img src="img/u_green_valley.jpg" alt="" style="object-position:50% 55%"><video class="hero-vid" src="vid/walk.mp4" poster="img/f_walk.jpg" muted loop playsinline preload="metadata"></video></div>
+  <div class="hero-photos" aria-hidden="true"><img src="img/hero_valley.jpg" alt="" style="object-position:50% 55%"><video class="hero-vid" src="vid/v12.mp4" muted loop playsinline preload="metadata"></video></div>
   <div class="wrap">
     <span class="alt">{t("Армения · 7 дней · май — октябрь","Armenia · 7 days · May — October","Հայաստան · 7 օր · մայիս — հոկտեմբեր")}</span>
     <h1>{t("Армения","Armenia","Հայաստան")}<br><em>{t("пешком","on foot","ոտքով")}</em></h1>
@@ -240,6 +247,7 @@ page = f'''<!doctype html>
       <a class="cta" href="#price">{t("Хочу в горы","Take me to the mountains","Ուզում եմ լեռներ")}</a>
       <span class="price-chip">{t("Цена по запросу","Price on request","Գինը՝ ըստ հարցման")}<small>{t("ответим в WhatsApp","we'll reply on WhatsApp","կպատասխանենք WhatsApp-ով")}</small></span>
     </div>
+    <a class="pg-url" href="https://scmam-rgb.github.io/white-irbis/trekking/">scmam-rgb.github.io/white-irbis/trekking</a>
   </div>
 </section>
 
@@ -258,10 +266,10 @@ page = f'''<!doctype html>
     <span class="eyebrow">{t("Как это выглядит","What it looks like","Ինչպես է դա երևում")}</span>
     <h2 class="h2">{t("С наших выходов в горы","From our days in the mountains","Մեր լեռնային ելքերից")}</h2>
     <div class="mo-grid">
-      <figure><span class="hv"><img src="img/f_walk.jpg" alt="Двое с рюкзаками идут по зелёному плато, позади снежные вершины" loading="lazy"><video src="vid/walk.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("По тропе","On the trail","Արահետով")}</b> {t("Идём в темпе группы, с привалами","At the group's pace, with rests","Խմբի տեմպով, դադարներով")}</figcaption></figure>
-      <figure><span class="hv"><img src="img/f_v12.jpg" alt="Красные маки на склоне, внизу зелёные хребты" loading="lazy"><video src="vid/v12.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Весна","Spring","Գարուն")}</b> {t("Склоны в цветах и зелёные хребты","Slopes in flower and green ridges","Ծաղկած լանջեր և կանաչ լեռնաշղթաներ")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_v09.jpg" alt="Вид с горного гребня на долины и снежники" loading="lazy"><video src="vid/v09.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("На гребне","On the ridge","Լեռնաշղթայի վրա")}</b> {t("Виды на десятки километров","Views for dozens of kilometres","Տեսարաններ տասնյակ կիլոմետրերով")}</figcaption></figure>
       <figure><span class="hv"><img src="img/f_v06.jpg" alt="Золотая трава и горные долины" loading="lazy"><video src="vid/v06.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Осень","Autumn","Աշուն")}</b> {t("Золотые травы и прозрачный воздух","Golden grass and clear air","Ոսկեգույն խոտ և թափանցիկ օդ")}</figcaption></figure>
       <figure><span class="hv"><img src="img/f_v08.jpg" alt="Участница в красной куртке у снежника на Арагаце" loading="lazy"><video src="vid/v08.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Арагац","Aragats","Արագած")}</b> {t("Снежники даже летом — берите тёплый слой","Snowfields even in summer — bring a warm layer","Ձնադաշտեր նույնիսկ ամռանը՝ վերցրեք տաք շերտ")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_v05.jpg" alt="Группа на вершине у креста" loading="lazy"><video src="vid/v05.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Вершина","Summit","Գագաթ")}</b> {t("Вся группа наверху","The whole group on top","Ամբողջ խումբը վերևում")}</figcaption></figure>
     </div>
   </div>
 </section>
@@ -308,7 +316,7 @@ page = f'''<!doctype html>
 {days_html}
     </ol>
     <div class="summit7">
-      <figure><span class="hv"><img src="img/kari.jpg" alt="Озеро Кари и склон Арагаца" loading="lazy"><video src="vid/v05.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span>{credit("Wowan1978","CC BY-SA 4.0")}</figure>
+      <figure><img src="img/kari.jpg" alt="Озеро Кари и склон Арагаца" loading="lazy">{credit("Wowan1978","CC BY-SA 4.0")}</figure>
       <div>
         <span class="mark">{t("День 7","Day 7","Օր 7")}</span>
         <h3 style="font-size:34px;text-transform:uppercase;margin-top:10px">{t("Вершина Арагаца","The summit of Aragats","Արագածի գագաթ")}</h3>
@@ -340,7 +348,7 @@ page = f'''<!doctype html>
       <article class="place"><img src="img/khorvirap.jpg" alt="Монастырь Хор Вирап на фоне Арарата" loading="lazy"><h3>{t("Хор Вирап","Khor Virap","Խոր Վիրապ")}</h3><p>{t("Монастырь на холме у подножия Арарата — лучший вид на гору из Армении.","A monastery on a hill at the foot of Ararat — the best view of the mountain from Armenia.","Վանք բլրի վրա Արարատի ստորոտին՝ լեռան լավագույն տեսարանը Հայաստանից։")}</p><p class="credit">{t("Фото: ","Photo: ","Լուսանկար՝ ")}Diego Delso, CC BY-SA 4.0, Wikimedia Commons</p></article>
       <article class="place"><img src="img/noravank.jpg" alt="Монастырь Нораванк среди красных скал" loading="lazy"><h3>{t("Нораванк и Арени-1","Noravank and Areni-1","Նորավանք և Արենի-1")}</h3><p>{t("Монастырь XIII века среди красных скал ущелья и пещера, где нашли древнейшую известную винодельню мира.","A 13th-century monastery among red cliffs, and the cave where the world's oldest known winery was found.","XIII դարի վանք կարմիր ժայռերի մեջ և քարանձավ, որտեղ գտել են աշխարհի ամենահին հայտնի գինեգործարանը։")}</p><p class="credit">{t("Фото: ","Photo: ","Լուսանկար՝ ")}Diego Delso, CC BY-SA 4.0, Wikimedia Commons</p></article>
     </div>
-    <figure class="summit"><span class="hv"><img src="img/aragpano.jpg" alt="Панорама вершин Арагаца из кратера" loading="lazy"><video src="vid/v09.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption class="credit">{t("Вершины Арагаца из кратера. Фото: vahemart, CC BY-SA 3.0, Wikimedia Commons","The Aragats summits from the crater. Photo: vahemart, CC BY-SA 3.0, Wikimedia Commons","Արագածի գագաթները խառնարանից։ Լուսանկար՝ vahemart, CC BY-SA 3.0, Wikimedia Commons")}</figcaption></figure>
+    <figure class="summit"><img src="img/aragpano.jpg" alt="Панорама вершин Арагаца из кратера" loading="lazy" style="border-radius:6px"><figcaption class="credit">{t("Вершины Арагаца из кратера. Фото: vahemart, CC BY-SA 3.0, Wikimedia Commons","The Aragats summits from the crater. Photo: vahemart, CC BY-SA 3.0, Wikimedia Commons","Արագածի գագաթները խառնարանից։ Լուսանկար՝ vahemart, CC BY-SA 3.0, Wikimedia Commons")}</figcaption></figure>
   </div>
 </section>
 
@@ -426,6 +434,7 @@ page = f'''<!doctype html>
       <dl class="reqs">
         <div><dt>{t("Телефон, WhatsApp, Telegram","Phone, WhatsApp, Telegram","Հեռախոս, WhatsApp, Telegram")}</dt><dd><a href="tel:+{PHONE}">+374 91 470 331</a></dd></div>
         <div><dt>{t("Почта","Email","Էլ. փոստ")}</dt><dd><a href="mailto:antuanvisit@gmail.com">antuanvisit@gmail.com</a></dd></div>
+        <div><dt>{t("Страница тура","Tour page","Տուրի էջը")}</dt><dd class="url"><a href="https://scmam-rgb.github.io/white-irbis/trekking/">scmam-rgb.github.io/white-irbis/trekking</a></dd></div>
         <div><dt>{t("Сайт","Website","Կայք")}</dt><dd><a href="https://irbis.am" target="_blank" rel="noopener">irbis.am</a></dd></div>
       </dl>
     </div>
@@ -434,8 +443,8 @@ page = f'''<!doctype html>
 
 <footer>
   <div class="wrap">
-    <p><b>White Irbis</b> {t("· горные программы в Армении · irbis.am ·","· mountain programmes in Armenia · irbis.am ·","· լեռնային ծրագրեր Հայաստանում · irbis.am ·")} <a href="tel:+{PHONE}">+374 91 470 331</a> (WhatsApp, Telegram) · antuanvisit@gmail.com</p>
-    <p>{t("Ещё у нас:","Also from us:","Նաև մեզ մոտ՝")} <a href="../skaly-i-vulkan/">{t("Скалы и вулкан","Rocks and Volcano","Ժայռեր և հրաբուխ")}</a> · <a href="../ski/">{t("Горные лыжи с нуля","Skiing from scratch","Լեռնադահուկ զրոյից")}</a> · <a href="../gaidbuk/">{t("Гайдбук «Скалы Армении»","Guidebook «Rocks of Armenia»","«Հայաստանի ժայռեր» ուղեցույց")}</a></p>
+    <p><b>White Irbis</b> {t("· горные программы в Армении · irbis.am ·","· mountain programmes in Armenia · irbis.am ·","· լեռնային ծրագրեր Հայաստանում · irbis.am ·")} <a href="tel:+{PHONE}">+374 91 470 331</a> (WhatsApp, Telegram) · antuanvisit@gmail.com · <a href="https://scmam-rgb.github.io/white-irbis/trekking/">scmam-rgb.github.io/white-irbis/trekking</a></p>
+    <p>{t("Ещё у нас:","Also from us:","Նաև մեզ մոտ՝")} <a href="../skaly-i-vulkan/">{t("Скалы и вулкан","Rocks and Volcano","Ժայռեր և հրաբուխ")}</a> · <a href="../weekend/">{t("Скалы за выходные","Rocks in a weekend","Ժայռեր հանգստյան օրերին")}</a> · <a href="../ski/">{t("Горные лыжи с нуля","Skiing from scratch","Լեռնադահուկ զրոյից")}</a> · <a href="../gaidbuk/">{t("Гайдбук «Скалы Армении»","Guidebook «Rocks of Armenia»","«Հայաստանի ժայռեր» ուղեցույց")}</a></p>
     <p>{t("Фото Wikimedia Commons — по лицензиям CC BY и CC BY-SA, авторы указаны под снимками. Схемы троп нарисованы по трекам гида. Остальные фото — архив White Irbis.","Wikimedia Commons photos are used under CC BY and CC BY-SA licences; authors are credited under each image. Trail sketches are drawn from our guide's tracks. All other photos are from the White Irbis archive.","Wikimedia Commons-ի լուսանկարները՝ CC BY և CC BY-SA լիցենզիաներով, հեղինակները նշված են լուսանկարների տակ։ Արահետների սխեմաները գծված են գիդի տրեկերով։ Մնացած լուսանկարները White Irbis-ի արխիվից են։")}</p>
   </div>
 </footer>
