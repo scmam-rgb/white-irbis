@@ -1,0 +1,7 @@
+hike|hiking Armenia
+tct|Transcaucasian Trail
+dil|Dilijan forest
+arag|Aragats
+garni|Garni gorge
+sevan|Sevan
+mount|Armenia mountains
