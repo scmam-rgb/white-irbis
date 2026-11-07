@@ -149,8 +149,8 @@ CSS_EXTRA = r"""
 .pg-url:hover{color:var(--eye)}
 .reqs dd.url{font-size:18px;font-family:var(--body);overflow-wrap:anywhere}
 
-.mo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:36px}
-.mo-grid img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.mo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px}
+.mo-grid img{width:100%;aspect-ratio:1/1;object-fit:cover}
 .mo-grid figcaption{margin-top:10px;font-size:15px;color:var(--muted)}
 .mo-grid figcaption b{display:block;font-family:var(--display);font-weight:600;font-size:20px;text-transform:uppercase;color:var(--ink)}
 @media (max-width:960px){.mo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -261,7 +261,7 @@ page = f'''<!doctype html>
 </header>
 
 <section class="hero" id="top">
-  <div class="hero-photos" aria-hidden="true"><img src="img/hero_valley.jpg" alt="" style="object-position:50% 55%"><video class="hero-vid" src="vid/v12.mp4" muted loop playsinline preload="metadata"></video></div>
+  <div class="hero-photos" aria-hidden="true"><img src="img/hero_valley.jpg" alt="" style="object-position:50% 55%"><video class="hero-vid" src="vid/hero_meadow.mp4" muted loop playsinline preload="metadata"></video></div>
   <div class="wrap">
     <span class="alt">{t("Армения · 7 дней · май — октябрь","Armenia · 7 days · May — October","Հայաստան · 7 օր · մայիս — հոկտեմբեր")}</span>
     <h1>{t("Армения","Armenia","Հայաստան")}<br><em>{t("пешком","on foot","ոտքով")}</em></h1>
@@ -287,11 +287,13 @@ page = f'''<!doctype html>
 <section class="motion" id="motion" style="padding-bottom:0">
   <div class="wrap">
     <span class="eyebrow">{t("Как это выглядит","What it looks like","Ինչպես է դա երևում")}</span>
-    <h2 class="h2">{t("С наших выходов в горы","From our days in the mountains","Մեր լեռնային ելքերից")}</h2>
+    <h2 class="h2">{t("Как ходим мы","How we walk","Ինչպես ենք քայլում")}</h2>
     <div class="mo-grid">
-      <figure><span class="hv"><img src="img/f_t_ridge.jpg" alt="Группа идёт по каменистой тропе на гребне" loading="lazy"><video src="vid/t_ridge.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("По тропе","On the trail","Արահետով")}</b> {t("Идём в темпе группы, с привалами","At the group's pace, with rests","Խմբի տեմպով, դադարներով")}</figcaption></figure>
-      <figure><span class="hv"><img src="img/f_t_rest.jpg" alt="Двое на привале смотрят на Арарат" loading="lazy"><video src="vid/t_rest.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Привал","A rest stop","Դադար")}</b> {t("С видом на Арарат","With a view of Ararat","Արարատի տեսարանով")}</figcaption></figure>
-      <figure><span class="hv"><img src="img/f_t_canyon.jpg" alt="Скальные ущелья юга Армении на закате" loading="lazy"><video src="vid/t_canyon.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Ущелья юга","Gorges of the south","Հարավի կիրճերը")}</b> {t("Красные скалы и крепости над обрывом","Red cliffs and fortresses above the drop","Կարմիր ժայռեր և ամրոցներ զառիթափի վրա")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_tr_gorge.jpg" alt="Группа с рюкзаками идёт по тропе в красном ущелье" loading="lazy"><video src="vid/tr_gorge.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Красное ущелье","The red gorge","Կարմիր կիրճ")}</b> {t("Идём цепочкой между скал","Single file between the cliffs","Շարքով քայլում ենք ժայռերի միջով")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_tr_plateau.jpg" alt="Две участницы с палками идут по плато, вдали Арарат" loading="lazy"><video src="vid/tr_plateau.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Плато","The plateau","Սարահարթ")}</b> {t("Широкая тропа и Арарат на горизонте","A broad trail with Ararat on the horizon","Լայն արահետ և Արարատը հորիզոնում")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_tr_fins.jpg" alt="Группа поднимается по узкому проходу между скальных гребней" loading="lazy"><video src="vid/tr_fins.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Скальный коридор","Rock corridor","Ժայռային միջանցք")}</b> {t("Местами тропа идёт между гребней","In places the trail squeezes between ridges","Տեղ-տեղ արահետն անցնում է կատարների միջով")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_tr_hand.jpg" alt="Гид подаёт руку участнице на скальном уступе" loading="lazy"><video src="vid/tr_hand.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Подадим руку","We'll give you a hand","Ձեռք կմեկնենք")}</b> {t("На сложных местах гид рядом","The guide is beside you on tricky bits","Բարդ հատվածներում գիդը կողքիդ է")}</figcaption></figure>
+      <figure><span class="hv"><img src="img/f_tr_canyon.jpg" alt="Группа идёт по сухому каньону с песчаными стенами" loading="lazy"><video src="vid/tr_canyon.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Каньон","The canyon","Կանիոն")}</b> {t("Сухие русла и песчаные стены","Dry streambeds and sandstone walls","Չոր հուներ և ավազաքարե պատեր")}</figcaption></figure>
       <figure><span class="hv"><img src="img/f_v05.jpg" alt="Группа на вершине Арагаца у креста" loading="lazy"><video src="vid/v05.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i class="hv-badge" aria-hidden="true"></i></span><figcaption><b>{t("Арагац","Aragats","Արագած")}</b> {t("Вся группа на вершине","The whole group on the summit","Ամբողջ խումբը գագաթին")}</figcaption></figure>
     </div>
   </div>
