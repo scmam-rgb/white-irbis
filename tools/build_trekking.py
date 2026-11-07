@@ -136,6 +136,10 @@ svg.append('</g><image href="img/logo.png" x="20" y="476" width="44" height="44"
 overview = "\n".join(svg)
 
 CSS_EXTRA = r"""
+@media (max-width:360px){.lang{margin-left:8px}.lang button{padding:6px 7px}.brand img{width:70px;height:70px}summary{overflow-wrap:anywhere}}
+
+@media (max-width:640px){html[lang="hy"] .h2{font-size:clamp(26px,7.6vw,40px)}.h2{overflow-wrap:break-word}}
+
 @media (max-width:1180px){.top nav{display:none}}
 .price-chip small{display:block;margin:6px 0 0;font-size:14px}
 .hero-photos::after{background:linear-gradient(90deg,var(--deep) 0%,rgba(18,18,18,.6) 14%,rgba(18,18,18,0) 40%),linear-gradient(180deg,rgba(10,10,9,.45) 0%,rgba(10,10,9,0) 30%)}
