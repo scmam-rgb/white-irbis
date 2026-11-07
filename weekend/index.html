@@ -141,6 +141,9 @@ html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,san
 .sl .s2{font-size:1em;font-weight:600;letter-spacing:.06em;margin-right:-.06em;color:#F7F4EC}
 .sl b{font-weight:600;color:#FAEB0F}
 @media (max-width:520px){.lockup{flex-direction:column;align-items:flex-start;gap:12px}.sl{font-size:17px;border-left:0;padding:0}}
+.msg{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.msg .cta{white-space:nowrap}.cta.tg{background:transparent;color:var(--eye);box-shadow:inset 0 0 0 2px var(--eye)}
+.reqs dd a[href^="mailto"]{font-size:.8em;overflow-wrap:anywhere}
+@media (max-width:640px){.msg .cta{font-size:17px;padding:14px 20px}}
 </style>
 
 <header class="top"><div class="wrap">
@@ -259,9 +262,10 @@ html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,san
   <div class="contact">
     <h3><span lang="ru">Едем на скалы?</span><span lang="en">Ready to climb?</span><span lang="hy">Գնո՞ւմ ենք ժայռեր</span></h3>
     <p><span lang="ru">Напишите — пришлём ближайшие даты.</span><span lang="en">Message us for the next dates.</span><span lang="hy">Գրեք մեզ՝ կուղարկենք մոտակա ամսաթվերը։</span></p>
-    <a class="cta wa" id="wa" href="https://wa.me/37491470331" target="_blank" rel="noopener"><span lang="ru">Написать в WhatsApp</span><span lang="en">WhatsApp us</span><span lang="hy">Գրել WhatsApp-ով</span></a>
+    <div class="msg"><a class="cta wa" id="wa" href="https://wa.me/37491470331" target="_blank" rel="noopener"><span lang="ru">Написать в WhatsApp</span><span lang="en">WhatsApp us</span><span lang="hy">Գրել WhatsApp-ով</span></a><a class="cta tg" href="https://t.me/+37491470331" target="_blank" rel="noopener"><span lang="ru">Написать в Telegram</span><span lang="en">Message on Telegram</span><span lang="hy">Գրել Telegram-ով</span></a></div>
     <dl class="reqs">
-      <div><dt><span lang="ru">Телефон и WhatsApp</span><span lang="en">Phone & WhatsApp</span><span lang="hy">Հեռախոս և WhatsApp</span></dt><dd><a href="tel:+37491470331">+374 91 470 331</a></dd></div>
+      <div><dt><span lang="ru">Телефон, WhatsApp, Telegram</span><span lang="en">Phone, WhatsApp, Telegram</span><span lang="hy">Հեռախոս, WhatsApp, Telegram</span></dt><dd><a href="tel:+37491470331">+374 91 470 331</a></dd></div>
+      <div><dt><span lang="ru">Почта</span><span lang="en">Email</span><span lang="hy">Էլ. փոստ</span></dt><dd><a href="mailto:antuanvisit@gmail.com">antuanvisit@gmail.com</a></dd></div>
       <div><dt><span lang="ru">Сайт</span><span lang="en">Website</span><span lang="hy">Կայք</span></dt><dd><a href="https://irbis.am" target="_blank" rel="noopener">irbis.am</a></dd></div>
     </dl>
   </div>
