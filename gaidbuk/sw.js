@@ -1,4 +1,4 @@
-const C='gaidbuk-v3';
+const C='gaidbuk-v4';
 const CORE=['./','index.html','manifest.webmanifest','img/icon-192.png','img/icon-512.png','img/apple-touch-icon.png','img/favicon-32.png','favicon.ico'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
