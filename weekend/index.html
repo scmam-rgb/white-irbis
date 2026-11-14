@@ -57,7 +57,7 @@ html[lang="hy"] .hero h1{font-size:clamp(44px,7vw,92px)}
 .hero-media img,.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero-media video{opacity:0;transition:opacity .6s}
 .hero.on .hero-media video{opacity:1}
-.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--deep) 0%,rgba(18,18,18,0) 24%)}
+.hero-media::after{content:"";position:absolute;inset:0;background:none;box-shadow:inset 10px 0 0 var(--eye)}
 .hero .wrap{position:relative;z-index:2;min-height:660px;padding-block:170px 64px;display:flex;flex-direction:column;justify-content:flex-end;gap:20px}
 .hero .alt{font-family:var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--eye);font-size:15px}
 .hero h1{font-size:clamp(54px,9vw,120px);text-transform:uppercase}
@@ -67,7 +67,7 @@ html[lang="hy"] .hero h1{font-size:clamp(44px,7vw,92px)}
 .cta{display:inline-flex;background:var(--eye);color:var(--eye-ink);font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:.06em;padding:14px 26px;border-radius:4px;text-decoration:none;font-weight:600}
 .price-chip{font-family:var(--display);font-size:30px}
 .price-chip small{font-family:var(--body);font-size:14px;color:var(--on-deep-muted);margin-left:6px}
-@media (max-width:900px){.hero-media{left:0}.hero-media::after{background:linear-gradient(180deg,rgba(10,10,9,.45),rgba(10,10,9,.15) 30%,rgba(10,10,9,.9) 75%)}}
+@media (max-width:900px){.hero-media{left:0}.hero-media::after{background:linear-gradient(180deg,rgba(10,10,9,.45),rgba(10,10,9,.15) 30%,rgba(10,10,9,.9) 75%);box-shadow:none}}
 
 .facts{background:var(--deep);color:var(--on-deep);padding-block:0 40px}
 .facts dl{display:grid;grid-template-columns:repeat(4,1fr);margin:0;border-top:1px solid #2E2D29}
@@ -151,6 +151,7 @@ html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,san
 @media (max-width:640px){.hero .wrap{padding-top:200px!important}}
 .inc .brief{margin-top:18px;color:var(--on-deep-muted);font-size:15px;border-left:3px solid var(--eye);padding-left:12px}
 </style>
+<style id="hero-edge">@media (min-width:901px){.hero{--tl:calc(max(0px,(100vw - 1120px)/2) + 20px)}.hero-media{left:calc(var(--tl) + 640px)!important}.hero .wrap>*{max-width:600px}.hero h1{font-size:min(9vw,93px)}html[lang="ru"] .hero h1{font-size:min(9vw,93px)}html[lang="en"] .hero h1{font-size:min(9vw,107px)}html[lang="hy"] .hero h1{font-size:min(7vw,64px)}}</style>
 
 <header class="top"><div class="wrap">
   <div class="lockup"><img src="img/logo.png" alt="White Irbis"><span class="sl"><span class="s1">Follow the</span><span class="s2">White <b>Irbis</b></span></span></div>

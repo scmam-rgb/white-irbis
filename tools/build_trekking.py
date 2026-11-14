@@ -142,7 +142,7 @@ CSS_EXTRA = r"""
 
 @media (max-width:1180px){.top nav{display:none}}
 .price-chip small{display:block;margin:6px 0 0;font-size:14px}
-.hero-photos::after{background:linear-gradient(90deg,var(--deep) 0%,rgba(18,18,18,.6) 14%,rgba(18,18,18,0) 40%),linear-gradient(180deg,rgba(10,10,9,.45) 0%,rgba(10,10,9,0) 30%)}
+.hero-photos::after{background:linear-gradient(180deg,rgba(10,10,9,.45) 0%,rgba(10,10,9,0) 30%);box-shadow:inset 10px 0 0 var(--eye)}
 @media (max-width:640px){.hero .wrap{padding-top:196px}}
 
 .pg-url{font-size:14px;letter-spacing:.04em;color:var(--on-deep-muted);text-decoration:none;align-self:flex-start;border-bottom:1px solid rgba(247,244,236,.25)}
@@ -206,8 +206,8 @@ CSS_EXTRA = r"""
   .route,.inc-grid,.price .wrap,.guides{break-inside:avoid}
   .eyebrow{display:block}
   .hero .wrap{min-height:0;padding-block:190px 44px!important}
-  .hero-photos::after{display:none!important}
-  .hero-photos img{content:url(img/hero_valley_print.jpg);object-position:0 50%!important}
+  .hero-photos::after{display:block!important;background:none!important;box-shadow:inset 10px 0 0 #FAEB0F!important}
+  .hero-photos img{object-position:50% 55%!important}
   #motion{padding-top:40px}
   .mo-grid img{aspect-ratio:4/3}
   .mo-grid{margin-top:20px}
