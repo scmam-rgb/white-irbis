@@ -9,7 +9,7 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="skaly-i-vulkan/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Rubik:wght@400;500&family=Noto+Sans+Armenian:wght@400;500&display=swap" rel="stylesheet">
 <style>
 body{margin:0;background:#121212;color:#F7F4EC;font-family:Rubik,Arial,sans-serif}
 .w{max-width:1100px;margin:0 auto;padding:40px 16px}
@@ -36,15 +36,35 @@ footer a{color:#FAEB0F}
 .sl .s2{font-weight:600;letter-spacing:.06em;margin-right:-.06em}
 .sl b{font-weight:600;color:#FAEB0F}
 @media (max-width:520px){header{gap:16px}header img{width:80px;height:80px}.sl{font-size:23px;padding-left:16px}}
+html:not([lang="ru"]) [lang="ru"], html:not([lang="en"]) [lang="en"], html:not([lang="hy"]) [lang="hy"]{display:none!important}
+.lang{display:flex;gap:4px;background:#1E1E1C;border:1px solid #3A3934;border-radius:6px;padding:4px;margin-left:auto;align-self:center}
+.lang button{font:600 14px Rubik,Arial,sans-serif;color:#F7F4EC;background:none;border:0;padding:6px 12px;border-radius:4px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:#FAEB0F;color:#121212}
+html[lang="hy"] body{font-family:Rubik,"Noto Sans Armenian",Arial,sans-serif}
+@media (max-width:520px){header{flex-wrap:wrap}.lang{margin-left:0}}
 </style></head><body><div class="w">
-<header><h1 class="vh">White Irbis — Follow the White Irbis</h1><img src="skaly-i-vulkan/img/logo.png" alt="White Irbis"><span class="sl" aria-hidden="true"><span class="s1">Follow the</span><span class="s2">White <b>Irbis</b></span></span></header>
+<header><h1 class="vh">White Irbis — Follow the White Irbis</h1><img src="skaly-i-vulkan/img/logo.png" alt="White Irbis"><span class="sl" aria-hidden="true"><span class="s1">Follow the</span><span class="s2">White <b>Irbis</b></span></span><div class="lang" role="group" aria-label="Language"><button type="button" data-l="ru" aria-pressed="true">RU</button><button type="button" data-l="en" aria-pressed="false">EN</button><button type="button" data-l="hy" aria-pressed="false">ARM</button></div></header>
 <div class="g">
-<a class="c" href="ski/"><img src="ski/img/preview.jpg" alt="Горные лыжи с нуля"><div>Горные лыжи с нуля · 7 дней · зима</div></a>
-<a class="c" href="skaly-i-vulkan/"><img src="skaly-i-vulkan/img/preview-v2.jpg" alt="Скалы и вулканы"><div>Скалы и вулканы · 7 дней · апрель — ноябрь</div></a>
-<a class="c" href="trekking/"><img src="trekking/img/preview.jpg" alt="Армения пешком"><div>Армения пешком · 7 дней · 95 000 ₽ · май — октябрь</div></a>
-<a class="c" href="extreme-wine/"><img src="extreme-wine/img/preview.jpg" alt="Экстрим вайн тур"><div>Экстрим вайн тур · 5 дней · 89 000 ₽</div></a>
-<a class="c" href="weekend/"><img src="weekend/img/preview.jpg" alt="Скалы за выходные"><div>Скалы за выходные · 2 дня из Еревана</div></a>
-<a class="c" href="gaidbuk/"><img src="gaidbuk/img/og-gaidbuk.jpg" alt="Скалы Армении — гайдбук"><div>Гайдбук «Скалы Армении» · 187 маршрутов</div></a>
+<a class="c" href="ski/"><img lang="ru" src="img/cards/ski-ru.jpg" alt="Горные лыжи с нуля"><img lang="en" src="img/cards/ski-en.jpg" alt="Skiing from scratch"><img lang="hy" src="img/cards/ski-hy.jpg" alt="Լեռնադահուկ զրոյից"><div><span lang="ru">Горные лыжи с нуля · 7 дней · зима</span><span lang="en">Skiing from scratch · 7 days · winter</span><span lang="hy">Լեռնադահուկ զրոյից · 7 օր · ձմեռ</span></div></a>
+<a class="c" href="skaly-i-vulkan/"><img lang="ru" src="img/cards/rocks-ru.jpg" alt="Скалы и вулканы"><img lang="en" src="img/cards/rocks-en.jpg" alt="Rocks and volcanoes"><img lang="hy" src="img/cards/rocks-hy.jpg" alt="Ժայռեր և հրաբուխներ"><div><span lang="ru">Скалы и вулканы · 7 дней · апрель — ноябрь</span><span lang="en">Rocks and volcanoes · 7 days · April — November</span><span lang="hy">Ժայռեր և հրաբուխներ · 7 օր · ապրիլ — նոյեմբեր</span></div></a>
+<a class="c" href="trekking/"><img lang="ru" src="img/cards/trek-ru.jpg" alt="Армения пешком"><img lang="en" src="img/cards/trek-en.jpg" alt="Armenia on foot"><img lang="hy" src="img/cards/trek-hy.jpg" alt="Հայաստան ոտքով"><div><span lang="ru">Армения пешком · 7 дней · 95 000 ₽ · май — октябрь</span><span lang="en">Armenia on foot · 7 days · 95 000 ₽ · May — October</span><span lang="hy">Հայաստան ոտքով · 7 օր · 95 000 ₽ · մայիս — հոկտեմբեր</span></div></a>
+<a class="c" href="extreme-wine/"><img lang="ru" src="img/cards/wine-ru.jpg" alt="Экстрим вайн тур"><img lang="en" src="img/cards/wine-en.jpg" alt="Extreme wine tour"><img lang="hy" src="img/cards/wine-hy.jpg" alt="Էքստրիմ գինու տուր"><div><span lang="ru">Экстрим вайн тур · 5 дней · 89 000 ₽</span><span lang="en">Extreme wine tour · 5 days · 89 000 ₽</span><span lang="hy">Էքստրիմ գինու տուր · 5 օր · 89 000 ₽</span></div></a>
+<a class="c" href="weekend/"><img lang="ru" src="img/cards/weekend-ru.jpg" alt="Скалы за выходные"><img lang="en" src="img/cards/weekend-en.jpg" alt="Rocks in a weekend"><img lang="hy" src="img/cards/weekend-hy.jpg" alt="Ժայռեր հանգստյան օրերին"><div><span lang="ru">Скалы за выходные · 2 дня из Еревана</span><span lang="en">Rocks in a weekend · 2 days from Yerevan</span><span lang="hy">Ժայռեր հանգստյան օրերին · 2 օր Երևանից</span></div></a>
+<a class="c" href="gaidbuk/"><img lang="ru" src="img/cards/guide-ru.jpg" alt="Гайдбук «Скалы Армении»"><img lang="en" src="img/cards/guide-en.jpg" alt="Rocks of Armenia guidebook"><img lang="hy" src="img/cards/guide-hy.jpg" alt="«Հայաստանի ժայռերը» ուղեցույց"><div><span lang="ru">Гайдбук «Скалы Армении» · 304 маршрута</span><span lang="en">Rocks of Armenia guidebook · 304 routes</span><span lang="hy">«Հայաստանի ժայռերը» ուղեցույց · 304 երթուղի</span></div></a>
 </div>
-<footer>WhatsApp и <a href="https://t.me/+37491470331">Telegram</a> <a href="https://wa.me/37491470331">+374 91 470 331</a> · <a href="mailto:antuanvisit@gmail.com">antuanvisit@gmail.com</a> · <a href="https://irbis.am">irbis.am</a></footer>
-</div></body></html>
+<footer>WhatsApp <span lang="ru">и</span><span lang="en">and</span><span lang="hy">և</span> <a href="https://t.me/+37491470331">Telegram</a> <a href="https://wa.me/37491470331">+374 91 470 331</a> · <a href="mailto:antuanvisit@gmail.com">antuanvisit@gmail.com</a> · <a href="https://irbis.am">irbis.am</a></footer>
+</div><script>
+(function(){
+  var html=document.documentElement, btns=[].slice.call(document.querySelectorAll('.lang button'));
+  var links=[].slice.call(document.querySelectorAll('a.c'));
+  var titles={ru:'White Irbis — туры в горы Армении',en:'White Irbis — mountain tours in Armenia',hy:'White Irbis — լեռնային տուրեր Հայաստանում'};
+  function set(l){html.lang=l;document.title=titles[l];
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    links.forEach(function(a){var h=a.getAttribute('href').split('?')[0];a.setAttribute('href',l==='ru'?h:h+'?lang='+l)});
+    try{localStorage.setItem('wi-lang',l)}catch(e){}}
+  var q=(location.search.match(/lang=(ru|en|hy)/)||[])[1], s=null; try{s=localStorage.getItem('wi-lang')}catch(e){}
+  set(q||(['ru','en','hy'].indexOf(s)>=0?s:'ru'));
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
+})();
+</script>
+</body></html>
