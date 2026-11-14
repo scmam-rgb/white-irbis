@@ -162,6 +162,14 @@ html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,san
 html[lang="hy"] .dg b{font-family:"Noto Sans Armenian",var(--display);font-stretch:75%;font-weight:700}
 @media (max-width:860px){.dg{grid-template-columns:repeat(2,minmax(0,1fr))}.dg b{font-size:21px;overflow-wrap:anywhere}}
 .price .big.req{font-size:clamp(56px,8vw,96px)}
+@media print{
+  .lang,.msg,.row .cta,video,.hv i,.hv-badge{display:none!important}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{padding-block:28px}
+  .day,.dg,.inc-grid,.price .wrap,.facts{break-inside:avoid}
+  .eyebrow,.h2,.lead{break-after:avoid}
+  a{text-decoration:none}
+}
 </style>
 
 <header class="top"><div class="wrap">
