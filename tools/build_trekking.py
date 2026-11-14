@@ -211,6 +211,7 @@ CSS_EXTRA = r"""
   #motion{padding-top:40px}
   .mo-grid img{aspect-ratio:4/3}
   .mo-grid{margin-top:20px}
+  .mo-grid>*{break-inside:avoid}
   .who-grid{margin-top:20px}
   .route{margin-top:20px;gap:28px}
   .legs{gap:12px}
@@ -268,7 +269,7 @@ page = f'''<!doctype html>
     <p class="sub">{t("Шесть троп за неделю: от базальтовых столбов Гарни и лесов Дилижана до вершины Арагаца. Уровень, доступный всем.","Six trails in a week: from the basalt columns of Garni and the forests of Dilijan to the summit of Aragats. A level anyone can manage.","Վեց արահետ մեկ շաբաթում՝ Գառնիի բազալտե սյուներից և Դիլիջանի անտառներից մինչև Արագածի գագաթ։ Մակարդակ՝ հասանելի բոլորին։")}</p>
     <div class="hero-row">
       <a class="cta" href="#price">{t("Хочу в горы","Take me to the mountains","Ուզում եմ լեռներ")}</a>
-      <span class="price-chip">{t("Цена по запросу","Price on request","Գինը՝ ըստ հարցման")}<small>{t("ответим в WhatsApp","we'll reply on WhatsApp","կպատասխանենք WhatsApp-ով")}</small></span>
+      <span class="price-chip">95 000 ₽<small>{t("с человека · 7 дней","per person · 7 days","մեկ անձի համար · 7 օր")}</small></span>
     </div>
     <a class="pg-url" href="https://scmam-rgb.github.io/white-irbis/trekking/">scmam-rgb.github.io/white-irbis/trekking</a>
   </div>
@@ -399,6 +400,7 @@ page = f'''<!doctype html>
           <li>{t("Все переезды к тропам","All transfers to the trails","Բոլոր տեղափոխումները դեպի արահետներ")}</li>
           <li>{t("Обеды или ланч-боксы на маршрутах","Lunches or lunch boxes on the trails","Ճաշեր կամ ճաշատուփեր երթուղիներում")}</li>
           <li>{t("Гиды-альпинисты на каждой тропе","Mountaineer guides on every trail","Լեռնագնաց գիդեր յուրաքանչյուր արահետում")}</li>
+          <li>{t("Страховка участника","Accident insurance","Դժբախտ պատահարներից ապահովագրություն")}</li>
         </ul>
         <div class="no"><h3>{t("Не входит","Not included","Ներառված չէ")}</h3><ul><li>{t("Перелёт до Еревана","Flights to Yerevan","Թռիչք մինչև Երևան")}</li></ul></div>
       </div>
@@ -422,7 +424,7 @@ page = f'''<!doctype html>
     <span class="eyebrow">{t("Ваши гиды","Your guides","Ձեր գիդերը")}</span>
     <h2 class="h2">{t("С кем пойдёте","Who you'll walk with","Ում հետ կգնաք")}</h2>
     <div class="guides">
-      <div class="guide"><img src="img/antoine.jpg" alt="Антуан Ананян, основатель White Irbis" loading="lazy" style="object-position:62% center"><div><h3>{t("Антуан Ананян","Antoine Ananyan","Անտուան Անանյան")}</h3><div class="role">{t("Основатель White Irbis","Founder of White Irbis","White Irbis-ի հիմնադիր")}</div><p>{t("Вице-президент Федерации альпинизма Армении. Водит группы в горах Армении с 2003 года. Автор этой программы.","Vice-president of the Mountaineering Federation of Armenia. Guiding groups in the mountains of Armenia since 2003. He designed this programme.","Հայաստանի լեռնագնացության ֆեդերացիայի փոխնախագահ։ Խմբեր է առաջնորդում Հայաստանի լեռներում 2003 թվականից։ Այս ծրագրի հեղինակն է։")}</p></div></div>
+      <div class="guide"><img src="img/antoine.jpg" alt="Антуан Ананян, основатель White Irbis" loading="lazy" style="object-position:62% center"><div><h3>{t("Антуан Ананян","Antoine Ananyan","Անտուան Անանյան")}</h3><div class="role">{t("Основатель White Irbis","Founder of White Irbis","White Irbis-ի հիմնադիր")}</div><p>{t("Альпинист с международно признанным опытом восхождений: Кавказ, Альпы, Памир, Тянь-Шань, Гималаи. Вице-президент Федерации альпинизма Армении. Водит группы в горах Армении с 2003 года и знает их особенно хорошо. Автор этой программы.","A mountaineer with internationally recognised experience: the Caucasus, Alps, Pamirs, Tian Shan and Himalayas. Vice-president of the Mountaineering Federation of Armenia. Guiding groups in the mountains of Armenia since 2003, and knows them especially well. He designed this programme.","Միջազգայնորեն ճանաչված փորձով լեռնագնաց՝ Կովկաս, Ալպեր, Պամիր, Տյան-Շան, Հիմալայներ։ Հայաստանի լեռնագնացության ֆեդերացիայի փոխնախագահ։ Խմբեր է առաջնորդում Հայաստանի լեռներում 2003 թվականից և դրանք հատկապես լավ գիտի։ Այս ծրագրի հեղինակն է։")}</p></div></div>
       <div class="guide"><img src="img/alexey.jpg" alt="Алексей Цисельский, гид White Irbis" loading="lazy" style="object-position:25% center"><div><h3>{t("Алексей Цисельский","Alexey Tsiselsky","Ալեքսեյ Ցիսելսկի")}</h3><div class="role">{t("Партнёр White Irbis","Partner at White Irbis","White Irbis-ի գործընկեր")}</div><p>{t("10 лет в альпинизме: Гималаи, Тянь-Шань, Кавказ, Альпы. 4 года в горах Армении.","10 years of mountaineering: Himalayas, Tian Shan, Caucasus, Alps. 4 years in the mountains of Armenia.","10 տարի լեռնագնացության մեջ՝ Հիմալայներ, Տյան-Շան, Կովկաս, Ալպեր։ 4 տարի Հայաստանի լեռներում։")}</p></div></div>
     </div>
   </div>
@@ -445,16 +447,17 @@ page = f'''<!doctype html>
   <div class="wrap">
     <div>
       <span class="eyebrow" style="color:var(--eye-ink)">{t("Цена","Price","Գին")}</span>
-      <div class="ask">{t("По запросу","On request","Ըստ հարցման")}<small>{t("зависит от дат и размера группы — напишите, посчитаем","depends on dates and group size — message us and we'll quote","կախված է ամսաթվերից և խմբի չափից՝ գրեք, կհաշվենք")}</small></div>
+      <div class="ask">95 000 ₽<small>{t("с человека · ≈ 417 000 ֏ · ≈ $1 155","per person · ≈ 417,000 AMD · ≈ $1,155","մեկ անձի համար · ≈ 417 000 ֏ · ≈ $1 155")}</small></div>
       <ul>
         <li>{t("7 дней, 6 ночей в Ереване","7 days, 6 nights in Yerevan","7 օր, 6 գիշեր Երևանում")}</li>
+        <li>{t("Группа от 2 человек","Groups from 2 people","Խումբը՝ 2 մարդուց")}</li>
         <li>{t("Май — октябрь, Арагац — июль–сентябрь","May — October, Aragats July–September","Մայիս — հոկտեմբեր, Արագած՝ հուլիս–սեպտեմբեր")}</li>
         <li>{t("Перелёт до Еревана — отдельно","Flights to Yerevan not included","Թռիչքը մինչև Երևան՝ առանձին")}</li>
       </ul>
     </div>
     <div class="contact">
       <h3>{t("Идём в горы?","Ready to walk?","Գնո՞ւմ ենք լեռներ")}</h3>
-      <p>{t("Напишите нам — пришлём даты и цену и ответим на вопросы.","Message us — we'll send dates and the price and answer your questions.","Գրեք մեզ՝ կուղարկենք ամսաթվերն ու գինը և կպատասխանենք հարցերին։")}</p>
+      <p>{t("Напишите нам — пришлём ближайшие даты и ответим на вопросы.","Message us — we'll send the next dates and answer your questions.","Գրեք մեզ՝ կուղարկենք մոտակա ամսաթվերը և կպատասխանենք հարցերին։")}</p>
       <div class="msg"><a class="cta wa" href="https://wa.me/{PHONE}" target="_blank" rel="noopener">{WA_SVG}<span>WhatsApp</span></a><a class="cta tg" href="https://t.me/+{PHONE}" target="_blank" rel="noopener">{TG_SVG}<span>Telegram</span></a></div>
       <dl class="reqs">
         <div><dt>{t("Телефон, WhatsApp, Telegram","Phone, WhatsApp, Telegram","Հեռախոս, WhatsApp, Telegram")}</dt><dd><a href="tel:+{PHONE}">+374 91 470 331</a></dd></div>
@@ -469,7 +472,7 @@ page = f'''<!doctype html>
 <footer>
   <div class="wrap">
     <p><b>White Irbis</b> {t("· горные программы в Армении · irbis.am ·","· mountain programmes in Armenia · irbis.am ·","· լեռնային ծրագրեր Հայաստանում · irbis.am ·")} <a href="tel:+{PHONE}">+374 91 470 331</a> (WhatsApp, Telegram) · antuanvisit@gmail.com · <a href="https://scmam-rgb.github.io/white-irbis/trekking/">scmam-rgb.github.io/white-irbis/trekking</a></p>
-    <p>{t("Ещё у нас:","Also from us:","Նաև մեզ մոտ՝")} <a href="../skaly-i-vulkan/">{t("Скалы и вулкан","Rocks and Volcano","Ժայռեր և հրաբուխ")}</a> · <a href="../weekend/">{t("Скалы за выходные","Rocks in a weekend","Ժայռեր հանգստյան օրերին")}</a> · <a href="../ski/">{t("Горные лыжи с нуля","Skiing from scratch","Լեռնադահուկ զրոյից")}</a> · <a href="../gaidbuk/">{t("Гайдбук «Скалы Армении»","Guidebook «Rocks of Armenia»","«Հայաստանի ժայռեր» ուղեցույց")}</a></p>
+    <p>{t("Ещё у нас:","Also from us:","Նաև մեզ մոտ՝")} <a href="../skaly-i-vulkan/">{t("Скалы и вулканы","Rocks and Volcanoes","Ժայռեր և հրաբուխներ")}</a> · <a href="../weekend/">{t("Скалы за выходные","Rocks in a weekend","Ժայռեր հանգստյան օրերին")}</a> · <a href="../ski/">{t("Горные лыжи с нуля","Skiing from scratch","Լեռնադահուկ զրոյից")}</a> · <a href="../gaidbuk/">{t("Гайдбук «Скалы Армении»","Guidebook «Rocks of Armenia»","«Հայաստանի ժայռեր» ուղեցույց")}</a></p>
     <p>{t("Фото Wikimedia Commons — по лицензиям CC BY и CC BY-SA, авторы указаны под снимками. Схемы троп нарисованы по трекам гида. Остальные фото — архив White Irbis.","Wikimedia Commons photos are used under CC BY and CC BY-SA licences; authors are credited under each image. Trail sketches are drawn from our guide's tracks. All other photos are from the White Irbis archive.","Wikimedia Commons-ի լուսանկարները՝ CC BY և CC BY-SA լիցենզիաներով, հեղինակները նշված են լուսանկարների տակ։ Արահետների սխեմաները գծված են գիդի տրեկերով։ Մնացած լուսանկարները White Irbis-ի արխիվից են։")}</p>
   </div>
 </footer>
