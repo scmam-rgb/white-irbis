@@ -269,7 +269,7 @@ page = f'''<!doctype html>
     <p class="sub">{t("Шесть троп за неделю: от базальтовых столбов Гарни и лесов Дилижана до вершины Арагаца. Уровень, доступный всем.","Six trails in a week: from the basalt columns of Garni and the forests of Dilijan to the summit of Aragats. A level anyone can manage.","Վեց արահետ մեկ շաբաթում՝ Գառնիի բազալտե սյուներից և Դիլիջանի անտառներից մինչև Արագածի գագաթ։ Մակարդակ՝ հասանելի բոլորին։")}</p>
     <div class="hero-row">
       <a class="cta" href="#price">{t("Хочу в горы","Take me to the mountains","Ուզում եմ լեռներ")}</a>
-      <span class="price-chip">95 000 ₽<small>{t("с человека · 7 дней","per person · 7 days","մեկ անձի համար · 7 օր")}</small></span>
+      <span class="price-chip"><span lang="ru">95 000 ₽</span><span lang="en">€1,030</span><span lang="hy">417 000 ֏</span><small>{t("с человека · 7 дней","per person · 7 days","մեկ անձի համար · 7 օր")}</small></span>
     </div>
     <a class="pg-url" href="https://scmam-rgb.github.io/white-irbis/trekking/">scmam-rgb.github.io/white-irbis/trekking</a>
   </div>
@@ -447,7 +447,7 @@ page = f'''<!doctype html>
   <div class="wrap">
     <div>
       <span class="eyebrow" style="color:var(--eye-ink)">{t("Цена","Price","Գին")}</span>
-      <div class="ask">95 000 ₽<small>{t("с человека · ≈ 417 000 ֏ · ≈ $1 155","per person · ≈ 417,000 AMD · ≈ $1,155","մեկ անձի համար · ≈ 417 000 ֏ · ≈ $1 155")}</small></div>
+      <div class="ask"><span lang="ru">95 000 ₽</span><span lang="en">€1,030</span><span lang="hy">417 000 ֏</span><small>{t("с человека · ≈ 417 000 ֏ · ≈ €1 030","per person · 95,000 ₽ · ≈ 417,000 AMD","մեկ անձի համար · 95 000 ₽ · ≈ €1 030")}</small></div>
       <ul>
         <li>{t("7 дней, 6 ночей в Ереване","7 days, 6 nights in Yerevan","7 օր, 6 գիշեր Երևանում")}</li>
         <li>{t("Группа от 2 человек","Groups from 2 people","Խումբը՝ 2 մարդուց")}</li>
