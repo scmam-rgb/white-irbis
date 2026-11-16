@@ -211,7 +211,7 @@ body = f'''<header class="top"><div class="wrap">
   <div class="gal3">
     <figure><img src="img/walk_gorge.jpg" alt="Группа с рюкзаками идёт по тропе в красном ущелье" loading="lazy"></figure>
     <figure><img src="img/walk_plateau.jpg" alt="Две участницы с палками идут по плато, вдали Арарат" loading="lazy"></figure>
-    <figure><img src="img/walk_fins.jpg" alt="Группа поднимается по узкому проходу между скал" loading="lazy"></figure>
+    <figure><img src="img/walk_ridge.jpg" alt="Группа идёт по каменистому гребню" loading="lazy"></figure>
   </div>
   <p class="credit">{T("Фото с выходов White Irbis","Photos from White Irbis trips","Լուսանկարներ White Irbis-ի ելքերից")}</p>
 </div></section>
