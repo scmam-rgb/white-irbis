@@ -68,7 +68,7 @@ def card(p):
             else f'<div class="pk-alt"><b>{altxt}</b></div>')
     four = ''
     if pid == 'aragats':
-        four = '<div class="stats four">' + ''.join(f'<span>{T(a,b,c)} <b>{h}</b></span>' for a,b,c,h in [('Северная','North','Հյուսիսային','4 090'),('Западная','West','Արևմտյան','3 995'),('Восточная','East','Արևելյան','3 908'),('Южная','South','Հարավային','3 888')]) + '</div>'
+        four = '<div class="stats four">' + ''.join(f'<span>{T(a,b,c)} <b>{h}</b></span>' for a,b,c,h in [('Северная','North','Հյուսիսային','4 090'),('Западная','West','Արևմտյան','4 008'),('Восточная','East','Արևելյան','3 908'),('Южная','South','Հարավային','3 879')]) + '</div>'
     lk = f'<p class="pk-link"><a href="{link[0]}">{T(*link[1])}</a></p>' if link else ''
     return f'''<article class="pk" id="{pid}">
 {head}
