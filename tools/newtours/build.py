@@ -24,6 +24,23 @@ extra = '''
 @media (max-width:900px){.dgrid{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){.dgrid{grid-template-columns:1fr}}
 .media figure img,.next figure img{border-radius:6px}
+.who4{grid-template-columns:repeat(4,1fr)}@media (max-width:960px){.who4{grid-template-columns:1fr 1fr}}@media (max-width:600px){.who4{grid-template-columns:1fr}}
+.gsec{background:var(--card)}
+.guides{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.guide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:22px;align-items:end}
+.guide img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+.guide h3{font-size:30px;text-transform:uppercase}
+.guide .role{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.guide p{color:var(--muted);margin-top:10px}
+@media (max-width:860px){.guides{grid-template-columns:1fr}}
+.faq-list{margin-top:32px;border-top:1px solid var(--line);max-width:860px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-family:var(--display);font-size:24px;text-transform:uppercase;list-style:none;display:flex;justify-content:space-between;gap:16px}
+html[lang="hy"] summary{font-family:"Noto Sans Armenian",var(--display);font-stretch:75%;font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--body);font-size:26px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted);max-width:62ch}
 .price .big{font-size:clamp(52px,7.4vw,100px)}.big>span[lang]{white-space:nowrap}
 '''
 

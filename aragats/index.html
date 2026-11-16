@@ -182,6 +182,23 @@ html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,san
 @media (max-width:900px){.dgrid{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){.dgrid{grid-template-columns:1fr}}
 .media figure img,.next figure img{border-radius:6px}
+.who4{grid-template-columns:repeat(4,1fr)}@media (max-width:960px){.who4{grid-template-columns:1fr 1fr}}@media (max-width:600px){.who4{grid-template-columns:1fr}}
+.gsec{background:var(--card)}
+.guides{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.guide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:22px;align-items:end}
+.guide img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+.guide h3{font-size:30px;text-transform:uppercase}
+.guide .role{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.guide p{color:var(--muted);margin-top:10px}
+@media (max-width:860px){.guides{grid-template-columns:1fr}}
+.faq-list{margin-top:32px;border-top:1px solid var(--line);max-width:860px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-family:var(--display);font-size:24px;text-transform:uppercase;list-style:none;display:flex;justify-content:space-between;gap:16px}
+html[lang="hy"] summary{font-family:"Noto Sans Armenian",var(--display);font-stretch:75%;font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--body);font-size:26px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted);max-width:62ch}
 .price .big{font-size:clamp(52px,7.4vw,100px)}.big>span[lang]{white-space:nowrap}
 </style>
 <style id="hero-edge">@media (min-width:901px){.hero{--tl:calc(max(0px,(100vw - 1120px)/2) + 20px)}.hero-media{left:calc(var(--tl) + 640px)!important}.hero .wrap>*{max-width:600px}.hero h1{font-size:min(9vw,120px)}html[lang="ru"] .hero h1{font-size:min(9vw,120px)}html[lang="en"] .hero h1{font-size:min(9vw,112px)}html[lang="hy"] .hero h1{font-size:min(7vw,70px)}}</style>
@@ -198,16 +215,16 @@ html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,san
   <div class="wrap">
     <span class="alt"><span lang="ru">Из Еревана · 1 день · июнь — октябрь</span><span lang="en">From Yerevan · 1 day · June — October</span><span lang="hy">Երևանից · 1 օր · հունիս — հոկտեմբեր</span></span>
     <h1><span lang="ru">Арагац<br><em>Северная</em></span><span lang="en">Aragats<br><em>North peak</em></span><span lang="hy">Արագած<br><em>Հյուսիսային</em></span></h1>
-    <p class="sub"><span lang="ru">Высшая точка Армении — 4 090 м. От озера Кари через кратер потухшего вулкана и по узкому гребню на вершину. Вечером снова в Ереване.</span><span lang="en">The highest point in Armenia, 4,090 m. From Lake Kari across the crater of an extinct volcano and up a narrow ridge to the top. Back in Yerevan by evening.</span><span lang="hy">Հայաստանի ամենաբարձր կետը՝ 4 090 մ։ Քարի լճից հանգած հրաբխի խառնարանով և նեղ կատարով դեպի գագաթ։ Երեկոյան՝ կրկին Երևանում։</span></p>
+    <p class="sub"><span lang="ru">Высшая точка Армении — 4 090 м. Джип забрасывает нас к старту, дальше пешком по краю кратера и узкому гребню на вершину. Вечером снова в Ереване.</span><span lang="en">The highest point in Armenia, 4,090 m. A jeep drops us at the start, then we walk along the crater rim and up a narrow ridge to the top. Back in Yerevan by evening.</span><span lang="hy">Հայաստանի ամենաբարձր կետը՝ 4 090 մ։ Ջիպը մեզ հասցնում է մեկնարկ, հետո ոտքով՝ խառնարանի եզրով և նեղ կատարով դեպի գագաթ։ Երեկոյան՝ կրկին Երևանում։</span></p>
     <div class="row"><a class="cta" href="#price"><span lang="ru">Хочу на вершину</span><span lang="en">Book the climb</span><span lang="hy">Ուզում եմ գագաթ</span></a><span class="price-chip"><span lang="ru">от 5 700 ₽</span><span lang="en">from €62</span><span lang="hy">25 000 ֏-ից</span><small lang="ru">с человека</small><small lang="en">per person</small><small lang="hy">մեկ անձի համար</small></span></div>
   </div>
 </section>
 
 <section class="facts"><div class="wrap"><dl>
   <div><dt><span lang="ru">Вершина</span><span lang="en">Summit</span><span lang="hy">Գագաթ</span></dt><dd><span lang="ru">4 090 м</span><span lang="en">4,090 m</span><span lang="hy">4 090 մ</span></dd></div>
-  <div><dt><span lang="ru">Старт</span><span lang="en">Start</span><span lang="hy">Մեկնարկ</span></dt><dd><span lang="ru">Озеро Кари, 3 200 м</span><span lang="en">Lake Kari, 3,200 m</span><span lang="hy">Քարի լիճ, 3 200 մ</span></dd></div>
-  <div><dt><span lang="ru">Набор</span><span lang="en">Elevation gain</span><span lang="hy">Բարձրացում</span></dt><dd><span lang="ru">≈ 900 м</span><span lang="en">≈ 900 m</span><span lang="hy">≈ 900 մ</span></dd></div>
-  <div><dt><span lang="ru">Группа</span><span lang="en">Group</span><span lang="hy">Խումբ</span></dt><dd><span lang="ru">От 3 человек</span><span lang="en">3 or more</span><span lang="hy">3 հոգուց</span></dd></div>
+  <div><dt><span lang="ru">Заброска</span><span lang="en">Approach</span><span lang="hy">Մոտեցում</span></dt><dd><span lang="ru">На джипе</span><span lang="en">By jeep</span><span lang="hy">Ջիպով</span></dd></div>
+  <div><dt><span lang="ru">Сезон</span><span lang="en">Season</span><span lang="hy">Սեզոն</span></dt><dd><span lang="ru">Июнь — октябрь</span><span lang="en">June — October</span><span lang="hy">Հունիս — հոկտեմբեր</span></dd></div>
+  <div><dt><span lang="ru">Группа</span><span lang="en">Group</span><span lang="hy">Խումբ</span></dt><dd><span lang="ru">От 2 человек</span><span lang="en">2 or more</span><span lang="hy">2 հոգուց</span></dd></div>
 </dl></div></section>
 
 <section id="program"><div class="wrap">
@@ -221,10 +238,10 @@ html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,san
       </div>
       <div>
         <div class="num">01</div>
-        <h3><span lang="ru">Утро · К озеру Кари</span><span lang="en">Morning · To Lake Kari</span><span lang="hy">Առավոտ · Դեպի Քարի լիճ</span></h3>
+        <h3><span lang="ru">Утро · Заброска</span><span lang="en">Morning · Jeep approach</span><span lang="hy">Առավոտ · Ջիպով մոտեցում</span></h3>
         <ul class="plan">
           <li><b>1</b><span><span lang="ru">Встреча в Ереване. Заранее обсуждаем с гидом одежду и снаряжение</span><span lang="en">Meet in Yerevan. We go over clothing and gear with the guide in advance</span><span lang="hy">Հանդիպում Երևանում։ Հագուստն ու հանդերձանքը նախապես քննարկում ենք գիդի հետ</span></span></li>
-          <li><b>2</b><span><span lang="ru">Переезд к подножию Арагаца, к озеру Кари на 3 200 м</span><span lang="en">Drive to the foot of Aragats, to Lake Kari at 3,200 m</span><span lang="hy">Ճանապարհ դեպի Արագածի ստորոտ՝ Քարի լիճ, 3 200 մ</span></span></li>
+          <li><b>2</b><span><span lang="ru">Ранний выезд к Арагацу, пересадка на джип — он забрасывает группу к началу маршрута</span><span lang="en">Early drive to Aragats, then a jeep takes the group up to the start of the route</span><span lang="hy">Վաղ մեկնում դեպի Արագած, հետո ջիպը խումբը հասցնում է երթուղու սկիզբ</span></span></li>
           <li><b>3</b><span><span lang="ru">Инструктаж и старт</span><span lang="en">Briefing and start</span><span lang="hy">Հրահանգավորում և մեկնարկ</span></span></li>
         </ul>
       </div>
@@ -249,10 +266,10 @@ html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,san
       </div>
       <div>
         <div class="num">03</div>
-        <h3><span lang="ru">Вечер · Спуск и Амберд</span><span lang="en">Evening · Descent and Amberd</span><span lang="hy">Երեկո · Վայրէջք և Ամբերդ</span></h3>
+        <h3><span lang="ru">Вечер · Спуск</span><span lang="en">Evening · Descent</span><span lang="hy">Երեկո · Վայրէջք</span></h3>
         <ul class="plan">
-          <li><b>7</b><span><span lang="ru">Спуск тем же путём к озеру Кари</span><span lang="en">Descent the same way to Lake Kari</span><span lang="hy">Վայրէջք նույն ճանապարհով դեպի Քարի լիճ</span></span></li>
-          <li><b>8</b><span><span lang="ru">По дороге — остановка у средневековой крепости Амберд</span><span lang="en">On the way back, a stop at the medieval fortress of Amberd</span><span lang="hy">Ճանապարհին՝ կանգառ միջնադարյան Ամբերդ ամրոցի մոտ</span></span></li>
+          <li><b>7</b><span><span lang="ru">Спуск тем же путём к джипу</span><span lang="en">Descent the same way back to the jeep</span><span lang="hy">Վայրէջք նույն ճանապարհով դեպի ջիպ</span></span></li>
+          <li><b>8</b><span><span lang="ru">Джип спускает к машине, ужин по дороге — по желанию</span><span lang="en">The jeep takes us down to the car; dinner on the way if you like</span><span lang="hy">Ջիպը մեզ իջեցնում է մեքենայի մոտ, ճանապարհին՝ ընթրիք ցանկության դեպքում</span></span></li>
           <li><b>9</b><span><span lang="ru">Возвращение в Ереван</span><span lang="en">Back in Yerevan</span><span lang="hy">Վերադարձ Երևան</span></span></li>
         </ul>
         <p class="credit"><span lang="ru">Время на маршруте зависит от темпа группы и снега — гид скажет точнее перед выходом.</span><span lang="en">Time on the route depends on the group's pace and the snow; the guide will give you a precise estimate before the start.</span><span lang="hy">Երթուղու տևողությունը կախված է խմբի տեմպից և ձյունից. գիդը ճշգրիտ կասի մեկնարկից առաջ։</span></p>
@@ -271,18 +288,34 @@ html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,san
   </div>
 </div></section>
 
+<section id="ready"><div class="wrap">
+  <span class="eyebrow"><span lang="ru">Подготовка</span><span lang="en">Preparation</span><span lang="hy">Նախապատրաստում</span></span>
+  <h2 class="h2"><span lang="ru">Что нужно знать до выхода</span><span lang="en">What to know before you go</span><span lang="hy">Ինչ պետք է իմանալ մինչ ելքը</span></h2>
+  <div class="who who4">
+    <div><h3><span lang="ru">Форма</span><span lang="en">Fitness</span><span lang="hy">Ֆիզիկական վիճակ</span></h3><p><span lang="ru">Весь день на ногах на высоте 3 500–4 000 м. Нужен опыт походов или регулярные тренировки. Альпинистская техника не нужна.</span><span lang="en">A full day on your feet at 3,500–4,000 m. You need some hiking experience or regular training. No mountaineering skills required.</span><span lang="hy">Ամբողջ օրը ոտքի վրա՝ 3 500–4 000 մ բարձրության վրա։ Պետք է արշավների փորձ կամ կանոնավոր մարզումներ։ Ալպինիստական տեխնիկա պետք չէ։</span></p></div>
+    <div><h3><span lang="ru">Высота</span><span lang="en">Altitude</span><span lang="hy">Բարձրություն</span></h3><p><span lang="ru">Идём в темпе самого медленного участника. Если кому-то плохо от высоты — гид решает, спускаться или ждать.</span><span lang="en">We walk at the pace of the slowest member. If someone feels the altitude, the guide decides whether to descend or wait.</span><span lang="hy">Քայլում ենք ամենադանդաղ մասնակցի տեմպով։ Եթե որևէ մեկին բարձրությունը վատ է անդրադառնում, գիդն է որոշում՝ իջնել, թե սպասել։</span></p></div>
+    <div><h3><span lang="ru">Погода</span><span lang="en">Weather</span><span lang="hy">Եղանակ</span></h3><p><span lang="ru">Наверху погода меняется быстро. Если гроза или сильный ветер — разворачиваемся или переносим дату.</span><span lang="en">Up high the weather changes fast. In a storm or strong wind we turn back or move the date.</span><span lang="hy">Վերևում եղանակը արագ է փոխվում։ Ամպրոպի կամ ուժեղ քամու դեպքում հետ ենք դառնում կամ տեղափոխում ամսաթիվը։</span></p></div>
+    <div><h3><span lang="ru">Гребень</span><span lang="en">The ridge</span><span lang="hy">Կատարը</span></h3><p><span lang="ru">Последний участок узкий. Без снега проходим пешком, со снегом гид провешивает верёвку.</span><span lang="en">The final stretch is narrow. Without snow we walk it; with snow the guide fixes a rope.</span><span lang="hy">Վերջին հատվածը նեղ է։ Առանց ձյան անցնում ենք ոտքով, ձյան դեպքում գիդը պարան է ձգում։</span></p></div>
+  </div>
+</div></section>
+
 <section class="inc" id="included"><div class="wrap">
   <span class="eyebrow"><span lang="ru">Что входит</span><span lang="en">What's included</span><span lang="hy">Ինչ է ներառված</span></span>
   <h2 class="h2"><span lang="ru">Ваше дело — дойти</span><span lang="en">You just walk</span><span lang="hy">Ձեր գործը՝ հասնելն է</span></h2>
   <div class="inc-grid">
     <div><h3><span lang="ru">Включено</span><span lang="en">Included</span><span lang="hy">Ներառված է</span></h3><ul>
       <li><span lang="ru">Гид-инструктор White Irbis</span><span lang="en">A White Irbis guide-instructor</span><span lang="hy">White Irbis-ի գիդ-հրահանգիչ</span></li>
-      <li><span lang="ru">Транспорт Ереван — озеро Кари — Амберд — Ереван</span><span lang="en">Transport Yerevan — Lake Kari — Amberd — Yerevan</span><span lang="hy">Տրանսպորտ Երևան — Քարի լիճ — Ամբերդ — Երևան</span></li>
-      <li><span lang="ru">Обед на вершине и вода</span><span lang="en">Summit lunch box and water</span><span lang="hy">Ճաշ գագաթին և ջուր</span></li>
+      <li><span lang="ru">Транспорт из Еревана и обратно</span><span lang="en">Transport from Yerevan and back</span><span lang="hy">Տրանսպորտ Երևանից և հետ</span></li>
+      <li><span lang="ru">Джип-заброска к старту и обратно</span><span lang="en">Jeep approach to the start and back</span><span lang="hy">Ջիպով մոտեցում մեկնարկին և հետ</span></li>
+      <li><span lang="ru">Обед-ланчбокс и вода</span><span lang="en">Summit lunch box and water</span><span lang="hy">Ճաշ գագաթին և ջուր</span></li>
+      <li><span lang="ru">Верёвка и страховочное снаряжение на гребне</span><span lang="en">Rope and safety gear for the ridge</span><span lang="hy">Պարան և ապահովագրական հանդերձանք կատարի համար</span></li>
+      <li><span lang="ru">Аптечка и связь у гида</span><span lang="en">First-aid kit and communications with the guide</span><span lang="hy">Դեղատուփ և կապ գիդի մոտ</span></li>
       <li><span lang="ru">Страховка участника</span><span lang="en">Participant insurance</span><span lang="hy">Մասնակցի ապահովագրություն</span></li>
     </ul></div>
     <div class="no"><h3><span lang="ru">Взять с собой</span><span lang="en">Bring</span><span lang="hy">Վերցրեք ձեզ հետ</span></h3><ul>
-      <li><span lang="ru">Треккинговые ботинки</span><span lang="en">Hiking boots</span><span lang="hy">Արշավային կոշիկներ</span></li>
+      <li><span lang="ru">Треккинговые ботинки с жёсткой подошвой</span><span lang="en">Hiking boots with a stiff sole</span><span lang="hy">Կոշտ ներբանով արշավային կոշիկներ</span></li>
+      <li><span lang="ru">Треккинговые палки — по желанию</span><span lang="en">Trekking poles, if you like</span><span lang="hy">Արշավային ձողեր՝ ցանկության դեպքում</span></li>
+      <li><span lang="ru">Вода 1,5–2 л и перекус</span><span lang="en">1.5–2 l of water and snacks</span><span lang="hy">1,5–2 լ ջուր և նախուտեստ</span></li>
       <li><span lang="ru">Тёплый слой, ветровку, шапку и перчатки — наверху холодно и в июле</span><span lang="en">A warm layer, a windproof jacket, a hat and gloves — it's cold on top even in July</span><span lang="hy">Տաք շերտ, քամուց պաշտպանող բաճկոն, գլխարկ և ձեռնոցներ. վերևում ցուրտ է նույնիսկ հուլիսին</span></li>
       <li><span lang="ru">Солнцезащитные очки и крем</span><span lang="en">Sunglasses and sunscreen</span><span lang="hy">Արևային ակնոց և քսուք</span></li>
       <li><span lang="ru">Рюкзак и личные лекарства</span><span lang="en">A daypack and personal medication</span><span lang="hy">Ուսապարկ և անձնական դեղեր</span></li>
@@ -300,10 +333,32 @@ html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,san
   </div>
 </div></section>
 
+<section id="guides" class="gsec">
+  <div class="wrap">
+    <span class="eyebrow"><span lang="ru">Ваши гиды</span><span lang="en">Your guides</span><span lang="hy">Ձեր գիդերը</span></span>
+    <h2 class="h2"><span lang="ru">С кем пойдёте</span><span lang="en">Who you'll climb with</span><span lang="hy">Ում հետ կգնաք</span></h2>
+    <div class="guides">
+      <div class="guide"><img src="img/antoine.jpg" alt="Антуан Ананян, основатель White Irbis, у палатки в горах" loading="lazy" style="object-position:62% center"><div><h3><span lang="ru">Антуан Ананян</span><span lang="en">Antoine Ananyan</span><span lang="hy">Անտուան Անանյան</span></h3><div class="role"><span lang="ru">Основатель White Irbis</span><span lang="en">Founder of White Irbis</span><span lang="hy">White Irbis-ի հիմնադիր</span></div><p><span lang="ru">Альпинист с международно признанным опытом восхождений: Кавказ, Альпы, Памир, Тянь-Шань, Гималаи. Вице-президент Федерации альпинизма Армении. Водит группы в горах Армении с 2003 года и знает их особенно хорошо.</span><span lang="en">A mountaineer with internationally recognised experience: the Caucasus, Alps, Pamirs, Tian Shan and Himalayas. Vice-president of the Mountaineering Federation of Armenia. Guiding groups in the mountains of Armenia since 2003, and knows them especially well.</span><span lang="hy">Միջազգայնորեն ճանաչված փորձով լեռնագնաց՝ Կովկաս, Ալպեր, Պամիր, Տյան-Շան, Հիմալայներ։ Հայաստանի լեռնագնացության ֆեդերացիայի փոխնախագահ։ Խմբեր է առաջնորդում Հայաստանի լեռներում 2003 թվականից և դրանք հատկապես լավ գիտի։</span></p></div></div>
+      <div class="guide"><img src="img/alexey.jpg" alt="Алексей Цисельский, гид White Irbis, на фоне вершины Арагаца" loading="lazy" style="object-position:25% center"><div><h3><span lang="ru">Алексей Цисельский</span><span lang="en">Alexey Tsiselsky</span><span lang="hy">Ալեքսեյ Ցիսելսկի</span></h3><div class="role"><span lang="ru">Партнёр White Irbis</span><span lang="en">Partner at White Irbis</span><span lang="hy">White Irbis-ի գործընկեր</span></div><p><span lang="ru">10 лет в альпинизме: Гималаи, Тянь-Шань, Кавказ, Альпы. 4 года в горах Армении.</span><span lang="en">10 years of mountaineering: Himalayas, Tian Shan, Caucasus, Alps. 4 years in the mountains of Armenia.</span><span lang="hy">10 տարի լեռնագնացության մեջ՝ Հիմալայներ, Տյան-Շան, Կովկաս, Ալպեր։ 4 տարի Հայաստանի լեռներում։</span></p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq"><div class="wrap">
+  <span class="eyebrow"><span lang="ru">Вопросы</span><span lang="en">Questions</span><span lang="hy">Հարցեր</span></span>
+  <h2 class="h2"><span lang="ru">Частые вопросы</span><span lang="en">Frequently asked</span><span lang="hy">Հաճախ տրվող հարցեր</span></h2>
+  <div class="faq-list">
+      <details open><summary><span lang="ru">Чем Северная отличается от Южной?</span><span lang="en">How is the North peak different from the South?</span><span lang="hy">Ինչով է Հյուսիսայինը տարբերվում Հարավայինից</span></summary><p><span lang="ru">Южная (3 879 м) — самый простой путь на Арагац. Северная (4 090 м) — высшая точка Армении: дольше, выше и с узким гребнем в конце.</span><span lang="en">The South peak (3,879 m) is the easiest way up Aragats. The North peak (4,090 m) is the highest point in Armenia: longer, higher, with a narrow ridge at the end.</span><span lang="hy">Հարավայինը (3 879 մ) Արագածի ամենահեշտ ճանապարհն է։ Հյուսիսայինը (4 090 մ) Հայաստանի ամենաբարձր կետն է՝ ավելի երկար, ավելի բարձր և վերջում նեղ կատարով։</span></p></details>
+      <details><summary><span lang="ru">Можно без опыта?</span><span lang="en">Can I go without experience?</span><span lang="hy">Կարելի՞ է առանց փորձի</span></summary><p><span lang="ru">Альпинистский опыт не нужен, но нужна выносливость. Если сомневаетесь, напишите нам — подскажем, с чего начать.</span><span lang="en">You don't need mountaineering experience, but you do need stamina. If in doubt, message us and we'll suggest where to start.</span><span lang="hy">Ալպինիստական փորձ պետք չէ, բայց պետք է տոկունություն։ Եթե կասկածում եք, գրեք մեզ՝ կառաջարկենք, թե որտեղից սկսել։</span></p></details>
+      <details><summary><span lang="ru">Что если погода испортится?</span><span lang="en">What if the weather turns bad?</span><span lang="hy">Իսկ եթե եղանակը վատանա</span></summary><p><span lang="ru">Решение принимает гид. Если выход отменяем до старта, переносим на другую дату.</span><span lang="en">The guide makes the call. If we cancel before the start, we move you to another date.</span><span lang="hy">Որոշումը կայացնում է գիդը։ Եթե ելքը չեղարկում ենք մինչև մեկնարկը, տեղափոխում ենք այլ ամսաթվի։</span></p></details>
+      <details><summary><span lang="ru">Можно зимой?</span><span lang="en">Can I go in winter?</span><span lang="hy">Կարելի՞ է ձմռանը</span></summary><p><span lang="ru">Да, если позволяет снег: на снегоступах, в зимней одежде, с верёвкой на гребне. Дату подбираем по прогнозу.</span><span lang="en">Yes, if the snow allows: on snowshoes, in winter clothing, with a rope on the ridge. We pick the date by the forecast.</span><span lang="hy">Այո, եթե ձյունը թույլ է տալիս՝ ձնագնացներով, ձմեռային հագուստով, կատարին՝ պարանով։ Ամսաթիվը ընտրում ենք ըստ կանխատեսման։</span></p></details>
+  </div>
+</div></section>
+
 <section class="price" id="price"><div class="wrap">
   <div>
     <span class="eyebrow" style="color:var(--eye-ink)"><span lang="ru">Цена</span><span lang="en">Price</span><span lang="hy">Գին</span></span>
-    <div class="big"><span lang="ru">от 5 700 ₽</span><span lang="en">from €62</span><span lang="hy">25 000 ֏-ից</span><small><span lang="ru">с человека, при группе от 3 человек</span><span lang="en">per person, groups of 3 or more</span><span lang="hy">մեկ անձի համար, 3 հոգուց խմբի դեպքում</span><span class="fx" style="display:block;font-family:var(--body);font-size:16px;font-weight:500;letter-spacing:0;text-transform:none;opacity:.8;margin-top:8px"><span lang="ru">25 000 ֏ · ≈ €62</span><span lang="en">≈ 5,700 ₽ · 25,000 AMD</span><span lang="hy">≈ 5 700 ₽ · ≈ €62</span></span></small></div>
+    <div class="big"><span lang="ru">от 5 700 ₽</span><span lang="en">from €62</span><span lang="hy">25 000 ֏-ից</span><small><span lang="ru">с человека, при группе от 4 человек</span><span lang="en">per person, groups of 4 or more</span><span lang="hy">մեկ անձի համար, 4 հոգուց խմբի դեպքում</span><span class="fx" style="display:block;font-family:var(--body);font-size:16px;font-weight:500;letter-spacing:0;text-transform:none;opacity:.8;margin-top:8px"><span lang="ru">25 000 ֏ · ≈ €62</span><span lang="en">≈ 5,700 ₽ · 25,000 AMD</span><span lang="hy">≈ 5 700 ₽ · ≈ €62</span></span></small></div>
     <ul>
       <li><b><span lang="ru">Июнь — октябрь, дату выбираем вместе</span><span lang="en">June — October, we pick the date together</span><span lang="hy">Հունիս — հոկտեմբեր, ամսաթիվը ընտրում ենք միասին</span></b></li>
       <li><span lang="ru">Зимой и весной — по снегу, на снегоступах</span><span lang="en">Winter and spring — depending on snow, on snowshoes</span><span lang="hy">Ձմռանը և գարնանը՝ ըստ ձյան, ձնագնացներով</span></li>
