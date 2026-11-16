@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Транскавказская тропа — гайдбук White Irbis</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="White Irbis">
+<meta property="og:title" content="Транскавказская тропа — гайдбук White Irbis">
+<meta property="og:description" content="819 км через всю Армению: участки, сезоны, навигация, ночёвки и вода. Плюс Грузия и Азербайджан.">
+<meta property="og:url" content="https://scmam-rgb.github.io/white-irbis/tct/">
+<meta property="og:image" content="https://scmam-rgb.github.io/white-irbis/img/cards/tct-ru.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../dolmatur/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../dolmatur/img/favicon-32.png">
+<link rel="apple-touch-icon" href="../dolmatur/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="TCT">
+<meta name="theme-color" content="#121212">
+<meta name="description" content="Гайдбук по Транскавказской тропе: 819 км через Армению от озера Арпи до Мегри — 7 регионов, сезоны, навигация, ночёвки, вода, разрешения. Общая информация по Грузии и Азербайджану.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Rubik:wght@400;500;600&family=Noto+Sans+Armenian:wdth,wght@62.5..100,400..700&display=swap">
+<style>
+:root{
+  --ink:#121212; --paper:#F7F4EC; --card:#EEEADF; --line:#DDD6C3; --muted:#6B6A62;
+  --eye:#FAEB0F; --eye-ink:#121212; --deep:#121212; --on-deep:#F7F4EC; --on-deep-muted:#B9B5A8;
+  --display:'Oswald','Arial Narrow',Arial,sans-serif; --body:'Rubik','Segoe UI',Arial,sans-serif; --wrap:1120px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ink:#EFEBE0; --paper:#161614; --card:#201F1C; --line:#34322D; --muted:#A39F92; --deep:#0B0B0A; color-scheme:dark}}
+:root[data-theme="dark"]{--ink:#EFEBE0; --paper:#161614; --card:#201F1C; --line:#34322D; --muted:#A39F92; --deep:#0B0B0A; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+section{padding-block:80px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.h2{font-size:clamp(32px,5vw,52px);text-transform:uppercase;margin-top:10px}
+.lead{font-size:19px;color:var(--muted);max-width:60ch;margin-top:14px}
+.credit{font-size:12px;color:var(--muted);margin-top:6px}
+:focus-visible{outline:3px solid var(--eye);outline-offset:3px}
+html:not([lang="ru"]) [lang="ru"], html:not([lang="en"]) [lang="en"], html:not([lang="hy"]) [lang="hy"]{display:none!important}
+html[lang="hy"] body{font-family:"Noto Sans Armenian",var(--body)}
+html[lang="hy"] h1,html[lang="hy"] h2,html[lang="hy"] h3,html[lang="hy"] .cta,html[lang="hy"] .alt,html[lang="hy"] .facts dd,html[lang="hy"] .day h3{font-family:"Noto Sans Armenian",var(--display);font-stretch:75%;font-weight:700}
+html[lang="hy"] .hero h1{font-size:clamp(44px,7vw,92px)}
+
+.top{position:absolute;inset:0 0 auto;z-index:3}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:18px}
+.top img{width:110px;height:110px}
+.lang{display:flex;gap:4px;background:rgba(18,18,18,.55);border-radius:6px;padding:4px}
+.lang button{font:600 14px var(--body);color:var(--on-deep);background:none;border:0;padding:6px 12px;border-radius:4px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--eye);color:var(--eye-ink)}
+
+.hero{position:relative;background:var(--deep);color:var(--on-deep);padding:0;overflow:hidden}
+.hero-media{position:absolute;top:0;bottom:0;right:0;left:50%}
+.hero-media img,.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-media video{opacity:0;transition:opacity .6s}
+.hero.on .hero-media video{opacity:1}
+.hero-media::after{content:"";position:absolute;inset:0;background:none;box-shadow:inset 10px 0 0 var(--eye)}
+.hero .wrap{position:relative;z-index:2;min-height:660px;padding-block:170px 64px;display:flex;flex-direction:column;justify-content:flex-end;gap:20px}
+.hero .alt{font-family:var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--eye);font-size:15px}
+.hero h1{font-size:clamp(54px,9vw,120px);text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--eye)}
+.hero .sub{font-size:clamp(18px,2vw,22px);max-width:34ch}
+.row{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center}
+.cta{display:inline-flex;background:var(--eye);color:var(--eye-ink);font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:.06em;padding:14px 26px;border-radius:4px;text-decoration:none;font-weight:600}
+.price-chip{font-family:var(--display);font-size:30px}
+.price-chip small{font-family:var(--body);font-size:14px;color:var(--on-deep-muted);margin-left:6px}
+@media (max-width:900px){.hero-media{left:0}.hero-media::after{background:linear-gradient(180deg,rgba(10,10,9,.45),rgba(10,10,9,.15) 30%,rgba(10,10,9,.9) 75%);box-shadow:none}}
+
+.facts{background:var(--deep);color:var(--on-deep);padding-block:0 40px}
+.facts dl{display:grid;grid-template-columns:repeat(4,1fr);margin:0;border-top:1px solid #2E2D29}
+.facts div{padding:20px 18px;border-right:1px solid #2E2D29}
+.facts div:last-child{border-right:0}
+.facts dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-deep-muted)}
+.facts dd{margin:6px 0 0;font-family:var(--display);font-size:24px}
+@media (max-width:760px){.facts dl{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.facts div{border-bottom:1px solid #2E2D29}}
+
+.days{display:flex;flex-direction:column;gap:56px;margin-top:40px}
+.day{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.day:nth-child(even) .media{order:2}
+.media{display:grid;gap:12px}
+.media img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px}
+.day h3{font-size:34px;text-transform:uppercase}
+.day .num{font-family:var(--display);font-size:80px;font-weight:700;line-height:.9;opacity:.12}
+.plan{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:10px}
+.plan li{display:grid;grid-template-columns:64px 1fr;gap:12px;border-top:1px solid var(--line);padding-top:10px}
+.plan b{font-family:var(--display);font-weight:600;font-size:18px}
+@media (max-width:860px){.day{grid-template-columns:1fr;gap:18px}.day:nth-child(even) .media{order:0}}
+
+.hv{position:relative;display:block;overflow:hidden;border-radius:6px}
+.hv video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s;pointer-events:none}
+.hv.on video{opacity:1}
+.hv i{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:rgba(18,18,18,.62)}
+.hv i::after{content:"";position:absolute;left:13px;top:10px;border-left:11px solid var(--eye);border-top:7px solid transparent;border-bottom:7px solid transparent}
+.hv.on i{opacity:0}
+
+.inc{background:var(--deep);color:var(--on-deep)}
+.inc .eyebrow{color:var(--on-deep-muted)}
+.inc-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:36px}
+.inc h3{font-size:24px;text-transform:uppercase;color:var(--eye);margin-bottom:12px}
+.inc ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.inc li{padding-left:22px;position:relative}
+.inc li::before{content:"";position:absolute;left:0;top:.6em;width:9px;height:9px;background:var(--eye);border-radius:2px}
+.inc .no li::before{background:var(--on-deep-muted)}
+@media (max-width:760px){.inc-grid{grid-template-columns:1fr}}
+
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.who div{background:var(--card);border-radius:6px;padding:26px}
+.who h3{font-size:24px;text-transform:uppercase}
+.who p{color:var(--muted);margin-top:8px}
+@media (max-width:760px){.who{grid-template-columns:1fr}}
+
+.next{background:var(--card)}
+.next .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.next img{border-radius:6px;aspect-ratio:4/3;object-fit:cover;width:100%}
+@media (max-width:760px){.next .wrap{grid-template-columns:1fr}}
+
+.price{background:var(--eye);color:var(--eye-ink)}
+.price .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.big{font-family:var(--display);font-size:clamp(64px,10vw,116px);font-weight:700;line-height:.95}
+.big small{display:block;font-size:.3em;font-weight:500;margin-top:8px}
+.price ul{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:6px}
+.contact{background:var(--eye-ink);color:#F7F4EC;border-radius:6px;padding:30px;display:flex;flex-direction:column;gap:14px}
+.contact h3{font-size:32px;text-transform:uppercase;color:var(--eye)}
+.contact p{color:#CFCBBF}
+.contact .cta{align-self:flex-start;white-space:nowrap}
+.reqs{display:flex;flex-direction:column;gap:10px;border-top:1px solid #33322E;padding-top:14px}
+.reqs dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#A8A497}
+.reqs dd{margin:2px 0 0;font-family:var(--display);font-size:24px}
+.reqs a{color:#F7F4EC;text-decoration:none}
+@media (max-width:760px){.price .wrap{grid-template-columns:1fr}}
+footer{padding:28px 0;font-size:13px;color:var(--muted)}
+/* slogan lockup: logo | FOLLOW THE / WHITE IRBIS — both lines optically the same width */
+.lockup{display:flex;align-items:center;gap:20px;text-decoration:none}
+.lockup img{flex:none}
+.sl{display:inline-flex;flex-direction:column;align-items:flex-start;gap:.42em;font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-size:22px;line-height:.82;text-transform:uppercase;white-space:nowrap;border-left:1px solid rgba(247,244,236,.3);padding:6px 0 6px 20px}
+html[lang] .sl span,html[lang] .sl b{font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-stretch:normal}
+.sl .s1{font-size:.5em;font-weight:400;letter-spacing:.7254em;margin-right:-.7254em;color:rgba(247,244,236,.8)}
+.sl .s2{font-size:1em;font-weight:600;letter-spacing:.06em;margin-right:-.06em;color:#F7F4EC}
+.sl b{font-weight:600;color:#FAEB0F}
+@media (max-width:520px){.lockup{flex-direction:column;align-items:flex-start;gap:12px}.sl{font-size:17px;border-left:0;padding:0}}
+.msg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:100%;max-width:470px}.msg .cta{display:flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;padding:15px 12px;margin:0;align-self:stretch}.msg .cta svg{width:22px;height:22px;flex:none}
+.msg .cta{background:transparent;color:var(--eye);border:2px solid var(--eye);border-radius:6px;transition:background .15s,color .15s}.msg .cta:hover,.msg .cta:focus-visible{background:var(--eye);color:var(--eye-ink)}
+.reqs dd a[href^="mailto"]{font-size:.8em;overflow-wrap:anywhere}
+@media (max-width:640px){.msg .cta{font-size:16px;letter-spacing:.03em;padding:14px 4px;gap:7px}.msg .cta svg{width:19px;height:19px}}
+
+/* header spacing fix (Nov 2026) */
+@media (max-width:1180px){.top nav{display:none}}
+@media (max-width:640px){.hero .wrap{padding-top:200px!important}}
+/* page additions */
+.media figure{margin:0}
+.media figure img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.stats span{background:var(--card);border-radius:4px;padding:5px 10px;font-family:var(--display);font-size:16px}
+.route{margin-top:18px;border-radius:6px;background:var(--card);padding:10px}
+.route img{width:100%;height:auto;border-radius:4px}
+.lunch-list{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:8px}
+.lunch-list li{padding-left:22px;position:relative}
+.lunch-list li::before{content:"";position:absolute;left:0;top:.6em;width:9px;height:9px;background:var(--eye);border-radius:2px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+.gal img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px}
+@media (max-width:760px){.gal{grid-template-columns:1fr 1fr}.gal img:first-child{grid-column:1/-1;aspect-ratio:3/2}}
+.plan li{grid-template-columns:28px 1fr}
+.plan b{opacity:.35}
+.lead a,.next a{color:inherit;text-decoration-color:var(--eye);text-decoration-thickness:3px;text-underline-offset:4px}
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.dc{background:var(--card);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.dc h3{font-size:24px;text-transform:uppercase}
+.dc p{color:var(--muted)}
+.dc .stats{margin-top:auto;padding-top:6px}
+.dc .stats span{background:var(--paper)}
+.dn{font-family:var(--display);font-size:48px;font-weight:700;line-height:.9;opacity:.18}
+.dc.hi{background:var(--deep);color:var(--on-deep)}
+.dc.hi p{color:var(--on-deep-muted)}.dc.hi .dn{color:var(--eye);opacity:1}
+.dc.hi .stats span{background:var(--eye);color:var(--eye-ink)}
+@media (max-width:900px){.dgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.dgrid{grid-template-columns:1fr}}
+.media figure img,.next figure img{border-radius:6px}
+.who4{grid-template-columns:repeat(4,1fr)}@media (max-width:960px){.who4{grid-template-columns:1fr 1fr}}@media (max-width:600px){.who4{grid-template-columns:1fr}}
+.gsec{background:var(--card)}
+.guides{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.guide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:22px;align-items:end}
+.guide img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+.guide h3{font-size:30px;text-transform:uppercase}
+.guide .role{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.guide p{color:var(--muted);margin-top:10px}
+@media (max-width:860px){.guides{grid-template-columns:1fr}}
+.faq-list{margin-top:32px;border-top:1px solid var(--line);max-width:860px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-family:var(--display);font-size:24px;text-transform:uppercase;list-style:none;display:flex;justify-content:space-between;gap:16px}
+html[lang="hy"] summary{font-family:"Noto Sans Armenian",var(--display);font-stretch:75%;font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--body);font-size:26px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted);max-width:62ch}
+.dimg{display:block;margin:-24px -24px 6px;border-radius:6px 6px 0 0;overflow:hidden;position:relative}
+.dimg img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.gal-sec{background:var(--card)}
+.gal3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+.gal3 figure{margin:0}.gal3 img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block}
+@media (max-width:760px){.gal3{grid-template-columns:1fr}.gal3 img{aspect-ratio:4/3}}
+.price .big{font-size:clamp(52px,7.4vw,100px)}.big>span[lang]{white-space:nowrap}
+
+@media (max-width:900px){.hero h1{font-size:clamp(30px,9.4vw,80px)!important}html[lang="hy"] .hero h1{font-size:clamp(28px,8.2vw,62px)!important}}
+.ab{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:start}
+@media (max-width:860px){.ab{grid-template-columns:1fr}}
+.sh3{font-size:24px;text-transform:uppercase;margin-top:32px}
+.sfbar{display:flex;height:46px;border-radius:6px;overflow:hidden;margin-top:14px}
+.sf{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:16px;min-width:0}
+.sf0{background:var(--eye);color:var(--eye-ink)}.sf1{background:#121212;color:#F7F4EC}.sf2{background:#B5462F;color:#fff}.sf3{background:#B9B5A8;color:#121212}
+.sfleg{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted)}
+.sfleg i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.schema{background:var(--deep);color:var(--on-deep);border-radius:6px;padding:26px 28px}
+.sch-cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-deep-muted)}
+.schema ol{list-style:none;margin:14px 0;padding:0 0 0 26px;position:relative}
+.schema ol::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;border-left:3px dashed var(--eye)}
+.sp{position:relative;padding:6px 0;font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:.03em}
+.sp::before{content:"";position:absolute;left:-23px;top:13px;width:10px;height:10px;border-radius:50%;background:var(--on-deep);box-shadow:0 0 0 3px var(--deep)}
+.sp.end::before{background:var(--eye);width:14px;height:14px;left:-25px;top:11px}
+.sp.end{color:var(--eye)}
+html[lang="hy"] .sp{font-family:"Noto Sans Armenian",var(--display);font-stretch:75%;font-weight:700}
+.sec-rg{background:var(--card)}
+.rgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
+@media (max-width:760px){.rgs{grid-template-columns:1fr}}
+.rg{background:var(--paper);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.rg-img img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.rg-none{height:64px;background:var(--deep);display:flex;align-items:flex-end;padding:18px 22px;background-image:radial-gradient(circle at 80% 20%,#2a2a26 0,#121212 70%)}
+.rg-none span{font-family:var(--display);font-size:44px;font-weight:700;line-height:.8;color:var(--eye)}
+.rg-b{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px}
+.rg-h{display:flex;align-items:baseline;gap:12px}.rg-h b{font-family:var(--display);color:var(--muted);font-size:18px}
+.rg-h h3{font-size:28px;text-transform:uppercase}
+.rg p{color:var(--muted)}
+.rg-hi i{display:block;font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;margin-bottom:2px}
+.rg-note{border-left:4px solid var(--eye);padding-left:12px;color:var(--ink)!important;font-size:15px}
+.rg .stats{margin-top:0}
+.rg-none + .rg-b .rg-h b{display:none}
+.prac{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 44px;margin-top:36px}
+@media (max-width:760px){.prac{grid-template-columns:1fr}}
+.prac h3{font-size:22px;text-transform:uppercase;color:var(--eye);margin-bottom:8px}
+.prac p{color:var(--on-deep-muted)}
+.bey{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:44px;margin-top:32px}
+@media (max-width:860px){.bey{grid-template-columns:1fr}}
+.bey h3{font-size:30px;text-transform:uppercase;margin-bottom:10px}
+.bey h4{font-family:var(--display);font-size:20px;text-transform:uppercase;margin:22px 0 10px}
+html[lang="hy"] .bey h4{font-family:"Noto Sans Armenian",var(--display);font-stretch:75%}
+.bey p{color:var(--muted);margin-top:10px}
+.tb{width:100%;border-collapse:collapse;font-size:15px}
+.tb th{text-align:left;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:6px 8px 6px 0}
+.tb td{border-bottom:1px solid var(--line);padding:8px 8px 8px 0}
+.tb td+td,.tb th+th{text-align:right;white-space:nowrap}
+.price .big>span[lang]{white-space:normal}
+</style>
+<style id="hero-edge">@media (min-width:901px){.hero{--tl:calc(max(0px,(100vw - 1120px)/2) + 20px)}.hero-media{left:calc(var(--tl) + 640px)!important}.hero .wrap>*{max-width:600px}.hero h1{font-size:min(9vw,68px)}html[lang="ru"] .hero h1{font-size:min(9vw,68px)}html[lang="en"] .hero h1{font-size:min(9vw,74px)}html[lang="hy"] .hero h1{font-size:min(7vw,56px)}}</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="lockup" href="../"><img src="img/logo.png" alt="White Irbis"><span class="sl"><span class="s1">Follow the</span><span class="s2">White <b>Irbis</b></span></span></a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="ru" aria-pressed="true">RU</button><button type="button" data-l="en" aria-pressed="false">EN</button><button type="button" data-l="hy" aria-pressed="false">ARM</button></div>
+</div></header>
+
+<section class="hero" id="top">
+  <div class="hero-media" aria-hidden="true"><img src="img/hero.jpg" alt="" style="object-position:50% 50%"></div>
+  <div class="wrap">
+    <span class="alt"><span lang="ru">Гайдбук · Армения · Грузия · Азербайджан</span><span lang="en">Guidebook · Armenia · Georgia · Azerbaijan</span><span lang="hy">Ուղեցույց · Հայաստան · Վրաստան · Ադրբեջան</span></span>
+    <h1><span lang="ru">Транскавказская<br><em>тропа</em></span><span lang="en">Transcaucasian<br><em>Trail</em></span><span lang="hy">Անդրկովկասյան<br><em>արահետ</em></span></h1>
+    <p class="sub"><span lang="ru">819 км пешком через всю Армению — от озера Арпи на границе с Грузией до Мегри у Аракса. Что ждёт на каждом участке, когда идти, где спать и как не потеряться.</span><span lang="en">819 km on foot across the whole of Armenia — from Lake Arpi on the Georgian border to Meghri on the Araks. What to expect on each section, when to go, where to sleep and how not to get lost.</span><span lang="hy">819 կմ ոտքով ամբողջ Հայաստանով՝ Վրաստանի սահմանին գտնվող Արփի լճից մինչև Արաքսի ափին գտնվող Մեղրի։ Ինչ է սպասվում յուրաքանչյուր հատվածում, երբ գնալ, որտեղ քնել և ինչպես չմոլորվել։</span></p>
+    <div class="row"><a class="cta" href="#sections"><span lang="ru">Смотреть участки</span><span lang="en">See the sections</span><span lang="hy">Տեսնել հատվածները</span></a></div>
+  </div>
+</section>
+
+<section class="facts"><div class="wrap"><dl>
+  <div><dt><span lang="ru">В Армении</span><span lang="en">In Armenia</span><span lang="hy">Հայաստանում</span></dt><dd><span lang="ru">819 км</span><span lang="en">819 km</span><span lang="hy">819 կմ</span></dd></div>
+  <div><dt><span lang="ru">Регионов</span><span lang="en">Regions</span><span lang="hy">Մարզեր</span></dt><dd>7</dd></div>
+  <div><dt><span lang="ru">Высшая точка</span><span lang="en">Highest point</span><span lang="hy">Ամենաբարձր կետ</span></dt><dd><span lang="ru">≈ 3 470 м</span><span lang="en">≈ 3,470 m</span><span lang="hy">≈ 3 470 մ</span></dd></div>
+  <div><dt><span lang="ru">Сезон</span><span lang="en">Season</span><span lang="hy">Սեզոն</span></dt><dd><span lang="ru">Июнь — сентябрь</span><span lang="en">June — September</span><span lang="hy">Հունիս — սեպտեմբեր</span></dd></div>
+</dl></div></section>
+
+<section id="about"><div class="wrap ab">
+  <div>
+    <span class="eyebrow"><span lang="ru">Что это за тропа</span><span lang="en">About the trail</span><span lang="hy">Ինչ արահետ է</span></span>
+    <h2 class="h2"><span lang="ru">Тропа через три страны</span><span lang="en">One trail, three countries</span><span lang="hy">Մեկ արահետ՝ երեք երկիր</span></h2>
+    <p class="lead"><span lang="ru">Транскавказская тропа (TCT) — длинный пеший маршрут через Армению, Грузию и Азербайджан. С 2016 года её строят волонтёры: соединяют старые пастушьи тропы, караванные пути и дороги между монастырями. В планах два коридора примерно по 1 500 км — по Большому и Малому Кавказу. К 2025 году готово около 1 750 км.</span><span lang="en">The Transcaucasian Trail (TCT) is a long-distance hiking route through Armenia, Georgia and Azerbaijan. Since 2016 volunteers have been building it by linking old shepherd paths, caravan routes and roads between monasteries. Two corridors of about 1,500 km each are planned — along the Greater and the Lesser Caucasus. By 2025 about 1,750 km were complete.</span><span lang="hy">Անդրկովկասյան արահետը (TCT) երկար քայլարշավային երթուղի է Հայաստանով, Վրաստանով և Ադրբեջանով։ 2016 թվականից կամավորները կառուցում են այն՝ միացնելով հին հովվական արահետները, քարավանային ուղիները և վանքերի միջև ճանապարհները։ Նախատեսված է երկու միջանցք՝ մոտ 1 500-ական կմ՝ Մեծ և Փոքր Կովկասով։ 2025 թ. պատրաստ էր մոտ 1 750 կմ։</span></p>
+    <p class="lead"><span lang="ru">Армянский участок открыли первым — в декабре 2021 года. Это самая полная национальная часть тропы: от границы до границы.</span><span lang="en">The Armenian section opened first, in December 2021. It is the most complete national part of the trail: border to border.</span><span lang="hy">Հայկական հատվածը բացվեց առաջինը՝ 2021 թ. դեկտեմբերին։ Սա արահետի ամենաամբողջական ազգային հատվածն է՝ սահմանից սահման։</span></p>
+    <h3 class="sh3"><span lang="ru">Из чего состоит путь</span><span lang="en">What's underfoot</span><span lang="hy">Ինչից է բաղկացած ճանապարհը</span></h3>
+    <div class="sfbar"><span class="sf sf0" style="flex:29"><b>29%</b></span><span class="sf sf1" style="flex:44"><b>44%</b></span><span class="sf sf2" style="flex:11"><b>11%</b></span><span class="sf sf3" style="flex:14"><b>14%</b></span></div><ul class="sfleg"><li><i class="sf0"></i><span lang="ru">Тропа</span><span lang="en">Footpath</span><span lang="hy">Արահետ</span> — 29%</li><li><i class="sf1"></i><span lang="ru">Грунтовки</span><span lang="en">Dirt roads</span><span lang="hy">Գրունտային ճանապարհ</span> — 44%</li><li><i class="sf2"></i><span lang="ru">Без тропы</span><span lang="en">Off-trail</span><span lang="hy">Առանց արահետի</span> — 11%</li><li><i class="sf3"></i><span lang="ru">Асфальт и сёла</span><span lang="en">Roads & villages</span><span lang="hy">Ասֆալտ և գյուղեր</span> — 14%</li></ul>
+  </div>
+  <div class="schema" aria-hidden="true"><div class="sch-cap"><span lang="ru">Север · Грузия</span><span lang="en">North · Georgia</span><span lang="hy">Հյուսիս · Վրաստան</span></div><ol><li class="sp end"><span><span lang="ru">Арпи</span><span lang="en">Arpi</span><span lang="hy">Արփի</span></span></li><li class="sp"><span><span lang="ru">Ширак</span><span lang="en">Shirak</span><span lang="hy">Շիրակ</span></span></li><li class="sp"><span><span lang="ru">Лори</span><span lang="en">Lori</span><span lang="hy">Լոռի</span></span></li><li class="sp"><span><span lang="ru">Дилижан</span><span lang="en">Dilijan</span><span lang="hy">Դիլիջան</span></span></li><li class="sp"><span><span lang="ru">Севан</span><span lang="en">Sevan</span><span lang="hy">Սևան</span></span></li><li class="sp"><span><span lang="ru">Гегам</span><span lang="en">Gegham</span><span lang="hy">Գեղամ</span></span></li><li class="sp"><span><span lang="ru">Ехегнадзор</span><span lang="en">Yeghegnadzor</span><span lang="hy">Եղեգնաձոր</span></span></li><li class="sp"><span><span lang="ru">Сисиан</span><span lang="en">Sisian</span><span lang="hy">Սիսիան</span></span></li><li class="sp"><span><span lang="ru">Татев</span><span lang="en">Tatev</span><span lang="hy">Տաթև</span></span></li><li class="sp"><span><span lang="ru">Капан</span><span lang="en">Kapan</span><span lang="hy">Կապան</span></span></li><li class="sp end"><span><span lang="ru">Мегри</span><span lang="en">Meghri</span><span lang="hy">Մեղրի</span></span></li></ol><div class="sch-cap"><span lang="ru">Юг · Иран</span><span lang="en">South · Iran</span><span lang="hy">Հարավ · Իրան</span></div></div>
+</div></section>
+
+<section id="sections" class="sec-rg"><div class="wrap">
+  <span class="eyebrow"><span lang="ru">Армения · с севера на юг</span><span lang="en">Armenia · north to south</span><span lang="hy">Հայաստան · հյուսիսից հարավ</span></span>
+  <h2 class="h2"><span lang="ru">Семь регионов</span><span lang="en">Seven regions</span><span lang="hy">Յոթ մարզ</span></h2>
+  <p class="lead"><span lang="ru">Идти можно в обе стороны. Километры по участкам — ориентир: маршрут уточняют каждый сезон.</span><span lang="en">You can walk it either way. Section distances are a guide: the route is refined every season.</span><span lang="hy">Կարելի է քայլել երկու ուղղությամբ։ Հատվածների կիլոմետրերը կողմնորոշիչ են՝ երթուղին ճշգրտվում է յուրաքանչյուր սեզոն։</span></p>
+  <div class="rgs">
+<article class="rg">
+<div class="rg-img rg-none"><span>01</span></div>
+<div class="rg-b">
+<div class="rg-h"><b>01</b><h3><span lang="ru">Ширак</span><span lang="en">Shirak</span><span lang="hy">Շիրակ</span></h3></div>
+<p><span lang="ru">Старт у озера Арпи на границе с Грузией. Высокое плато: болота, луга, безлесная степь и холмы, в основном грунтовки — идти несложно, но холодно и ветрено.</span><span lang="en">The start at Lake Arpi on the Georgian border. A high plateau of wetlands, meadows, treeless steppe and hills, mostly on dirt tracks — easy walking, but cold and windy.</span><span lang="hy">Մեկնարկ Արփի լճից՝ Վրաստանի սահմանին։ Բարձր սարահարթ՝ ճահիճներ, մարգագետիններ, անտառազուրկ տափաստան և բլուրներ, հիմնականում գրունտային ճանապարհներ. քայլելը հեշտ է, բայց ցուրտ ու քամոտ։</span></p>
+<p class="rg-hi"><i><span lang="ru">Смотреть</span><span lang="en">Highlights</span><span lang="hy">Տեսնել</span></i><span lang="ru">Нацпарк «Озеро Арпи», летние цветы, мегалиты у Арташена. Один из самых малопосещаемых уголков Армении.</span><span lang="en">Lake Arpi National Park, summer wildflowers, megaliths near Hartashen. One of the least visited corners of Armenia.</span><span lang="hy">«Արփի լիճ» ազգային պարկ, ամառային ծաղիկներ, մեգալիթներ Հարթաշենի մոտ։ Հայաստանի ամենաքիչ այցելվող անկյուններից մեկը։</span></p>
+<p class="rg-note"><span lang="ru">Проход по нацпарку «Озеро Арпи» — с регистрацией заранее.</span><span lang="en">Lake Arpi National Park asks hikers to register in advance.</span><span lang="hy">«Արփի լիճ» ազգային պարկով անցնելու համար պետք է նախապես գրանցվել։</span></p>
+</div></article>
+<article class="rg">
+<div class="rg-img rg-none"><span>02</span></div>
+<div class="rg-b">
+<div class="rg-h"><b>02</b><h3><span lang="ru">Лори</span><span lang="en">Lori</span><span lang="hy">Լոռի</span></h3></div>
+<p><span lang="ru">Лесистые хребты и долины, тропы по каньонам Дзорагета и Дебеда, затем выход выше леса.</span><span lang="en">Forested ridges and farm valleys, trails through the Dzoraget and Debed canyons, then up above the treeline.</span><span lang="hy">Անտառապատ լեռնաշղթաներ և հովիտներ, արահետներ Ձորագետի և Դեբեդի կիրճերով, հետո՝ անտառի գոտուց վեր։</span></p>
+<p class="rg-hi"><i><span lang="ru">Смотреть</span><span lang="en">Highlights</span><span lang="hy">Տեսնել</span></i><span lang="ru">Сосновые леса и дендропарк у Степанавана, каменная лестница Кобайра, Одзун, Санаин (ЮНЕСКО). В Дебеде открыто больше 100 км новых троп.</span><span lang="en">Pine forests and the arboretum near Stepanavan, the Kobayr stone staircase, Odzun, Sanahin (UNESCO). Over 100 km of new trails have opened in the Debed canyon.</span><span lang="hy">Սոճու անտառներ և դենդրոպարկ Ստեփանավանի մոտ, Քոբայրի քարե աստիճաններ, Օձուն, Սանահին (ՅՈՒՆԵՍԿՕ)։ Դեբեդի կիրճում բացվել է ավելի քան 100 կմ նոր արահետ։</span></p>
+<p class="rg-hi"><i><span lang="ru">Магазины</span><span lang="en">Resupply</span><span lang="hy">Խանութներ</span></i><span lang="ru">Степанаван, Алаверди</span><span lang="en">Stepanavan, Alaverdi</span><span lang="hy">Ստեփանավան, Ալավերդի</span></p>
+<p class="rg-note"><span lang="ru">Самый длинный безлюдный отрезок севера — около 86 км под горой Джарсар: 3–4 дня без магазинов.</span><span lang="en">The longest remote stretch in the north — about 86 km below Mt Dzharsar: 3–4 days without shops.</span><span lang="hy">Հյուսիսի ամենաերկար ամայի հատվածը՝ մոտ 86 կմ Ջարսար լեռան տակ. 3–4 օր առանց խանութների։</span></p>
+</div></article>
+<article class="rg">
+<div class="rg-img"><img src="img/trail_group.jpg" alt="Группа White Irbis на лесной тропе Дилижана" loading="lazy"></div>
+<div class="rg-b">
+<div class="rg-h"><b>03</b><h3><span lang="ru">Тавуш и Дилижан</span><span lang="en">Tavush & Dilijan</span><span lang="hy">Տավուշ և Դիլիջան</span></h3></div>
+<div class="stats"><span><span lang="ru">80 км · 4–5 дней</span><span lang="en">80 km · 4–5 days</span><span lang="hy">80 կմ · 4–5 օր</span></span></div>
+<p><span lang="ru">Высокогорные грунтовки и пастушьи тропы, скалы Иджеванского хребта, лесные тропы вокруг Дилижана и озера Парз.</span><span lang="en">Highland tracks and shepherd paths, the cliffs of the Ijevan range, forest trails around Dilijan and Lake Parz.</span><span lang="hy">Բարձրլեռնային ճանապարհներ և հովվական արահետներ, Իջևանի լեռնաշղթայի ժայռեր, անտառային արահետներ Դիլիջանի և Պարզ լճի շուրջ։</span></p>
+<p class="rg-hi"><i><span lang="ru">Смотреть</span><span lang="en">Highlights</span><span lang="hy">Տեսնել</span></i><span lang="ru">Нацпарк «Дилижан»: Агарцин, Гошаванк, озеро Гош. Участок по нацпарку — около 80 км, 4–5 дней, размечен красно-белым.</span><span lang="en">Dilijan National Park: Haghartsin, Goshavank, Lake Gosh. The national park stretch is about 80 km, 4–5 days, waymarked in red and white.</span><span lang="hy">«Դիլիջան» ազգային պարկ՝ Հաղարծին, Գոշավանք, Գոշի լիճ։ Ազգային պարկի հատվածը մոտ 80 կմ է, 4–5 օր, նշագծված կարմիր-սպիտակ։</span></p>
+<p class="rg-hi"><i><span lang="ru">Магазины</span><span lang="en">Resupply</span><span lang="hy">Խանութներ</span></i><span lang="ru">Дилижан</span><span lang="en">Dilijan</span><span lang="hy">Դիլիջան</span></p>
+<p class="rg-note"><span lang="ru">Один хребет не размечен и зарос — местами придётся продираться через кусты.</span><span lang="en">One ridge is unmarked and overgrown — expect some bushwhacking.</span><span lang="hy">Մի լեռնաշղթա նշագծված չէ և խիտ բուսականությամբ է՝ տեղ-տեղ ստիպված կլինեք ճեղքել թփերը։</span></p>
+</div></article>
+<article class="rg">
+<div class="rg-img rg-none"><span>04</span></div>
+<div class="rg-b">
+<div class="rg-h"><b>04</b><h3><span lang="ru">Гегамский хребет</span><span lang="en">Gegham Mountains</span><span lang="hy">Գեղամա լեռներ</span></h3></div>
+<p><span lang="ru">Самая высокая и дикая часть: от Севана на вулканическое плато. Часто без тропы — осыпи, курумы, застывшая лава, кочевья пастухов.</span><span lang="en">The highest and wildest part: from Sevan up onto the volcanic plateau. Often no trail at all — scree, boulder fields, old lava flows and shepherd camps.</span><span lang="hy">Ամենաբարձր և վայրի հատվածը՝ Սևանից դեպի հրաբխային սարահարթ։ Հաճախ առանց արահետի՝ քարաթափեր, քարակույտեր, սառած լավա, հովիվների վրաններ։</span></p>
+<p class="rg-hi"><i><span lang="ru">Смотреть</span><span lang="en">Highlights</span><span lang="hy">Տեսնել</span></i><span lang="ru">Кратерные озёра, Аждаак (≈3 600 м), в ясный день — Арарат.</span><span lang="en">Crater lakes, Mt Azhdahak (≈3,600 m) and, on a clear day, Ararat.</span><span lang="hy">Խառնարանային լճեր, Աժդահակ (≈3 600 մ), պարզ օրը՝ Արարատը։</span></p>
+<p class="rg-hi"><i><span lang="ru">Магазины</span><span lang="en">Resupply</span><span lang="hy">Խանութներ</span></i><span lang="ru">Севан</span><span lang="en">Sevan</span><span lang="hy">Սևան</span></p>
+<p class="rg-note"><span lang="ru">С октября по июнь здесь снег — надёжно проходить только в июле–августе. Мало воды, частые грозы.</span><span lang="en">Snowbound from October to June — only July and August are reliable. Little water, frequent thunderstorms.</span><span lang="hy">Հոկտեմբերից հունիս այստեղ ձյուն է՝ հուսալի է միայն հուլիսին և օգոստոսին։ Քիչ ջուր, հաճախակի ամպրոպներ։</span></p>
+</div></article>
+<article class="rg">
+<div class="rg-img"><img src="img/canyon_sunset.jpg" alt="Ущелье Вайоц Дзора на закате" loading="lazy"></div>
+<div class="rg-b">
+<div class="rg-h"><b>05</b><h3><span lang="ru">Вайоц Дзор</span><span lang="en">Vayots Dzor</span><span lang="hy">Վայոց Ձոր</span></h3></div>
+<p><span lang="ru">Скалы, красные каньоны, старинные тропы — расчищенные и размеченные — и грунтовки между виноградниками.</span><span lang="en">Cliffs, red canyons, cleared and waymarked ancient paths and dirt roads between vineyards.</span><span lang="hy">Ժայռեր, կարմիր կիրճեր, մաքրված և նշագծված հնագույն արահետներ, գրունտային ճանապարհներ խաղողի այգիների միջև։</span></p>
+<p class="rg-hi"><i><span lang="ru">Смотреть</span><span lang="en">Highlights</span><span lang="hy">Տեսնել</span></i><span lang="ru">Нораванк, караван-сарай Селим, винодельни Арени. Для дня отдыха — кемпинг под Ехегнадзором.</span><span lang="en">Noravank, Selim caravanserai, the wineries of Areni. Campsites near Yeghegnadzor for a rest day.</span><span lang="hy">Նորավանք, Սելիմի քարավանատուն, Արենիի գինեգործարաններ։ Հանգստի օրվա համար՝ ճամբար Եղեգնաձորի մոտ։</span></p>
+<p class="rg-hi"><i><span lang="ru">Магазины</span><span lang="en">Resupply</span><span lang="hy">Խանութներ</span></i><span lang="ru">Ехегнадзор</span><span lang="en">Yeghegnadzor</span><span lang="hy">Եղեգնաձոր</span></p>
+<p class="rg-note"><span lang="ru">В 2025 году маршрут увели от Джермука: у границы усилилось военное присутствие. Идите по актуальной карте TCT.</span><span lang="en">In 2025 the route was moved away from Jermuk because of increased military presence near the border. Follow the current TCT map.</span><span lang="hy">2025 թ. երթուղին հեռացվեց Ջերմուկից՝ սահմանի մոտ ռազմական ներկայության աճի պատճառով։ Հետևեք TCT-ի ընթացիկ քարտեզին։</span></p>
+</div></article>
+<article class="rg">
+<div class="rg-img rg-none"><span>06</span></div>
+<div class="rg-b">
+<div class="rg-h"><b>06</b><h3><span lang="ru">Сюник</span><span lang="en">Syunik</span><span lang="hy">Սյունիք</span></h3></div>
+<div class="stats"><span><span lang="ru">≈150 км · 8–12 дней</span><span lang="en">≈150 km · 8–12 days</span><span lang="hy">≈150 կմ · 8–12 օր</span></span></div>
+<p><span lang="ru">Луга, глубокие каньоны, альпийские скалы и сухие склоны. В основном старинные тропы; большая часть совпадает с «Тропой легенд».</span><span lang="en">Grasslands, deep canyons, alpine rock and dry slopes. Mostly ancient footpaths; much of it follows the Legends Trail.</span><span lang="hy">Մարգագետիններ, խոր կիրճեր, ալպյան ժայռեր և չոր լանջեր։ Հիմնականում հնագույն արահետներ, մեծ մասը համընկնում է «Լեգենդների արահետի» հետ։</span></p>
+<p class="rg-hi"><i><span lang="ru">Смотреть</span><span lang="en">Highlights</span><span lang="hy">Տեսնել</span></i><span lang="ru">Татев над ущельем Воротан, водопад Шаки, гора Хуступ, пещерные сёла.</span><span lang="en">Tatev above the Vorotan gorge, Shaki waterfall, Mt Khustup, cave villages.</span><span lang="hy">Տաթևը Որոտանի կիրճի վրա, Շաքիի ջրվեժ, Խուստուփ լեռ, քարանձավային գյուղեր։</span></p>
+<p class="rg-hi"><i><span lang="ru">Магазины</span><span lang="en">Resupply</span><span lang="hy">Խանութներ</span></i><span lang="ru">Сисиан, Горис, Капан</span><span lang="en">Sisian, Goris, Kapan</span><span lang="hy">Սիսիան, Գորիս, Կապան</span></p>
+<p class="rg-note"><span lang="ru">Гадюки. В заповеднике Шикаог ставить палатку нельзя.</span><span lang="en">Vipers. Wild camping is forbidden in Shikahogh Reserve.</span><span lang="hy">Իժեր։ Շիկահողի արգելոցում վրան խփել չի կարելի։</span></p>
+</div></article>
+<article class="rg">
+<div class="rg-img rg-none"><span>07</span></div>
+<div class="rg-b">
+<div class="rg-h"><b>07</b><h3><span lang="ru">Аревик и Мегри</span><span lang="en">Arevik & Meghri</span><span lang="hy">Արևիկ և Մեղրի</span></h3></div>
+<p><span lang="ru">Финиш у границы с Ираном: горная полупустыня нацпарка «Аревик» и спуск к Мегри.</span><span lang="en">The finish on the Iranian border: the mountain semi-desert of Arevik National Park and the descent to Meghri.</span><span lang="hy">Ավարտ Իրանի սահմանին՝ «Արևիկ» ազգային պարկի լեռնային կիսաանապատ և վայրէջք դեպի Մեղրի։</span></p>
+<p class="rg-hi"><i><span lang="ru">Смотреть</span><span lang="en">Highlights</span><span lang="hy">Տեսնել</span></i><span lang="ru">Самая глухая и трудная часть Армении. С юга на север идти тяжелее, чем наоборот.</span><span lang="en">The remotest and toughest part of Armenia. Harder going south to north than the other way.</span><span lang="hy">Հայաստանի ամենահեռավոր և դժվար հատվածը։ Հարավից հյուսիս քայլելն ավելի դժվար է, քան հակառակը։</span></p>
+<p class="rg-hi"><i><span lang="ru">Магазины</span><span lang="en">Resupply</span><span lang="hy">Խանութներ</span></i><span lang="ru">Мегри</span><span lang="en">Meghri</span><span lang="hy">Մեղրի</span></p>
+<p class="rg-note"><span lang="ru">Тропа ещё строится: крутые колючие склоны без тропы. В нацпарке «Аревик» — регистрация заранее.</span><span lang="en">Still under construction: steep, thorny slopes with no path. Arevik National Park asks hikers to register in advance.</span><span lang="hy">Արահետը դեռ կառուցվում է՝ զառիթափ, փշոտ լանջեր առանց արահետի։ «Արևիկ» ազգային պարկում պետք է նախապես գրանցվել։</span></p>
+</div></article>
+  </div>
+</div></section>
+
+<section class="inc" id="practical"><div class="wrap">
+  <span class="eyebrow"><span lang="ru">Практика</span><span lang="en">Practicalities</span><span lang="hy">Գործնական</span></span>
+  <h2 class="h2"><span lang="ru">Перед выходом</span><span lang="en">Before you set off</span><span lang="hy">Մինչ ճանապարհ ընկնելը</span></h2>
+  <div class="prac">
+    <div><h3><span lang="ru">Когда идти</span><span lang="en">When to go</span><span lang="hy">Երբ գնալ</span></h3><p><span lang="ru">Лучше всего — июнь–сентябрь. С юга на север: примерно с середины мая до конца сентября. С севера на юг: с начала июля до середины октября. Гегамский хребет под снегом с октября по июнь — рассчитывайте пройти его в июле–августе. Летом в низинах бывает за +32 °C.</span><span lang="en">Best from June to September. Northbound: roughly mid-May to the end of September. Southbound: early July to mid-October. The Gegham range is snowbound from October to June, so plan to cross it in July or August. Low-lying sections can top 32 °C in summer.</span><span lang="hy">Լավագույնը՝ հունիս–սեպտեմբեր։ Հարավից հյուսիս՝ մոտավորապես մայիսի կեսից մինչև սեպտեմբերի վերջ։ Հյուսիսից հարավ՝ հուլիսի սկզբից մինչև հոկտեմբերի կես։ Գեղամա լեռները ձյան տակ են հոկտեմբերից հունիս՝ պլանավորեք անցնել հուլիսին կամ օգոստոսին։ Ամռանը ցածրադիր վայրերում լինում է +32 °C-ից ավելի։</span></p></div>
+    <div><h3><span lang="ru">Навигация</span><span lang="en">Navigation</span><span lang="hy">Կողմնորոշում</span></h3><p><span lang="ru">Размечено около трети пути — красно-белыми метками и указателями. Остальное — по GPS: треки GPX и KML на сайте TCT, приложения FarOut и Hiiker, бумажные карты 1:25 000 от Cartisan. Офлайн-карты скачайте заранее.</span><span lang="en">About a third of the route is waymarked with red-and-white blazes and signposts. The rest is GPS navigation: GPX and KML tracks on the TCT website, the FarOut and Hiiker apps, and Cartisan 1:25,000 paper maps. Download offline maps in advance.</span><span lang="hy">Երթուղու մոտ մեկ երրորդը նշագծված է կարմիր-սպիտակ նշաններով և ցուցանակներով։ Մնացածը՝ GPS-ով. GPX և KML տրեկներ TCT-ի կայքում, FarOut և Hiiker հավելվածներ, Cartisan-ի 1:25 000 թղթային քարտեզներ։ Օֆլայն քարտեզները ներբեռնեք նախապես։</span></p></div>
+    <div><h3><span lang="ru">Ночёвки</span><span lang="en">Where to sleep</span><span lang="hy">Գիշերակաց</span></h3><p><span lang="ru">Палатка обязательна. Дикий кемпинг в Армении обычно терпят — почти вся земля общинная, ставьтесь аккуратно. Гестхаусы есть во многих сёлах, платят наличными. В заповеднике Шикаог палатку ставить нельзя.</span><span lang="en">A tent is essential. Wild camping is widely tolerated in Armenia, as most land is community-owned — camp considerately. Many villages have guesthouses, paid in cash. Camping is forbidden in Shikahogh Reserve.</span><span lang="hy">Վրանը պարտադիր է։ Վայրի ճամբարումը Հայաստանում սովորաբար հանդուրժվում է՝ հողի մեծ մասը համայնքային է, տեղավորվեք զգույշ։ Շատ գյուղերում կան հյուրատներ, վճարում են կանխիկ։ Շիկահողի արգելոցում վրան խփել չի կարելի։</span></p></div>
+    <div><h3><span lang="ru">Еда и вода</span><span lang="en">Food & water</span><span lang="hy">Սնունդ և ջուր</span></h3><p><span lang="ru">Супермаркеты — каждые 50–100 км: Мегри, Капан, Горис, Сисиан, Ехегнадзор, Севан, Дилижан, Алаверди, Степанаван. На глухих участках несите еду до 7 дней. Воды мало, особенно в Гегаме: берите запас на несколько литров и фильтр.</span><span lang="en">Supermarkets every 50–100 km: Meghri, Kapan, Goris, Sisian, Yeghegnadzor, Sevan, Dilijan, Alaverdi, Stepanavan. Carry up to 7 days of food on remote stretches. Water is scarce, especially in the Geghams — carry several litres and a filter.</span><span lang="hy">Սուպերմարկետներ՝ յուրաքանչյուր 50–100 կմ. Մեղրի, Կապան, Գորիս, Սիսիան, Եղեգնաձոր, Սևան, Դիլիջան, Ալավերդի, Ստեփանավան։ Ամայի հատվածներում վերցրեք մինչև 7 օրվա սնունդ։ Ջուրը քիչ է, հատկապես Գեղամում՝ վերցրեք մի քանի լիտր և ֆիլտր։</span></p></div>
+    <div><h3><span lang="ru">Разрешения</span><span lang="en">Permits</span><span lang="hy">Թույլտվություններ</span></h3><p><span lang="ru">Для большей части пути разрешения не нужны. В нацпарках «Аревик» и «Озеро Арпи» нужна регистрация заранее, в некоторых парках — небольшой сбор. Между Арменией и Грузией — только через официальный переход Бавра.</span><span lang="en">Most of the route needs no permit. Arevik and Lake Arpi national parks ask for advance registration; some parks charge a small fee. Cross between Armenia and Georgia only at the official Bavra checkpoint.</span><span lang="hy">Երթուղու մեծ մասի համար թույլտվություն պետք չէ։ «Արևիկ» և «Արփի լիճ» ազգային պարկերում պետք է նախապես գրանցվել, որոշ պարկերում՝ փոքր վճար։ Հայաստանի և Վրաստանի միջև՝ միայն Բավրայի պաշտոնական անցակետով։</span></p></div>
+    <div><h3><span lang="ru">Риски</span><span lang="en">Hazards</span><span lang="hy">Ռիսկեր</span></h3><p><span lang="ru">Пастушьи собаки, грозы с молниями, броды через холодные реки, размытые мосты, борщевик, гадюки, заросшие тропы. Спасатели и медицина на большей части пути далеко — идите со страховкой и сообщайте маршрут близким.</span><span lang="en">Livestock guard dogs, lightning storms, cold river fords, washed-out bridges, giant hogweed, vipers and overgrown paths. Rescue and medical help are far away on most of the route — get insurance and share your plan with someone.</span><span lang="hy">Հովվական շներ, կայծակով ամպրոպներ, սառը գետերի անցումներ, քանդված կամուրջներ, խոզաղբյուր, իժեր, խիտ բուսականությամբ արահետներ։ Փրկարարներն ու բժշկական օգնությունը մեծ մասամբ հեռու են՝ ունեցեք ապահովագրություն և ձեր երթուղին հայտնեք մտերիմներին։</span></p></div>
+    <div><h3><span lang="ru">Как добраться</span><span lang="en">Getting there</span><span lang="hy">Ինչպես հասնել</span></h3><p><span lang="ru">Прилёт в Ереван. На юг — маршрутка Ереван — Мегри, около 9 часов. На север — автобус до Гюмри и такси до озера Арпи. Билеты на маршрутки обычно бронируют по телефону.</span><span lang="en">Fly into Yerevan. For the south — the Yerevan–Meghri minibus, about 9 hours. For the north — a bus to Gyumri and a taxi to Lake Arpi. Minibus seats are usually booked by phone.</span><span lang="hy">Ժամանում Երևան։ Դեպի հարավ՝ Երևան–Մեղրի երթուղային տաքսի, մոտ 9 ժամ։ Դեպի հյուսիս՝ ավտոբուս մինչև Գյումրի և տաքսի մինչև Արփի լիճ։ Երթուղայինների տեղերը սովորաբար ամրագրում են հեռախոսով։</span></p></div>
+    <div><h3><span lang="ru">Деньги и связь</span><span lang="en">Money & mobile</span><span lang="hy">Գումար և կապ</span></h3><p><span lang="ru">Банкоматы — только в крупных городах, в сёлах нужны наличные драмы. Местная SIM-карта с безлимитным интернетом стоит недорого — для оформления нужен паспорт.</span><span lang="en">ATMs only in larger towns; villages run on cash drams. A local SIM card with unlimited data is cheap — bring your passport to register it.</span><span lang="hy">Բանկոմատներ՝ միայն խոշոր քաղաքներում, գյուղերում պետք են կանխիկ դրամ։ Տեղական SIM քարտը անսահմանափակ ինտերնետով էժան է՝ ձևակերպման համար պետք է անձնագիր։</span></p></div>
+  </div>
+</div></section>
+
+<section id="beyond"><div class="wrap">
+  <span class="eyebrow"><span lang="ru">За пределами Армении</span><span lang="en">Beyond Armenia</span><span lang="hy">Հայաստանից դուրս</span></span>
+  <h2 class="h2"><span lang="ru">Грузия и Азербайджан</span><span lang="en">Georgia and Azerbaijan</span><span lang="hy">Վրաստան և Ադրբեջան</span></h2>
+  <div class="bey">
+    <div>
+      <h3><span lang="ru">Грузия</span><span lang="en">Georgia</span><span lang="hy">Վրաստան</span></h3>
+      <p><span lang="ru">От Армении тропа идёт через Джавахетию, леса Боржоми, Имерети, Рачу, Сванетию и Самегрело к Чёрному морю — финиш в Анаклии. Вместе с Арменией — около 1 540 км и 2–4 месяца пути. Часть грузинских участков ещё строится.</span><span lang="en">From Armenia the trail runs through Javakheti, the Borjomi forests, Imereti, Racha, Svaneti and Samegrelo to the Black Sea — finishing at Anaklia. Together with Armenia it is about 1,540 km and 2–4 months on foot. Some Georgian sections are still being built.</span><span lang="hy">Հայաստանից արահետն անցնում է Ջավախքով, Բորժոմիի անտառներով, Իմերեթիով, Ռաչայով, Սվանեթիով և Սամեգրելոյով դեպի Սև ծով՝ ավարտը Անակլիայում։ Հայաստանի հետ միասին՝ մոտ 1 540 կմ և 2–4 ամիս ճանապարհ։ Վրացական որոշ հատվածներ դեռ կառուցվում են։</span></p>
+      <p><span lang="ru">Между Зесхо и Геби — погранзона с Россией, нужен пропуск. В одной части нацпарка Боржоми — регистрация у рейнджеров.</span><span lang="en">Between Zeskho and Ghebi you are in the Russian border zone and need a permit. Part of Borjomi National Park requires registration with the rangers.</span><span lang="hy">Զեսխոյի և Գեբիի միջև՝ Ռուսաստանի հետ սահմանային գոտի, պետք է անցաթուղթ։ Բորժոմիի ազգային պարկի մի մասում՝ գրանցում ռեյնջերների մոտ։</span></p>
+      <h4><span lang="ru">Сванетия — самый известный участок, около 10 дней</span><span lang="en">Svaneti — the best-known section, about 10 days</span><span lang="hy">Սվանեթի՝ ամենահայտնի հատվածը, մոտ 10 օր</span></h4>
+      <table class="tb"><thead><tr><th><span lang="ru">Этап</span><span lang="en">Stage</span><span lang="hy">Փուլ</span></th><th><span lang="ru">км</span><span lang="en">km</span><span lang="hy">կմ</span></th><th><span lang="ru">Набор, м</span><span lang="en">Gain, m</span><span lang="hy">Բարձրացում, մ</span></th></tr></thead><tbody><tr><td><span lang="ru">Чубери — Накра</span><span lang="en">Chuberi — Nakra</span><span lang="hy">Չուբերի — Նակրա</span></td><td>27</td><td>↑ 2 300</td></tr><tr><td><span lang="ru">Накра — Бечо</span><span lang="en">Nakra — Becho</span><span lang="hy">Նակրա — Բեչո</span></td><td>35</td><td>↑ 2 400</td></tr><tr><td><span lang="ru">Бечо — Местиа</span><span lang="en">Becho — Mestia</span><span lang="hy">Բեչո — Մեստիա</span></td><td>21</td><td>↑ 1 600</td></tr><tr><td><span lang="ru">Местиа — Адиши</span><span lang="en">Mestia — Adishi</span><span lang="hy">Մեստիա — Ադիշի</span></td><td>28</td><td>↑ 2 000</td></tr><tr><td><span lang="ru">Адиши — Ушгули</span><span lang="en">Adishi — Ushguli</span><span lang="hy">Ադիշի — Ուշգուլի</span></td><td>29</td><td>↑ 1 400</td></tr></tbody></table>
+    </div>
+    <div>
+      <h3><span lang="ru">Азербайджан</span><span lang="en">Azerbaijan</span><span lang="hy">Ադրբեջան</span></h3>
+      <p><span lang="ru">Северный коридор TCT задуман по Большому Кавказу — от Чёрного моря до Каспия, через север Грузии и Азербайджан. Азербайджанская часть пока в разработке, часть маршрута проходит через проблемные из-за конфликтов зоны.</span><span lang="en">The northern TCT corridor is planned along the Greater Caucasus — from the Black Sea to the Caspian, through northern Georgia and Azerbaijan. The Azerbaijani part is still in development, and some of it runs through areas made difficult by conflict.</span><span lang="hy">TCT-ի հյուսիսային միջանցքը նախատեսված է Մեծ Կովկասով՝ Սև ծովից մինչև Կասպից ծով՝ Վրաստանի հյուսիսով և Ադրբեջանով։ Ադրբեջանական հատվածը դեռ մշակման փուլում է, երթուղու մի մասն անցնում է հակամարտությունների պատճառով խնդրահարույց գոտիներով։</span></p>
+      <p class="credit"><span lang="ru">Перед поездкой сверяйтесь с актуальными картами и новостями TCT.</span><span lang="en">Check the latest TCT maps and news before you travel.</span><span lang="hy">Մեկնելուց առաջ ստուգեք TCT-ի ընթացիկ քարտեզներն ու նորությունները։</span></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="next" id="with-us"><div class="wrap">
+  <figure style="margin:0"><img src="img/forest.jpg" alt="Лесная тропа в национальном парке Дилижан" loading="lazy" style="aspect-ratio:4/3"></figure>
+  <div>
+    <span class="eyebrow"><span lang="ru">С White Irbis</span><span lang="en">With White Irbis</span><span lang="hy">White Irbis-ի հետ</span></span>
+    <h2 class="h2"><span lang="ru">Пройти кусок тропы с нами</span><span lang="en">Walk a piece of it with us</span><span lang="hy">Անցնել արահետի մի մասը մեզ հետ</span></h2>
+    <p class="lead"><span lang="ru">Участки TCT уже входят в наши туры: лесная тропа от озера Парз к Гошаванку в «Армении пешком» и тропа к Амагу в «Скалах и вулканах». Если хотите пройти отрезок целиком — поможем подобрать участок, заброску, ночёвки и гида.</span><span lang="en">Sections of the TCT are already part of our tours: the forest trail from Lake Parz to Goshavank in Armenia on Foot and the trail to Amaghu in Rocks and Volcanoes. If you want to walk a whole section, we'll help you choose it and arrange transfers, overnights and a guide.</span><span lang="hy">TCT-ի հատվածներն արդեն մեր տուրերում են՝ անտառային արահետը Պարզ լճից Գոշավանք «Հայաստան ոտքով» տուրում և արահետը դեպի Ամաղու «Ժայռեր և հրաբուխներ» տուրում։ Եթե ցանկանում եք անցնել մի ամբողջ հատված՝ կօգնենք ընտրել այն, կազմակերպել տեղափոխումը, գիշերակացը և գիդ։</span></p>
+    <p class="lead"><a href="../trekking/"><span lang="ru">Армения пешком →</span><span lang="en">Armenia on Foot →</span><span lang="hy">Հայաստան ոտքով →</span></a> &nbsp; <a href="../skaly-i-vulkan/"><span lang="ru">Скалы и вулканы →</span><span lang="en">Rocks and Volcanoes →</span><span lang="hy">Ժայռեր և հրաբուխներ →</span></a></p>
+  </div>
+</div></section>
+
+<section class="price" id="price"><div class="wrap">
+  <div>
+    <span class="eyebrow" style="color:var(--eye-ink)"><span lang="ru">Спросить</span><span lang="en">Ask us</span><span lang="hy">Հարցնել</span></span>
+    <div class="big" style="font-size:clamp(44px,6vw,80px)"><span lang="ru">Планируете тропу?</span><span lang="en">Planning the trail?</span><span lang="hy">Պլանավորո՞ւմ եք արահետը</span></div>
+    <ul>
+      <li><span lang="ru">Подскажем, какой участок выбрать под ваши дни и форму</span><span lang="en">We'll suggest a section for your time and fitness</span><span lang="hy">Կառաջարկենք հատված՝ ըստ ձեր օրերի և ֆիզիկական վիճակի</span></li>
+      <li><span lang="ru">Организуем заброску, ночёвки и гида</span><span lang="en">We can arrange transfers, overnights and a guide</span><span lang="hy">Կկազմակերպենք տեղափոխում, գիշերակաց և գիդ</span></li>
+    </ul>
+  </div>
+  <div class="contact">
+    <h3><span lang="ru">Напишите нам</span><span lang="en">Message us</span><span lang="hy">Գրեք մեզ</span></h3>
+    <p><span lang="ru">Расскажите, сколько у вас дней и какой участок интересен.</span><span lang="en">Tell us how many days you have and which section interests you.</span><span lang="hy">Պատմեք, քանի օր ունեք և որ հատվածն է ձեզ հետաքրքրում։</span></p>
+    <div class="msg"><a class="cta wa" id="wa" href="https://wa.me/37491470331" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.7l4.8-1.3A9.8 9.8 0 1 0 12 2.2Zm0 1.9a7.9 7.9 0 1 1-4.1 14.6l-.3-.2-2.8.8.8-2.7-.2-.3A7.9 7.9 0 0 1 12 4.1Zm-3 3.9c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.2 3.4 5.3 4.6 2.6 1 3.1.8 3.7.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.4l-2-1c-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5H9Z"/></svg><span>WhatsApp</span></a><a class="cta tg" href="https://t.me/+37491470331" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.6 3.4 2.9 10.6c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.3-1.4ZM8.3 13.2l9.9-6.2c.5-.3.9-.1.5.2l-8.2 7.4-.3 3.4-1.9-4.8Z"/></svg><span>Telegram</span></a></div>
+    <dl class="reqs">
+      <div><dt><span lang="ru">Телефон, WhatsApp, Telegram</span><span lang="en">Phone, WhatsApp, Telegram</span><span lang="hy">Հեռախոս, WhatsApp, Telegram</span></dt><dd><a href="tel:+37491470331">+374 91 470 331</a></dd></div>
+      <div><dt><span lang="ru">Почта</span><span lang="en">Email</span><span lang="hy">Էլ. փոստ</span></dt><dd><a href="mailto:antuanvisit@gmail.com">antuanvisit@gmail.com</a></dd></div>
+      <div><dt><span lang="ru">Сайт</span><span lang="en">Website</span><span lang="hy">Կայք</span></dt><dd><a href="https://irbis.am" target="_blank" rel="noopener">irbis.am</a></dd></div>
+    </dl>
+  </div>
+</div></section>
+
+<footer><div class="wrap">White Irbis · irbis.am · +374 91 470 331<br><span lang="ru">Данные: </span><span lang="en">Sources: </span><span lang="hy">Աղբյուրներ՝ </span><a href="https://transcaucasiantrail.org" target="_blank" rel="noopener">transcaucasiantrail.org</a>, Lonely Planet, National Geographic (2026). <span lang="ru">Маршрут меняется каждый сезон — перед выходом сверяйтесь с картой TCT. Схема на странице — не в масштабе. Фото — архив White Irbis.</span><span lang="en">The route changes every season — check the TCT map before you go. The diagram on this page is not to scale. Photos from the White Irbis archive.</span><span lang="hy">Երթուղին փոխվում է յուրաքանչյուր սեզոն՝ մեկնելուց առաջ ստուգեք TCT-ի քարտեզը։ Էջի սխեման մասշտաբային չէ։ Լուսանկարները՝ White Irbis-ի արխիվից։</span><br><a href="../gaidbuk/"><span lang="ru">Ещё гайдбук: «Скалы Армении»</span><span lang="en">Another guidebook: Rocks of Armenia</span><span lang="hy">Եվս մեկ ուղեցույց՝ «Հայաստանի ժայռերը»</span></a></div></footer>
+
+<script>
+(function(){
+  var html=document.documentElement, btns=[].slice.call(document.querySelectorAll('.lang button'));
+  var msg={"ru": "Здравствуйте! Планирую Транскавказскую тропу, хочу посоветоваться", "en": "Hi! I am planning the Transcaucasian Trail and would like some advice", "hy": "Բարև Ձեզ։ Պլանավորում եմ Անդրկովկասյան արահետը, ուզում եմ խորհրդակցել"}, titles={"ru": "Транскавказская тропа — гайдбук White Irbis", "en": "Transcaucasian Trail — White Irbis guidebook", "hy": "Անդրկովկասյան արահետ — White Irbis ուղեցույց"};
+  function set(l){html.lang=l;btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    document.getElementById('wa').href='https://wa.me/37491470331?text='+encodeURIComponent(msg[l]);
+    document.title=titles[l];
+    try{localStorage.setItem('wi-lang',l)}catch(e){}}
+  var q=(location.search.match(/lang=(ru|en|hy)/)||[])[1], s=null; try{s=localStorage.getItem('wi-lang')}catch(e){}
+  set(q||(['ru','en','hy'].indexOf(s)>=0?s:'ru'));
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
+  var hero=document.querySelector('.hero'), hv=hero.querySelector('video');
+  if(hv&&!matchMedia('(prefers-reduced-motion: reduce)').matches){hv.addEventListener('playing',function(){hero.classList.add('on')});hv.addEventListener('ended',function(){hero.classList.remove('on')});var p=hv.play();if(p&&p.catch)p.catch(function(){})}
+  var touch=matchMedia('(hover: none)').matches;
+  [].slice.call(document.querySelectorAll('.hv')).forEach(function(el){var v=el.querySelector('video');if(!v)return;
+    function on(){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){});el.classList.add('on')}
+    function off(){v.pause();el.classList.remove('on')}
+    if(touch){new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting&&e.intersectionRatio>.6?on():off()})},{threshold:[0,.6,1]}).observe(el)}
+    else{el.addEventListener('mouseenter',on);el.addEventListener('mouseleave',off)}});
+})();
+</script>
+</body>
+</html>

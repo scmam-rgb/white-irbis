@@ -78,6 +78,57 @@ SCRIPT = '''<script>
 })();
 </script>'''
 
+TCT_CSS = """
+@media (max-width:900px){.hero h1{font-size:clamp(30px,9.4vw,80px)!important}html[lang="hy"] .hero h1{font-size:clamp(28px,8.2vw,62px)!important}}
+.ab{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:start}
+@media (max-width:860px){.ab{grid-template-columns:1fr}}
+.sh3{font-size:24px;text-transform:uppercase;margin-top:32px}
+.sfbar{display:flex;height:46px;border-radius:6px;overflow:hidden;margin-top:14px}
+.sf{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:16px;min-width:0}
+.sf0{background:var(--eye);color:var(--eye-ink)}.sf1{background:#121212;color:#F7F4EC}.sf2{background:#B5462F;color:#fff}.sf3{background:#B9B5A8;color:#121212}
+.sfleg{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted)}
+.sfleg i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.schema{background:var(--deep);color:var(--on-deep);border-radius:6px;padding:26px 28px}
+.sch-cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-deep-muted)}
+.schema ol{list-style:none;margin:14px 0;padding:0 0 0 26px;position:relative}
+.schema ol::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;border-left:3px dashed var(--eye)}
+.sp{position:relative;padding:6px 0;font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:.03em}
+.sp::before{content:"";position:absolute;left:-23px;top:13px;width:10px;height:10px;border-radius:50%;background:var(--on-deep);box-shadow:0 0 0 3px var(--deep)}
+.sp.end::before{background:var(--eye);width:14px;height:14px;left:-25px;top:11px}
+.sp.end{color:var(--eye)}
+html[lang="hy"] .sp{font-family:"Noto Sans Armenian",var(--display);font-stretch:75%;font-weight:700}
+.sec-rg{background:var(--card)}
+.rgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
+@media (max-width:760px){.rgs{grid-template-columns:1fr}}
+.rg{background:var(--paper);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.rg-img img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.rg-none{height:64px;background:var(--deep);display:flex;align-items:flex-end;padding:18px 22px;background-image:radial-gradient(circle at 80% 20%,#2a2a26 0,#121212 70%)}
+.rg-none span{font-family:var(--display);font-size:44px;font-weight:700;line-height:.8;color:var(--eye)}
+.rg-b{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px}
+.rg-h{display:flex;align-items:baseline;gap:12px}.rg-h b{font-family:var(--display);color:var(--muted);font-size:18px}
+.rg-h h3{font-size:28px;text-transform:uppercase}
+.rg p{color:var(--muted)}
+.rg-hi i{display:block;font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;margin-bottom:2px}
+.rg-note{border-left:4px solid var(--eye);padding-left:12px;color:var(--ink)!important;font-size:15px}
+.rg .stats{margin-top:0}
+.rg-none + .rg-b .rg-h b{display:none}
+.prac{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 44px;margin-top:36px}
+@media (max-width:760px){.prac{grid-template-columns:1fr}}
+.prac h3{font-size:22px;text-transform:uppercase;color:var(--eye);margin-bottom:8px}
+.prac p{color:var(--on-deep-muted)}
+.bey{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:44px;margin-top:32px}
+@media (max-width:860px){.bey{grid-template-columns:1fr}}
+.bey h3{font-size:30px;text-transform:uppercase;margin-bottom:10px}
+.bey h4{font-family:var(--display);font-size:20px;text-transform:uppercase;margin:22px 0 10px}
+html[lang="hy"] .bey h4{font-family:"Noto Sans Armenian",var(--display);font-stretch:75%}
+.bey p{color:var(--muted);margin-top:10px}
+.tb{width:100%;border-collapse:collapse;font-size:15px}
+.tb th{text-align:left;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:6px 8px 6px 0}
+.tb td{border-bottom:1px solid var(--line);padding:8px 8px 8px 0}
+.tb td+td,.tb th+th{text-align:right;white-space:nowrap}
+.price .big>span[lang]{white-space:normal}
+"""
+
 PAGES = {
  'aragats': dict(
    title='Арагац, Северная вершина — White Irbis',
@@ -95,6 +146,14 @@ PAGES = {
    msg={'ru':'Здравствуйте! Хочу на Арарат','en':'Hi! I would like to climb Mount Ararat','hy':'Բարև Ձեզ։ Ուզում եմ բարձրանալ Արարատ'},
    titles={'ru':'Восхождение на Арарат — White Irbis','en':'Mount Ararat ascent — White Irbis','hy':'Վերելք Արարատ — White Irbis'},
    card='ararat'),
+ 'tct': dict(
+   title='Транскавказская тропа — гайдбук White Irbis',
+   desc='Гайдбук по Транскавказской тропе: 819 км через Армению от озера Арпи до Мегри — 7 регионов, сезоны, навигация, ночёвки, вода, разрешения. Общая информация по Грузии и Азербайджану.',
+   ogdesc='819 км через всю Армению: участки, сезоны, навигация, ночёвки и вода. Плюс Грузия и Азербайджан.',
+   apptitle='TCT', fs={'ru':68,'en':74,'hy':56},
+   msg={'ru':'Здравствуйте! Планирую Транскавказскую тропу, хочу посоветоваться','en':'Hi! I am planning the Transcaucasian Trail and would like some advice','hy':'Բարև Ձեզ։ Պլանավորում եմ Անդրկովկասյան արահետը, ուզում եմ խորհրդակցել'},
+   titles={'ru':'Транскавказская тропа — гайдбук White Irbis','en':'Transcaucasian Trail — White Irbis guidebook','hy':'Անդրկովկասյան արահետ — White Irbis ուղեցույց'},
+   card='tct', css=TCT_CSS),
 }
 import json
 for slug, p in PAGES.items():
@@ -126,8 +185,8 @@ for slug, p in PAGES.items():
 '''
     css2 = css.replace('/* dolmatur additions */', '/* page additions */').rstrip()
     assert css2.startswith('<style>')
-    out = head + css2 + extra + '</style>\n' + edge(p['fs']) + '\n</head>\n<body>\n\n' + body + '\n' + SCRIPT % dict(msg=json.dumps(p['msg'], ensure_ascii=False), titles=json.dumps(p['titles'], ensure_ascii=False)) + '\n</body>\n</html>\n'
-    os.makedirs(f'{R}/{slug}/img', exist_ok=True); os.makedirs(f'{R}/{slug}/vid', exist_ok=True)
+    out = head + css2 + extra + p.get('css','') + '</style>\n' + edge(p['fs']) + '\n</head>\n<body>\n\n' + body + '\n' + SCRIPT % dict(msg=json.dumps(p['msg'], ensure_ascii=False), titles=json.dumps(p['titles'], ensure_ascii=False)) + '\n</body>\n</html>\n'
+    os.makedirs(f'{R}/{slug}/img', exist_ok=True)
     open(f'{R}/{slug}/index.html', 'w').write(out)
     shutil.copy(f'{R}/dolmatur/img/logo.png', f'{R}/{slug}/img/logo.png')
     print(slug, len(out))
