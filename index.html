@@ -37,11 +37,13 @@ footer a{color:#FAEB0F}
 .sl b{font-weight:600;color:#FAEB0F}
 @media (max-width:520px){header{gap:16px}header img{width:80px;height:80px}.sl{font-size:23px;padding-left:16px}}
 html:not([lang="ru"]) [lang="ru"], html:not([lang="en"]) [lang="en"], html:not([lang="hy"]) [lang="hy"]{display:none!important}
-.lang{display:flex;gap:4px;background:#1E1E1C;border:1px solid #3A3934;border-radius:6px;padding:4px;margin-left:auto;align-self:center}
+.lang{display:flex;gap:4px;background:#1E1E1C;border:1px solid #3A3934;border-radius:6px;padding:4px;align-self:center}
+.about{margin-left:auto;align-self:center;color:#F7F4EC;font-family:Oswald,Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:18px;text-decoration:none;border-bottom:3px solid #FAEB0F;padding-bottom:2px}
+.about:hover{color:#FAEB0F}
 .lang button{font:600 14px Rubik,Arial,sans-serif;color:#F7F4EC;background:none;border:0;padding:6px 12px;border-radius:4px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:#FAEB0F;color:#121212}
 html[lang="hy"] body{font-family:Rubik,"Noto Sans Armenian",Arial,sans-serif}
-@media (max-width:520px){header{flex-wrap:wrap}.lang{margin-left:0}}
+@media (max-width:520px){header{flex-wrap:wrap}.lang{margin-left:0}.about{margin-left:0}}
 .sh{font-family:Oswald,Arial,sans-serif;text-transform:uppercase;font-weight:600;font-size:22px;letter-spacing:.12em;color:#B9B5A8;margin:0 0 16px}
 a.gb{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);margin-top:24px;background:#FAEB0F;color:#121212;text-decoration:none;border-radius:18px;overflow:hidden;border:2px solid #FAEB0F}
 a.gb img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15)}
@@ -56,7 +58,7 @@ a.gb p{margin:0;font-size:18px;line-height:1.45}
 a.gb:hover .gb-btn{background:#000}
 @media (max-width:700px){a.gb{grid-template-columns:1fr}a.gb img{aspect-ratio:1200/630;height:auto}}
 </style></head><body><div class="w">
-<header><h1 class="vh">White Irbis — Follow the White Irbis</h1><img src="skaly-i-vulkan/img/logo.png" alt="White Irbis"><span class="sl" aria-hidden="true"><span class="s1">Follow the</span><span class="s2">White <b>Irbis</b></span></span><div class="lang" role="group" aria-label="Language"><button type="button" data-l="ru" aria-pressed="true">RU</button><button type="button" data-l="en" aria-pressed="false">EN</button><button type="button" data-l="hy" aria-pressed="false">ARM</button></div></header>
+<header><h1 class="vh">White Irbis — Follow the White Irbis</h1><img src="skaly-i-vulkan/img/logo.png" alt="White Irbis"><span class="sl" aria-hidden="true"><span class="s1">Follow the</span><span class="s2">White <b>Irbis</b></span></span><a class="about" href="o-nas/"><span lang="ru">О нас</span><span lang="en">About us</span><span lang="hy">Մեր մասին</span></a><div class="lang" role="group" aria-label="Language"><button type="button" data-l="ru" aria-pressed="true">RU</button><button type="button" data-l="en" aria-pressed="false">EN</button><button type="button" data-l="hy" aria-pressed="false">ARM</button></div></header>
 <h2 class="sh"><span lang="ru">Туры</span><span lang="en">Tours</span><span lang="hy">Տուրեր</span></h2>
 <div class="g">
 <a class="c" href="ski/"><img lang="ru" src="img/cards/ski-ru.jpg" alt="Горные лыжи с нуля"><img lang="en" src="img/cards/ski-en.jpg" alt="Skiing from scratch"><img lang="hy" src="img/cards/ski-hy.jpg" alt="Լեռնադահուկ զրոյից"><div><span lang="ru">Горные лыжи с нуля · 7 дней · зима</span><span lang="en">Skiing from scratch · 7 days · winter</span><span lang="hy">Լեռնադահուկ զրոյից · 7 օր · ձմեռ</span></div></a>
@@ -71,11 +73,11 @@ a.gb:hover .gb-btn{background:#000}
 <a class="gb" href="gory/"><img src="gory/img/hero.jpg" alt="" aria-hidden="true"><div><span class="gb-k"><span lang="ru">Гайдбук</span><span lang="en">Guidebook</span><span lang="hy">Ուղեցույց</span></span><b><span lang="ru">Горы Армении</span><span lang="en">Mountains of Armenia</span><span lang="hy">Հայաստանի լեռները</span></b><p><span lang="ru">12 вершин — от «спящего великана» Ара до 4 090 м Арагаца: высота, старт, сложность и сезон.</span><span lang="en">12 peaks — from Ara, the sleeping giant, to Aragats at 4,090 m: height, trailhead, difficulty and season.</span><span lang="hy">12 գագաթ՝ «քնած հսկա» Արայից մինչև 4 090 մ Արագած. բարձրություն, մեկնարկ, բարդություն և սեզոն։</span></p><span class="gb-btn"><span lang="ru">Открыть гайдбук →</span><span lang="en">Open the guidebook →</span><span lang="hy">Բացել ուղեցույցը →</span></span></div></a>
 <a class="gb" href="tct/"><img src="tct/img/hero.jpg" alt="" aria-hidden="true"><div><span class="gb-k"><span lang="ru">Гайдбук</span><span lang="en">Guidebook</span><span lang="hy">Ուղեցույց</span></span><b><span lang="ru">Транскавказская тропа</span><span lang="en">Transcaucasian Trail</span><span lang="hy">Անդրկովկասյան արահետ</span></b><p><span lang="ru">819 км через всю Армению: семь регионов, сезоны, навигация, ночёвки и вода.</span><span lang="en">819 km across Armenia: seven regions, seasons, navigation, overnights and water.</span><span lang="hy">819 կմ ամբողջ Հայաստանով՝ յոթ մարզ, սեզոններ, կողմնորոշում, գիշերակաց և ջուր։</span></p><span class="gb-btn"><span lang="ru">Открыть гайдбук →</span><span lang="en">Open the guidebook →</span><span lang="hy">Բացել ուղեցույցը →</span></span></div></a>
 <a class="gb" href="gaidbuk/"><img src="skaly-i-vulkan/img/u_noravank_air.jpg" alt="" aria-hidden="true"><div><span class="gb-k"><span lang="ru">Гайдбук</span><span lang="en">Guidebook</span><span lang="hy">Ուղեցույց</span></span><b><span lang="ru">«Скалы Армении»</span><span lang="en">Rocks of Armenia</span><span lang="hy">«Հայաստանի ժայռերը»</span></b><p><span lang="ru">304 маршрута в 15 районах: схемы, категории, подходы. Для тех, кто лазает сам.</span><span lang="en">304 routes in 15 areas: topos, grades, approaches. For climbers going on their own.</span><span lang="hy">304 երթուղի 15 շրջանում՝ սխեմաներ, կարգեր, մոտեցումներ։ Նրանց համար, ովքեր մագլցում են ինքնուրույն։</span></p><span class="gb-btn"><span lang="ru">Открыть гайдбук →</span><span lang="en">Open the guidebook →</span><span lang="hy">Բացել ուղեցույցը →</span></span></div></a>
-<footer>WhatsApp <span lang="ru">и</span><span lang="en">and</span><span lang="hy">և</span> <a href="https://t.me/+37491470331">Telegram</a> <a href="https://wa.me/37491470331">+374 91 470 331</a> · <a href="mailto:antuanvisit@gmail.com">antuanvisit@gmail.com</a> · <a href="https://irbis.am">irbis.am</a></footer>
+<footer><a href="o-nas/"><span lang="ru">О нас</span><span lang="en">About us</span><span lang="hy">Մեր մասին</span></a> · WhatsApp <span lang="ru">и</span><span lang="en">and</span><span lang="hy">և</span> <a href="https://t.me/+37491470331">Telegram</a> <a href="https://wa.me/37491470331">+374 91 470 331</a> · <a href="mailto:antuanvisit@gmail.com">antuanvisit@gmail.com</a> · <a href="https://irbis.am">irbis.am</a></footer>
 </div><script>
 (function(){
   var html=document.documentElement, btns=[].slice.call(document.querySelectorAll('.lang button'));
-  var links=[].slice.call(document.querySelectorAll('a.c,a.gb'));
+  var links=[].slice.call(document.querySelectorAll('a.c,a.gb,a.about'));
   var titles={ru:'White Irbis — туры в горы Армении',en:'White Irbis — mountain tours in Armenia',hy:'White Irbis — լեռնային տուրեր Հայաստանում'};
   function set(l){html.lang=l;document.title=titles[l];
     btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});

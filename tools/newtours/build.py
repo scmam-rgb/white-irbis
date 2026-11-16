@@ -167,6 +167,29 @@ html[lang="hy"] .ladder .ln{font-family:"Noto Sans Armenian",var(--display);font
 .price .big>span[lang]{white-space:normal}
 """
 
+ABOUT_CSS = """
+.st{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px;align-items:center}
+.st figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+@media (max-width:860px){.st{grid-template-columns:1fr}}
+.pt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:32px}
+@media (max-width:760px){.pt{grid-template-columns:1fr}}
+.ptc{background:var(--card);border-radius:6px;padding:28px;border-top:6px solid var(--eye)}
+.ptc h3{font-size:26px;text-transform:uppercase;margin-bottom:10px}
+.ptc p{color:var(--muted);margin-top:8px}
+.ptc .ptn{color:var(--ink);font-weight:600}
+.prac{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 40px;margin-top:36px}
+@media (max-width:900px){.prac{grid-template-columns:1fr 1fr}}@media (max-width:600px){.prac{grid-template-columns:1fr}}
+.prac h3{font-size:22px;text-transform:uppercase;color:var(--eye);margin-bottom:8px}
+.prac p{color:var(--on-deep-muted)}
+.wh{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media (max-width:760px){.wh{grid-template-columns:1fr}}
+.lk{display:flex;flex-direction:column;margin-top:20px;border-top:1px solid var(--line)}
+.lk a{font-family:var(--display);font-size:24px;text-transform:uppercase;text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line)}
+html[lang="hy"] .lk a{font-family:"Noto Sans Armenian",var(--display);font-stretch:75%;font-weight:700}
+.lk a:hover{color:#7A6A00}
+.price .big>span[lang]{white-space:normal}
+"""
+
 PAGES = {
  'aragats': dict(
    title='Арагац, Северная вершина — White Irbis',
@@ -200,6 +223,14 @@ PAGES = {
    msg={'ru':'Здравствуйте! Хочу подняться на гору в Армении, подскажите','en':'Hi! I would like to climb a mountain in Armenia — can you advise?','hy':'Բարև Ձեզ։ Ուզում եմ բարձրանալ Հայաստանի լեռներից մեկը, խորհուրդ կտա՞ք'},
    titles={'ru':'Горы Армении — гайдбук White Irbis','en':'Mountains of Armenia — White Irbis guidebook','hy':'Հայաստանի լեռները — White Irbis ուղեցույց'},
    card='gory', css=GORY_CSS),
+ 'o-nas': dict(
+   title='О нас — White Irbis',
+   desc='White Irbis — горная команда из Еревана: гиды-альпинисты Антуан Ананян и Алексей Цисельский, в горах Армении с 2003 года. Партнёры: Федерация альпинизма и горного туризма Армении (член UIAA), клуб «7 Вершин».',
+   ogdesc='Гиды-альпинисты из Еревана, в горах Армении с 2003 года. Безопасность, страховка, маленькие группы.',
+   apptitle='White Irbis', fs={'ru':120,'en':120,'hy':92},
+   msg={'ru':'Здравствуйте! Хочу в горы с White Irbis','en':'Hi! I would like to go to the mountains with White Irbis','hy':'Բարև Ձեզ։ Ուզում եմ լեռներ գնալ White Irbis-ի հետ'},
+   titles={'ru':'О нас — White Irbis','en':'About us — White Irbis','hy':'Մեր մասին — White Irbis'},
+   card='about', css=ABOUT_CSS),
 }
 import json
 for slug, p in PAGES.items():
