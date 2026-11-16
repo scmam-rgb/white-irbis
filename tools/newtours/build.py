@@ -41,6 +41,12 @@ summary::-webkit-details-marker{display:none}
 summary::after{content:"+";font-family:var(--body);font-size:26px;line-height:1}
 details[open] summary::after{content:"–"}
 details p{margin-top:10px;color:var(--muted);max-width:62ch}
+.dimg{display:block;margin:-24px -24px 6px;border-radius:6px 6px 0 0;overflow:hidden;position:relative}
+.dimg img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.gal-sec{background:var(--card)}
+.gal3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+.gal3 figure{margin:0}.gal3 img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block}
+@media (max-width:760px){.gal3{grid-template-columns:1fr}.gal3 img{aspect-ratio:4/3}}
 .price .big{font-size:clamp(52px,7.4vw,100px)}.big>span[lang]{white-space:nowrap}
 '''
 

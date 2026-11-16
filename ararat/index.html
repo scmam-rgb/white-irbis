@@ -199,6 +199,12 @@ summary::-webkit-details-marker{display:none}
 summary::after{content:"+";font-family:var(--body);font-size:26px;line-height:1}
 details[open] summary::after{content:"–"}
 details p{margin-top:10px;color:var(--muted);max-width:62ch}
+.dimg{display:block;margin:-24px -24px 6px;border-radius:6px 6px 0 0;overflow:hidden;position:relative}
+.dimg img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.gal-sec{background:var(--card)}
+.gal3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+.gal3 figure{margin:0}.gal3 img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block}
+@media (max-width:760px){.gal3{grid-template-columns:1fr}.gal3 img{aspect-ratio:4/3}}
 .price .big{font-size:clamp(52px,7.4vw,100px)}.big>span[lang]{white-space:nowrap}
 </style>
 <style id="hero-edge">@media (min-width:901px){.hero{--tl:calc(max(0px,(100vw - 1120px)/2) + 20px)}.hero-media{left:calc(var(--tl) + 640px)!important}.hero .wrap>*{max-width:600px}.hero h1{font-size:min(9vw,120px)}html[lang="ru"] .hero h1{font-size:min(9vw,120px)}html[lang="en"] .hero h1{font-size:min(9vw,120px)}html[lang="hy"] .hero h1{font-size:min(7vw,92px)}}</style>
@@ -211,7 +217,7 @@ details p{margin-top:10px;color:var(--muted);max-width:62ch}
 </div></header>
 
 <section class="hero" id="top">
-  <div class="hero-media" aria-hidden="true"><img src="img/khorvirap.jpg" alt="" style="object-position:50% 45%"></div>
+  <div class="hero-media" aria-hidden="true"><img src="img/glacier.jpg" alt="" style="object-position:45% 50%"><video src="vid/hero.mp4" muted loop playsinline preload="metadata"></video></div>
   <div class="wrap">
     <span class="alt"><span lang="ru">Из Еревана · 6 дней · июль — сентябрь</span><span lang="en">From Yerevan · 6 days · July — September</span><span lang="hy">Երևանից · 6 օր · հուլիս — սեպտեմբեր</span></span>
     <h1><span lang="ru">Арарат<br><em>5 137 м</em></span><span lang="en">Ararat<br><em>5,137 m</em></span><span lang="hy">Արարատ<br><em>5 137 մ</em></span></h1>
@@ -233,30 +239,35 @@ details p{margin-top:10px;color:var(--muted);max-width:62ch}
   <p class="lead"><span lang="ru">Тяжёлые вещи до лагерей везут лошади. На штурм выходим ночью, последний участок — по леднику в кошках.</span><span lang="en">Horses carry the heavy gear up to the camps. We set off for the summit at night; the last stretch is on the glacier in crampons.</span><span lang="hy">Ծանր իրերը մինչև ճամբարներ տանում են ձիերը։ Գագաթ ենք դուրս գալիս գիշերը, վերջին հատվածը՝ սառցադաշտով, կատվաճանկերով։</span></p>
   <div class="dgrid">
     <article class="dc">
+      <span class="dimg"><img src="img/dusk.jpg" alt="Вечерние огни долины под Араратом" loading="lazy"></span>
       <div class="dn">01</div>
       <h3><span lang="ru">Ереван — Догубаязит</span><span lang="en">Yerevan — Doğubayazıt</span><span lang="hy">Երևան — Դողուբայազիդ</span></h3>
       <p><span lang="ru">Наш минивэн везёт через Гюмри и Грузию до турецкой границы, там пересаживаемся на турецкий. По желанию — остановка в Ани. Ужин в гостинице и брифинг.</span><span lang="en">Our minivan drives via Gyumri and Georgia to the Turkish border, where we switch to a Turkish one. Optional stop at Ani. Dinner at the hotel and a briefing.</span><span lang="hy">Մեր միկրոավտոբուսը Գյումրիով և Վրաստանով հասցնում է թուրքական սահման, այնտեղ նստում ենք թուրքականը։ Ցանկության դեպքում՝ կանգառ Անիում։ Ընթրիք հյուրանոցում և ճեպազրույց։</span></p>
       <div class="stats"><span lang="ru">Гостиница</span><span lang="en">Hotel</span><span lang="hy">Հյուրանոց</span></div>
     </article>
     <article class="dc">
+      <span class="dimg hv"><img src="img/team.jpg" alt="Группа White Irbis на подходе, за спиной Арарат" loading="lazy"><video src="vid/rest.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i aria-hidden="true"></i></span>
       <div class="dn">02</div>
       <h3><span lang="ru">Лагерь 1 · 3 200 м</span><span lang="en">Camp 1 · 3,200 m</span><span lang="hy">Ճամբար 1 · 3 200 մ</span></h3>
       <p><span lang="ru">Час до села Эли (2 200 м), дальше пешком. Вещи везут лошади.</span><span lang="en">An hour's drive to Eli village (2,200 m), then on foot. Horses carry the bags.</span><span lang="hy">Մեկ ժամ մինչև Էլի գյուղ (2 200 մ), հետո՝ ոտքով։ Իրերը տանում են ձիերը։</span></p>
       <div class="stats"><span lang="ru">6–7 км</span><span lang="en">6–7 km</span><span lang="hy">6–7 կմ</span><span lang="ru">4–5 ч</span><span lang="en">4–5 h</span><span lang="hy">4–5 ժ</span><span lang="ru">↑ ≈ 1 000 м</span><span lang="en">↑ ≈ 1,000 m</span><span lang="hy">↑ ≈ 1 000 մ</span></div>
     </article>
     <article class="dc">
+      <span class="dimg"><img src="img/night_camp.jpg" alt="Ночь в штурмовом лагере, внизу огни Догубаязита" loading="lazy"></span>
       <div class="dn">03</div>
       <h3><span lang="ru">Штурмовой лагерь · 4 200 м</span><span lang="en">High camp · 4,200 m</span><span lang="hy">Գրոհային ճամբար · 4 200 մ</span></h3>
       <p><span lang="ru">Переход и акклиматизационный выход ещё на 200–300 м. Проверка снаряжения, учимся ходить в кошках, рано спать.</span><span lang="en">The move up and an acclimatisation walk another 200–300 m higher. Gear check, crampon practice, early night.</span><span lang="hy">Անցում և կլիմայավարժման ելք ևս 200–300 մ։ Հանդերձանքի ստուգում, սովորում ենք քայլել կատվաճանկերով, վաղ քուն։</span></p>
       <div class="stats"><span lang="ru">5–6 км</span><span lang="en">5–6 km</span><span lang="hy">5–6 կմ</span><span lang="ru">до 6 ч</span><span lang="en">up to 6 h</span><span lang="hy">մինչև 6 ժ</span><span lang="ru">↑ ≈ 950 м</span><span lang="en">↑ ≈ 950 m</span><span lang="hy">↑ ≈ 950 մ</span></div>
     </article>
     <article class="dc hi">
+      <span class="dimg hv"><img src="img/summit_top.jpg" alt="На вершине Арарата у таблички 5 137 м" loading="lazy"><video src="vid/ascent.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i aria-hidden="true"></i></span>
       <div class="dn">04</div>
       <h3><span lang="ru">Вершина · 5 137 м</span><span lang="en">Summit · 5,137 m</span><span lang="hy">Գագաթ · 5 137 մ</span></h3>
       <p><span lang="ru">Подъём около полуночи. 5–6 часов по осыпи и камням, потом ледник в кошках. 30–40 минут на вершине, спуск в лагерь 1.</span><span lang="en">Up around midnight. 5–6 hours over scree and boulders, then the glacier in crampons. 30–40 minutes on top, then down to Camp 1.</span><span lang="hy">Զարթնում ենք կեսգիշերին մոտ։ 5–6 ժամ քարաթափով և քարերով, հետո՝ սառցադաշտ կատվաճանկերով։ 30–40 րոպե գագաթին, վայրէջք 1-ին ճամբար։</span></p>
       <div class="stats"><span lang="ru">Штурм</span><span lang="en">Summit day</span><span lang="hy">Գրոհ</span></div>
     </article>
     <article class="dc">
+      <span class="dimg"><img src="img/horses.jpg" alt="Лошади с грузом в лагере, снег" loading="lazy"></span>
       <div class="dn">05</div>
       <h3><span lang="ru">Спуск в Догубаязит</span><span lang="en">Down to Doğubayazıt</span><span lang="hy">Վայրէջք Դողուբայազիդ</span></h3>
       <p><span lang="ru">6 км вниз до Эли и в город. По желанию — дворец Исхак-паши.</span><span lang="en">6 km down to Eli and into town. Optional visit to the Ishak Pasha Palace.</span><span lang="hy">6 կմ ներքև մինչև Էլի և քաղաք։ Ցանկության դեպքում՝ Իսհակ փաշայի պալատ։</span></p>
@@ -269,6 +280,17 @@ details p{margin-top:10px;color:var(--muted);max-width:62ch}
     </article>
   </div>
   <p class="credit"><span lang="ru">Порядок дней может меняться из-за погоды и самочувствия группы.</span><span lang="en">The order of days may change with the weather and how the group feels.</span><span lang="hy">Օրերի հերթականությունը կարող է փոխվել եղանակի և խմբի ինքնազգացողության պատճառով։</span></p>
+</div></section>
+
+<section class="gal-sec" id="photos"><div class="wrap">
+  <span class="eyebrow"><span lang="ru">Как это было</span><span lang="en">How it went</span><span lang="hy">Ինչպես էր</span></span>
+  <h2 class="h2"><span lang="ru">Наши восхождения на Арарат</span><span lang="en">Our Ararat climbs</span><span lang="hy">Մեր վերելքները Արարատ</span></h2>
+  <div class="gal3">
+    <figure><img src="img/summit_ridge.jpg" alt="Вершинный гребень Арарата, отдых перед спуском" loading="lazy"></figure>
+    <figure><span class="hv"><img src="img/shadow.jpg" alt="Тень Арарата на облаках на рассвете" loading="lazy"><video src="vid/hero.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i aria-hidden="true"></i></span></figure>
+    <figure><img src="img/ascent.jpg" alt="Группа поднимается по заснеженной осыпи" loading="lazy"></figure>
+  </div>
+  <p class="credit"><span lang="ru">На рассвете гора отбрасывает на облака тень-пирамиду — её видно только с высоты.</span><span lang="en">At sunrise the mountain casts a pyramid-shaped shadow onto the clouds — you can only see it from up high.</span><span lang="hy">Արևածագին լեռը ամպերի վրա գցում է բուրգաձև ստվեր, որը երևում է միայն բարձրությունից։</span></p>
 </div></section>
 
 <section class="next" id="aragats"><div class="wrap">
