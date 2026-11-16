@@ -129,6 +129,43 @@ html[lang="hy"] .bey h4{font-family:"Noto Sans Armenian",var(--display);font-str
 .price .big>span[lang]{white-space:normal}
 """
 
+GORY_CSS = """
+.ld{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:56px;align-items:center}
+@media (max-width:860px){.ld{grid-template-columns:1fr;gap:28px}}
+.ladder{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ladder a{display:grid;grid-template-columns:150px 1fr 64px;gap:12px;align-items:center;text-decoration:none}
+.ladder .ln{font-family:var(--display);font-size:17px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html[lang="hy"] .ladder .ln{font-family:"Noto Sans Armenian",var(--display);font-stretch:75%;font-weight:700}
+.ladder .lb{height:14px;background:var(--card);border-radius:3px;overflow:hidden}
+.ladder .lb i{display:block;height:100%;background:var(--ink);border-radius:3px}
+.ladder li:first-child .lb i{background:var(--eye)}
+.ladder .la{font-family:var(--display);font-size:16px;text-align:right;color:var(--muted)}
+.ladder a:hover .lb i{background:var(--eye)}
+@media (max-width:520px){.ladder a{grid-template-columns:110px 1fr 56px}}
+.sec-pk{background:var(--card)}
+.pks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
+@media (max-width:760px){.pks{grid-template-columns:1fr}}
+.pk{background:var(--paper);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:20px}
+.pk-img{position:relative}.pk-img img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.pk-img b,.pk-alt b{font-family:var(--display);font-weight:700;color:var(--eye);line-height:.9}
+.pk-img b{position:absolute;left:20px;bottom:16px;font-size:52px;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.pk-alt{background:var(--deep);padding:22px 24px 18px;background-image:radial-gradient(circle at 85% 0,#2c2b27 0,#121212 65%)}
+.pk-alt b{font-size:52px}
+.pk-b{padding:20px 24px 24px;display:flex;flex-direction:column;gap:10px}
+.pk-b h3{font-size:30px;text-transform:uppercase}
+.pk p{color:var(--muted)}
+.pk .stats{margin-top:0}.pk .stats span{background:var(--card)}
+.pk .stats .lv span{background:none!important;padding:0;border-radius:0;color:inherit}
+.pk .lv-e{background:#DDEBC8!important}.pk .lv-m{background:var(--eye)!important}.pk .lv-h{background:#121212!important;color:#F7F4EC}.pk .lv-x{background:#B5462F!important;color:#fff}
+.pk-r i{display:block;font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;margin-bottom:2px}
+.pk-link a{color:var(--ink);font-weight:600;text-decoration-color:var(--eye);text-decoration-thickness:3px;text-underline-offset:4px}
+.prac{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 44px;margin-top:36px}
+@media (max-width:760px){.prac{grid-template-columns:1fr}}
+.prac h3{font-size:22px;text-transform:uppercase;color:var(--eye);margin-bottom:8px}
+.prac p{color:var(--on-deep-muted)}
+.price .big>span[lang]{white-space:normal}
+"""
+
 PAGES = {
  'aragats': dict(
    title='Арагац, Северная вершина — White Irbis',
@@ -154,6 +191,14 @@ PAGES = {
    msg={'ru':'Здравствуйте! Планирую Транскавказскую тропу, хочу посоветоваться','en':'Hi! I am planning the Transcaucasian Trail and would like some advice','hy':'Բարև Ձեզ։ Պլանավորում եմ Անդրկովկասյան արահետը, ուզում եմ խորհրդակցել'},
    titles={'ru':'Транскавказская тропа — гайдбук White Irbis','en':'Transcaucasian Trail — White Irbis guidebook','hy':'Անդրկովկասյան արահետ — White Irbis ուղեցույց'},
    card='tct', css=TCT_CSS),
+ 'gory': dict(
+   title='Горы Армении — гайдбук White Irbis',
+   desc='Гайдбук по горам Армении: Арагац, Аждаак, Капутджух, Хуступ, Ухтасар, Тегенис, Ара, Атис, Лалвар, Артаниш, Димац — высота, старт, сложность, сезон.',
+   ogdesc='11 вершин Армении: высота, старт, сложность и сезон. От «спящего великана» Ара до 4 090 м Арагаца.',
+   apptitle='Горы Армении', fs={'ru':120,'en':110,'hy':84},
+   msg={'ru':'Здравствуйте! Хочу подняться на гору в Армении, подскажите','en':'Hi! I would like to climb a mountain in Armenia — can you advise?','hy':'Բարև Ձեզ։ Ուզում եմ բարձրանալ Հայաստանի լեռներից մեկը, խորհուրդ կտա՞ք'},
+   titles={'ru':'Горы Армении — гайдбук White Irbis','en':'Mountains of Armenia — White Irbis guidebook','hy':'Հայաստանի լեռները — White Irbis ուղեցույց'},
+   card='gory', css=GORY_CSS),
 }
 import json
 for slug, p in PAGES.items():
