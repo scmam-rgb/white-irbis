@@ -156,6 +156,7 @@ html[lang="hy"] .ladder .ln{font-family:"Noto Sans Armenian",var(--display);font
 .pk p{color:var(--muted)}
 .pk .stats{margin-top:0}.pk .stats span{background:var(--card)}
 .pk .stats .lv span{background:none!important;padding:0;border-radius:0;color:inherit}
+.pk .four{flex-wrap:wrap}.pk .four span{background:var(--deep)!important;color:var(--on-deep)}.pk .four span span{background:none!important;padding:0;color:inherit}.pk .four b{color:var(--eye);font-family:var(--display);font-weight:600;margin-left:4px}
 .pk .lv-e{background:#DDEBC8!important}.pk .lv-m{background:var(--eye)!important}.pk .lv-h{background:#121212!important;color:#F7F4EC}.pk .lv-x{background:#B5462F!important;color:#fff}
 .pk-r i{display:block;font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;margin-bottom:2px}
 .pk-link a{color:var(--ink);font-weight:600;text-decoration-color:var(--eye);text-decoration-thickness:3px;text-underline-offset:4px}
@@ -193,8 +194,8 @@ PAGES = {
    card='tct', css=TCT_CSS),
  'gory': dict(
    title='Горы Армении — гайдбук White Irbis',
-   desc='Гайдбук по горам Армении: Арагац, Аждаак, Капутджух, Хуступ, Ухтасар, Тегенис, Ара, Атис, Лалвар, Артаниш, Димац — высота, старт, сложность, сезон.',
-   ogdesc='11 вершин Армении: высота, старт, сложность и сезон. От «спящего великана» Ара до 4 090 м Арагаца.',
+   desc='Гайдбук по горам Армении: Арагац, Аждаак, Капутджух, Хуступ, Ухтасар, Тегенис, Артаваз, Ара, Атис, Лалвар, Артаниш, Димац — высота, старт, сложность, сезон.',
+   ogdesc='12 вершин Армении: высота, старт, сложность и сезон. От «спящего великана» Ара до 4 090 м Арагаца.',
    apptitle='Горы Армении', fs={'ru':120,'en':110,'hy':84},
    msg={'ru':'Здравствуйте! Хочу подняться на гору в Армении, подскажите','en':'Hi! I would like to climb a mountain in Armenia — can you advise?','hy':'Բարև Ձեզ։ Ուզում եմ բարձրանալ Հայաստանի լեռներից մեկը, խորհուրդ կտա՞ք'},
    titles={'ru':'Горы Армении — гайдбук White Irbis','en':'Mountains of Armenia — White Irbis guidebook','hy':'Հայաստանի լեռները — White Irbis ուղեցույց'},
