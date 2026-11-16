@@ -78,6 +78,23 @@ body = f'''<header class="top"><div class="wrap">
   </div>
 </div></section>
 
+<section id="custom"><div class="wrap">
+  <span class="eyebrow">{T("Кроме туров","Beyond the tours","Տուրերից բացի")}</span>
+  <h2 class="h2">{T("Сделаем по-вашему","We'll do it your way","Կանենք ձեր ձևով")}</h2>
+  <div class="pt">
+    <div class="ptc">
+      <h3>{T("Индивидуально","Tailor-made","Անհատական")}</h3>
+      <p>{T("Любую программу соберём под вас: даты, маршрут, уровень, длительность. Семья, друзья, клуб или компания — частный гид, своя машина и свой темп.","We'll build any programme around you: dates, route, level, length. Family, friends, a club or a company — a private guide, your own vehicle and your own pace.","Ցանկացած ծրագիր կկազմենք ձեզ համար՝ ամսաթվեր, երթուղի, մակարդակ, տևողություն։ Ընտանիք, ընկերներ, ակումբ կամ ընկերություն՝ անհատական գիդ, ձեր մեքենան և ձեր տեմպը։")}</p>
+      <p class="ptn">{T("Однодневный выход, восхождение, скалы или неделя по Армении — напишите, что хотите.","A day out, a summit, rock climbing or a week around Armenia — tell us what you want.","Մեկօրյա ելք, վերելք, ժայռեր կամ մեկ շաբաթ Հայաստանով՝ գրեք, ինչ եք ուզում։")}</p>
+    </div>
+    <div class="ptc">
+      <h3>{T("Прокат снаряжения","Gear rental","Հանդերձանքի վարձույթ")}</h3>
+      <p>{T("Идёте в горы сами? Дадим снаряжение напрокат: палатки, спальники, коврики, каски, системы, верёвки, скальные туфли и другое.","Heading out on your own? We rent out gear: tents, sleeping bags, mats, helmets, harnesses, ropes, climbing shoes and more.","Լեռներ եք գնում ինքնուրույն։ Վարձով կտանք հանդերձանք՝ վրաններ, քնապարկեր, ներքնակներ, սաղավարտներ, համակարգեր, պարաններ, ժայռային կոշիկներ և այլն։")}</p>
+      <p class="ptn">{T("Напишите, что нужно и на какие даты, — подготовим.","Tell us what you need and for which dates — we'll get it ready.","Գրեք, ինչ է պետք և որ ամսաթվերին՝ կպատրաստենք։")}</p>
+    </div>
+  </div>
+</div></section>
+
 <section id="what"><div class="wrap wh">
   <div>
     <span class="eyebrow">{T("Туры","Tours","Տուրեր")}</span>
