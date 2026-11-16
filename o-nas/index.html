@@ -216,6 +216,10 @@ details p{margin-top:10px;color:var(--muted);max-width:62ch}
 .ptc h3{font-size:26px;text-transform:uppercase;margin-bottom:10px}
 .ptc p{color:var(--muted);margin-top:8px}
 .ptc .ptn{color:var(--ink);font-weight:600}
+.ptc.ptf{grid-column:1/-1;display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:center}
+.flogo{display:block;background:#fff;border-radius:6px;padding:12px}
+.flogo img{display:block;width:100%;height:auto}
+@media(max-width:640px){.ptc.ptf{grid-template-columns:1fr;gap:16px}.flogo{width:150px}}
 .prac{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 40px;margin-top:36px}
 @media (max-width:900px){.prac{grid-template-columns:1fr 1fr}}@media (max-width:600px){.prac{grid-template-columns:1fr}}
 .prac h3{font-size:22px;text-transform:uppercase;color:var(--eye);margin-bottom:8px}
@@ -279,10 +283,13 @@ html[lang="hy"] .lk a{font-family:"Noto Sans Armenian",var(--display);font-stret
   <span class="eyebrow"><span lang="ru">Партнёры</span><span lang="en">Partners</span><span lang="hy">Գործընկերներ</span></span>
   <h2 class="h2"><span lang="ru">Мы в федерации</span><span lang="en">Part of the federation</span><span lang="hy">Մենք ֆեդերացիայում ենք</span></h2>
   <div class="pt">
-    <div class="ptc">
-      <h3><span lang="ru">Федерация альпинизма и горного туризма Армении</span><span lang="en">Armenian Mountaineering and Hiking Federation</span><span lang="hy">Հայաստանի լեռնագնացության և լեռնային զբոսաշրջության ֆեդերացիա</span></h3>
+    <div class="ptc ptf">
+      <a class="flogo" href="https://armalp.am/" target="_blank" rel="noopener"><img src="img/federation.png" width="240" height="210" alt="Логотип Федерации альпинизма и горного туризма Армении" loading="lazy"></a>
+      <div>
+      <h3><span lang="ru">Федерация альпинизма и горного туризма Армении</span><span lang="en">Armenian Mountaineering and Mountain Tourism Federation</span><span lang="hy">Հայաստանի լեռնագնացության և լեռնային զբոսաշրջության ֆեդերացիա</span></h3>
       <p><span lang="ru">Национальная федерация, которая с 2011 года отвечает за альпинизм, горный туризм и скалолазание в стране: проводит сборы, обучение и семинары. В октябре 2025 года стала полноправным членом UIAA — Международной федерации альпинизма и скалолазания.</span><span lang="en">The national federation responsible since 2011 for mountaineering, hiking and climbing in the country: it runs training camps, courses and seminars. In October 2025 it became a full member of the UIAA, the International Climbing and Mountaineering Federation.</span><span lang="hy">Ազգային ֆեդերացիա, որը 2011 թվականից պատասխանատու է երկրում լեռնագնացության, լեռնային զբոսաշրջության և մագլցման համար՝ անցկացնում է հավաքներ, ուսուցումներ և սեմինարներ։ 2025 թ. հոկտեմբերին դարձավ UIAA-ի՝ Լեռնագնացության և մագլցման միջազգային ֆեդերացիայի լիիրավ անդամ։</span></p>
       <p class="ptn"><span lang="ru">Антуан Ананян — вице-президент федерации.</span><span lang="en">Antoine Ananyan is the federation's vice-president.</span><span lang="hy">Անտուան Անանյանը ֆեդերացիայի փոխնախագահն է։</span></p>
+      </div>
     </div>
   </div>
 </div></section>

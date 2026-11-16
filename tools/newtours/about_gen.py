@@ -62,10 +62,13 @@ body = f'''<header class="top"><div class="wrap">
   <span class="eyebrow">{T("Партнёры","Partners","Գործընկերներ")}</span>
   <h2 class="h2">{T("Мы в федерации","Part of the federation","Մենք ֆեդերացիայում ենք")}</h2>
   <div class="pt">
-    <div class="ptc">
-      <h3>{T("Федерация альпинизма и горного туризма Армении","Armenian Mountaineering and Hiking Federation","Հայաստանի լեռնագնացության և լեռնային զբոսաշրջության ֆեդերացիա")}</h3>
+    <div class="ptc ptf">
+      <a class="flogo" href="https://armalp.am/" target="_blank" rel="noopener"><img src="img/federation.png" width="240" height="210" alt="Логотип Федерации альпинизма и горного туризма Армении" loading="lazy"></a>
+      <div>
+      <h3>{T("Федерация альпинизма и горного туризма Армении","Armenian Mountaineering and Mountain Tourism Federation","Հայաստանի լեռնագնացության և լեռնային զբոսաշրջության ֆեդերացիա")}</h3>
       <p>{T("Национальная федерация, которая с 2011 года отвечает за альпинизм, горный туризм и скалолазание в стране: проводит сборы, обучение и семинары. В октябре 2025 года стала полноправным членом UIAA — Международной федерации альпинизма и скалолазания.","The national federation responsible since 2011 for mountaineering, hiking and climbing in the country: it runs training camps, courses and seminars. In October 2025 it became a full member of the UIAA, the International Climbing and Mountaineering Federation.","Ազգային ֆեդերացիա, որը 2011 թվականից պատասխանատու է երկրում լեռնագնացության, լեռնային զբոսաշրջության և մագլցման համար՝ անցկացնում է հավաքներ, ուսուցումներ և սեմինարներ։ 2025 թ. հոկտեմբերին դարձավ UIAA-ի՝ Լեռնագնացության և մագլցման միջազգային ֆեդերացիայի լիիրավ անդամ։")}</p>
       <p class="ptn">{T("Антуан Ананян — вице-президент федерации.","Antoine Ananyan is the federation's vice-president.","Անտուան Անանյանը ֆեդերացիայի փոխնախագահն է։")}</p>
+      </div>
     </div>
   </div>
 </div></section>
