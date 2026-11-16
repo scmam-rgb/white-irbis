@@ -68,7 +68,7 @@ SCRIPT = '''<script>
   set(q||(['ru','en','hy'].indexOf(s)>=0?s:'ru'));
   btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
   var hero=document.querySelector('.hero'), hv=hero.querySelector('video');
-  if(hv&&!matchMedia('(prefers-reduced-motion: reduce)').matches){hv.addEventListener('playing',function(){hero.classList.add('on')});var p=hv.play();if(p&&p.catch)p.catch(function(){})}
+  if(hv&&!matchMedia('(prefers-reduced-motion: reduce)').matches){hv.addEventListener('playing',function(){hero.classList.add('on')});hv.addEventListener('ended',function(){hero.classList.remove('on')});var p=hv.play();if(p&&p.catch)p.catch(function(){})}
   var touch=matchMedia('(hover: none)').matches;
   [].slice.call(document.querySelectorAll('.hv')).forEach(function(el){var v=el.querySelector('video');if(!v)return;
     function on(){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){});el.classList.add('on')}

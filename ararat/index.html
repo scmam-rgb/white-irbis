@@ -217,7 +217,7 @@ details p{margin-top:10px;color:var(--muted);max-width:62ch}
 </div></header>
 
 <section class="hero" id="top">
-  <div class="hero-media" aria-hidden="true"><img src="img/glacier.jpg" alt="" style="object-position:45% 50%"><video src="vid/hero.mp4" muted loop playsinline preload="metadata"></video></div>
+  <div class="hero-media" aria-hidden="true"><img src="img/glacier.jpg" alt="" style="object-position:45% 50%"><video src="vid/hero.mp4" muted playsinline preload="metadata"></video></div>
   <div class="wrap">
     <span class="alt"><span lang="ru">Из Еревана · 6 дней · июль — сентябрь</span><span lang="en">From Yerevan · 6 days · July — September</span><span lang="hy">Երևանից · 6 օր · հուլիս — սեպտեմբեր</span></span>
     <h1><span lang="ru">Арарат<br><em>5 137 м</em></span><span lang="en">Ararat<br><em>5,137 m</em></span><span lang="hy">Արարատ<br><em>5 137 մ</em></span></h1>
@@ -239,7 +239,7 @@ details p{margin-top:10px;color:var(--muted);max-width:62ch}
   <p class="lead"><span lang="ru">Тяжёлые вещи до лагерей везут лошади. На штурм выходим ночью, последний участок — по леднику в кошках.</span><span lang="en">Horses carry the heavy gear up to the camps. We set off for the summit at night; the last stretch is on the glacier in crampons.</span><span lang="hy">Ծանր իրերը մինչև ճամբարներ տանում են ձիերը։ Գագաթ ենք դուրս գալիս գիշերը, վերջին հատվածը՝ սառցադաշտով, կատվաճանկերով։</span></p>
   <div class="dgrid">
     <article class="dc">
-      <span class="dimg"><img src="img/dusk.jpg" alt="Вечерние огни долины под Араратом" loading="lazy"></span>
+      <span class="dimg"><img src="img/road.jpg" alt="Арарат из Армении — с этого вида начинается путь" loading="lazy"></span>
       <div class="dn">01</div>
       <h3><span lang="ru">Ереван — Догубаязит</span><span lang="en">Yerevan — Doğubayazıt</span><span lang="hy">Երևան — Դողուբայազիդ</span></h3>
       <p><span lang="ru">Наш минивэн везёт через Гюмри и Грузию до турецкой границы, там пересаживаемся на турецкий. По желанию — остановка в Ани. Ужин в гостинице и брифинг.</span><span lang="en">Our minivan drives via Gyumri and Georgia to the Turkish border, where we switch to a Turkish one. Optional stop at Ani. Dinner at the hotel and a briefing.</span><span lang="hy">Մեր միկրոավտոբուսը Գյումրիով և Վրաստանով հասցնում է թուրքական սահման, այնտեղ նստում ենք թուրքականը։ Ցանկության դեպքում՝ կանգառ Անիում։ Ընթրիք հյուրանոցում և ճեպազրույց։</span></p>
@@ -398,7 +398,7 @@ details p{margin-top:10px;color:var(--muted);max-width:62ch}
   set(q||(['ru','en','hy'].indexOf(s)>=0?s:'ru'));
   btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
   var hero=document.querySelector('.hero'), hv=hero.querySelector('video');
-  if(hv&&!matchMedia('(prefers-reduced-motion: reduce)').matches){hv.addEventListener('playing',function(){hero.classList.add('on')});var p=hv.play();if(p&&p.catch)p.catch(function(){})}
+  if(hv&&!matchMedia('(prefers-reduced-motion: reduce)').matches){hv.addEventListener('playing',function(){hero.classList.add('on')});hv.addEventListener('ended',function(){hero.classList.remove('on')});var p=hv.play();if(p&&p.catch)p.catch(function(){})}
   var touch=matchMedia('(hover: none)').matches;
   [].slice.call(document.querySelectorAll('.hv')).forEach(function(el){var v=el.querySelector('video');if(!v)return;
     function on(){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){});el.classList.add('on')}
