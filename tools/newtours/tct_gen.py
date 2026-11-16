@@ -6,9 +6,9 @@ def L(*a): return T(*a)
 regions = [
  # (num, name, terrain, highlights, towns, note, stats, img, alt)
  ('01', ('Ширак','Shirak','Շիրակ'),
-  ('Старт у озера Арпи на границе с Грузией. Высокое плато: болота, луга, безлесная степь и холмы, в основном грунтовки — идти несложно, но холодно и ветрено.',
-   'The start at Lake Arpi on the Georgian border. A high plateau of wetlands, meadows, treeless steppe and hills, mostly on dirt tracks — easy walking, but cold and windy.',
-   'Մեկնարկ Արփի լճից՝ Վրաստանի սահմանին։ Բարձր սարահարթ՝ ճահիճներ, մարգագետիններ, անտառազուրկ տափաստան և բլուրներ, հիմնականում գրունտային ճանապարհներ. քայլելը հեշտ է, բայց ցուրտ ու քամոտ։'),
+  ('Старт у озера Арпи на севере Армении. Высокое плато: болота, луга, безлесная степь и холмы, в основном грунтовки — идти несложно, но холодно и ветрено.',
+   'The start at Lake Arpi in the far north of Armenia. A high plateau of wetlands, meadows, treeless steppe and hills, mostly on dirt tracks — easy walking, but cold and windy.',
+   'Մեկնարկ Արփի լճից՝ Հայաստանի հյուսիսում։ Բարձր սարահարթ՝ ճահիճներ, մարգագետիններ, անտառազուրկ տափաստան և բլուրներ, հիմնականում գրունտային ճանապարհներ. քայլելը հեշտ է, բայց ցուրտ ու քամոտ։'),
   ('Нацпарк «Озеро Арпи», летние цветы, мегалиты у Арташена. Один из самых малопосещаемых уголков Армении.',
    'Lake Arpi National Park, summer wildflowers, megaliths near Hartashen. One of the least visited corners of Armenia.',
    '«Արփի լիճ» ազգային պարկ, ամառային ծաղիկներ, մեգալիթներ Հարթաշենի մոտ։ Հայաստանի ամենաքիչ այցելվող անկյուններից մեկը։'),
@@ -72,9 +72,9 @@ regions = [
   ('Гадюки. В заповеднике Шикаог ставить палатку нельзя.','Vipers. Wild camping is forbidden in Shikahogh Reserve.','Իժեր։ Շիկահողի արգելոցում վրան խփել չի կարելի։'),
   ('≈150 км · 8–12 дней','≈150 km · 8–12 days','≈150 կմ · 8–12 օր'), None, None),
  ('07', ('Аревик и Мегри','Arevik & Meghri','Արևիկ և Մեղրի'),
-  ('Финиш у границы с Ираном: горная полупустыня нацпарка «Аревик» и спуск к Мегри.',
-   'The finish on the Iranian border: the mountain semi-desert of Arevik National Park and the descent to Meghri.',
-   'Ավարտ Իրանի սահմանին՝ «Արևիկ» ազգային պարկի լեռնային կիսաանապատ և վայրէջք դեպի Մեղրի։'),
+  ('Финиш на юге Армении: горная полупустыня нацпарка «Аревик» и спуск к Мегри.',
+   'The finish in the far south of Armenia: the mountain semi-desert of Arevik National Park and the descent to Meghri.',
+   'Ավարտ Հայաստանի հարավում՝ «Արևիկ» ազգային պարկի լեռնային կիսաանապատ և վայրէջք դեպի Մեղրի։'),
   ('Самая глухая и трудная часть Армении. С юга на север идти тяжелее, чем наоборот.',
    'The remotest and toughest part of Armenia. Harder going south to north than the other way.',
    'Հայաստանի ամենահեռավոր և դժվար հատվածը։ Հարավից հյուսիս քայլելն ավելի դժվար է, քան հակառակը։'),
@@ -110,7 +110,7 @@ def schema():
     for i, p in enumerate(pts):
         cls = ' end' if i in (0, len(pts)-1) else ''
         rows.append(f'<li class="sp{cls}"><span>{T(*p)}</span></li>')
-    return f'''<div class="schema" aria-hidden="true"><div class="sch-cap">{T("Север · Грузия","North · Georgia","Հյուսիս · Վրաստան")}</div><ol>{''.join(rows)}</ol><div class="sch-cap">{T("Юг · Иран","South · Iran","Հարավ · Իրան")}</div></div>'''
+    return f'''<div class="schema" aria-hidden="true"><div class="sch-cap">{T("Север","North","Հյուսիս")}</div><ol>{''.join(rows)}</ol><div class="sch-cap">{T("Юг","South","Հարավ")}</div></div>'''
 
 practical = [
  (('Когда идти','When to go','Երբ գնալ'),
@@ -130,9 +130,9 @@ practical = [
    'Supermarkets every 50–100 km: Meghri, Kapan, Goris, Sisian, Yeghegnadzor, Sevan, Dilijan, Alaverdi, Stepanavan. Carry up to 7 days of food on remote stretches. Water is scarce, especially in the Geghams — carry several litres and a filter.',
    'Սուպերմարկետներ՝ յուրաքանչյուր 50–100 կմ. Մեղրի, Կապան, Գորիս, Սիսիան, Եղեգնաձոր, Սևան, Դիլիջան, Ալավերդի, Ստեփանավան։ Ամայի հատվածներում վերցրեք մինչև 7 օրվա սնունդ։ Ջուրը քիչ է, հատկապես Գեղամում՝ վերցրեք մի քանի լիտր և ֆիլտր։')),
  (('Разрешения','Permits','Թույլտվություններ'),
-  ('Для большей части пути разрешения не нужны. В нацпарках «Аревик» и «Озеро Арпи» нужна регистрация заранее, в некоторых парках — небольшой сбор. Между Арменией и Грузией — только через официальный переход Бавра.',
-   'Most of the route needs no permit. Arevik and Lake Arpi national parks ask for advance registration; some parks charge a small fee. Cross between Armenia and Georgia only at the official Bavra checkpoint.',
-   'Երթուղու մեծ մասի համար թույլտվություն պետք չէ։ «Արևիկ» և «Արփի լիճ» ազգային պարկերում պետք է նախապես գրանցվել, որոշ պարկերում՝ փոքր վճար։ Հայաստանի և Վրաստանի միջև՝ միայն Բավրայի պաշտոնական անցակետով։')),
+  ('Для большей части пути разрешения не нужны. В нацпарках «Аревик» и «Озеро Арпи» нужна регистрация заранее, в некоторых парках — небольшой сбор.',
+   'Most of the route needs no permit. Arevik and Lake Arpi national parks ask for advance registration; some parks charge a small fee.',
+   'Երթուղու մեծ մասի համար թույլտվություն պետք չէ։ «Արևիկ» և «Արփի լիճ» ազգային պարկերում պետք է նախապես գրանցվել, որոշ պարկերում՝ փոքր վճար։')),
  (('Риски','Hazards','Ռիսկեր'),
   ('Пастушьи собаки, грозы с молниями, броды через холодные реки, размытые мосты, борщевик, гадюки, заросшие тропы. Спасатели и медицина на большей части пути далеко — идите со страховкой и сообщайте маршрут близким.',
    'Livestock guard dogs, lightning storms, cold river fords, washed-out bridges, giant hogweed, vipers and overgrown paths. Rescue and medical help are far away on most of the route — get insurance and share your plan with someone.',
@@ -170,9 +170,9 @@ body = f'''<header class="top"><div class="wrap">
 <section class="hero" id="top">
   <div class="hero-media" aria-hidden="true"><img src="img/hero.jpg" alt="" style="object-position:50% 50%"></div>
   <div class="wrap">
-    <span class="alt">{T("Гайдбук · Армения · Грузия · Азербайджан","Guidebook · Armenia · Georgia · Azerbaijan","Ուղեցույց · Հայաստան · Վրաստան · Ադրբեջան")}</span>
+    <span class="alt">{T("Гайдбук · Армения · 819 км","Guidebook · Armenia · 819 km","Ուղեցույց · Հայաստան · 819 կմ")}</span>
     <h1>{T("Транскавказская<br><em>тропа</em>","Transcaucasian<br><em>Trail</em>","Անդրկովկասյան<br><em>արահետ</em>")}</h1>
-    <p class="sub">{T("819 км пешком через всю Армению — от озера Арпи на границе с Грузией до Мегри у Аракса. Что ждёт на каждом участке, когда идти, где спать и как не потеряться.","819 km on foot across the whole of Armenia — from Lake Arpi on the Georgian border to Meghri on the Araks. What to expect on each section, when to go, where to sleep and how not to get lost.","819 կմ ոտքով ամբողջ Հայաստանով՝ Վրաստանի սահմանին գտնվող Արփի լճից մինչև Արաքսի ափին գտնվող Մեղրի։ Ինչ է սպասվում յուրաքանչյուր հատվածում, երբ գնալ, որտեղ քնել և ինչպես չմոլորվել։")}</p>
+    <p class="sub">{T("819 км пешком через всю Армению — от озера Арпи на севере до Мегри у Аракса. Что ждёт на каждом участке, когда идти, где спать и как не потеряться.","819 km on foot across the whole of Armenia — from Lake Arpi in the north to Meghri on the Araks. What to expect on each section, when to go, where to sleep and how not to get lost.","819 կմ ոտքով ամբողջ Հայաստանով՝ հյուսիսում գտնվող Արփի լճից մինչև Արաքսի ափին գտնվող Մեղրի։ Ինչ է սպասվում յուրաքանչյուր հատվածում, երբ գնալ, որտեղ քնել և ինչպես չմոլորվել։")}</p>
     <div class="row"><a class="cta" href="#sections">{T("Смотреть участки","See the sections","Տեսնել հատվածները")}</a></div>
   </div>
 </section>
@@ -187,8 +187,8 @@ body = f'''<header class="top"><div class="wrap">
 <section id="about"><div class="wrap ab">
   <div>
     <span class="eyebrow">{T("Что это за тропа","About the trail","Ինչ արահետ է")}</span>
-    <h2 class="h2">{T("Тропа через три страны","One trail, three countries","Մեկ արահետ՝ երեք երկիր")}</h2>
-    <p class="lead">{T("Транскавказская тропа (TCT) — длинный пеший маршрут через Армению, Грузию и Азербайджан. С 2016 года её строят волонтёры: соединяют старые пастушьи тропы, караванные пути и дороги между монастырями. В планах два коридора примерно по 1 500 км — по Большому и Малому Кавказу. К 2025 году готово около 1 750 км.","The Transcaucasian Trail (TCT) is a long-distance hiking route through Armenia, Georgia and Azerbaijan. Since 2016 volunteers have been building it by linking old shepherd paths, caravan routes and roads between monasteries. Two corridors of about 1,500 km each are planned — along the Greater and the Lesser Caucasus. By 2025 about 1,750 km were complete.","Անդրկովկասյան արահետը (TCT) երկար քայլարշավային երթուղի է Հայաստանով, Վրաստանով և Ադրբեջանով։ 2016 թվականից կամավորները կառուցում են այն՝ միացնելով հին հովվական արահետները, քարավանային ուղիները և վանքերի միջև ճանապարհները։ Նախատեսված է երկու միջանցք՝ մոտ 1 500-ական կմ՝ Մեծ և Փոքր Կովկասով։ 2025 թ. պատրաստ էր մոտ 1 750 կմ։")}</p>
+    <h2 class="h2">{T("Тропа через всю Армению","A trail across all of Armenia","Արահետ ամբողջ Հայաստանով")}</h2>
+    <p class="lead">{T("Транскавказская тропа (TCT) — длинный пеший маршрут по Кавказу. С 2016 года её строят волонтёры: соединяют старые пастушьи тропы, караванные пути и дороги между монастырями.","The Transcaucasian Trail (TCT) is a long-distance hiking route across the Caucasus. Since 2016 volunteers have been building it by linking old shepherd paths, caravan routes and roads between monasteries.","Անդրկովկասյան արահետը (TCT) երկար քայլարշավային երթուղի է Կովկասով։ 2016 թվականից կամավորները կառուցում են այն՝ միացնելով հին հովվական արահետները, քարավանային ուղիները և վանքերի միջև ճանապարհները։")}</p>
     <p class="lead">{T("Армянский участок открыли первым — в декабре 2021 года. Это самая полная национальная часть тропы: от границы до границы.","The Armenian section opened first, in December 2021. It is the most complete national part of the trail: border to border.","Հայկական հատվածը բացվեց առաջինը՝ 2021 թ. դեկտեմբերին։ Սա արահետի ամենաամբողջական ազգային հատվածն է՝ սահմանից սահման։")}</p>
     <h3 class="sh3">{T("Из чего состоит путь","What's underfoot","Ինչից է բաղկացած ճանապարհը")}</h3>
     {surf()}
@@ -210,25 +210,6 @@ body = f'''<header class="top"><div class="wrap">
   <h2 class="h2">{T("Перед выходом","Before you set off","Մինչ ճանապարհ ընկնելը")}</h2>
   <div class="prac">
 {prac()}
-  </div>
-</div></section>
-
-<section id="beyond"><div class="wrap">
-  <span class="eyebrow">{T("За пределами Армении","Beyond Armenia","Հայաստանից դուրս")}</span>
-  <h2 class="h2">{T("Грузия и Азербайджан","Georgia and Azerbaijan","Վրաստան և Ադրբեջան")}</h2>
-  <div class="bey">
-    <div>
-      <h3>{T("Грузия","Georgia","Վրաստան")}</h3>
-      <p>{T("От Армении тропа идёт через Джавахетию, леса Боржоми, Имерети, Рачу, Сванетию и Самегрело к Чёрному морю — финиш в Анаклии. Вместе с Арменией — около 1 540 км и 2–4 месяца пути. Часть грузинских участков ещё строится.","From Armenia the trail runs through Javakheti, the Borjomi forests, Imereti, Racha, Svaneti and Samegrelo to the Black Sea — finishing at Anaklia. Together with Armenia it is about 1,540 km and 2–4 months on foot. Some Georgian sections are still being built.","Հայաստանից արահետն անցնում է Ջավախքով, Բորժոմիի անտառներով, Իմերեթիով, Ռաչայով, Սվանեթիով և Սամեգրելոյով դեպի Սև ծով՝ ավարտը Անակլիայում։ Հայաստանի հետ միասին՝ մոտ 1 540 կմ և 2–4 ամիս ճանապարհ։ Վրացական որոշ հատվածներ դեռ կառուցվում են։")}</p>
-      <p>{T("Между Зесхо и Геби — погранзона с Россией, нужен пропуск. В одной части нацпарка Боржоми — регистрация у рейнджеров.","Between Zeskho and Ghebi you are in the Russian border zone and need a permit. Part of Borjomi National Park requires registration with the rangers.","Զեսխոյի և Գեբիի միջև՝ Ռուսաստանի հետ սահմանային գոտի, պետք է անցաթուղթ։ Բորժոմիի ազգային պարկի մի մասում՝ գրանցում ռեյնջերների մոտ։")}</p>
-      <h4>{T("Сванетия — самый известный участок, около 10 дней","Svaneti — the best-known section, about 10 days","Սվանեթի՝ ամենահայտնի հատվածը, մոտ 10 օր")}</h4>
-      {sv()}
-    </div>
-    <div>
-      <h3>{T("Азербайджан","Azerbaijan","Ադրբեջան")}</h3>
-      <p>{T("Северный коридор TCT задуман по Большому Кавказу — от Чёрного моря до Каспия, через север Грузии и Азербайджан. Азербайджанская часть пока в разработке, часть маршрута проходит через проблемные из-за конфликтов зоны.","The northern TCT corridor is planned along the Greater Caucasus — from the Black Sea to the Caspian, through northern Georgia and Azerbaijan. The Azerbaijani part is still in development, and some of it runs through areas made difficult by conflict.","TCT-ի հյուսիսային միջանցքը նախատեսված է Մեծ Կովկասով՝ Սև ծովից մինչև Կասպից ծով՝ Վրաստանի հյուսիսով և Ադրբեջանով։ Ադրբեջանական հատվածը դեռ մշակման փուլում է, երթուղու մի մասն անցնում է հակամարտությունների պատճառով խնդրահարույց գոտիներով։")}</p>
-      <p class="credit">{T("Перед поездкой сверяйтесь с актуальными картами и новостями TCT.","Check the latest TCT maps and news before you travel.","Մեկնելուց առաջ ստուգեք TCT-ի ընթացիկ քարտեզներն ու նորությունները։")}</p>
-    </div>
   </div>
 </div></section>
 
