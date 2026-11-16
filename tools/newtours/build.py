@@ -177,10 +177,10 @@ ABOUT_CSS = """
 .ptc h3{font-size:26px;text-transform:uppercase;margin-bottom:10px}
 .ptc p{color:var(--muted);margin-top:8px}
 .ptc .ptn{color:var(--ink);font-weight:600}
-.ptc.ptf{grid-column:1/-1;display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:center}
+.ptc.ptf{grid-column:1/-1;display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:center}
 .flogo{display:block;background:#fff;border-radius:6px;padding:12px}
 .flogo img{display:block;width:100%;height:auto}
-@media(max-width:640px){.ptc.ptf{grid-template-columns:1fr;gap:16px}.flogo{width:150px}}
+@media(max-width:900px){.ptc.ptf{grid-template-columns:1fr;gap:16px}.flogo{width:100%;max-width:320px}}
 .prac{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 40px;margin-top:36px}
 @media (max-width:900px){.prac{grid-template-columns:1fr 1fr}}@media (max-width:600px){.prac{grid-template-columns:1fr}}
 .prac h3{font-size:22px;text-transform:uppercase;color:var(--eye);margin-bottom:8px}
