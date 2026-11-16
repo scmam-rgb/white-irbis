@@ -4,12 +4,12 @@ def T(ru, en, hy): return f'<span lang="ru">{ru}</span><span lang="en">{en}</spa
 guides = open(f'{H}/guides.html').read().strip().replace('<section id="guides">', '<section id="guides" class="gsec">')
 
 why = [
- (('Два инструктора на скалах','Two instructors on rock','Երկու հրահանգիչ ժայռերին'),
-  ('На скальных выходах всегда двое: один готовит маршрут, второй страхует. Без исключений.','On every climbing day there are two of us: one rigs the route, the other belays. No exceptions.','Ժայռային ելքերին միշտ երկուսն ենք՝ մեկը պատրաստում է երթուղին, մյուսը ապահովագրում։ Առանց բացառության։')),
+ (('Профессиональные инструкторы','Professional instructors','Պրոֆեսիոնալ հրահանգիչներ'),
+  ('Каждую группу ведут профессиональные инструкторы по альпинизму и скалолазанию. На скалах их всегда не меньше двух: один готовит маршрут, другой страхует. Без исключений.','Every group is led by professional mountaineering and climbing instructors. On rock there are always at least two: one rigs the route, the other belays. No exceptions.','Յուրաքանչյուր խումբ առաջնորդում են լեռնագնացության և մագլցման պրոֆեսիոնալ հրահանգիչներ։ Ժայռերին նրանք միշտ առնվազն երկուսն են՝ մեկը պատրաստում է երթուղին, մյուսը ապահովագրում։ Առանց բացառության։')),
  (('Страховка в цене','Insurance included','Ապահովագրությունը գնի մեջ'),
   ('Страховка участника входит в каждый наш тур — отдельно оформлять не нужно.','Participant insurance is included in every tour — nothing to arrange separately.','Մասնակցի ապահովագրությունը ներառված է յուրաքանչյուր տուրում՝ առանձին ձևակերպել պետք չէ։')),
  (('Маленькие группы','Small groups','Փոքր խմբեր'),
-  ('На скалах — до 8 человек, на лыжах — до 6. Гид видит каждого и подстраивает темп.','Up to 8 people on rock, up to 6 on skis. The guide sees everyone and sets the pace to suit.','Ժայռերին՝ մինչև 8 հոգի, դահուկներին՝ մինչև 6։ Գիդը տեսնում է յուրաքանչյուրին և հարմարեցնում տեմպը։')),
+  ('На скалах — до 8 человек, на лыжах — до 6. Инструктор видит каждого и подстраивает темп.','Up to 8 people on rock, up to 6 on skis. The instructor sees everyone and sets the pace to suit.','Ժայռերին՝ մինչև 8 հոգի, դահուկներին՝ մինչև 6։ Հրահանգիչը տեսնում է յուրաքանչյուրին և հարմարեցնում տեմպը։')),
  (('Снаряжение наше','Gear provided','Հանդերձանքը մերն է'),
   ('Верёвки, системы, каски, скальные туфли, палатки, спальники — проверенные, на всех участников.','Ropes, harnesses, helmets, climbing shoes, tents, sleeping bags — checked and enough for everyone.','Պարաններ, համակարգեր, սաղավարտներ, ժայռային կոշիկներ, վրաններ, քնապարկեր՝ ստուգված, բոլոր մասնակիցների համար։')),
  (('План под погоду','Plans that follow the weather','Պլան՝ ըստ եղանակի'),
@@ -34,7 +34,7 @@ body = f'''<header class="top"><div class="wrap">
   <div class="wrap">
     <span class="alt">{T("О нас","About us","Մեր մասին")}</span>
     <h1>White<br><em>Irbis</em></h1>
-    <p class="sub">{T("Горная команда из Еревана. Водим людей в горы Армении с 2003 года: скалы, вершины, тропы и лыжи — с теми, кто знает эти горы лучше всех.","A mountain team from Yerevan. We have been taking people into the mountains of Armenia since 2003: rock, summits, trails and skiing — with people who know these mountains best.","Լեռնային թիմ Երևանից։ 2003 թվականից մարդկանց տանում ենք Հայաստանի լեռներ՝ ժայռեր, գագաթներ, արահետներ և դահուկներ, նրանց հետ, ովքեր այս լեռներն ամենալավն են ճանաչում։")}</p>
+    <p class="sub">{T("Горная команда из Еревана. Водим людей в горы Армении с 2003 года: скалы, вершины, тропы и лыжи — с профессиональными инструкторами, которые знают эти горы лучше всех.","A mountain team from Yerevan. We have been taking people into the mountains of Armenia since 2003: rock, summits, trails and skiing — with professional instructors who know these mountains best.","Լեռնային թիմ Երևանից։ 2003 թվականից մարդկանց տանում ենք Հայաստանի լեռներ՝ ժայռեր, գագաթներ, արահետներ և դահուկներ՝ պրոֆեսիոնալ հրահանգիչների հետ, ովքեր այս լեռներն ամենալավն են ճանաչում։")}</p>
     <div class="row"><a class="cta" href="#price">{T("Написать нам","Message us","Գրել մեզ")}</a></div>
   </div>
 </section>
@@ -43,7 +43,7 @@ body = f'''<header class="top"><div class="wrap">
   <div><dt>{T("Первая группа","First group","Առաջին խումբը")}</dt><dd>2003</dd></div>
   <div><dt>{T("Уже сходили с нами","Already been with us","Արդեն եղել են մեզ հետ")}</dt><dd>{T("1 000+ человек","1,000+ people","1 000+ մարդ")}</dd></div>
   <div><dt>{T("Самый высокий тур","Highest tour","Ամենաբարձր տուրը")}</dt><dd>{T("Арарат, 5 137 м","Ararat, 5,137 m","Արարատ, 5 137 մ")}</dd></div>
-  <div><dt>{T("Наши гиды ходили","Our guides have climbed","Մեր գիդերը եղել են")}</dt><dd>{T("От Альп до Гималаев","Alps to Himalayas","Ալպերից Հիմալայներ")}</dd></div>
+  <div><dt>{T("Наши инструкторы ходили","Our instructors have climbed","Մեր հրահանգիչները եղել են")}</dt><dd>{T("От Альп до Гималаев","Alps to Himalayas","Ալպերից Հիմալայներ")}</dd></div>
 </dl></div></section>
 
 <section id="story"><div class="wrap st">
@@ -51,7 +51,7 @@ body = f'''<header class="top"><div class="wrap">
     <span class="eyebrow">{T("Кто мы","Who we are","Ով ենք մենք")}</span>
     <h2 class="h2">Follow the White Irbis</h2>
     <p class="lead">{T("Ирбис — снежный барс, хозяин высоких гор. Наш девиз — отсылка к «Матрице»: там нужно было последовать за белым кроликом, чтобы увидеть настоящий мир. Мы предлагаем последовать за белым ирбисом — из города, офиса и привычных дел в горы.","The irbis is the snow leopard, master of the high mountains. Our motto nods to The Matrix, where you had to follow the white rabbit to see the real world. We invite you to follow the white irbis — out of the city, the office and the routine, and into the mountains.","Իրբիսը ձյունե ընձառյուծն է՝ բարձր լեռների տերը։ Մեր կարգախոսը հղում է «Մատրիցային». այնտեղ պետք էր հետևել սպիտակ ճագարին՝ իրական աշխարհը տեսնելու համար։ Մենք առաջարկում ենք հետևել սպիտակ իրբիսին՝ քաղաքից, գրասենյակից և սովորական գործերից դեպի լեռներ։")}</p>
-    <p class="lead">{T("Мы — альпинисты, а не турагентство. Сами ходим на вершины по всему миру и сами ведём каждую группу: от первого выхода на скалу до восхождения на Арарат.","We are mountaineers, not a travel agency. We climb peaks around the world ourselves and lead every group ourselves — from a first day on rock to the summit of Ararat.","Մենք ալպինիստներ ենք, ոչ թե տուրիստական գործակալություն։ Ինքներս ենք բարձրանում գագաթներ ամբողջ աշխարհում և ինքներս ենք առաջնորդում յուրաքանչյուր խումբ՝ ժայռի վրա առաջին ելքից մինչև Արարատի գագաթ։")}</p>
+    <p class="lead">{T("Мы — альпинисты, а не турагентство. Наша команда — профессиональные инструкторы по альпинизму, скалолазанию и горным лыжам. Мы сами ходим на вершины по всему миру и сами ведём каждую группу: от первого выхода на скалу до восхождения на Арарат.","We are mountaineers, not a travel agency. Our team is made up of professional mountaineering, climbing and ski instructors. We climb peaks around the world ourselves and lead every group ourselves — from a first day on rock to the summit of Ararat.","Մենք ալպինիստներ ենք, ոչ թե տուրիստական գործակալություն։ Մեր թիմը լեռնագնացության, մագլցման և լեռնադահուկային սպորտի պրոֆեսիոնալ հրահանգիչներ են։ Ինքներս ենք բարձրանում գագաթներ ամբողջ աշխարհում և ինքներս ենք առաջնորդում յուրաքանչյուր խումբ՝ ժայռի վրա առաջին ելքից մինչև Արարատի գագաթ։")}</p>
   </div>
   <figure style="margin:0"><img src="img/belay.jpg" alt="Инструктор White Irbis на станции над ущельем" loading="lazy"></figure>
 </div></section>
@@ -63,7 +63,7 @@ body = f'''<header class="top"><div class="wrap">
   <h2 class="h2">{T("Мы в федерации","Part of the federation","Մենք ֆեդերացիայում ենք")}</h2>
   <div class="pt">
     <div class="ptc ptf">
-      <a class="flogo" href="https://armalp.am/" target="_blank" rel="noopener"><img src="img/federation.png" width="596" height="220" alt="Логотипы Федерации альпинизма и горного туризма Армении и UIAA" loading="lazy"></a>
+      <a class="flogo" href="https://armalp.am/" target="_blank" rel="noopener"><img src="img/federation.jpg" width="1000" height="460" alt="Логотипы Федерации альпинизма и горного туризма Армении и UIAA" loading="lazy"></a>
       <div>
       <h3>{T("Федерация альпинизма и горного туризма Армении","Armenian Mountaineering and Mountain Tourism Federation","Հայաստանի լեռնագնացության և լեռնային զբոսաշրջության ֆեդերացիա")}</h3>
       <p>{T("Национальная федерация, которая с 2011 года отвечает за альпинизм, горный туризм и скалолазание в стране: проводит сборы, обучение и семинары. В октябре 2025 года стала полноправным членом UIAA — Международной федерации альпинизма и скалолазания.","The national federation responsible since 2011 for mountaineering, hiking and climbing in the country: it runs training camps, courses and seminars. In October 2025 it became a full member of the UIAA, the International Climbing and Mountaineering Federation.","Ազգային ֆեդերացիա, որը 2011 թվականից պատասխանատու է երկրում լեռնագնացության, լեռնային զբոսաշրջության և մագլցման համար՝ անցկացնում է հավաքներ, ուսուցումներ և սեմինարներ։ 2025 թ. հոկտեմբերին դարձավ UIAA-ի՝ Լեռնագնացության և մագլցման միջազգային ֆեդերացիայի լիիրավ անդամ։")}</p>
@@ -87,7 +87,7 @@ body = f'''<header class="top"><div class="wrap">
   <div class="pt">
     <div class="ptc">
       <h3>{T("Индивидуально","Tailor-made","Անհատական")}</h3>
-      <p>{T("Любую программу соберём под вас: даты, маршрут, уровень, длительность. Семья, друзья, клуб или компания — частный гид, своя машина и свой темп.","We'll build any programme around you: dates, route, level, length. Family, friends, a club or a company — a private guide, your own vehicle and your own pace.","Ցանկացած ծրագիր կկազմենք ձեզ համար՝ ամսաթվեր, երթուղի, մակարդակ, տևողություն։ Ընտանիք, ընկերներ, ակումբ կամ ընկերություն՝ անհատական գիդ, ձեր մեքենան և ձեր տեմպը։")}</p>
+      <p>{T("Любую программу соберём под вас: даты, маршрут, уровень, длительность. Семья, друзья, клуб или компания — личный инструктор, своя машина и свой темп.","We'll build any programme around you: dates, route, level, length. Family, friends, a club or a company — a private instructor, your own vehicle and your own pace.","Ցանկացած ծրագիր կկազմենք ձեզ համար՝ ամսաթվեր, երթուղի, մակարդակ, տևողություն։ Ընտանիք, ընկերներ, ակումբ կամ ընկերություն՝ անհատական հրահանգիչ, ձեր մեքենան և ձեր տեմպը։")}</p>
       <p class="ptn">{T("Однодневный выход, восхождение, скалы или неделя по Армении — напишите, что хотите.","A day out, a summit, rock climbing or a week around Armenia — tell us what you want.","Մեկօրյա ելք, վերելք, ժայռեր կամ մեկ շաբաթ Հայաստանով՝ գրեք, ինչ եք ուզում։")}</p>
     </div>
     <div class="ptc">

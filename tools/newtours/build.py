@@ -177,6 +177,7 @@ ABOUT_CSS = """
 .ptc h3{font-size:26px;text-transform:uppercase;margin-bottom:10px}
 .ptc p{color:var(--muted);margin-top:8px}
 .ptc .ptn{color:var(--ink);font-weight:600}
+@media(max-width:560px){#guides .h2{font-size:26px;overflow-wrap:anywhere}.guide{grid-template-columns:1fr;align-items:start}.guide img{aspect-ratio:4/3;object-position:50% 30%!important}.guide h3{font-size:26px}}
 .ptc.ptf{grid-column:1/-1;display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:center}
 .flogo{display:block;background:#fff;border-radius:6px;padding:12px}
 .flogo img{display:block;width:100%;height:auto}
