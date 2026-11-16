@@ -40,10 +40,10 @@ body = f'''<header class="top"><div class="wrap">
 </section>
 
 <section class="facts"><div class="wrap"><dl>
-  <div><dt>{T("В горах Армении","In Armenia's mountains","Հայաստանի լեռներում")}</dt><dd>{T("С 2003 года","Since 2003","2003 թվականից")}</dd></div>
-  <div><dt>{T("Клиентов","Clients","Հաճախորդներ")}</dt><dd>500+</dd></div>
-  <div><dt>{T("Туров","Tours","Տուրեր")}</dt><dd>7</dd></div>
-  <div><dt>{T("Гайдбуков","Guidebooks","Ուղեցույցներ")}</dt><dd>3</dd></div>
+  <div><dt>{T("Первая группа","First group","Առաջին խումբը")}</dt><dd>2003</dd></div>
+  <div><dt>{T("Уже сходили с нами","Already been with us","Արդեն եղել են մեզ հետ")}</dt><dd>{T("1 000+ человек","1,000+ people","1 000+ մարդ")}</dd></div>
+  <div><dt>{T("Самый высокий тур","Highest tour","Ամենաբարձր տուրը")}</dt><dd>{T("Арарат, 5 137 м","Ararat, 5,137 m","Արարատ, 5 137 մ")}</dd></div>
+  <div><dt>{T("Наши гиды ходили","Our guides have climbed","Մեր գիդերը եղել են")}</dt><dd>{T("От Альп до Гималаев","Alps to Himalayas","Ալպերից Հիմալայներ")}</dd></div>
 </dl></div></section>
 
 <section id="story"><div class="wrap st">
@@ -60,16 +60,12 @@ body = f'''<header class="top"><div class="wrap">
 
 <section id="partners"><div class="wrap">
   <span class="eyebrow">{T("Партнёры","Partners","Գործընկերներ")}</span>
-  <h2 class="h2">{T("С кем мы работаем","Who we work with","Ում հետ ենք աշխատում")}</h2>
+  <h2 class="h2">{T("Мы в федерации","Part of the federation","Մենք ֆեդերացիայում ենք")}</h2>
   <div class="pt">
     <div class="ptc">
       <h3>{T("Федерация альпинизма и горного туризма Армении","Armenian Mountaineering and Hiking Federation","Հայաստանի լեռնագնացության և լեռնային զբոսաշրջության ֆեդերացիա")}</h3>
       <p>{T("Национальная федерация, которая с 2011 года отвечает за альпинизм, горный туризм и скалолазание в стране: проводит сборы, обучение и семинары. В октябре 2025 года стала полноправным членом UIAA — Международной федерации альпинизма и скалолазания.","The national federation responsible since 2011 for mountaineering, hiking and climbing in the country: it runs training camps, courses and seminars. In October 2025 it became a full member of the UIAA, the International Climbing and Mountaineering Federation.","Ազգային ֆեդերացիա, որը 2011 թվականից պատասխանատու է երկրում լեռնագնացության, լեռնային զբոսաշրջության և մագլցման համար՝ անցկացնում է հավաքներ, ուսուցումներ և սեմինարներ։ 2025 թ. հոկտեմբերին դարձավ UIAA-ի՝ Լեռնագնացության և մագլցման միջազգային ֆեդերացիայի լիիրավ անդամ։")}</p>
       <p class="ptn">{T("Антуан Ананян — вице-президент федерации.","Antoine Ananyan is the federation's vice-president.","Անտուան Անանյանը ֆեդերացիայի փոխնախագահն է։")}</p>
-    </div>
-    <div class="ptc">
-      <h3>{T("Клуб «7 Вершин»","7 Summits Club","«7 գագաթ» ակումբ")}</h3>
-      <p>{T("Один из самых известных в России клубов высотного альпинизма и горных путешествий. Наш партнёр.","One of Russia's best-known clubs for high-altitude mountaineering and mountain travel. Our partner.","Ռուսաստանում բարձրլեռնային ալպինիզմի և լեռնային ճանապարհորդությունների ամենահայտնի ակումբներից մեկը։ Մեր գործընկերը։")}</p>
     </div>
   </div>
 </div></section>
@@ -80,7 +76,6 @@ body = f'''<header class="top"><div class="wrap">
   <div class="prac">
 {chr(10).join(f'    <div><h3>{T(*h)}</h3><p>{T(*p)}</p></div>' for h, p in why)}
   </div>
-  <p class="credit" style="color:var(--on-deep-muted);margin-top:28px">{T("Работаем официально: индивидуальный предприниматель Антуан Ананян, Армения.","We operate officially as the registered business of Antoine Ananyan, Armenia.","Աշխատում ենք պաշտոնապես՝ անհատ ձեռնարկատեր Անտուան Անանյան, Հայաստան։")}</p>
 </div></section>
 
 <section id="what"><div class="wrap wh">
