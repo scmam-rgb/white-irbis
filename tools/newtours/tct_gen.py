@@ -205,6 +205,17 @@ body = f'''<header class="top"><div class="wrap">
   </div>
 </div></section>
 
+<section id="walking" class="gal-sec"><div class="wrap">
+  <span class="eyebrow">{T("На тропе","On the trail","Արահետին")}</span>
+  <h2 class="h2">{T("Так это выглядит","What it looks like","Ահա թե ինչպես է դա")}</h2>
+  <div class="gal3">
+    <figure><img src="img/walk_gorge.jpg" alt="Группа с рюкзаками идёт по тропе в красном ущелье" loading="lazy"></figure>
+    <figure><img src="img/walk_plateau.jpg" alt="Две участницы с палками идут по плато, вдали Арарат" loading="lazy"></figure>
+    <figure><img src="img/walk_fins.jpg" alt="Группа поднимается по узкому проходу между скал" loading="lazy"></figure>
+  </div>
+  <p class="credit">{T("Фото с выходов White Irbis","Photos from White Irbis trips","Լուսանկարներ White Irbis-ի ելքերից")}</p>
+</div></section>
+
 <section class="inc" id="practical"><div class="wrap">
   <span class="eyebrow">{T("Практика","Practicalities","Գործնական")}</span>
   <h2 class="h2">{T("Перед выходом","Before you set off","Մինչ ճանապարհ ընկնելը")}</h2>
