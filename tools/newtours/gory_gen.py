@@ -103,7 +103,7 @@ body = f'''<header class="top"><div class="wrap">
 </div></header>
 
 <section class="hero" id="top">
-  <div class="hero-media" aria-hidden="true"><img src="img/hero.jpg" alt="" style="object-position:50% 40%"></div>
+  <div class="hero-media" aria-hidden="true"><img src="img/hero.jpg" alt="" style="object-position:60% 50%"></div>
   <div class="wrap">
     <span class="alt">{T("Гайдбук · 11 вершин","Guidebook · 11 peaks","Ուղեցույց · 11 գագաթ")}</span>
     <h1>{T("Горы<br><em>Армении</em>","Mountains<br><em>of Armenia</em>","Հայաստանի<br><em>լեռները</em>")}</h1>
