@@ -1,0 +1,23 @@
+<script>
+(function(){
+  var html=document.documentElement, btns=[].slice.call(document.querySelectorAll('.lang button'));
+  var links=[].slice.call(document.querySelectorAll('a.c,a.gb,a.about'));
+  var titles={ru:'White Irbis — туры в горы Армении',en:'White Irbis — mountain tours in Armenia',hy:'White Irbis — լեռնային տուրեր Հայաստանում'};
+  function set(l){html.lang=l;document.title=titles[l];
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    links.forEach(function(a){var h=a.getAttribute('href').split('?')[0];a.setAttribute('href',l==='ru'?h:h+'?lang='+l)});
+    try{localStorage.setItem('wi-lang',l)}catch(e){}}
+  var q=(location.search.match(/lang=(ru|en|hy)/)||[])[1], s=null; try{s=localStorage.getItem('wi-lang')}catch(e){}
+  set(q||(['ru','en','hy'].indexOf(s)>=0?s:'ru'));
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
+
+  (function(){var a=document.querySelector('a.about');if(!a)return;var st=a.querySelector('.ab-s'),i=0,t=null,n=3;
+    function go(k){st.style.transition=k===0&&i===n?'none':'';i=k;st.style.transform='translateY(-'+(1.15*k)+'em)'}
+    function step(){var k=i+1;go(k);if(k===n){setTimeout(function(){go(0)},460)}}
+    function start(){if(t)return;step();t=setInterval(step,900)}
+    function stop(){clearInterval(t);t=null;go(0)}
+    if(matchMedia('(hover: hover)').matches){a.addEventListener('mouseenter',start);a.addEventListener('mouseleave',stop);a.addEventListener('focus',start);a.addEventListener('blur',stop)}
+    else if(!matchMedia('(prefers-reduced-motion: reduce)').matches){setInterval(step,2200)}
+  })();
+})();
+</script>

@@ -1,0 +1,54 @@
+
+body{margin:0;background:#121212;color:#F7F4EC;font-family:Rubik,Arial,sans-serif}
+.w{max-width:1100px;margin:0 auto;padding:40px 16px}
+header{display:flex;align-items:center;gap:22px;margin-bottom:36px}
+header img{width:104px;height:104px;flex:none}
+h1{font-family:Oswald,Arial,sans-serif;text-transform:uppercase;font-size:40px;margin:0}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px}
+a.c{display:block;color:inherit;text-decoration:none;border-radius:18px;overflow:hidden;background:#1E1E1C;border:1px solid #3A3934}
+a.c img{width:100%;aspect-ratio:1200/630;object-fit:cover;display:block}
+a.c div{padding:16px 20px;font-size:18px}
+a.c:hover{border-color:#FAEB0F}
+footer{margin-top:32px;font-size:18px}
+footer a{color:#FAEB0F}
+/* slogan under the wordmark, letter-spaced to the wordmark's exact width */
+.tt{display:inline-flex;flex-direction:column;align-items:stretch;gap:9px}
+.sll{display:block;font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-size:13px;line-height:1;letter-spacing:0.2822em;margin-right:-0.2822em;text-transform:uppercase;white-space:nowrap;color:#F7F4EC}
+.sll .sl-f{font-weight:300;color:#B9B5A8}
+.sll .sl-w{font-weight:600}
+.sll b{font-weight:600;color:#FAEB0F}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* logo | FOLLOW THE / WHITE IRBIS — same lockup as the tour pages, lines optically equal width */
+.sl{display:inline-flex;flex-direction:column;align-items:flex-start;gap:.42em;font-family:Oswald,"Arial Narrow",Arial,sans-serif;font-size:30px;line-height:.82;text-transform:uppercase;white-space:nowrap;border-left:1px solid rgba(247,244,236,.3);padding:8px 0 8px 22px;color:#F7F4EC}
+.sl .s1{font-size:.5em;font-weight:400;letter-spacing:.7254em;margin-right:-.7254em;color:rgba(247,244,236,.8)}
+.sl .s2{font-weight:600;letter-spacing:.06em;margin-right:-.06em}
+.sl b{font-weight:600;color:#FAEB0F}
+@media (max-width:520px){header{gap:16px}header img{width:80px;height:80px}.sl{font-size:23px;padding-left:16px}}
+html:not([lang="ru"]) [lang="ru"], html:not([lang="en"]) [lang="en"], html:not([lang="hy"]) [lang="hy"]{display:none!important}
+.lang{display:flex;gap:4px;background:#1E1E1C;border:1px solid #3A3934;border-radius:6px;padding:4px;align-self:center}
+.lang{margin-left:auto}
+.about{margin-left:36px;align-self:center;display:inline-flex;align-items:center;gap:10px;border:2px solid #FAEB0F;border-radius:40px;padding:9px 18px 9px 22px;color:#FAEB0F;text-decoration:none;font-family:Oswald,"Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:18px;line-height:1;transition:background .2s,color .2s}
+.about i{font-style:normal;transition:transform .2s}
+.about:hover,.about:focus-visible{background:#FAEB0F;color:#121212}.about:hover i{transform:translateX(4px)}
+.ab-w{display:block;height:1.15em;overflow:hidden;width:5.7em;text-align:left}
+.ab-s{display:flex;flex-direction:column;transition:transform .45s cubic-bezier(.6,0,.2,1)}
+.ab-s span{display:block;height:1.15em;line-height:1.15em;white-space:nowrap}
+.ab-s .ab-hy{font-family:"Noto Sans Armenian",Oswald,sans-serif;font-weight:600;font-size:.86em;letter-spacing:.02em}
+.lang button{font:600 14px Rubik,Arial,sans-serif;color:#F7F4EC;background:none;border:0;padding:6px 12px;border-radius:4px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:#FAEB0F;color:#121212}
+html[lang="hy"] body{font-family:Rubik,"Noto Sans Armenian",Arial,sans-serif}
+@media (max-width:760px){.about{margin-left:20px;font-size:16px;padding:8px 14px 8px 16px}}
+@media (max-width:520px){header{flex-wrap:wrap}.lang{margin-left:0}.about{margin-left:0;order:3}}
+.sh{font-family:Oswald,Arial,sans-serif;text-transform:uppercase;font-weight:600;font-size:22px;letter-spacing:.12em;color:#B9B5A8;margin:0 0 16px}
+a.gb{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);margin-top:24px;background:#FAEB0F;color:#121212;text-decoration:none;border-radius:18px;overflow:hidden;border:2px solid #FAEB0F}
+a.gb img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15)}
+a.gb>div{padding:30px 34px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.gb-k{font-family:Oswald,Arial,sans-serif;font-weight:600;font-size:18px;letter-spacing:.22em;line-height:1;text-transform:uppercase}
+html[lang="hy"] .gb-k{font-family:"Noto Sans Armenian",Oswald,sans-serif;font-size:16px;letter-spacing:.12em}
+
+a.gb b{font-family:Oswald,Arial,sans-serif;font-size:clamp(36px,4.6vw,60px);line-height:1;text-transform:uppercase}
+html[lang="hy"] a.gb b{font-family:"Noto Sans Armenian",Oswald,sans-serif;font-size:clamp(28px,3.4vw,44px)}
+a.gb p{margin:0;font-size:18px;line-height:1.45}
+.gb-btn{align-self:flex-start;background:#121212;color:#FAEB0F;font-family:Oswald,Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em;padding:12px 20px;border-radius:6px;font-size:18px}
+a.gb:hover .gb-btn{background:#000}
+@media (max-width:700px){a.gb{grid-template-columns:1fr}a.gb img{aspect-ratio:1200/630;height:auto}}
