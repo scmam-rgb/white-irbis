@@ -251,10 +251,10 @@ for slug, p in PAGES.items():
 <meta property="og:title" content="{p['title']}">
 <meta property="og:description" content="{p['ogdesc']}">
 <meta property="og:url" content="https://scmam-rgb.github.io/white-irbis/{slug}/">
-<meta property="og:image" content="https://scmam-rgb.github.io/white-irbis/img/cards/{p['card']}-ru.jpg">
+<meta property="og:image" content="https://scmam-rgb.github.io/white-irbis/img/og-square.jpg">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image:height" content="1200">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="../dolmatur/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../dolmatur/img/favicon-32.png">
 <link rel="apple-touch-icon" href="../dolmatur/img/apple-touch-icon.png">

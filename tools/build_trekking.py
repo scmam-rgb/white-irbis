@@ -241,9 +241,9 @@ page = f'''<!doctype html>
 <meta property="og:title" content="Армения пешком — 7 дней, 6 троп">
 <meta property="og:description" content="Гарни, Цахкуняцкий хребет, Дилижан, Артаниш над Севаном, Смбатаберд и Арагац. Гиды-альпинисты White Irbis, уровень доступный всем.">
 <meta property="og:url" content="https://scmam-rgb.github.io/white-irbis/trekking/">
-<meta property="og:image" content="https://scmam-rgb.github.io/white-irbis/trekking/img/preview.jpg">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://scmam-rgb.github.io/white-irbis/img/og-square.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="1200">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Rubik:wght@400;500;600&family=Noto+Sans+Armenian:wdth,wght@62.5..100,400..700&display=swap">
 <style>{base_css}{CSS_EXTRA}</style>
