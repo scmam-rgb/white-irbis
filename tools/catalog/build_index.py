@@ -134,23 +134,10 @@ custom = f'''<section class="sec" id="custom">
               "Վկայական մեր ցանկացած տուրի համար՝ տուրի գնից 5%-ով էժան։ Անվանական, ընտրովի ամսաթվով՝ Արագած, հանգստյան օրեր ժայռերին, դահուկային շաբաթ կամ Արարատ։")}</p>
       </div>
       <div class="gift-p"><span class="pct">−5%</span>{waT("Здравствуйте! Хочу подарочный сертификат.","Hello! I'd like a gift certificate.","Բարև։ Ուզում եմ նվեր-վկայական։","Хочу сертификат","Get a certificate","Ուզում եմ վկայական","btn dark")}</div>
-      <span class="turn" aria-hidden="true">↻</span>
     </div>
     <div class="gift face bk" aria-hidden="true">
-      <div>
-        <b>{T("Поздравляем!","Congratulations!","Շնորհավորում ենք")}</b>
-        <p class="cg">{T("Вам подарили горы. Выберите тур и удобную дату — остальное мы возьмём на себя.","You've been given the mountains. Choose a tour and a date that suits you — we'll take care of the rest.","Ձեզ լեռներ են նվիրել։ Ընտրեք տուրը և հարմար ամսաթիվը, մնացածը մենք կանենք։")}</p>
-        <span class="gk">{T("Условия","Terms","Պայմաններ")}</span>
-        <ul class="gl">
-          <li>{T("Любой тур White Irbis: Арагац, Арарат, скалы, треккинг, горные лыжи","Any White Irbis tour: Aragats, Ararat, rock, trekking, skiing","White Irbis-ի ցանկացած տուր՝ Արագած, Արարատ, ժայռեր, արշավ, դահուկներ")}</li>
-          <li>{T("Цена сертификата — на 5% ниже цены тура","The certificate costs 5% less than the tour","Վկայականի գինը տուրի գնից 5%-ով ցածր է")}</li>
-          <li>{T("Именной, дату выбирает получатель","Personalised; the recipient chooses the date","Անվանական է, ամսաթիվն ընտրում է ստացողը")}</li>
-          <li>{T("Инструкторы и страховка — как в обычном туре","Instructors and insurance included, as in any tour","Հրահանգիչներն ու ապահովագրությունը՝ ինչպես սովորական տուրում")}</li>
-          <li>{T("Оформление — в WhatsApp или Telegram","Order via WhatsApp or Telegram","Պատվերը՝ WhatsApp-ով կամ Telegram-ով")}</li>
-        </ul>
-      </div>
-      <div class="gift-p">{waT("Здравствуйте! Хочу подарочный сертификат.","Hello! I'd like a gift certificate.","Բարև։ Ուզում եմ նվեր-վկայական։","Хочу сертификат","Get a certificate","Ուզում եմ վկայական","btn ")}</div>
-      <span class="turn" aria-hidden="true">↻</span>
+      <div class="gw"><b class="gr on">{T("Поздравляем!","Congratulations!","Շնորհավորում ենք")}</b><b class="gr">{T("С днём рождения!","Happy birthday!","Շնորհավոր ծնունդդ")}</b><b class="gr">{T("С юбилеем!","Happy anniversary!","Շնորհավոր հոբելյանդ")}</b><b class="gr">{T("С праздником!","Happy holidays!","Շնորհավոր տոնդ")}</b></div>
+      <span class="gs">White Irbis</span>
     </div>
    </div>
   </div>
@@ -288,12 +275,12 @@ footer{color:var(--mut);margin-bottom:80px}
 .flip{margin-top:14px;perspective:1600px;cursor:pointer;outline:none}
 .fl-in{display:grid;transition:transform .9s cubic-bezier(.45,.05,.2,1);transform-style:preserve-3d}
 .flip.flipped .fl-in{transform:rotateY(180deg)}
-.flip .face{grid-area:1/1;margin-top:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:3px solid #fff;box-shadow:0 0 0 1px rgba(255,255,255,.35),0 18px 40px rgba(0,0,0,.35);position:relative}
-.flip .face:before{content:"";position:absolute;inset:9px;border:1px dashed rgba(18,18,18,.35);border-radius:12px;pointer-events:none}
+.flip .face{grid-area:1/1;margin-top:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:3px solid #fff;box-shadow:0 18px 40px rgba(0,0,0,.35);position:relative}
 @media(min-width:761px){.flip .face{align-content:center}}
 .flip .bk{transform:rotateY(180deg);background:#121212;color:var(--ink)}
-.flip .bk:before{border-color:rgba(255,255,255,.3)}
-.flip .bk b{color:var(--y)}
+.flip .bk{display:flex!important;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.gw{display:grid}.gw .gr{grid-area:1/1;opacity:0;color:var(--y);font-size:clamp(40px,6vw,76px)!important;margin:0!important}.gw .gr.on{opacity:1}
+.gs{font-family:Oswald,Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);font-size:14px;margin-top:10px}
 .flip .bk .gk{color:var(--y);display:block;margin-top:14px}
 .flip .cg{font-size:18px}
 .gl{margin:8px 0 0;padding:0;list-style:none;columns:2;column-gap:28px}
@@ -324,15 +311,17 @@ a.gb b{font-size:clamp(32px,3.9vw,48px)}
 
 JS = rd('script.js.html').replace("var links=[].slice.call(document.querySelectorAll('a.c,a.gb,a.about'));",
   "var links=[].slice.call(document.querySelectorAll('a.c,a.gb,a.about,a.dep-h'));")
-JS = JS.replace('})();\n</script>', r'''  // gift certificate: flips by itself, tap/click to turn
+JS = JS.replace('})();\n</script>', r'''  // gift certificate: turns by itself to a greeting; hover/tap shows the offer
   var fl=document.getElementById('gift');
-  if(fl){var setH=function(){var f=fl.classList.contains('flipped');fl.querySelector('.fr').setAttribute('aria-hidden',f);fl.querySelector('.bk').setAttribute('aria-hidden',!f)};
-    var tog=function(){fl.classList.toggle('flipped');setH()};
-    fl.addEventListener('click',function(e){if(e.target.closest('a'))return;tog();hold=Date.now()+12000});
-    fl.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog();hold=Date.now()+12000}});
-    var hold=0,hov=false,vis=false;fl.addEventListener('mouseenter',function(){hov=true});fl.addEventListener('mouseleave',function(){hov=false});
+  if(fl){var gr=[].slice.call(fl.querySelectorAll('.gr')),gi=0,hold=0,hov=false,vis=false;
+    var set=function(f){if(f&&!fl.classList.contains('flipped')){gr[gi].classList.remove('on');gi=(gi+1)%gr.length;gr[gi].classList.add('on')}
+      fl.classList.toggle('flipped',f);fl.querySelector('.fr').setAttribute('aria-hidden',f);fl.querySelector('.bk').setAttribute('aria-hidden',!f)};
+    gi=gr.length-1;gr.forEach(function(g){g.classList.remove('on')});gr[gi].classList.add('on');
+    fl.addEventListener('mouseenter',function(){hov=true;set(false)});fl.addEventListener('mouseleave',function(){hov=false;hold=Date.now()+2500});
+    fl.addEventListener('click',function(e){if(e.target.closest('a'))return;set(false);hold=Date.now()+12000});
+    fl.addEventListener('focusin',function(){set(false);hold=Date.now()+12000});
     if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.5}).observe(fl);
-    if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(function(){if(vis&&!hov&&Date.now()>hold)tog()},fl.classList.contains('flipped')?9000:6000);
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(function(){if(vis&&!hov&&Date.now()>hold)set(!fl.classList.contains('flipped'))},4000);
   }
   // hide past departures
   var today=new Date().toISOString().slice(0,10);
