@@ -320,7 +320,7 @@ JS = JS.replace('})();\n</script>', r'''  // gift certificate: turns by itself t
     fl.addEventListener('click',function(e){if(e.target.closest('a'))return;set(false);hold=Date.now()+12000});
     fl.addEventListener('focusin',function(){set(false);hold=Date.now()+12000});
     if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.3}).observe(fl);else vis=true;
-    setInterval(function(){if(vis&&!hov&&Date.now()>hold)set(!fl.classList.contains('flipped'))},4000);
+    (function tick(){var f=fl.classList.contains('flipped');if(vis&&!hov&&Date.now()>hold){set(!f);f=!f}setTimeout(tick,f?2000:4000)})();
   }
   // hide past departures
   var today=new Date().toISOString().slice(0,10);
