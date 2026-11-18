@@ -289,7 +289,6 @@ footer{color:var(--mut);margin-bottom:80px}
 .turn{position:absolute;right:14px;top:10px;font-size:20px;opacity:.55}
 .flip:focus-visible .face{outline:2px solid var(--y);outline-offset:4px}
 @media(max-width:760px){.gl{columns:1}}
-@media(prefers-reduced-motion:reduce){.fl-in{transition:none}}
 @media(prefers-reduced-motion:reduce){.gi video{display:none}}
 .tf li{min-width:0;overflow-wrap:anywhere;hyphens:auto}
 .fedl img{max-width:100%;height:auto;max-height:34px}
@@ -317,11 +316,11 @@ JS = JS.replace('})();\n</script>', r'''  // gift certificate: turns by itself t
     var set=function(f){if(f&&!fl.classList.contains('flipped')){gr[gi].classList.remove('on');gi=(gi+1)%gr.length;gr[gi].classList.add('on')}
       fl.classList.toggle('flipped',f);fl.querySelector('.fr').setAttribute('aria-hidden',f);fl.querySelector('.bk').setAttribute('aria-hidden',!f)};
     gi=gr.length-1;gr.forEach(function(g){g.classList.remove('on')});gr[gi].classList.add('on');
-    fl.addEventListener('mouseenter',function(){hov=true;set(false)});fl.addEventListener('mouseleave',function(){hov=false;hold=Date.now()+2500});
+    fl.addEventListener('pointerenter',function(e){if(e.pointerType!=='mouse')return;hov=true;set(false)});fl.addEventListener('pointerleave',function(e){if(e.pointerType!=='mouse')return;hov=false;hold=Date.now()+2500});
     fl.addEventListener('click',function(e){if(e.target.closest('a'))return;set(false);hold=Date.now()+12000});
     fl.addEventListener('focusin',function(){set(false);hold=Date.now()+12000});
-    if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.5}).observe(fl);
-    if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(function(){if(vis&&!hov&&Date.now()>hold)set(!fl.classList.contains('flipped'))},4000);
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.3}).observe(fl);else vis=true;
+    setInterval(function(){if(vis&&!hov&&Date.now()>hold)set(!fl.classList.contains('flipped'))},4000);
   }
   // hide past departures
   var today=new Date().toISOString().slice(0,10);
