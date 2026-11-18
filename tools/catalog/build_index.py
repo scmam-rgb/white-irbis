@@ -123,15 +123,36 @@ custom = f'''<section class="sec" id="custom">
           ("Идёте в горы сами? Палатки, спальники, коврики, каски, системы, верёвки, скальные туфли и другое.","Heading out on your own? Tents, sleeping bags, mats, helmets, harnesses, ropes, climbing shoes and more.","Լեռներ եք գնում ինքնուրույն։ Վրաններ, քնապարկեր, ներքնակներ, սաղավարտներ, համակարգեր, պարաններ, ժայռային կոշիկներ և այլն։"),
           waT("Здравствуйте! Нужен прокат снаряжения.","Hello! I need to rent some gear.","Բարև։ Հանդերձանքի վարձույթ է պետք։","Узнать →","Ask →","Իմանալ →","lnk"))}
   </div>
-  <div class="gift">
-    <div>
-      <span class="gk">{T("Подарочный сертификат","Gift certificate","Նվեր-վկայական")}</span>
-      <b>{T("Подарите горы","Give the mountains","Նվիրեք լեռներ")}</b>
-      <p>{T("Сертификат на любой наш тур — на 5% дешевле цены тура. Именной, с датой на выбор: восхождение на Арагац, выходные на скалах, неделя на лыжах или Арарат.",
-            "A certificate for any of our tours — 5% off the tour price. Personalised, with the date of their choice: Aragats, a weekend on rock, a week of skiing or Ararat.",
-            "Վկայական մեր ցանկացած տուրի համար՝ տուրի գնից 5%-ով էժան։ Անվանական, ընտրովի ամսաթվով՝ Արագած, հանգստյան օրեր ժայռերին, դահուկային շաբաթ կամ Արարատ։")}</p>
+  <div class="flip" id="gift" tabindex="0" aria-label="Gift certificate">
+   <div class="fl-in">
+    <div class="gift face fr">
+      <div>
+        <span class="gk">{T("Подарочный сертификат","Gift certificate","Նվեր-վկայական")}</span>
+        <b>{T("Подарите горы","Give the mountains","Նվիրեք լեռներ")}</b>
+        <p>{T("Сертификат на любой наш тур — на 5% дешевле цены тура. Именной, с датой на выбор: восхождение на Арагац, выходные на скалах, неделя на лыжах или Арарат.",
+              "A certificate for any of our tours — 5% off the tour price. Personalised, with the date of their choice: Aragats, a weekend on rock, a week of skiing or Ararat.",
+              "Վկայական մեր ցանկացած տուրի համար՝ տուրի գնից 5%-ով էժան։ Անվանական, ընտրովի ամսաթվով՝ Արագած, հանգստյան օրեր ժայռերին, դահուկային շաբաթ կամ Արարատ։")}</p>
+      </div>
+      <div class="gift-p"><span class="pct">−5%</span>{waT("Здравствуйте! Хочу подарочный сертификат.","Hello! I'd like a gift certificate.","Բարև։ Ուզում եմ նվեր-վկայական։","Хочу сертификат","Get a certificate","Ուզում եմ վկայական","btn dark")}</div>
+      <span class="turn" aria-hidden="true">↻</span>
     </div>
-    <div class="gift-p"><span class="pct">−5%</span>{waT("Здравствуйте! Хочу подарочный сертификат.","Hello! I'd like a gift certificate.","Բարև։ Ուզում եմ նվեր-վկայական։","Хочу сертификат","Get a certificate","Ուզում եմ վկայական","btn dark")}</div>
+    <div class="gift face bk" aria-hidden="true">
+      <div>
+        <b>{T("Поздравляем!","Congratulations!","Շնորհավորում ենք")}</b>
+        <p class="cg">{T("Вам подарили горы. Выберите тур и удобную дату — остальное мы возьмём на себя.","You've been given the mountains. Choose a tour and a date that suits you — we'll take care of the rest.","Ձեզ լեռներ են նվիրել։ Ընտրեք տուրը և հարմար ամսաթիվը, մնացածը մենք կանենք։")}</p>
+        <span class="gk">{T("Условия","Terms","Պայմաններ")}</span>
+        <ul class="gl">
+          <li>{T("Любой тур White Irbis: Арагац, Арарат, скалы, треккинг, горные лыжи","Any White Irbis tour: Aragats, Ararat, rock, trekking, skiing","White Irbis-ի ցանկացած տուր՝ Արագած, Արարատ, ժայռեր, արշավ, դահուկներ")}</li>
+          <li>{T("Цена сертификата — на 5% ниже цены тура","The certificate costs 5% less than the tour","Վկայականի գինը տուրի գնից 5%-ով ցածր է")}</li>
+          <li>{T("Именной, дату выбирает получатель","Personalised; the recipient chooses the date","Անվանական է, ամսաթիվն ընտրում է ստացողը")}</li>
+          <li>{T("Инструкторы и страховка — как в обычном туре","Instructors and insurance included, as in any tour","Հրահանգիչներն ու ապահովագրությունը՝ ինչպես սովորական տուրում")}</li>
+          <li>{T("Оформление — в WhatsApp или Telegram","Order via WhatsApp or Telegram","Պատվերը՝ WhatsApp-ով կամ Telegram-ով")}</li>
+        </ul>
+      </div>
+      <div class="gift-p">{waT("Здравствуйте! Хочу подарочный сертификат.","Hello! I'd like a gift certificate.","Բարև։ Ուզում եմ նվեր-վկայական։","Хочу сертификат","Get a certificate","Ուզում եմ վկայական","btn ")}</div>
+      <span class="turn" aria-hidden="true">↻</span>
+    </div>
+   </div>
   </div>
 </section>'''
 
@@ -262,6 +283,26 @@ footer{color:var(--mut);margin-bottom:80px}
 .fab a{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.4)}
 .fa-wa{background:#25D366}.fa-tg{background:#229ED9}
 @media(min-width:900px){.fab a{width:50px;height:50px}}
+
+/* gift flip card */
+.flip{margin-top:14px;perspective:1600px;cursor:pointer;outline:none}
+.fl-in{display:grid;transition:transform .9s cubic-bezier(.45,.05,.2,1);transform-style:preserve-3d}
+.flip.flipped .fl-in{transform:rotateY(180deg)}
+.flip .face{grid-area:1/1;margin-top:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:3px solid #fff;box-shadow:0 0 0 1px rgba(255,255,255,.35),0 18px 40px rgba(0,0,0,.35);position:relative}
+.flip .face:before{content:"";position:absolute;inset:9px;border:1px dashed rgba(18,18,18,.35);border-radius:12px;pointer-events:none}
+@media(min-width:761px){.flip .face{align-content:center}}
+.flip .bk{transform:rotateY(180deg);background:#121212;color:var(--ink)}
+.flip .bk:before{border-color:rgba(255,255,255,.3)}
+.flip .bk b{color:var(--y)}
+.flip .bk .gk{color:var(--y);display:block;margin-top:14px}
+.flip .cg{font-size:18px}
+.gl{margin:8px 0 0;padding:0;list-style:none;columns:2;column-gap:28px}
+.gl li{break-inside:avoid;padding:4px 0 4px 18px;position:relative;line-height:1.35;color:var(--mut)}
+.gl li:before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:var(--y)}
+.turn{position:absolute;right:14px;top:10px;font-size:20px;opacity:.55}
+.flip:focus-visible .face{outline:2px solid var(--y);outline-offset:4px}
+@media(max-width:760px){.gl{columns:1}}
+@media(prefers-reduced-motion:reduce){.fl-in{transition:none}}
 @media(prefers-reduced-motion:reduce){.gi video{display:none}}
 .tf li{min-width:0;overflow-wrap:anywhere;hyphens:auto}
 .fedl img{max-width:100%;height:auto;max-height:34px}
@@ -283,7 +324,17 @@ a.gb b{font-size:clamp(32px,3.9vw,48px)}
 
 JS = rd('script.js.html').replace("var links=[].slice.call(document.querySelectorAll('a.c,a.gb,a.about'));",
   "var links=[].slice.call(document.querySelectorAll('a.c,a.gb,a.about,a.dep-h'));")
-JS = JS.replace('})();\n</script>', r'''  // hide past departures
+JS = JS.replace('})();\n</script>', r'''  // gift certificate: flips by itself, tap/click to turn
+  var fl=document.getElementById('gift');
+  if(fl){var setH=function(){var f=fl.classList.contains('flipped');fl.querySelector('.fr').setAttribute('aria-hidden',f);fl.querySelector('.bk').setAttribute('aria-hidden',!f)};
+    var tog=function(){fl.classList.toggle('flipped');setH()};
+    fl.addEventListener('click',function(e){if(e.target.closest('a'))return;tog();hold=Date.now()+12000});
+    fl.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog();hold=Date.now()+12000}});
+    var hold=0,hov=false,vis=false;fl.addEventListener('mouseenter',function(){hov=true});fl.addEventListener('mouseleave',function(){hov=false});
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.5}).observe(fl);
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(function(){if(vis&&!hov&&Date.now()>hold)tog()},fl.classList.contains('flipped')?9000:6000);
+  }
+  // hide past departures
   var today=new Date().toISOString().slice(0,10);
   [].forEach.call(document.querySelectorAll('.dl li'),function(li){if(li.dataset.end<today)li.remove()});
   if(!document.querySelector('.dl li')){var d=document.getElementById('dates');if(d)d.remove()}

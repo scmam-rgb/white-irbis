@@ -148,6 +148,26 @@ footer{color:var(--mut);margin-bottom:80px}
 .fab a{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.4)}
 .fa-wa{background:#25D366}.fa-tg{background:#229ED9}
 @media(min-width:900px){.fab a{width:50px;height:50px}}
+
+/* gift flip card */
+.flip{margin-top:14px;perspective:1600px;cursor:pointer;outline:none}
+.fl-in{display:grid;transition:transform .9s cubic-bezier(.45,.05,.2,1);transform-style:preserve-3d}
+.flip.flipped .fl-in{transform:rotateY(180deg)}
+.flip .face{grid-area:1/1;margin-top:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:3px solid #fff;box-shadow:0 0 0 1px rgba(255,255,255,.35),0 18px 40px rgba(0,0,0,.35);position:relative}
+.flip .face:before{content:"";position:absolute;inset:9px;border:1px dashed rgba(18,18,18,.35);border-radius:12px;pointer-events:none}
+@media(min-width:761px){.flip .face{align-content:center}}
+.flip .bk{transform:rotateY(180deg);background:#121212;color:var(--ink)}
+.flip .bk:before{border-color:rgba(255,255,255,.3)}
+.flip .bk b{color:var(--y)}
+.flip .bk .gk{color:var(--y);display:block;margin-top:14px}
+.flip .cg{font-size:18px}
+.gl{margin:8px 0 0;padding:0;list-style:none;columns:2;column-gap:28px}
+.gl li{break-inside:avoid;padding:4px 0 4px 18px;position:relative;line-height:1.35;color:var(--mut)}
+.gl li:before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:var(--y)}
+.turn{position:absolute;right:14px;top:10px;font-size:20px;opacity:.55}
+.flip:focus-visible .face{outline:2px solid var(--y);outline-offset:4px}
+@media(max-width:760px){.gl{columns:1}}
+@media(prefers-reduced-motion:reduce){.fl-in{transition:none}}
 @media(prefers-reduced-motion:reduce){.gi video{display:none}}
 .tf li{min-width:0;overflow-wrap:anywhere;hyphens:auto}
 .fedl img{max-width:100%;height:auto;max-height:34px}
@@ -212,13 +232,34 @@ a.gb b{font-size:clamp(32px,3.9vw,48px)}
     <div class="xc"><h3><span lang="ru">Компании и клубы</span><span lang="en">Companies and clubs</span><span lang="hy">Ընկերություններ և ակումբներ</span></h3><p><span lang="ru">Корпоративный выезд, тимбилдинг или клубная поездка: восхождение, скалы, треккинг. Закрытая группа и программа под ваши задачи.</span><span lang="en">A corporate trip, team building or club outing: a summit, rock or trekking. A private group and a programme built around your goals.</span><span lang="hy">Կորպորատիվ ելք, թիմային միջոցառում կամ ակումբային ճամփորդություն՝ վերելք, ժայռեր, արշավ։ Փակ խումբ և ծրագիր՝ ձեր նպատակներով։</span></p><a class="lnk" lang="ru" href="https://wa.me/37491470331?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8/%D0%BA%D0%BB%D1%83%D0%B1%D0%B0." target="_blank" rel="noopener">Запросить →</a><a class="lnk" lang="en" href="https://wa.me/37491470331?text=Hello%21%20We%27re%20interested%20in%20a%20trip%20for%20our%20company/club." target="_blank" rel="noopener">Request →</a><a class="lnk" lang="hy" href="https://wa.me/37491470331?text=%D4%B2%D5%A1%D6%80%D6%87%D6%89%20%D5%80%D5%A5%D5%BF%D5%A1%D6%84%D6%80%D6%84%D6%80%D5%BE%D5%A1%D5%AE%20%D5%A5%D5%B6%D6%84%20%D5%A8%D5%B6%D5%AF%D5%A5%D6%80%D5%B8%D6%82%D5%A9%D5%B5%D5%A1%D5%B6/%D5%A1%D5%AF%D5%B8%D6%82%D5%B4%D5%A2%D5%AB%20%D5%A5%D5%AC%D6%84%D5%B8%D5%BE%D6%89" target="_blank" rel="noopener">Հարցում →</a></div>
     <div class="xc"><h3><span lang="ru">Прокат снаряжения</span><span lang="en">Gear rental</span><span lang="hy">Հանդերձանքի վարձույթ</span></h3><p><span lang="ru">Идёте в горы сами? Палатки, спальники, коврики, каски, системы, верёвки, скальные туфли и другое.</span><span lang="en">Heading out on your own? Tents, sleeping bags, mats, helmets, harnesses, ropes, climbing shoes and more.</span><span lang="hy">Լեռներ եք գնում ինքնուրույն։ Վրաններ, քնապարկեր, ներքնակներ, սաղավարտներ, համակարգեր, պարաններ, ժայռային կոշիկներ և այլն։</span></p><a class="lnk" lang="ru" href="https://wa.me/37491470331?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BF%D1%80%D0%BE%D0%BA%D0%B0%D1%82%20%D1%81%D0%BD%D0%B0%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F." target="_blank" rel="noopener">Узнать →</a><a class="lnk" lang="en" href="https://wa.me/37491470331?text=Hello%21%20I%20need%20to%20rent%20some%20gear." target="_blank" rel="noopener">Ask →</a><a class="lnk" lang="hy" href="https://wa.me/37491470331?text=%D4%B2%D5%A1%D6%80%D6%87%D6%89%20%D5%80%D5%A1%D5%B6%D5%A4%D5%A5%D6%80%D5%B1%D5%A1%D5%B6%D6%84%D5%AB%20%D5%BE%D5%A1%D6%80%D5%B1%D5%B8%D6%82%D5%B5%D5%A9%20%D5%A7%20%D5%BA%D5%A5%D5%BF%D6%84%D6%89" target="_blank" rel="noopener">Իմանալ →</a></div>
   </div>
-  <div class="gift">
-    <div>
-      <span class="gk"><span lang="ru">Подарочный сертификат</span><span lang="en">Gift certificate</span><span lang="hy">Նվեր-վկայական</span></span>
-      <b><span lang="ru">Подарите горы</span><span lang="en">Give the mountains</span><span lang="hy">Նվիրեք լեռներ</span></b>
-      <p><span lang="ru">Сертификат на любой наш тур — на 5% дешевле цены тура. Именной, с датой на выбор: восхождение на Арагац, выходные на скалах, неделя на лыжах или Арарат.</span><span lang="en">A certificate for any of our tours — 5% off the tour price. Personalised, with the date of their choice: Aragats, a weekend on rock, a week of skiing or Ararat.</span><span lang="hy">Վկայական մեր ցանկացած տուրի համար՝ տուրի գնից 5%-ով էժան։ Անվանական, ընտրովի ամսաթվով՝ Արագած, հանգստյան օրեր ժայռերին, դահուկային շաբաթ կամ Արարատ։</span></p>
+  <div class="flip" id="gift" tabindex="0" aria-label="Gift certificate">
+   <div class="fl-in">
+    <div class="gift face fr">
+      <div>
+        <span class="gk"><span lang="ru">Подарочный сертификат</span><span lang="en">Gift certificate</span><span lang="hy">Նվեր-վկայական</span></span>
+        <b><span lang="ru">Подарите горы</span><span lang="en">Give the mountains</span><span lang="hy">Նվիրեք լեռներ</span></b>
+        <p><span lang="ru">Сертификат на любой наш тур — на 5% дешевле цены тура. Именной, с датой на выбор: восхождение на Арагац, выходные на скалах, неделя на лыжах или Арарат.</span><span lang="en">A certificate for any of our tours — 5% off the tour price. Personalised, with the date of their choice: Aragats, a weekend on rock, a week of skiing or Ararat.</span><span lang="hy">Վկայական մեր ցանկացած տուրի համար՝ տուրի գնից 5%-ով էժան։ Անվանական, ընտրովի ամսաթվով՝ Արագած, հանգստյան օրեր ժայռերին, դահուկային շաբաթ կամ Արարատ։</span></p>
+      </div>
+      <div class="gift-p"><span class="pct">−5%</span><a class="btn dark" lang="ru" href="https://wa.me/37491470331?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82." target="_blank" rel="noopener">Хочу сертификат</a><a class="btn dark" lang="en" href="https://wa.me/37491470331?text=Hello%21%20I%27d%20like%20a%20gift%20certificate." target="_blank" rel="noopener">Get a certificate</a><a class="btn dark" lang="hy" href="https://wa.me/37491470331?text=%D4%B2%D5%A1%D6%80%D6%87%D6%89%20%D5%88%D6%82%D5%A6%D5%B8%D6%82%D5%B4%20%D5%A5%D5%B4%20%D5%B6%D5%BE%D5%A5%D6%80-%D5%BE%D5%AF%D5%A1%D5%B5%D5%A1%D5%AF%D5%A1%D5%B6%D6%89" target="_blank" rel="noopener">Ուզում եմ վկայական</a></div>
+      <span class="turn" aria-hidden="true">↻</span>
     </div>
-    <div class="gift-p"><span class="pct">−5%</span><a class="btn dark" lang="ru" href="https://wa.me/37491470331?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82." target="_blank" rel="noopener">Хочу сертификат</a><a class="btn dark" lang="en" href="https://wa.me/37491470331?text=Hello%21%20I%27d%20like%20a%20gift%20certificate." target="_blank" rel="noopener">Get a certificate</a><a class="btn dark" lang="hy" href="https://wa.me/37491470331?text=%D4%B2%D5%A1%D6%80%D6%87%D6%89%20%D5%88%D6%82%D5%A6%D5%B8%D6%82%D5%B4%20%D5%A5%D5%B4%20%D5%B6%D5%BE%D5%A5%D6%80-%D5%BE%D5%AF%D5%A1%D5%B5%D5%A1%D5%AF%D5%A1%D5%B6%D6%89" target="_blank" rel="noopener">Ուզում եմ վկայական</a></div>
+    <div class="gift face bk" aria-hidden="true">
+      <div>
+        <b><span lang="ru">Поздравляем!</span><span lang="en">Congratulations!</span><span lang="hy">Շնորհավորում ենք</span></b>
+        <p class="cg"><span lang="ru">Вам подарили горы. Выберите тур и удобную дату — остальное мы возьмём на себя.</span><span lang="en">You've been given the mountains. Choose a tour and a date that suits you — we'll take care of the rest.</span><span lang="hy">Ձեզ լեռներ են նվիրել։ Ընտրեք տուրը և հարմար ամսաթիվը, մնացածը մենք կանենք։</span></p>
+        <span class="gk"><span lang="ru">Условия</span><span lang="en">Terms</span><span lang="hy">Պայմաններ</span></span>
+        <ul class="gl">
+          <li><span lang="ru">Любой тур White Irbis: Арагац, Арарат, скалы, треккинг, горные лыжи</span><span lang="en">Any White Irbis tour: Aragats, Ararat, rock, trekking, skiing</span><span lang="hy">White Irbis-ի ցանկացած տուր՝ Արագած, Արարատ, ժայռեր, արշավ, դահուկներ</span></li>
+          <li><span lang="ru">Цена сертификата — на 5% ниже цены тура</span><span lang="en">The certificate costs 5% less than the tour</span><span lang="hy">Վկայականի գինը տուրի գնից 5%-ով ցածր է</span></li>
+          <li><span lang="ru">Именной, дату выбирает получатель</span><span lang="en">Personalised; the recipient chooses the date</span><span lang="hy">Անվանական է, ամսաթիվն ընտրում է ստացողը</span></li>
+          <li><span lang="ru">Инструкторы и страховка — как в обычном туре</span><span lang="en">Instructors and insurance included, as in any tour</span><span lang="hy">Հրահանգիչներն ու ապահովագրությունը՝ ինչպես սովորական տուրում</span></li>
+          <li><span lang="ru">Оформление — в WhatsApp или Telegram</span><span lang="en">Order via WhatsApp or Telegram</span><span lang="hy">Պատվերը՝ WhatsApp-ով կամ Telegram-ով</span></li>
+        </ul>
+      </div>
+      <div class="gift-p"><a class="btn " lang="ru" href="https://wa.me/37491470331?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82." target="_blank" rel="noopener">Хочу сертификат</a><a class="btn " lang="en" href="https://wa.me/37491470331?text=Hello%21%20I%27d%20like%20a%20gift%20certificate." target="_blank" rel="noopener">Get a certificate</a><a class="btn " lang="hy" href="https://wa.me/37491470331?text=%D4%B2%D5%A1%D6%80%D6%87%D6%89%20%D5%88%D6%82%D5%A6%D5%B8%D6%82%D5%B4%20%D5%A5%D5%B4%20%D5%B6%D5%BE%D5%A5%D6%80-%D5%BE%D5%AF%D5%A1%D5%B5%D5%A1%D5%AF%D5%A1%D5%B6%D6%89" target="_blank" rel="noopener">Ուզում եմ վկայական</a></div>
+      <span class="turn" aria-hidden="true">↻</span>
+    </div>
+   </div>
   </div>
 </section>
 <section class="sec" id="guides">
@@ -259,6 +300,16 @@ a.gb b{font-size:clamp(32px,3.9vw,48px)}
     if(matchMedia('(hover: hover)').matches){a.addEventListener('mouseenter',start);a.addEventListener('mouseleave',stop);a.addEventListener('focus',start);a.addEventListener('blur',stop)}
     else if(!matchMedia('(prefers-reduced-motion: reduce)').matches){setInterval(step,2200)}
   })();
+  // gift certificate: flips by itself, tap/click to turn
+  var fl=document.getElementById('gift');
+  if(fl){var setH=function(){var f=fl.classList.contains('flipped');fl.querySelector('.fr').setAttribute('aria-hidden',f);fl.querySelector('.bk').setAttribute('aria-hidden',!f)};
+    var tog=function(){fl.classList.toggle('flipped');setH()};
+    fl.addEventListener('click',function(e){if(e.target.closest('a'))return;tog();hold=Date.now()+12000});
+    fl.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog();hold=Date.now()+12000}});
+    var hold=0,hov=false,vis=false;fl.addEventListener('mouseenter',function(){hov=true});fl.addEventListener('mouseleave',function(){hov=false});
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.5}).observe(fl);
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(function(){if(vis&&!hov&&Date.now()>hold)tog()},fl.classList.contains('flipped')?9000:6000);
+  }
   // hide past departures
   var today=new Date().toISOString().slice(0,10);
   [].forEach.call(document.querySelectorAll('.dl li'),function(li){if(li.dataset.end<today)li.remove()});
