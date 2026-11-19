@@ -250,8 +250,8 @@ for slug, p in PAGES.items():
 <meta property="og:site_name" content="White Irbis">
 <meta property="og:title" content="{p['title']}">
 <meta property="og:description" content="{p['ogdesc']}">
-<meta property="og:url" content="https://scmam-rgb.github.io/white-irbis/{slug}/">
-<meta property="og:image" content="https://scmam-rgb.github.io/white-irbis/img/og-square.jpg">
+<meta property="og:url" content="https://whiteirbis.am/{slug}/">
+<meta property="og:image" content="https://whiteirbis.am/img/og-square.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="1200">
 <meta name="twitter:card" content="summary">

@@ -240,8 +240,8 @@ page = f'''<!doctype html>
 <meta property="og:type" content="website"><meta property="og:site_name" content="White Irbis">
 <meta property="og:title" content="Армения пешком — 7 дней, 6 троп">
 <meta property="og:description" content="Гарни, Цахкуняцкий хребет, Дилижан, Артаниш над Севаном, Смбатаберд и Арагац. Гиды-альпинисты White Irbis, уровень доступный всем.">
-<meta property="og:url" content="https://scmam-rgb.github.io/white-irbis/trekking/">
-<meta property="og:image" content="https://scmam-rgb.github.io/white-irbis/img/og-square.jpg">
+<meta property="og:url" content="https://whiteirbis.am/trekking/">
+<meta property="og:image" content="https://whiteirbis.am/img/og-square.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="1200">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -271,7 +271,7 @@ page = f'''<!doctype html>
       <a class="cta" href="#price">{t("Хочу в горы","Take me to the mountains","Ուզում եմ լեռներ")}</a>
       <span class="price-chip"><span lang="ru">95 000 ₽</span><span lang="en">€1,030</span><span lang="hy">417 000 ֏</span><small>{t("с человека · 7 дней","per person · 7 days","մեկ անձի համար · 7 օր")}</small></span>
     </div>
-    <a class="pg-url" href="https://scmam-rgb.github.io/white-irbis/trekking/">scmam-rgb.github.io/white-irbis/trekking</a>
+    <a class="pg-url" href="https://whiteirbis.am/trekking/">whiteirbis.am/trekking</a>
   </div>
 </section>
 
@@ -462,7 +462,7 @@ page = f'''<!doctype html>
       <dl class="reqs">
         <div><dt>{t("Телефон, WhatsApp, Telegram","Phone, WhatsApp, Telegram","Հեռախոս, WhatsApp, Telegram")}</dt><dd><a href="tel:+{PHONE}">+374 91 470 331</a></dd></div>
         <div><dt>{t("Почта","Email","Էլ. փոստ")}</dt><dd><a href="mailto:antuanvisit@gmail.com">antuanvisit@gmail.com</a></dd></div>
-        <div><dt>{t("Страница тура","Tour page","Տուրի էջը")}</dt><dd class="url"><a href="https://scmam-rgb.github.io/white-irbis/trekking/">scmam-rgb.github.io/white-irbis/trekking</a></dd></div>
+        <div><dt>{t("Страница тура","Tour page","Տուրի էջը")}</dt><dd class="url"><a href="https://whiteirbis.am/trekking/">whiteirbis.am/trekking</a></dd></div>
         <div><dt>{t("Сайт","Website","Կայք")}</dt><dd><a href="https://whiteirbis.am" target="_blank" rel="noopener">whiteirbis.am</a></dd></div>
       </dl>
     </div>
@@ -471,7 +471,7 @@ page = f'''<!doctype html>
 
 <footer>
   <div class="wrap">
-    <p><b>White Irbis</b> {t("· горные программы в Армении · whiteirbis.am ·","· mountain programmes in Armenia · whiteirbis.am ·","· լեռնային ծրագրեր Հայաստանում · whiteirbis.am ·")} <a href="tel:+{PHONE}">+374 91 470 331</a> (WhatsApp, Telegram) · antuanvisit@gmail.com · <a href="https://scmam-rgb.github.io/white-irbis/trekking/">scmam-rgb.github.io/white-irbis/trekking</a></p>
+    <p><b>White Irbis</b> {t("· горные программы в Армении · whiteirbis.am ·","· mountain programmes in Armenia · whiteirbis.am ·","· լեռնային ծրագրեր Հայաստանում · whiteirbis.am ·")} <a href="tel:+{PHONE}">+374 91 470 331</a> (WhatsApp, Telegram) · antuanvisit@gmail.com · <a href="https://whiteirbis.am/trekking/">whiteirbis.am/trekking</a></p>
     <p>{t("Ещё у нас:","Also from us:","Նաև մեզ մոտ՝")} <a href="../skaly-i-vulkan/">{t("Скалы и вулканы","Rocks and Volcanoes","Ժայռեր և հրաբուխներ")}</a> · <a href="../weekend/">{t("Скалы за выходные","Rocks in a weekend","Ժայռեր հանգստյան օրերին")}</a> · <a href="../ski/">{t("Горные лыжи с нуля","Skiing from scratch","Լեռնադահուկ զրոյից")}</a> · <a href="../gaidbuk/">{t("Гайдбук «Скалы Армении»","Guidebook «Rocks of Armenia»","«Հայաստանի ժայռեր» ուղեցույց")}</a></p>
     <p>{t("Фото Wikimedia Commons — по лицензиям CC BY и CC BY-SA, авторы указаны под снимками. Схемы троп нарисованы по трекам гида. Остальные фото — архив White Irbis.","Wikimedia Commons photos are used under CC BY and CC BY-SA licences; authors are credited under each image. Trail sketches are drawn from our guide's tracks. All other photos are from the White Irbis archive.","Wikimedia Commons-ի լուսանկարները՝ CC BY և CC BY-SA լիցենզիաներով, հեղինակները նշված են լուսանկարների տակ։ Արահետների սխեմաները գծված են գիդի տրեկերով։ Մնացած լուսանկարները White Irbis-ի արխիվից են։")}</p>
   </div>
