@@ -179,7 +179,7 @@ body = f'''<header class="top"><div class="wrap">
   </div>
 </div></section>
 
-<footer><div class="wrap">White Irbis · irbis.am · +374 91 470 331<br>{T("Высоты — по данным Armenian Geographic (armgeo.am) и открытым источникам. Фото — архив White Irbis.","Heights from Armenian Geographic (armgeo.am) and public sources. Photos from the White Irbis archive.","Բարձրությունները՝ ըստ Armenian Geographic-ի (armgeo.am) և բաց աղբյուրների։ Լուսանկարները՝ White Irbis-ի արխիվից։")}<br><a href="../tct/">{T("Гайдбук: Транскавказская тропа","Guidebook: Transcaucasian Trail","Ուղեցույց՝ Անդրկովկասյան արահետ")}</a> · <a href="../gaidbuk/">{T("Гайдбук: Скалы Армении","Guidebook: Rocks of Armenia","Ուղեցույց՝ Հայաստանի ժայռերը")}</a></div></footer>
+<footer><div class="wrap">White Irbis · whiteirbis.am · +374 91 470 331<br>{T("Высоты — по данным Armenian Geographic (armgeo.am) и открытым источникам. Фото — архив White Irbis.","Heights from Armenian Geographic (armgeo.am) and public sources. Photos from the White Irbis archive.","Բարձրությունները՝ ըստ Armenian Geographic-ի (armgeo.am) և բաց աղբյուրների։ Լուսանկարները՝ White Irbis-ի արխիվից։")}<br><a href="../tct/">{T("Гайдбук: Транскавказская тропа","Guidebook: Transcaucasian Trail","Ուղեցույց՝ Անդրկովկասյան արահետ")}</a> · <a href="../gaidbuk/">{T("Гайдбук: Скалы Армении","Guidebook: Rocks of Armenia","Ուղեցույց՝ Հայաստանի ժայռերը")}</a></div></footer>
 '''
 open(f'{H}/gory_body.html', 'w').write(body)
 print('ok', len(body))

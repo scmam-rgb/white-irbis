@@ -127,7 +127,7 @@ body = f'''<header class="top"><div class="wrap">
   </div>
 </div></section>
 
-<footer><div class="wrap">White Irbis · irbis.am · +374 91 470 331<br><a href="../">{T("Все туры и гайдбуки","All tours and guidebooks","Բոլոր տուրերն ու ուղեցույցները")}</a></div></footer>
+<footer><div class="wrap">White Irbis · whiteirbis.am · +374 91 470 331<br><a href="../">{T("Все туры и гайдбуки","All tours and guidebooks","Բոլոր տուրերն ու ուղեցույցները")}</a></div></footer>
 '''
 open(f'{H}/o-nas_body.html', 'w').write(body)
 print('ok', len(body))
