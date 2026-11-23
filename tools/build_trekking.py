@@ -227,7 +227,7 @@ CSS_EXTRA = r"""
 """
 
 page = f'''<!doctype html>
-<html lang="ru"><head><meta charset="utf-8">
+<html lang="ru"><head><meta charset="utf-8"><script src="/pixel.js" defer></script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Армения пешком — White Irbis</title>
 <link rel="icon" href="favicon.ico" sizes="any">
