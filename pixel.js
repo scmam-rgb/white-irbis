@@ -1,6 +1,6 @@
 /* Meta Pixel — White Irbis. ID меняется только здесь. */
 (function () {
-  var PIXEL_ID = '__PIXEL_ID__';
+  var PIXEL_ID = '2983552958672062';
   if (!/^\d+$/.test(PIXEL_ID)) return; /* ID ещё не вставлен */
   if (/claude|localhost|^$/.test(location.hostname)) return;
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
