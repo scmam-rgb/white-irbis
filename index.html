@@ -289,14 +289,14 @@ a.gb b{font-size:clamp(32px,3.9vw,48px)}
   // gift certificate: turns by itself to a greeting; hover/tap shows the offer
   var fl=document.getElementById('gift');
   if(fl){var gr=[].slice.call(fl.querySelectorAll('.gr')),gi=0,hold=0,hov=false,vis=false;
-    var set=function(f){if(f&&!fl.classList.contains('flipped')){gr[gi].classList.remove('on');gi=(gi+1)%gr.length;gr[gi].classList.add('on')}
+    var flip=function(f){if(f&&!fl.classList.contains('flipped')){gr[gi].classList.remove('on');gi=(gi+1)%gr.length;gr[gi].classList.add('on')}
       fl.classList.toggle('flipped',f);fl.querySelector('.fr').setAttribute('aria-hidden',f);fl.querySelector('.bk').setAttribute('aria-hidden',!f)};
     gi=gr.length-1;gr.forEach(function(g){g.classList.remove('on')});gr[gi].classList.add('on');
-    fl.addEventListener('pointerenter',function(e){if(e.pointerType!=='mouse')return;hov=true;set(false)});fl.addEventListener('pointerleave',function(e){if(e.pointerType!=='mouse')return;hov=false;hold=Date.now()+2500});
-    fl.addEventListener('click',function(e){if(e.target.closest('a'))return;set(false);hold=Date.now()+12000});
-    fl.addEventListener('focusin',function(){set(false);hold=Date.now()+12000});
+    fl.addEventListener('pointerenter',function(e){if(e.pointerType!=='mouse')return;hov=true;flip(false)});fl.addEventListener('pointerleave',function(e){if(e.pointerType!=='mouse')return;hov=false;hold=Date.now()+2500});
+    fl.addEventListener('click',function(e){if(e.target.closest('a'))return;flip(false);hold=Date.now()+12000});
+    fl.addEventListener('focusin',function(){flip(false);hold=Date.now()+12000});
     if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.3}).observe(fl);else vis=true;
-    (function tick(){var f=fl.classList.contains('flipped');if(vis&&!hov&&Date.now()>hold){set(!f);f=!f}setTimeout(tick,f?2000:4000)})();
+    (function tick(){var f=fl.classList.contains('flipped');if(vis&&!hov&&Date.now()>hold){flip(!f);f=!f}setTimeout(tick,f?2000:4000)})();
   }
   // hide past departures
   var today=new Date().toISOString().slice(0,10);
