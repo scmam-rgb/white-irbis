@@ -248,6 +248,18 @@ def build(p, price):
     open(f'{R}/{p["slug"]}/index.html', 'w', encoding='utf-8').write(s)
     print(p['slug'], len(s))
 
+
+OFFSEASON_FAQ = ('<details><summary><span lang="ru">А зимой и весной можно?</span><span lang="en">Can I go in winter or spring?</span><span lang="hy">Իսկ ձմռանը և գարնանը կարելի՞ է</span></summary>'
+ '<p><span lang="ru">Да, с ноября по май — индивидуально. Склон под снегом, дорога к озеру Кари закрыта, поэтому подход длиннее и нужно зимнее снаряжение: кошки, ледоруб, тёплая одежда — подберём и выдадим. Дату ставим под окно хорошей погоды. Цена — индивидуальный тариф, считаем под вашу группу.</span>'
+ '<span lang="en">Yes, from November to May — as a private trip. The slope is under snow and the road to Lake Kari is closed, so the approach is longer and you need winter gear: crampons, ice axe, warm clothing — we will provide it. We pick a good-weather window. Price is an individual rate, calculated for your group.</span>'
+ '<span lang="hy">Այո, նոյեմբերից մայիս՝ անհատական։ Լանջը ձյան տակ է, Քարի լճի ճանապարհը փակ է, ուստի մոտեցումն ավելի երկար է և պետք է ձմեռային սարքավորում՝ կատուներ, սառցահատ, տաք հագուստ․ կտրամադրենք։ Ամսաթիվը ընտրում ենք լավ եղանակի պատուհանի տակ։ Գինը անհատական սակագին է՝ հաշվում ենք ձեր խմբի համար։</span></p></details>')
+OFFSEASON_LI = ('<li><span lang="ru">Ноябрь — май: восхождение по снегу, индивидуальный тариф</span><span lang="en">November — May: snow ascent, individual rate</span><span lang="hy">Նոյեմբեր — մայիս՝ վերելք ձյունով, անհատական սակագին</span></li>')
+def offseason(s):
+    i = s.index('Когда лучше ехать?'); j = s.index('</details>', i) + len('</details>')
+    s = s[:j] + '\n      ' + OFFSEASON_FAQ + s[j:]
+    k = s.index('<li><span lang="ru">Для двоих и закрытых групп')
+    return s[:k] + OFFSEASON_LI + '\n      ' + s[k:]
+
 ALTS = {'aragats-yug': {'Северный склон Арагаца, облака накрывают гребень': 'Группа поднимается от озера Кари к Южной вершине Арагаца', 'На гребне Северной вершины, впереди вершинный крест': 'У креста на Южной вершине Арагаца', 'Группа White Irbis на вершине Арагаца': 'Группа на Южной вершине, позади Западная и Северная', 'Скальные зубцы над кратером Арагаца в тумане': 'По дороге к Арагацу, на горизонте Арарат'}, 'aragats-zapad': {'Северный склон Арагаца, облака накрывают гребень': 'Группа поднимается от озера Кари', 'На гребне Северной вершины, впереди вершинный крест': 'Подъём по камням к Западной вершине Арагаца',
  'Подъём по камням к Западной вершине Арагаца" loading="lazy" style="aspect-ratio:3/2"':'Подъём по камням к Западной вершине Арагаца" loading="lazy" style="aspect-ratio:3/2;object-position:50% 20%"', 'Группа White Irbis на вершине Арагаца': 'У креста на Западной вершине Арагаца', 'Скальные зубцы над кратером Арагаца в тумане': 'Группа White Irbis на Западной вершине'}}
 
@@ -258,4 +270,5 @@ if __name__ == '__main__':
         build(p, prices.get(k))
         f = f'{R}/{k}/index.html'; s = open(f, encoding='utf-8').read()
         for a, b in ALTS[k].items(): s = s.replace(a, b)
+        if k == 'aragats-yug': s = offseason(s)
         open(f, 'w', encoding='utf-8').write(s)
