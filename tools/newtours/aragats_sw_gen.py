@@ -207,8 +207,8 @@ PAGES = {
   },
   alts={'north_slope.jpg': 'Склон Арагаца над облаками', 'ridge_top.jpg': 'На краю кратера Арагаца',
         'summit.jpg': 'Группа White Irbis на Арагаце'},
-  media={'img/above_clouds.jpg':'img/cross_sun.jpg','img/north_slope.jpg':'../aragats-yug/img/kari_walk.jpg','img/ridge_top.jpg':'img/scramble.jpg',
-         'img/summit.jpg':'img/cross_fog.jpg','img/crater_spires.jpg':'img/summit_selfie.jpg',
+  media={'img/above_clouds.jpg':'img/west_top.jpg','img/north_slope.jpg':'../aragats-yug/img/kari_walk.jpg','img/ridge_top.jpg':'img/scramble.jpg',
+         'img/summit.jpg':'img/cross_sun.jpg','img/crater_spires.jpg':'img/summit_selfie.jpg',
          'vid/hero.mp4':'vid/hero.mp4','vid/approach.mp4':'vid/approach.mp4','vid/slope.mp4':'vid/slope.mp4','vid/descent.mp4':'vid/descent.mp4'}),
 }
 
@@ -294,7 +294,7 @@ GAL = {
    ('img/west_rest.jpg', 'Скалы и снежники под Западной вершиной', '30% 50%'),
    ('../aragats-yug/img/rock_jump.jpg', 'Скальные столбы на гребне', '50% 50%'),
    ('../aragats-yug/img/sitting_view.jpg', 'Вид на Западную и Северную вершины', '40% 50%'),
-   ('img/cross_fog.jpg', 'У креста на Западной вершине в облаке', '50% 70%')]),
+   ('img/west_ridge2.jpg', 'На гребне Западной вершины Арагаца', '50% 50%')]),
 }
 
 WINTER = ('<section class="next" id="winter" style="background:var(--deep);color:var(--on-deep)"><div class="wrap">\n'
