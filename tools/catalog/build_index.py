@@ -66,7 +66,7 @@ dates = f'''<section class="sec" id="dates">
 </section>'''
 
 # ---------- 3. tours with a quick picker ----------
-TAGS = {'ski/': 'first winter', 'skaly-i-vulkan/': 'first rocks peak', 'aragats/': 'peak', 'ararat/': 'peak',
+TAGS = {'ski/': 'first winter', 'skaly-i-vulkan/': 'first rocks peak', 'aragats/': 'peak', 'aragats-yug/': 'first peak', 'aragats-zapad/': 'peak', 'ararat/': 'peak',
         'trekking/': 'first walk', 'extreme-wine/': 'first', 'weekend/': 'first rocks'}
 cards = rd('cards.html')
 for href, tg in TAGS.items():
