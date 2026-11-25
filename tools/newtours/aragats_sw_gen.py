@@ -124,7 +124,7 @@ PAGES = {
         'summit.jpg': 'Группа White Irbis на Арагаце'},
   media={'img/above_clouds.jpg':'img/crater_view.jpg','img/north_slope.jpg':'img/kari_walk.jpg','img/ridge_top.jpg':'img/summit_cross.jpg',
          'img/summit.jpg':'img/group_peaks.jpg','img/crater_spires.jpg':'img/ararat_view.jpg',
-         'vid/hero.mp4':'vid/hero.mp4','vid/approach.mp4':'vid/approach.mp4','vid/slope.mp4':'vid/slope.mp4','vid/descent.mp4':'vid/descent.mp4'}),
+         'vid/hero.mp4':'vid/hero.mp4','vid/approach.mp4':'vid/kari_climb.mp4','vid/slope.mp4':'vid/crater.mp4','vid/descent.mp4':'vid/descent.mp4'}),
  'aragats-zapad': dict(
   slug='aragats-zapad', apptitle='Арагац Западная', fs=(120, 112, 70),
   title=tri('Арагац, Западная вершина — White Irbis', 'Aragats, West peak — White Irbis', 'Արագած, Արևմտյան գագաթ — White Irbis'),
