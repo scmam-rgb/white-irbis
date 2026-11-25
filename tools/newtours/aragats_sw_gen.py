@@ -375,6 +375,44 @@ def v2(k, s):
     return s
 
 
+# ---------- v3: South is NOT easy — altitude sickness, real effort ----------
+YUG3 = {
+ '3 879 метров —': ('3 879 метров — без альпинистской техники, но и не прогулка. Машина довозит до озера Кари, дальше три с половиной часа вверх по камням на высоту почти четыре тысячи, где у многих начинается горняшка. Зато наверху под ногами кратер старого вулкана, а по дороге домой — средневековая крепость Амберд.',
+   '3,879 metres — no climbing technique needed, but no stroll either. The car takes you to Lake Kari, then three and a half hours up over stones to almost four thousand metres, where many people feel the altitude. The reward: the crater of an old volcano at your feet, and the medieval fortress of Amberd on the way home.',
+   '3 879 մետր՝ առանց ալպինիստական տեխնիկայի, բայց ոչ էլ զբոսանք։ Մեքենան հասցնում է Քարի լիճ, հետո երեքուկես ժամ վերև քարերով՝ գրեթե չորս հազար մետր, որտեղ շատերի մոտ սկսվում է լեռնային հիվանդությունը։ Փոխարենը վերևում ոտքերի տակ հին հրաբխի խառնարանն է, իսկ տուն վերադառնալիս՝ միջնադարյան Ամբերդ ամրոցը։'),
+ 'Арагац — потухший вулкан и самая высокая гора современной Армении. В доисторические': ('Арагац — потухший вулкан и самая высокая гора современной Армении. В доисторические времена взрыв разрушил его вершину, и по краю кратера остались четыре пика. Южная — самый понятный путь наверх: без скал и верёвок. Но высота есть высота: здесь начинается настоящее знакомство с горами.',
+   'Aragats is an extinct volcano and the highest mountain of modern Armenia. In prehistoric times an eruption destroyed its top, leaving four peaks around the crater rim. The South peak is the most straightforward way up: no rock, no ropes. But altitude is altitude — this is where a real acquaintance with the mountains begins.',
+   'Արագածը հանգած հրաբուխ է և ժամանակակից Հայաստանի ամենաբարձր լեռը։ Նախապատմական ժամանակներում պայթյունը քանդել է նրա գագաթը, և խառնարանի եզրին մնացել են չորս գագաթներ։ Հարավայինը վեր բարձրանալու ամենապարզ ճանապարհն է՝ առանց ժայռերի և պարանների։ Բայց բարձրությունը բարձրություն է․ այստեղ սկսվում է իսկական ծանոթությունը լեռների հետ։'),
+ 'Летом Южная — лёгкий трекинг.': ('Летом Южная — серьёзный, но понятный трекинг. Зимой это совсем другая гора: снег по колено, ветер, мороз и кошки на ногах. Дорога к Кари закрыта, подход длиннее. Это отдельный индивидуальный тур для тех, кто хочет настоящую зимнюю вершину.',
+   'In summer the South peak is a demanding but straightforward trek. In winter it is a different mountain: knee-deep snow, wind, frost and crampons. The road to Lake Kari is closed and the approach is longer. This is a separate private tour for those who want a real winter summit.',
+   'Ամռանը Հարավայինը լուրջ, բայց հասկանալի արշավ է։ Ձմռանը դա բոլորովին այլ լեռ է՝ ծնկահաս ձյուն, քամի, ցուրտ և կատուներ ոտքերին։ Քարի լճի ճանապարհը փակ է, մոտեցումն ավելի երկար է։ Սա առանձին անհատական տուր է նրանց համար, ովքեր ուզում են իսկական ձմեռային գագաթ։'),
+ 'Около пяти часов ходьбы на высоте 3 200–3 900 м.': ('Около пяти часов ходьбы вверх и вниз на высоте 3 200–3 900 м по камням. Нужна хорошая форма: регулярный спорт или опыт походов. Альпинистская техника не нужна.',
+   'About five hours up and down over stones at 3,200–3,900 m. You need good fitness: regular sport or hiking experience. No climbing technique required.',
+   'Մոտ հինգ ժամ վեր և վար քարերով 3 200–3 900 մ բարձրության վրա։ Պետք է լավ մարզավիճակ՝ կանոնավոր սպորտ կամ արշավների փորձ։ Ալպինիստական տեխնիկա պետք չէ։'),
+ 'Идём в темпе самого медленного участника.': ('На 3 500–3 900 м у многих начинается горняшка: болит голова, не хватает воздуха, нет сил. Это нормально. Идём медленно, в темпе самого медленного, пьём воду. Если кому-то плохо — гид решает, ждать или спускаться.',
+   'At 3,500–3,900 m many people get altitude sickness: headache, shortness of breath, no energy. That is normal. We go slowly, at the pace of the slowest, and drink water. If someone feels bad, the guide decides whether to wait or descend.',
+   '3 500–3 900 մ բարձրության վրա շատերի մոտ սկսվում է լեռնային հիվանդությունը՝ գլխացավ, օդի պակաս, ուժասպառություն։ Դա նորմալ է։ Գնում ենք դանդաղ, ամենադանդաղի տեմպով, ջուր ենք խմում։ Եթե մեկին վատ է՝ գիդը որոշում է սպասել, թե իջնել։'),
+ 'Первая большая высота': ('Первая серьёзная вершина', 'Your first serious summit', 'Առաջին լուրջ գագաթը'),
+ 'Хотите попробовать высоту': ('Хотите проверить себя', 'Want to test yourself', 'Ուզում եք ստուգել ինքներդ ձեզ'),
+ 'Почти 3 900 м за один день': ('Почти 3 900 м за один день: узнаете, как организм ведёт себя на высоте.', 'Almost 3,900 m in a day: you will find out how your body handles altitude.', 'Գրեթե 3 900 մ մեկ օրում՝ կիմանաք, թե ինչպես է օրգանիզմն իրեն պահում բարձրության վրա։'),
+ 'Идёте всей семьёй или с друзьями': ('Идёте с друзьями', 'Going with friends', 'Գնում եք ընկերներով'),
+ 'Самый простой путь на Арагац': ('Путь без скал и верёвок — подходит для группы с хорошей походной формой.', 'A route with no rock or ropes — fine for a group in good hiking shape.', 'Երթուղի առանց ժայռերի և պարանների՝ հարմար է լավ արշավային պատրաստվածությամբ խմբի համար։'),
+ 'Хорошая первая ступень акклиматизации.': ('Хорошая ступень акклиматизации.', 'A good step of acclimatisation.', 'Լավ քայլ ադապտացիայի համար։'),
+ 'Южная (3 879 м) — самый простой путь на Арагац: старт': ('Южная (3 879 м) — путь без скал: старт от озера Кари, около 5 часов ходьбы, но на высоте почти четырёх тысяч, где тяжело с непривычки. Северная (4 090 м) — высшая точка Армении: дольше, выше и с узким гребнем в конце.',
+   'The South peak (3,879 m) has no rock: start at Lake Kari, about 5 hours of walking, but at almost four thousand metres, which is hard if you are not used to it. The North peak (4,090 m) is the highest point in Armenia: longer, higher, with a narrow ridge at the end.',
+   'Հարավայինը (3 879 մ) առանց ժայռերի է՝ մեկնարկ Քարի լճից, մոտ 5 ժամ քայլք, բայց գրեթե չորս հազար մետր բարձրության վրա, որտեղ անսովոր լինելու դեպքում դժվար է։ Հյուսիսայինը (4 090 մ) Հայաստանի ամենաբարձր կետն է՝ ավելի երկար, ավելի բարձր և վերջում նեղ կատարով։'),
+}
+
+def v3(s):
+    def rep(m):
+        ru = m.group(1)
+        for k, v in YUG3.items():
+            if ru.startswith(k):
+                return f'<span lang="ru">{v[0]}</span>{m.group(2)}<span lang="en">{v[1]}</span>{m.group(4)}<span lang="hy">{v[2]}</span>'
+        return m.group(0)
+    return TRI.sub(rep, s)
+
+
 if __name__ == '__main__':
     import sys
     prices = json.loads(sys.argv[1]) if len(sys.argv) > 1 else {}
@@ -384,6 +422,5 @@ if __name__ == '__main__':
         for a, b in ALTS[k].items(): s = s.replace(a, b)
         if k == 'aragats-yug': s = offseason(s)
         s = v2(k, s)
+        if k == 'aragats-yug': s = v3(s)
         open(f, 'w', encoding='utf-8').write(s)
-
-
