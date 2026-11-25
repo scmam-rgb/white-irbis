@@ -38,7 +38,7 @@ PAGES = {
   ogdesc='Первая вершина почти четыре тысячи метров за один день: озеро Кари, подъём 3,5 часа, обед на вершине и Амберд по дороге домой.',
   msg=tri('Здравствуйте! Хочу на Южную вершину Арагаца', 'Hi! I would like to climb the South peak of Aragats', 'Բարև Ձեզ։ Ուզում եմ բարձրանալ Արագածի Հարավային գագաթ'),
   T={
-   'Из Еревана · 1 день · июнь — октябрь': tri('Из Еревана · 1 день · июнь — октябрь', 'From Yerevan · 1 day · June — October', 'Երևանից · 1 օր · հունիս — հոկտեմբեր'),
+   'Из Еревана · 1 день · июнь — октябрь': tri('Из Еревана · 1 день · июнь — сентябрь', 'From Yerevan · 1 day · June — September', 'Երևանից · 1 օր · հունիս — սեպտեմբեր'),
    'Арагац<br><em>Северная</em>': tri('Арагац<br><em>Южная</em>', 'Aragats<br><em>South</em>', 'Արագած<br><em>Հարավային</em>'),
    '4 090 метров — выше в Армении только небо.': tri(
      '3 879 метров — первая настоящая высота без альпинистской техники. Машина довозит до озера Кари, дальше три с половиной часа по широкому склону — и под ногами кратер старого вулкана. Обед на вершине, а по дороге домой — средневековая крепость Амберд.',
@@ -75,9 +75,17 @@ PAGES = {
      'Timing depends on the group pace and snow — the guide will tell you more precisely before the start.',
      'Երթուղու ժամանակը կախված է խմբի տեմպից և ձյունից․ գիդը ավելի ճշգրիտ կասի մեկնարկից առաջ։'),
    'Ходим на Северную с июня по октябрь': tri(
-     'Ходим на Южную с июня по октябрь, когда дорога к озеру Кари открыта и специальное снаряжение не нужно.',
-     'We climb the South peak from June to October, when the road to Lake Kari is open and no special gear is needed.',
-     'Հարավային ենք գնում հունիսից հոկտեմբեր, երբ Քարի լճի ճանապարհը բաց է և հատուկ սարքավորում պետք չէ։'),
+     'Сезон на Южной — с июня по сентябрь: дорога к озеру Кари открыта, специальное снаряжение не нужно. В мае и октябре — по снегу, индивидуально.',
+     'The South peak season is June to September: the road to Lake Kari is open and no special gear is needed. In May and October we go on snow, as a private trip.',
+     'Հարավայինի սեզոնը հունիսից սեպտեմբեր է․ Քարի լճի ճանապարհը բաց է, հատուկ սարքավորում պետք չէ։ Մայիսին և հոկտեմբերին՝ ձյունով, անհատական։'),
+   'Июнь — октябрь': tri('Июнь — сентябрь', 'June — September', 'Հունիս — սեպտեմբեր'),
+   'Сезон — июнь — октябрь': tri('Сезон — июнь — сентябрь', 'Season — June — September', 'Սեզոն՝ հունիս — սեպտեմբեր'),
+   'С июня по октябрь. Дату выбираем': tri(
+     'С июня по сентябрь. Дату выбираем вместе и подстраиваем под прогноз, чтобы наверху было ясно.',
+     'From June to September. We pick the date together and adjust it to the forecast so the summit is clear.',
+     'Հունիսից սեպտեմբեր։ Ամսաթիվը ընտրում ենք միասին և հարմարեցնում կանխատեսմանը, որպեսզի վերևում պարզ լինի։'),
+   'Июнь — октябрь, дату выбираем вместе': tri('Июнь — сентябрь, дату выбираем вместе', 'June — September, we pick the date together', 'Հունիս — սեպտեմբեր, ամսաթիվը ընտրում ենք միասին'),
+   'Сезон': tri('Сезон', 'Season', 'Սեզոն'),
    'Собираетесь на <a href="../ararat/">Арарат</a>?': tri(
      'Понравилось? Следующий шаг — <a href="../aragats/">Северная вершина</a>, высшая точка Армении, или <a href="../aragats-zapad/">Западная</a>.',
      'Enjoyed it? The next step is the <a href="../aragats/">North peak</a>, the highest point of Armenia, or the <a href="../aragats-zapad/">West peak</a>.',
@@ -249,11 +257,11 @@ def build(p, price):
     print(p['slug'], len(s))
 
 
-OFFSEASON_FAQ = ('<details><summary><span lang="ru">А зимой и весной можно?</span><span lang="en">Can I go in winter or spring?</span><span lang="hy">Իսկ ձմռանը և գարնանը կարելի՞ է</span></summary>'
- '<p><span lang="ru">Да, с ноября по май — индивидуально. Склон под снегом, дорога к озеру Кари закрыта, поэтому подход длиннее и нужно зимнее снаряжение: кошки, ледоруб, тёплая одежда — подберём и выдадим. Дату ставим под окно хорошей погоды. Цена — индивидуальный тариф, считаем под вашу группу.</span>'
- '<span lang="en">Yes, from November to May — as a private trip. The slope is under snow and the road to Lake Kari is closed, so the approach is longer and you need winter gear: crampons, ice axe, warm clothing — we will provide it. We pick a good-weather window. Price is an individual rate, calculated for your group.</span>'
- '<span lang="hy">Այո, նոյեմբերից մայիս՝ անհատական։ Լանջը ձյան տակ է, Քարի լճի ճանապարհը փակ է, ուստի մոտեցումն ավելի երկար է և պետք է ձմեռային սարքավորում՝ կատուներ, սառցահատ, տաք հագուստ․ կտրամադրենք։ Ամսաթիվը ընտրում ենք լավ եղանակի պատուհանի տակ։ Գինը անհատական սակագին է՝ հաշվում ենք ձեր խմբի համար։</span></p></details>')
-OFFSEASON_LI = ('<li><span lang="ru">Ноябрь — май: восхождение по снегу, индивидуальный тариф</span><span lang="en">November — May: snow ascent, individual rate</span><span lang="hy">Նոյեմբեր — մայիս՝ վերելք ձյունով, անհատական սակագին</span></li>')
+OFFSEASON_FAQ = ('<details><summary><span lang="ru">А в мае или октябре можно?</span><span lang="en">Can I go in May or October?</span><span lang="hy">Իսկ մայիսին կամ հոկտեմբերին կարելի՞ է</span></summary>'
+ '<p><span lang="ru">Да, в мае и октябре — индивидуально. Наверху лежит снег, поэтому нужны кошки и ледоруб — их выдаём мы, тёплая одежда ваша. Дату ставим под окно хорошей погоды. Цена — индивидуальный тариф, считаем под вашу группу. Зимой на Арагац не ходим.</span>'
+ '<span lang="en">Yes, in May and October — as a private trip. There is snow on top, so you need crampons and an ice axe — we provide them; warm clothing is yours. We pick a good-weather window. Price is an individual rate, calculated for your group. We do not climb Aragats in winter.</span>'
+ '<span lang="hy">Այո, մայիսին և հոկտեմբերին՝ անհատական։ Վերևում ձյուն կա, ուստի պետք են կատուներ և սառցահատ՝ դրանք տրամադրում ենք մենք, տաք հագուստը ձերն է։ Ամսաթիվը ընտրում ենք լավ եղանակի պատուհանի տակ։ Գինը անհատական սակագին է՝ հաշվում ենք ձեր խմբի համար։ Ձմռանը Արագած չենք գնում։</span></p></details>')
+OFFSEASON_LI = ('<li><span lang="ru">Май и октябрь: восхождение по снегу, индивидуальный тариф</span><span lang="en">May and October: snow ascent, individual rate</span><span lang="hy">Մայիս և հոկտեմբեր՝ վերելք ձյունով, անհատական սակագին</span></li>')
 def offseason(s):
     i = s.index('Когда лучше ехать?'); j = s.index('</details>', i) + len('</details>')
     s = s[:j] + '\n      ' + OFFSEASON_FAQ + s[j:]
