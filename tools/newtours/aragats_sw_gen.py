@@ -113,7 +113,10 @@ PAGES = {
    'Идём на Северную?': tri('Идём на Южную?', 'Up the South peak?', 'Գնո՞ւմ ենք Հարավային'),
   },
   alts={'north_slope.jpg': 'Склон Арагаца над облаками', 'ridge_top.jpg': 'На краю кратера Арагаца',
-        'summit.jpg': 'Группа White Irbis на Арагаце'}),
+        'summit.jpg': 'Группа White Irbis на Арагаце'},
+  media={'img/above_clouds.jpg':'img/crater_view.jpg','img/north_slope.jpg':'img/kari_walk.jpg','img/ridge_top.jpg':'img/summit_cross.jpg',
+         'img/summit.jpg':'img/group_peaks.jpg','img/crater_spires.jpg':'img/ararat_view.jpg',
+         'vid/hero.mp4':'vid/hero.mp4','vid/approach.mp4':'vid/approach.mp4','vid/slope.mp4':'vid/slope.mp4','vid/descent.mp4':'vid/descent.mp4'}),
  'aragats-zapad': dict(
   slug='aragats-zapad', apptitle='Арагац Западная', fs=(120, 112, 70),
   title=tri('Арагац, Западная вершина — White Irbis', 'Aragats, West peak — White Irbis', 'Արագած, Արևմտյան գագաթ — White Irbis'),
@@ -195,7 +198,10 @@ PAGES = {
          'Идём на Северную?': tri('Идём на Западную?', 'Up the West peak?', 'Գնո՞ւմ ենք Արևմտյան'),
   },
   alts={'north_slope.jpg': 'Склон Арагаца над облаками', 'ridge_top.jpg': 'На краю кратера Арагаца',
-        'summit.jpg': 'Группа White Irbis на Арагаце'}),
+        'summit.jpg': 'Группа White Irbis на Арагаце'},
+  media={'img/above_clouds.jpg':'img/cross_sun.jpg','img/north_slope.jpg':'../aragats-yug/img/kari_walk.jpg','img/ridge_top.jpg':'img/scramble.jpg',
+         'img/summit.jpg':'img/cross_fog.jpg','img/crater_spires.jpg':'img/summit_selfie.jpg',
+         'vid/hero.mp4':'vid/hero.mp4','vid/approach.mp4':'vid/approach.mp4','vid/slope.mp4':'vid/slope.mp4','vid/descent.mp4':'vid/descent.mp4'}),
 }
 
 TRI = re.compile(r'<span lang="ru">(.*?)</span>(\s*)<span lang="en">(.*?)</span>(\s*)<span lang="hy">(.*?)</span>', re.S)
@@ -233,6 +239,8 @@ def build(p, price):
     s = re.sub(r'titles=\{[^{}]*\}', lambda m: 'titles=' + json.dumps(dict(zip(('ru', 'en', 'hy'), t)), ensure_ascii=False), s, count=1)
     # media from the North page folder
     s = re.sub(r'(src|href)="(img|vid)/(?!logo\.png)', r'\1="../aragats/\2/', s)
+    for a, b in p.get('media', {}).items():
+        s = s.replace(f'src="../aragats/{a}"', f'src="{b}"')
     for f, alt in p['alts'].items():
         s = re.sub(rf'(src="../aragats/img/{re.escape(f)}" alt=")[^"]*', rf'\g<1>{alt}', s)
     os.makedirs(f'{R}/{p["slug"]}/img', exist_ok=True)
@@ -240,8 +248,14 @@ def build(p, price):
     open(f'{R}/{p["slug"]}/index.html', 'w', encoding='utf-8').write(s)
     print(p['slug'], len(s))
 
+ALTS = {'aragats-yug': {'Северный склон Арагаца, облака накрывают гребень': 'Группа поднимается от озера Кари к Южной вершине Арагаца', 'На гребне Северной вершины, впереди вершинный крест': 'У креста на Южной вершине Арагаца', 'Группа White Irbis на вершине Арагаца': 'Группа на Южной вершине, позади Западная и Северная', 'Скальные зубцы над кратером Арагаца в тумане': 'По дороге к Арагацу, на горизонте Арарат'}, 'aragats-zapad': {'Северный склон Арагаца, облака накрывают гребень': 'Группа поднимается от озера Кари', 'На гребне Северной вершины, впереди вершинный крест': 'Подъём по камням к Западной вершине Арагаца',
+ 'Подъём по камням к Западной вершине Арагаца" loading="lazy" style="aspect-ratio:3/2"':'Подъём по камням к Западной вершине Арагаца" loading="lazy" style="aspect-ratio:3/2;object-position:50% 20%"', 'Группа White Irbis на вершине Арагаца': 'У креста на Западной вершине Арагаца', 'Скальные зубцы над кратером Арагаца в тумане': 'Группа White Irbis на Западной вершине'}}
+
 if __name__ == '__main__':
     import sys
     prices = json.loads(sys.argv[1]) if len(sys.argv) > 1 else {}
     for k, p in PAGES.items():
         build(p, prices.get(k))
+        f = f'{R}/{k}/index.html'; s = open(f, encoding='utf-8').read()
+        for a, b in ALTS[k].items(): s = s.replace(a, b)
+        open(f, 'w', encoding='utf-8').write(s)
