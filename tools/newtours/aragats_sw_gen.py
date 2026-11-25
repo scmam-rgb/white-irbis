@@ -271,6 +271,110 @@ def offseason(s):
 ALTS = {'aragats-yug': {'Северный склон Арагаца, облака накрывают гребень': 'Группа поднимается от озера Кари к Южной вершине Арагаца', 'На гребне Северной вершины, впереди вершинный крест': 'У креста на Южной вершине Арагаца', 'Группа White Irbis на вершине Арагаца': 'Группа на Южной вершине, позади Западная и Северная', 'Скальные зубцы над кратером Арагаца в тумане': 'По дороге к Арагацу, на горизонте Арарат'}, 'aragats-zapad': {'Северный склон Арагаца, облака накрывают гребень': 'Группа поднимается от озера Кари', 'На гребне Северной вершины, впереди вершинный крест': 'Подъём по камням к Западной вершине Арагаца',
  'Подъём по камням к Западной вершине Арагаца" loading="lazy" style="aspect-ratio:3/2"':'Подъём по камням к Западной вершине Арагаца" loading="lazy" style="aspect-ratio:3/2;object-position:50% 20%"', 'Группа White Irbis на вершине Арагаца': 'У креста на Западной вершине Арагаца', 'Скальные зубцы над кратером Арагаца в тумане': 'Группа White Irbis на Западной вершине'}}
 
+# ---------- v2: galleries, winter block (South), mountaineering tone (West) ----------
+def T3(ru, en, hy):
+    return f'<span lang="ru">{ru}</span><span lang="en">{en}</span><span lang="hy">{hy}</span>'
+
+def gallery(title, items):
+    figs = ''.join(f'<figure><img src="{src}" alt="{alt}" loading="lazy"{(" style=" + chr(34) + "object-position:" + pos + chr(34)) if pos else ""}></figure>' for src, alt, pos in items)
+    return (f'<section class="gal-sec" id="gallery"><div class="wrap">\n  <span class="eyebrow">{T3("Фото", "Photos", "Լուսանկարներ")}</span>\n'
+            f'  <h2 class="h2">{title}</h2>\n  <div class="gal3">{figs}</div>\n</div></section>\n\n')
+
+GAL = {
+ 'aragats-yug': (T3('Как это выглядит', 'What it looks like', 'Ինչպես է դա երևում'), [
+   ('img/ridge_trio.jpg', 'Привал на гребне над озером Кари', '50% 50%'),
+   ('img/rock_pillars.jpg', 'Скальные столбы на подходе к Южной', '50% 50%'),
+   ('img/sitting_view.jpg', 'Вид с Южной на кратер, Западную и Северную вершины', '40% 50%'),
+   ('img/flag.jpg', 'Флаг на Южной вершине Арагаца', '40% 50%'),
+   ('img/cross_trio.jpg', 'Группа у креста на Южной вершине', '50% 50%'),
+   ('img/crater_peaks.jpg', 'Кратер Арагаца со снежниками', '30% 50%')]),
+ 'aragats-zapad': (T3('Как это выглядит', 'What it looks like', 'Ինչպես է դա երևում'), [
+   ('img/west_top.jpg', 'Гребень к Западной вершине Арагаца', '55% 50%'),
+   ('img/west_view.jpg', 'Вид с Западной вершины на кратер', '30% 50%'),
+   ('img/west_rest.jpg', 'Скалы и снежники под Западной вершиной', '30% 50%'),
+   ('../aragats-yug/img/rock_jump.jpg', 'Скальные столбы на гребне', '50% 50%'),
+   ('../aragats-yug/img/sitting_view.jpg', 'Вид на Западную и Северную вершины', '40% 50%'),
+   ('img/cross_fog.jpg', 'У креста на Западной вершине в облаке', '50% 70%')]),
+}
+
+WINTER = ('<section class="next" id="winter" style="background:var(--deep);color:var(--on-deep)"><div class="wrap">\n'
+ '  <figure style="margin:0"><span class="hv"><img src="img/winter_cross.jpg" alt="Крест на Южной вершине Арагаца зимой, всё в снегу" loading="lazy" style="aspect-ratio:4/3">'
+ '<video src="vid/winter.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i aria-hidden="true"></i></span></figure>\n  <div>\n'
+ '    <span class="eyebrow" style="color:var(--eye)">' + T3('Хардкор', 'Hardcore', 'Հարդքոր') + '</span>\n'
+ '    <h2 class="h2">' + T3('Южная зимой', 'The South peak in winter', 'Հարավայինը ձմռանը') + '</h2>\n'
+ '    <p class="lead" style="color:var(--on-deep-muted)">' + T3(
+   'Летом Южная — лёгкий трекинг. Зимой это совсем другая гора: снег по колено, ветер, мороз и кошки на ногах. Дорога к Кари закрыта, подход длиннее. Это отдельный индивидуальный тур для тех, кто хочет настоящую зимнюю вершину.',
+   'In summer the South peak is an easy trek. In winter it is a different mountain: knee-deep snow, wind, frost and crampons. The road to Lake Kari is closed and the approach is longer. This is a separate private tour for those who want a real winter summit.',
+   'Ամռանը Հարավայինը թեթև արշավ է։ Ձմռանը դա բոլորովին այլ լեռ է՝ ծնկահաս ձյուն, քամի, ցուրտ և կատուներ ոտքերին։ Քարի լճի ճանապարհը փակ է, մոտեցումն ավելի երկար է։ Սա առանձին անհատական տուր է նրանց համար, ովքեր ուզում են իսկական ձմեռային գագաթ։') + '</p>\n'
+ '    <p class="lead" style="color:var(--on-deep-muted)">' + T3(
+   'Кошки и ледоруб выдаём, тёплая одежда ваша. Дату ставим под окно хорошей погоды. Цена — индивидуальный тариф, напишите нам.',
+   'We provide crampons and an ice axe; warm clothing is yours. We pick a good-weather window. Price is an individual rate — message us.',
+   'Կատուներն ու սառցահատը տրամադրում ենք, տաք հագուստը ձերն է։ Ամսաթիվը ընտրում ենք լավ եղանակի պատուհանի տակ։ Գինը անհատական սակագին է՝ գրեք մեզ։') + '</p>\n'
+ '  </div>\n</div></section>\n\n')
+
+TEXT2 = {
+ 'aragats-yug': {
+  'Зимой на Арагац не ходим.': 'Зимой — отдельный хардкорный тур, см. «Южная зимой».',
+  'We do not climb Aragats in winter.': 'In winter it is a separate hardcore tour — see “The South peak in winter”.',
+  'Ձմռանը Արագած չենք գնում։': 'Ձմռանը՝ առանձին հարդքոր տուր, տես «Հարավայինը ձմռանը»։',
+  '3 879 метров — первая настоящая высота без альпинистской техники.': '3 879 метров — лёгкий и очень красивый трекинг на почти четыре тысячи, без альпинистской техники.',
+  "3,879 metres — your first real altitude, no climbing skills needed.": "3,879 metres — an easy and very beautiful trek to almost four thousand, no climbing skills needed.",
+ },
+ 'aragats-zapad': {
+  # hero sub
+  '4 008 метров — вторая по высоте вершина Армении. От озера Кари уходим к седловине между Южной и Западной, дальше крутой подъём по осыпи — и вершина, куда добираются немногие. По дороге домой — крепость Амберд.':
+  '4 008 метров — уже не трекинг, а горное восхождение. Через седловину, по сыпухе и скальным участкам, где работаешь руками, — на вершину, куда добираются немногие. По дороге домой — крепость Амберд.',
+  "3,995 metres — the second-highest summit in Armenia.": "",
+  'Западная — вторая по высоте и самая крутая на подходе: тропы почти нет, последний час идём по осыпи.':
+  'Западная — вторая по высоте и самая серьёзная из четырёх: тропы почти нет, сыпуха, скальные участки, где придётся полазить. Это следующий шаг для тех, кто уже ходил в горы.',
+  'Около шести часов ходьбы на высоте 3 200–4 000 м, в конце крутая осыпь. Нужен опыт горных походов. Альпинистская техника не нужна.':
+  'Около шести часов на высоте 3 200–4 000 м: сыпуха и простое скальное лазание. Нужен опыт горных походов и уверенность на камнях. Гид страхует на сложных местах.',
+  'Под вершиной крутой сыпучий склон, возможны падающие камни. Идём плотно, в касках по решению гида.':
+  'Под вершиной крутая сыпуха и скальные выходы — лезем руками, возможны падающие камни. Идём в касках, плотной группой.',
+  'Западная — следующий шаг: выше, круче и почти без людей.':
+  'Западная — следующий шаг: выше, круче, с лазаньем и почти без людей.',
+  'Почти четыре тысячи без толпы': 'Горное восхождение',
+  'Четыре тысячи без толпы': 'Горное восхождение',
+ },
+}
+TEXT2_EN_HY = {
+ 'aragats-zapad': {
+  '4,008 metres — the second-highest summit in Armenia. From Lake Kari we head to the saddle between the South and West peaks, then a steep climb up the scree to a summit few people reach. On the way home — Amberd fortress.':
+  '4,008 metres — no longer a trek but a real mountain ascent. Across the saddle, up scree and rocky sections where you use your hands, to a summit few people reach. On the way home — Amberd fortress.',
+  '4 008 մետր՝ Հայաստանի երկրորդ ամենաբարձր գագաթը։ Քարի լճից գնում ենք դեպի Հարավային և Արևմտյան գագաթների միջև թամբը, հետո զառիթափ վերելք քարաթափով՝ դեպի գագաթ, որտեղ քչերն են հասնում։ Տուն վերադառնալիս՝ Ամբերդ ամրոցը։':
+  '4 008 մետր՝ արդեն ոչ թե արշավ, այլ իսկական լեռնային վերելք։ Թամբով, քարաթափով և ժայռային հատվածներով, որտեղ աշխատում ես ձեռքերով, դեպի գագաթ, որտեղ քչերն են հասնում։ Տուն վերադառնալիս՝ Ամբերդ ամրոցը։',
+  'The West peak is the second highest and the steepest to approach: there is hardly a trail, and the last hour is on scree.':
+  'The West peak is the second highest and the most serious of the four: hardly a trail, scree and rocky sections where you scramble. The next step for those who have hiked in the mountains.',
+  'About six hours of walking at 3,200–4,000 m with steep scree at the end. Mountain hiking experience is needed; no climbing technique required.':
+  'About six hours at 3,200–4,000 m: scree and easy scrambling. Mountain hiking experience and confidence on rock are needed. The guide belays on the tricky bits.',
+  'Below the summit is a steep, loose slope with possible rockfall. We keep together; helmets if the guide decides so.':
+  'Below the summit: steep scree and rock steps — you climb with your hands, rockfall is possible. We wear helmets and keep together.',
+  'The West peak is the next step: higher, steeper and almost empty.': 'The West peak is the next step: higher, steeper, with scrambling and almost empty.',
+  'Four thousand without the crowds': 'A real mountain ascent',
+  'Արևմտյանը բարձրությամբ երկրորդն է և ամենազառիթափը մոտեցման վրա․ արահետ գրեթե չկա, վերջին ժամը քարաթափով ենք գնում։':
+  'Արևմտյանը բարձրությամբ երկրորդն է և չորսից ամենալուրջը՝ արահետ գրեթե չկա, քարաթափ և ժայռային հատվածներ, որտեղ պետք է մագլցել։',
+  'Չորս հազար՝ առանց ամբոխի': 'Իսկական լեռնային վերելք',
+ },
+}
+
+def v2(k, s):
+    for a, b in {**TEXT2.get(k, {}), **TEXT2_EN_HY.get(k, {})}.items():
+        if a and a in s: s = s.replace(a, b)
+    title, items = GAL[k]
+    i = s.index('<section id="guides"')
+    s = s[:i] + gallery(title, items) + s[i:]
+    if k == 'aragats-yug':
+        i = s.index('<section id="ready">')
+        s = s[:i] + WINTER + s[i:]
+        s = s.replace('<li><span lang="ru">Май и октябрь: восхождение по снегу, индивидуальный тариф</span>',
+                      '<li><span lang="ru">Май и октябрь — по снегу, зимой — <a href="#winter">хардкорный тур</a>, индивидуальный тариф</span>', 1)
+    if k == 'aragats-zapad':
+        # vertical climbing video: show it whole
+        s = s.replace('style="aspect-ratio:3/2;object-position:50% 20%"', 'style="aspect-ratio:9/16;max-height:640px;width:auto;margin:0 auto;object-position:50% 50%"', 1)
+        s = s.replace('src="img/summit_selfie.jpg" alt="Группа White Irbis на Западной вершине"', 'src="img/west_view.jpg" alt="Вид с Западной вершины на кратер и Южную"', 1)
+    return s
+
+
 if __name__ == '__main__':
     import sys
     prices = json.loads(sys.argv[1]) if len(sys.argv) > 1 else {}
@@ -279,4 +383,7 @@ if __name__ == '__main__':
         f = f'{R}/{k}/index.html'; s = open(f, encoding='utf-8').read()
         for a, b in ALTS[k].items(): s = s.replace(a, b)
         if k == 'aragats-yug': s = offseason(s)
+        s = v2(k, s)
         open(f, 'w', encoding='utf-8').write(s)
+
+
