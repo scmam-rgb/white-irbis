@@ -299,7 +299,9 @@ GAL = {
 
 WINTER = ('<section class="next" id="winter" style="background:var(--deep);color:var(--on-deep)"><div class="wrap">\n'
  '  <figure style="margin:0"><span class="hv"><img src="img/winter_cross.jpg" alt="Крест на Южной вершине Арагаца зимой, всё в снегу" loading="lazy" style="aspect-ratio:4/3">'
- '<video src="vid/winter.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i aria-hidden="true"></i></span></figure>\n  <div>\n'
+ '<video src="vid/winter.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i aria-hidden="true"></i></span>'
+ '<span class="hv" style="margin-top:12px"><img src="img/winter_snowshoe.jpg" alt="Зимний подъём на Арагац в снегоступах" loading="lazy" style="aspect-ratio:4/3">'
+ '<video src="vid/winter_snowshoe.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><i aria-hidden="true"></i></span></figure>\n  <div>\n'
  '    <span class="eyebrow" style="color:var(--eye)">' + T3('Хардкор', 'Hardcore', 'Հարդքոր') + '</span>\n'
  '    <h2 class="h2">' + T3('Южная зимой', 'The South peak in winter', 'Հարավայինը ձմռանը') + '</h2>\n'
  '    <p class="lead" style="color:var(--on-deep-muted)">' + T3(
